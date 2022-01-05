@@ -37,14 +37,7 @@ public class Home extends AppCompatActivity {
 
 
 
-        welcome = findViewById(R.id.attributeWelcome);
-        username = findViewById(R.id.attributeUsername);
-        password = findViewById(R.id.attributePassword);
-        city = findViewById(R.id.attributeCity);
-        datetext = findViewById(R.id.attribute_date);
-        datetext.setInputType(InputType.TYPE_NULL);
-        modifyPassword= findViewById(R.id.input_modifyPassword);
-        logout = findViewById(R.id.input_button_signOut);
+
 
         Intent intent = getIntent();
         Serializable obj = intent.getSerializableExtra(Login.EXTRA_USER);
@@ -55,7 +48,7 @@ public class Home extends AppCompatActivity {
             user = new User();
         }
 
-        welcome.setText("Welcome " + user.getUsername().toString() + "!");
+      /*  welcome.setText("Welcome " + user.getUsername().toString() + "!");
         username.setText(user.getUsername());
         password.setText(user.getPassword());
         city.setText(user.getCity());
@@ -80,6 +73,6 @@ public class Home extends AppCompatActivity {
                 startActivity(login);
             }
         });
-
+*/
     }
 }
