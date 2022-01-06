@@ -8,6 +8,7 @@ package com.example.palestratiium;
 
 import androidx.appcompat.app.AppCompatActivity;
 import androidx.fragment.app.DialogFragment;
+import androidx.recyclerview.widget.GridLayoutManager;
 import androidx.recyclerview.widget.LinearLayoutManager;
 import androidx.recyclerview.widget.RecyclerView;
 
@@ -94,7 +95,7 @@ public class Home extends AppCompatActivity {
         if(esercizi.size()>0){
             mRecyclerView = findViewById(R.id.listRecyclerView_esercizi);
             mRecyclerView.setHasFixedSize(true);
-            mLayoutManager = new LinearLayoutManager(this);
+            mLayoutManager = new GridLayoutManager(this,3);
             adapter = new Adapter_ListaEserciziHome(esercizi);
             mRecyclerView.setLayoutManager(mLayoutManager);
             mRecyclerView.setAdapter(adapter);

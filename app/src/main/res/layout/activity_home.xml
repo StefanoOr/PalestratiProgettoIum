@@ -7,6 +7,8 @@
     tools:context=".Home"
     android:background="@color/ic_launcher_background">
 
+
+        
         <androidx.recyclerview.widget.RecyclerView
             android:id="@+id/listRecyclerView_esercizi"
             android:layout_width="match_parent"
