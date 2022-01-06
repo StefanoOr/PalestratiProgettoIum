@@ -5,12 +5,27 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     tools:context=".Home"
-    android:background="@color/colorPrimary">
+    android:background="@color/ic_launcher_background">
+
+        <androidx.recyclerview.widget.RecyclerView
+            android:id="@+id/listRecyclerView_esercizi"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:layout_alignParentTop="true"
+            android:layout_alignParentBottom="true"
+            android:layout_marginTop="53dp"
+            android:layout_marginBottom="109dp"
 
 
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintHorizontal_bias="0.0"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintVertical_bias="0.0" />
 
 
-
-
-
-        </RelativeLayout>
+<TextView
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+        android:text="lista esercizi"/>
+</RelativeLayout>

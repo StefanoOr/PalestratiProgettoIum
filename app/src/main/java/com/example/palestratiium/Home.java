@@ -8,6 +8,8 @@ package com.example.palestratiium;
 
 import androidx.appcompat.app.AppCompatActivity;
 import androidx.fragment.app.DialogFragment;
+import androidx.recyclerview.widget.LinearLayoutManager;
+import androidx.recyclerview.widget.RecyclerView;
 
 import android.content.Intent;
 import android.os.Bundle;
@@ -18,14 +20,23 @@ import android.widget.TextView;
 
 import java.io.Serializable;
 import java.text.SimpleDateFormat;
+import java.util.ArrayList;
 import java.util.Calendar;
+import java.util.List;
+
+import adapter.Adapter_ListaEserciziHome;
 
 public class Home extends AppCompatActivity {
 
     User user;
     TextView welcome, username, password, city, datetext, modifyPassword;
     Button logout;
+//TODO test esercizi da elimiare
+    private List<Esercizio> esercizi = new ArrayList<>();
 
+    private RecyclerView.LayoutManager mLayoutManager;
+    RecyclerView mRecyclerView;
+    RecyclerView.Adapter adapter;
     public static final String EXTRA_USER = "package com.example.BonusLogin";
 
 
@@ -74,5 +85,25 @@ public class Home extends AppCompatActivity {
             }
         });
 */
+        Esercizio uno = new Esercizio("a","aa","aaa",1);
+        Esercizio due = new Esercizio("b","bb","bbb",2);
+        esercizi.add(uno);
+        esercizi.add(due);
+
+
+        if(esercizi.size()>0){
+            mRecyclerView = findViewById(R.id.listRecyclerView_esercizi);
+            mRecyclerView.setHasFixedSize(true);
+            mLayoutManager = new LinearLayoutManager(this);
+            adapter = new Adapter_ListaEserciziHome(esercizi);
+            mRecyclerView.setLayoutManager(mLayoutManager);
+            mRecyclerView.setAdapter(adapter);
+        }
+
+
+
+
+
+
     }
 }
