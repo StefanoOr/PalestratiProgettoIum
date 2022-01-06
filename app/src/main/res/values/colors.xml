@@ -9,4 +9,6 @@
     <color name="loginButton">#5bd1d7</color>
     <color name="white">#FFFFFF</color>
     <color name="black">#000000</color>
+    <color name="barra_separatoria_principale">#FF4D14</color>
+    <color name="barra_separatoria_secondaria">#FF6433</color>
 </resources>

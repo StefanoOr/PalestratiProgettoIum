@@ -88,8 +88,12 @@ public class Home extends AppCompatActivity {
 */
         Esercizio uno = new Esercizio("a","aa","aaa",1);
         Esercizio due = new Esercizio("b","bb","bbb",2);
+        Esercizio tre = new Esercizio("c","aa","aaa",1);
+        Esercizio quattro = new Esercizio("d","bb","bbb",2);
         esercizi.add(uno);
         esercizi.add(due);
+        esercizi.add(tre);
+        esercizi.add(quattro);
 
 
         if(esercizi.size()>0){
