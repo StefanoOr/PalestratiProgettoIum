@@ -1,118 +1,174 @@
 <?xml version="1.0" encoding="utf-8"?>
-<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
+    android:orientation="vertical"
     tools:context=".Login">
 
-    <!-- Corso IUM - AA 2019 - 2020 -->
-    <!-- 65577 - Daniele Stochino -->
-    <!-- Esercitazione Bonus -->
-
-    <LinearLayout
+    <androidx.constraintlayout.widget.ConstraintLayout
         android:layout_width="match_parent"
-        android:layout_height="match_parent"
-        android:orientation="horizontal">
+        android:layout_height="match_parent"  >
 
-        <ScrollView
+        <ImageView
+            android:id="@+id/imageView2"
+            android:layout_width="210dp"
+            android:layout_height="210dp"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintHorizontal_bias="0.496"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent"
+            app:layout_constraintVertical_bias="0.139"
+            app:srcCompat="@drawable/ic_noun_penrose_triangle_358755" />
+
+        <TextView
+            android:id="@+id/TitleApp"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:fontFamily="@font/roboto"
+            android:gravity="center_horizontal"
+            android:text="@string/bonus_login"
+            android:textAppearance="@style/TextAppearance.AppCompat.Body2"
+            android:textColor="@color/barra_separatoria_principale"
+            android:textSize="36sp"
+            android:textStyle="bold"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/imageView2"
+            app:layout_constraintVertical_bias="0.0" />
+
+        <View
+            android:id="@+id/view6"
             android:layout_width="match_parent"
-            android:layout_height="match_parent">
+            android:layout_height="1dp"
+            android:background="@color/barra_separatoria_principale"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintHorizontal_bias="0.0"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/TitleApp"
+            app:layout_constraintVertical_bias="0.0" />
 
-            <LinearLayout
+        <ImageView
+            android:id="@+id/imageView6"
+            android:layout_width="30dp"
+            android:layout_height="30dp"
+            android:layout_marginTop="36dp"
+            android:src="@drawable/ic_baseline_person_24"
+            app:layout_constraintEnd_toStartOf="@+id/input_login_username"
+            app:layout_constraintHorizontal_bias="1.0"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/view6" />
+
+        <com.google.android.material.textfield.TextInputLayout
+            android:id="@+id/input_login_username"
+            android:layout_width="270dp"
+            android:layout_height="60dp"
+            android:hint="Username"
+            android:textColorHint="@color/white"
+            android:transitionName="user_transition"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintHorizontal_bias="0.496"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/view6"
+            app:layout_constraintVertical_bias="0.073">
+
+            <com.google.android.material.textfield.TextInputEditText
                 android:layout_width="match_parent"
-                android:layout_height="match_parent"
-                android:layout_gravity="center"
-                android:gravity="center"
-                android:orientation="vertical">
+                android:layout_height="wrap_content"
+                android:backgroundTint="@color/barra_separatoria_secondaria"
+                android:inputType="text"
+                android:textAlignment="textStart" />
+        </com.google.android.material.textfield.TextInputLayout>
 
-                <ImageView
-                    android:id="@+id/imageView2"
-                    android:layout_width="185dp"
-                    android:layout_height="210dp"
-                    android:layout_marginTop="48dp"
-                    app:srcCompat="@drawable/ic_noun_penrose_triangle_358755" />
+        <ImageView
+            android:layout_width="30dp"
+            android:layout_height="30dp"
+            android:layout_marginTop="12dp"
+            android:src="@drawable/ic_baseline_vpn_key_24"
+            app:layout_constraintEnd_toStartOf="@+id/input_login_password"
+            app:layout_constraintHorizontal_bias="1.0"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/input_login_username" />
 
-                <TextView
-                    android:id="@+id/TitleApp"
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:layout_marginTop="5dp"
-                    android:fontFamily="@font/roboto"
-                    android:gravity="center_horizontal"
-                    android:text="@string/bonus_login"
-                    android:textColor="@color/barra_separatoria_principale"
-                    android:textAppearance="@style/TextAppearance.AppCompat.Body2"
-                    android:textSize="36sp" />
+        <com.google.android.material.textfield.TextInputLayout
+            android:id="@+id/input_login_password"
+            android:layout_width="270dp"
+            android:layout_height="60dp"
+            android:hint="Password"
+            android:textColorHint="@color/white"
+            android:transitionName="pass_transition"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintHorizontal_bias="0.496"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/input_login_username"
+            app:layout_constraintVertical_bias="0.0"
+            app:passwordToggleEnabled="true">
 
-                <Space
-                    android:layout_width="match_parent"
-                    android:layout_height="10dp" />
+            <com.google.android.material.textfield.TextInputEditText
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:backgroundTint="@color/barra_separatoria_secondaria"
+                android:inputType="textPassword"
+                android:textAlignment="textStart" />
 
-                <com.google.android.material.textfield.TextInputLayout
-                    android:id="@+id/input_login_username"
-                    android:layout_width="match_parent"
-                    android:layout_height="match_parent"
-                    android:layout_marginLeft="50dp"
-                    android:layout_marginRight="50dp"
-                    android:hint="Username"
-                    android:textColorHint="@color/white"
-                    android:transitionName="user_transition">
+        </com.google.android.material.textfield.TextInputLayout>
 
-                    <com.google.android.material.textfield.TextInputEditText
-                        android:layout_width="match_parent"
-                        android:layout_height="wrap_content"
-                        android:inputType="text"
-                        android:textAlignment="textStart" />
-                </com.google.android.material.textfield.TextInputLayout>
+        <Button
+            android:id="@+id/signin_button"
+            android:layout_width="210dp"
+            android:layout_height="60dp"
+            android:backgroundTint="@color/barra_separatoria_principale"
+            android:text="Sign In"
+            android:textSize="24sp"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintHorizontal_bias="0.497"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/input_login_password"
+            app:layout_constraintVertical_bias="0.254" />
 
-                <com.google.android.material.textfield.TextInputLayout
-                    android:id="@+id/input_login_password"
-                    android:layout_width="match_parent"
-                    android:layout_height="match_parent"
-                    android:layout_marginLeft="50dp"
-                    android:layout_marginRight="50dp"
-                    android:hint="Password"
-                    android:textColorHint="@color/white"
-                    android:transitionName="pass_transition"
-                    app:passwordToggleEnabled="true">
+        <ImageView
+            android:layout_width="30dp"
+            android:layout_height="30dp"
+            android:src="@drawable/ic_baseline_keyboard_arrow_right_24"
+            app:layout_constraintEnd_toStartOf="@+id/signup_text"
+            app:layout_constraintHorizontal_bias="1.0"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="@+id/signup_text" />
 
-                    <com.google.android.material.textfield.TextInputEditText
-                        android:layout_width="match_parent"
-                        android:layout_height="wrap_content"
-                        android:inputType="textPassword"
-                        android:textAlignment="textStart" />
+        <TextView
+            android:id="@+id/signup_text"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:gravity="center_horizontal"
+            android:text="New User ?  Sign Up"
+            android:textColor="@color/barra_separatoria_principale"
+            android:textSize="20dp"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/signin_button"
+            app:layout_constraintVertical_bias="0.193" />
 
-                </com.google.android.material.textfield.TextInputLayout>
+        <View
+            android:layout_width="match_parent"
+            android:layout_height="0.5dp"
+            android:layout_marginStart="120dp"
+            android:layout_marginEnd="120dp"
+            android:background="@color/barra_separatoria_secondaria"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintHorizontal_bias="0.0"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/signup_text"
+            app:layout_constraintVertical_bias="0.0" />
 
-                <Button
-                    android:id="@+id/signin_button"
-                    android:layout_width="210dp"
-                    android:layout_height="60dp"
-                    android:layout_marginTop="40dp"
-                    android:backgroundTint="@color/barra_separatoria_principale"
-                    android:text="Sign In"
-                    android:textSize="24sp" />
+    </androidx.constraintlayout.widget.ConstraintLayout>
 
-                <TextView
-                    android:id="@+id/signup_text"
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:layout_marginTop="30dp"
-                    android:gravity="center_horizontal"
-                    android:text="New User ?  Sign Up"
-                    android:textColor="@color/barra_separatoria_principale"/>
-
-                <View
-                    android:layout_width="match_parent"
-                    android:layout_height="0.5dp"
-                    android:layout_marginStart="130dp"
-                    android:layout_marginEnd="130dp"
-                    android:background="@color/barra_separatoria_secondaria"
-                    app:layout_constraintEnd_toEndOf="@+id/modify_password" />
-            </LinearLayout>
-        </ScrollView>
-    </LinearLayout>
-
-
-</androidx.constraintlayout.widget.ConstraintLayout>
+</LinearLayout>
