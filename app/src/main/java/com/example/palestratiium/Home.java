@@ -30,9 +30,12 @@ import adapter.Adapter_ListaEserciziHome;
 public class Home extends AppCompatActivity {
 
     User user;
+    Button profilo;
     TextView welcome, username, password, city, datetext, modifyPassword;
     Button logout;
-//TODO test esercizi da elimiare
+
+
+    //TODO test esercizi da elimiare
     private List<Esercizio> esercizi = new ArrayList<>();
 
     private RecyclerView.LayoutManager mLayoutManager;
@@ -46,10 +49,7 @@ public class Home extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_home);
 
-
-
-
-
+        profilo = findViewById(R.id.profilo);
 
         Intent intent = getIntent();
         Serializable obj = intent.getSerializableExtra(Login.EXTRA_USER);
@@ -59,6 +59,15 @@ public class Home extends AppCompatActivity {
         }else{
             user = new User();
         }
+
+        profilo.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                Intent showResult = new Intent(Home.this, Profilo.class);
+                showResult.putExtra(EXTRA_USER, user);
+                startActivity(showResult);
+            }
+        });
 
       /*  welcome.setText("Welcome " + user.getUsername().toString() + "!");
         username.setText(user.getUsername());

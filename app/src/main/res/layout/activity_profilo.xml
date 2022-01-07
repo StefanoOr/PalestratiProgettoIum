@@ -199,13 +199,13 @@
             android:layout_height="30dp"
             android:layout_marginTop="100dp"
             android:src="@drawable/ic_baseline_keyboard_arrow_right_24"
-            app:layout_constraintEnd_toStartOf="@+id/textView2"
+            app:layout_constraintEnd_toStartOf="@+id/modify_password"
             app:layout_constraintHorizontal_bias="1.0"
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toBottomOf="@+id/view4" />
 
         <TextView
-            android:id="@+id/textView2"
+            android:id="@+id/modify_password"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_marginTop="100dp"
@@ -217,14 +217,28 @@
             app:layout_constraintTop_toBottomOf="@+id/view4" />
 
         <View
+            android:id="@+id/view5"
             android:layout_width="match_parent"
             android:layout_height="0.5dp"
             android:layout_marginStart="130dp"
             android:layout_marginEnd="130dp"
             android:background="@color/barra_separatoria_secondaria"
-            app:layout_constraintEnd_toEndOf="@+id/textView2"
-            app:layout_constraintStart_toStartOf="@+id/textView2"
-            app:layout_constraintTop_toBottomOf="@+id/textView2" />
+            app:layout_constraintEnd_toEndOf="@+id/modify_password"
+            app:layout_constraintStart_toStartOf="@+id/modify_password"
+            app:layout_constraintTop_toBottomOf="@+id/modify_password" />
+
+        <Button
+            android:id="@+id/back_home"
+            android:layout_width="190dp"
+            android:layout_height="50dp"
+            android:backgroundTint="@color/barra_separatoria_principale"
+            android:text="Home"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintHorizontal_bias="0.497"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/view5"
+            app:layout_constraintVertical_bias="0.115" />
 
 
     </androidx.constraintlayout.widget.ConstraintLayout>
