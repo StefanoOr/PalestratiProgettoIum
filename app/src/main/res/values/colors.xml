@@ -11,4 +11,6 @@
     <color name="black">#000000</color>
     <color name="barra_separatoria_principale">#FF4D14</color>
     <color name="barra_separatoria_secondaria">#FF6433</color>
+    <color name="card_background">#000000</color>
+    <color name="card_text">#FF6433</color>
 </resources>

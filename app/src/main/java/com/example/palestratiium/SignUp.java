@@ -32,7 +32,7 @@ public class SignUp extends AppCompatActivity {
 
     User user = new User();
     TextInputLayout username, city, password, passwordConf;
-    TextView date;
+    TextView date, back;
     Button signup_button;
     DatePickerFragment datePickerFragment = new DatePickerFragment();
     boolean isPasswordVisibleNEW, isPasswordVisibleCONFIRM;
@@ -52,6 +52,7 @@ public class SignUp extends AppCompatActivity {
         date = findViewById(R.id.input_signup_date);
         date.setInputType(InputType.TYPE_NULL);
         signup_button = findViewById(R.id.input_button_signUp);
+        back = findViewById(R.id.textView2);
         isPasswordVisibleNEW = true;
         isPasswordVisibleCONFIRM = true;
 
@@ -108,6 +109,15 @@ public class SignUp extends AppCompatActivity {
                 }else{
                     //TODO raise expection for not matching passwords
                 }
+            }
+        });
+
+        back.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                Intent home = new Intent(SignUp.this, Login.class);
+                home.putExtra(EXTRA_USER, user);
+                startActivity(home);
             }
         });
 
