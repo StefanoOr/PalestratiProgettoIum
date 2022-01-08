@@ -1,6 +1,10 @@
 package com.example.palestratiium;
 
+import java.util.ArrayList;
 import java.util.Calendar;
+import java.util.List;
+
+import Classi.Esercizio;
 
 public class PersonalTrainer {
 
@@ -12,6 +16,7 @@ public class PersonalTrainer {
     private String team;
     private boolean coach;
 
+    private List<Esercizio> listaEsercizi= new ArrayList<>();
 
 
     public PersonalTrainer(){
@@ -27,6 +32,17 @@ public class PersonalTrainer {
         this.coach=true;
 
     }
+
+
+
+    public void addEsercizi(Esercizio esercizio){
+        listaEsercizi.add(esercizio);
+    }
+
+    public List<Esercizio> getAllListaEsercizi(){
+        return listaEsercizi;
+    }
+
 
 
 

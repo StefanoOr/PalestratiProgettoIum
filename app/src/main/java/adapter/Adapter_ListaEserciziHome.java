@@ -1,5 +1,6 @@
 package adapter;
 
+import android.content.Intent;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
@@ -8,8 +9,12 @@ import android.widget.TextView;
 import androidx.annotation.NonNull;
 import androidx.recyclerview.widget.RecyclerView;
 
-import com.example.palestratiium.Esercizio;
+import Classi.Esercizio;
+
+import com.example.palestratiium.Home;
+import com.example.palestratiium.Login;
 import com.example.palestratiium.R;
+import com.example.palestratiium.SignUp;
 
 import java.util.List;
 
@@ -43,6 +48,7 @@ public class Adapter_ListaEserciziHome extends  RecyclerView.Adapter<Adapter_Lis
 
 
         holder.nEsercizio.setText(currentItem.getNome());
+        holder.bindData(position);
     }
 
     @Override
@@ -57,6 +63,16 @@ public class Adapter_ListaEserciziHome extends  RecyclerView.Adapter<Adapter_Lis
             super(itemView);
 
             nEsercizio= itemView.findViewById(R.id.nomeEsercizio);
+        }
+
+        void bindData(int position){
+
+            nEsercizio.setOnClickListener(new View.OnClickListener() {
+                @Override
+                public void onClick(View v) {
+                 
+                }
+            });
         }
     }
 }

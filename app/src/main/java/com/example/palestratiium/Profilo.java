@@ -10,6 +10,8 @@ import android.widget.TextView;
 
 import java.io.Serializable;
 
+import Classi.User;
+
 public class Profilo extends AppCompatActivity {
 
     User user;

@@ -4,7 +4,7 @@
     Esercitazione Bonus
  */
 
-package com.example.palestratiium;
+package Classi;
 
 import java.io.Serializable;
 import java.util.Calendar;
@@ -32,7 +32,7 @@ public class User implements Serializable {
         return username;
     }
 
-    String getPassword() {
+    public String getPassword() {
         return password;
     }
 
@@ -40,23 +40,23 @@ public class User implements Serializable {
         this.username = username;
     }
 
-    void setPassword(String password) {
+    public void setPassword(String password) {
         this.password = password;
     }
 
-    String getCity() {
+    public String getCity() {
         return city;
     }
 
-    void setCity(String city) {
+    public void setCity(String city) {
         this.city = city;
     }
 
-    Calendar getDate() {
+    public Calendar getDate() {
         return date;
     }
 
-    void setDate(Calendar date) {
+    public void setDate(Calendar date) {
         this.date = date;
     }
 
