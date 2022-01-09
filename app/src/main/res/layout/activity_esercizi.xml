@@ -14,18 +14,26 @@
         <RelativeLayout
             android:id="@+id/card_video"
             android:layout_width="match_parent"
-            android:layout_height="300dp"
+            android:layout_height="320dp"
             android:layout_centerHorizontal="true"
             android:background="@drawable/card_background_edit_profile"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toTopOf="parent">
 
+            <ImageView
+                android:id="@+id/back_button"
+                android:layout_width="40dp"
+                android:layout_height="40dp"
+                android:src="@drawable/ic_baseline_keyboard_double_arrow_left_24">
+
+            </ImageView>
+
             <TextView
                 android:id="@+id/esercizio_title"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:layout_marginTop="10dp"
+                android:layout_marginTop="30dp"
                 android:fontFamily="@font/roboto"
                 android:text="@string/Nome_Esercizio"
                 android:textAlignment="center"
@@ -46,13 +54,13 @@
                 android:layout_height="185dp"
                 android:layout_alignTop="@id/barra_uno"
                 android:layout_centerHorizontal="true"
-                android:layout_marginTop="25dp" />
+                android:layout_marginTop="35dp" />
 
             <View
                 android:layout_width="match_parent"
                 android:layout_height="1dp"
                 android:layout_alignBottom="@id/videoView"
-                android:layout_marginBottom="-15dp"
+                android:layout_marginBottom="-25dp"
                 android:background="@color/barra_separatoria_principale" />
 
         </RelativeLayout>
@@ -136,7 +144,7 @@
                 android:layout_width="match_parent"
                 android:layout_height="0.5dp"
                 android:layout_alignBottom="@id/text_corpo_altro"
-                android:layout_marginBottom="-70dp"
+                android:layout_marginBottom="-20dp"
                 android:layout_marginStart="25dp"
                 android:layout_marginEnd="25dp"
                 android:background="@color/barra_separatoria_secondaria" />
@@ -154,6 +162,7 @@
             app:layout_constraintTop_toBottomOf="@id/card_altro">
 
             <TextView
+                android:id="@+id/text_vota"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:layout_marginTop="20dp"
@@ -169,7 +178,10 @@
                 android:id="@+id/ratingBar"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:layout_centerInParent="true" />
+                android:layout_centerInParent="true"
+                android:layout_alignBottom="@id/text_vota"
+                android:layout_marginBottom="-60dp"
+                android:progressTint="@color/barra_separatoria_principale"/>
 
         </RelativeLayout>
 
