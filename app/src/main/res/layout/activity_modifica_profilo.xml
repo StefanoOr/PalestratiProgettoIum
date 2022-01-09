@@ -37,7 +37,7 @@
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:layout_marginTop="15dp"
-            android:text="Height"
+            android:text="Altezza"
             android:textAlignment="center"
             android:textColor="@color/white"
             android:textSize="20dp"
@@ -46,16 +46,16 @@
         </TextView>
 
         <TextView
+            android:id="@+id/current_height"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:text="160"
-            android:layout_marginBottom="50dp"
-            android:textSize="40dp"
-            android:textColor="@color/white"
-            android:textStyle="bold"
             android:layout_alignParentBottom="true"
             android:layout_centerInParent="true"
-            android:id="@+id/current_height">
+            android:layout_marginBottom="50dp"
+            android:text="160"
+            android:textColor="@color/white"
+            android:textSize="40dp"
+            android:textStyle="bold">
 
         </TextView>
 
@@ -88,6 +88,73 @@
 
         </SeekBar>
 
+    </RelativeLayout>
+
+    <RelativeLayout
+        android:id="@+id/peso_layout"
+        android:layout_width="340dp"
+        android:layout_height="150dp"
+        android:layout_below="@id/altezza_layout"
+        android:layout_centerHorizontal="true"
+        android:layout_marginLeft="25dp"
+        android:layout_marginRight="25dp"
+        android:layout_marginBottom="50dp"
+        android:background="@drawable/card_background_edit_profile">
+
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="15dp"
+            android:text="Peso"
+            android:textAlignment="center"
+            android:textColor="@color/white"
+            android:textSize="20dp"
+            android:textStyle="bold">
+
+        </TextView>
+
+        <TextView
+            android:id="@+id/current_peso"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignParentBottom="true"
+            android:layout_centerInParent="true"
+            android:layout_marginBottom="50dp"
+            android:text="80"
+            android:textColor="@color/white"
+            android:textSize="40dp"
+            android:textStyle="bold">
+
+        </TextView>
+
+        <TextView
+            android:id="@+id/misura_peso"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_centerInParent="true"
+            android:layout_marginStart="10dp"
+            android:layout_marginBottom="50dp"
+            android:layout_toEndOf="@id/current_peso"
+            android:text="Kg"
+            android:textColor="@color/white"
+            android:textSize="20dp"
+            android:textStyle="bold">
+
+        </TextView>
+
+        <SeekBar
+            android:id="@+id/seekbar_peso"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_alignParentBottom="true"
+            android:layout_marginLeft="10dp"
+            android:layout_marginRight="10dp"
+            android:layout_marginBottom="20dp"
+            android:progressBackgroundTint="@color/barra_separatoria_principale"
+            android:progressTint="@color/barra_separatoria_secondaria"
+            android:thumbTint="@color/barra_separatoria_principale">
+
+        </SeekBar>
 
     </RelativeLayout>
 

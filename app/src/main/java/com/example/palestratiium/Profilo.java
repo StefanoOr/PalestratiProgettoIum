@@ -6,6 +6,7 @@ import android.content.Intent;
 import android.os.Bundle;
 import android.view.View;
 import android.widget.Button;
+import android.widget.ImageView;
 import android.widget.TextView;
 
 import java.io.Serializable;
@@ -17,6 +18,7 @@ public class Profilo extends AppCompatActivity {
     User user;
     TextView modify_password, username, nome;
     Button home;
+    ImageView edit;
 
     public static final String EXTRA_USER = "package com.example.BonusLogin";
 
@@ -30,6 +32,7 @@ public class Profilo extends AppCompatActivity {
         username = findViewById(R.id.textView9);
         nome = findViewById(R.id.textView11);
         home = findViewById(R.id.back_home);
+        edit = findViewById(R.id.edit_button);
 
         Intent intent = getIntent();
         Serializable obj = intent.getSerializableExtra(Login.EXTRA_USER);
@@ -42,6 +45,15 @@ public class Profilo extends AppCompatActivity {
 
         username.setText(user.getUsername());
         nome.setText(user.getUsername());
+
+        edit.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                Intent showResult = new Intent(Profilo.this, ModificaProfilo.class);
+                showResult.putExtra(EXTRA_USER, user);
+                startActivity(showResult);
+            }
+        });
 
         modify_password.setOnClickListener(new View.OnClickListener() {
             @Override
