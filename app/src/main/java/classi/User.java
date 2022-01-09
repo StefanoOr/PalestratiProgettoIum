@@ -4,11 +4,10 @@
     Esercitazione Bonus
  */
 
-package Classi;
+package classi;
 
 import java.io.Serializable;
 import java.util.Calendar;
-import java.util.Date;
 
 public class User implements Serializable {
 

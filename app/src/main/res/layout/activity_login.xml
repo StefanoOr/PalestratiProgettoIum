@@ -56,12 +56,12 @@
             android:id="@+id/imageView6"
             android:layout_width="30dp"
             android:layout_height="30dp"
-            android:layout_marginTop="16dp"
+            android:layout_marginTop="36dp"
             android:src="@drawable/ic_baseline_person_24"
             app:layout_constraintEnd_toStartOf="@+id/input_login_username"
             app:layout_constraintHorizontal_bias="1.0"
             app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toTopOf="@+id/input_login_username" />
+            app:layout_constraintTop_toBottomOf="@+id/view6" />
 
         <com.google.android.material.textfield.TextInputLayout
             android:id="@+id/input_login_username"
@@ -88,12 +88,12 @@
         <ImageView
             android:layout_width="30dp"
             android:layout_height="30dp"
-            android:layout_marginTop="32dp"
+            android:layout_marginTop="12dp"
             android:src="@drawable/ic_baseline_vpn_key_24"
             app:layout_constraintEnd_toStartOf="@+id/input_login_password"
             app:layout_constraintHorizontal_bias="1.0"
             app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toBottomOf="@+id/imageView6" />
+            app:layout_constraintTop_toBottomOf="@+id/input_login_username" />
 
         <com.google.android.material.textfield.TextInputLayout
             android:id="@+id/input_login_password"

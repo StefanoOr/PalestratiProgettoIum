@@ -20,11 +20,12 @@ import java.io.Serializable;
 import java.util.ArrayList;
 import java.util.List;
 
-import Classi.Esercizio;
-import Classi.User;
+import adapter.RecycleViewInterface;
+import classi.Esercizio;
+import classi.User;
 import adapter.Adapter_ListaEserciziHome;
 
-public class Home extends AppCompatActivity {
+public class Home extends AppCompatActivity implements RecycleViewInterface {
 
     User user;
     Button profilo;
@@ -38,7 +39,7 @@ public class Home extends AppCompatActivity {
     private RecyclerView.LayoutManager mLayoutManager;
     RecyclerView mRecyclerView;
     RecyclerView.Adapter adapter;
-    public static final String EXTRA_USER = "package com.example.BonusLogin";
+    public static final String EXTRA_USER = "package com.example.palestratiium";
 
 
     @Override
@@ -106,7 +107,7 @@ public class Home extends AppCompatActivity {
             mRecyclerView = findViewById(R.id.listRecyclerView_esercizi);
             mRecyclerView.setHasFixedSize(true);
             mLayoutManager = new GridLayoutManager(this,3);
-            adapter = new Adapter_ListaEserciziHome(esercizi);
+            adapter = new Adapter_ListaEserciziHome(esercizi,this);
             mRecyclerView.setLayoutManager(mLayoutManager);
             mRecyclerView.setAdapter(adapter);
         }
@@ -116,5 +117,13 @@ public class Home extends AppCompatActivity {
 
 
 
+    }
+
+    @Override
+    public void onItemClick(int position) {
+        Intent intent = new Intent(Home.this, Esercizi.class);
+        intent.putExtra(EXTRA_USER, user);
+        
+        startActivity(intent);
     }
 }

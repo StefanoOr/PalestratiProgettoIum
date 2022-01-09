@@ -22,7 +22,7 @@ import com.google.android.material.textfield.TextInputLayout;
 import java.io.Serializable;
 import java.util.Objects;
 
-import Classi.User;
+import classi.User;
 
 public class ModifyPassword extends AppCompatActivity {
 

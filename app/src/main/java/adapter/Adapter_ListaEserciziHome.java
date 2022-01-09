@@ -1,6 +1,5 @@
 package adapter;
 
-import android.content.Intent;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
@@ -9,12 +8,9 @@ import android.widget.TextView;
 import androidx.annotation.NonNull;
 import androidx.recyclerview.widget.RecyclerView;
 
-import Classi.Esercizio;
+import classi.Esercizio;
 
-import com.example.palestratiium.Home;
-import com.example.palestratiium.Login;
 import com.example.palestratiium.R;
-import com.example.palestratiium.SignUp;
 
 import java.util.List;
 
@@ -23,13 +19,15 @@ import java.util.List;
 
 public class Adapter_ListaEserciziHome extends  RecyclerView.Adapter<Adapter_ListaEserciziHome.ExampleViewHolder>{
     private List<Esercizio> mExampleList;
+    private  final RecycleViewInterface recycleViewInterface;
 
 
 
 
 
-    public Adapter_ListaEserciziHome(List <Esercizio> exampleList) {
+    public Adapter_ListaEserciziHome(List <Esercizio> exampleList,RecycleViewInterface recycleViewInterface) {
         this.mExampleList = exampleList;
+        this.recycleViewInterface=recycleViewInterface;
     }
 
 
@@ -38,7 +36,7 @@ public class Adapter_ListaEserciziHome extends  RecyclerView.Adapter<Adapter_Lis
     @Override
     public ExampleViewHolder onCreateViewHolder(@NonNull ViewGroup parent, int viewType) {
         View v = LayoutInflater.from(parent.getContext()).inflate(R.layout.card_video, parent, false);
-        ExampleViewHolder evh = new ExampleViewHolder(v);
+        ExampleViewHolder evh = new ExampleViewHolder(v,recycleViewInterface);
         return evh;
     }
 
@@ -56,13 +54,26 @@ public class Adapter_ListaEserciziHome extends  RecyclerView.Adapter<Adapter_Lis
         return mExampleList.size();
     }
 
-    public class ExampleViewHolder extends RecyclerView.ViewHolder {
+    public static class ExampleViewHolder extends RecyclerView.ViewHolder {
 
         public TextView nEsercizio;
-        public ExampleViewHolder(@NonNull View itemView) {
+        public ExampleViewHolder(@NonNull View itemView, final RecycleViewInterface recycleViewInterface) {
             super(itemView);
 
             nEsercizio= itemView.findViewById(R.id.nomeEsercizio);
+
+            itemView.setOnClickListener(new View.OnClickListener() {
+                @Override
+                public void onClick(View v) {
+                    if(recycleViewInterface != null){
+                        int pos=getAdapterPosition();
+
+                        if(pos != RecyclerView.NO_POSITION){
+                            recycleViewInterface.onItemClick(pos);
+                        }
+                    }
+                }
+            });
         }
 
         void bindData(int position){
@@ -70,7 +81,7 @@ public class Adapter_ListaEserciziHome extends  RecyclerView.Adapter<Adapter_Lis
             nEsercizio.setOnClickListener(new View.OnClickListener() {
                 @Override
                 public void onClick(View v) {
-                 
+
                 }
             });
         }

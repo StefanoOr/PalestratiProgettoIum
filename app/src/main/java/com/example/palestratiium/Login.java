@@ -21,7 +21,7 @@ import com.google.android.material.textfield.TextInputLayout;
 
 import java.util.List;
 
-import Classi.User;
+import classi.User;
 
 public class Login extends AppCompatActivity {
 
@@ -32,7 +32,7 @@ public class Login extends AppCompatActivity {
     TextView signup_text;
     boolean isPasswordVisible = true;
 
-    public static final String EXTRA_USER = "package com.example.BonusLogin";
+    public static final String EXTRA_USER = "package com.example.palestratiium";
 
     @SuppressLint("ClickableViewAccessibility")
     @Override
