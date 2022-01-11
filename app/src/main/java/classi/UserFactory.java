@@ -4,20 +4,20 @@
     Esercitazione Bonus
  */
 
-package com.example.palestratiium;
+package classi;
+
+import com.example.palestratiium.DatePickerFragment;
 
 import java.util.ArrayList;
 import java.util.Calendar;
 import java.util.List;
-
-import classi.PersonalTrainer;
-import classi.User;
 
 public class UserFactory {
 
     private static UserFactory singleton;
     private List<User> users = new ArrayList<>();
     private List<PersonalTrainer> coach = new ArrayList<>();
+    private List<Esercizio> esercizio = new ArrayList<>();
     DatePickerFragment datePickerFragment = new DatePickerFragment();
 
     private UserFactory() {
@@ -31,6 +31,18 @@ public class UserFactory {
         }
         return singleton;
     }
+
+    public List<Esercizio> getEsercizio(){
+        return esercizio;
+    }
+
+    /*public void setListaEsercizio(){
+        for(int i=0;i<coach.size();i++){
+            for(int j=0;j<coach.get(i).getEsercizio(j);j++){
+
+            }
+        }
+    }*/
 
     public List<PersonalTrainer> getPersonal(){
         PersonalTrainer atzeni = new PersonalTrainer();
@@ -51,9 +63,6 @@ public class UserFactory {
 
     public List<User> getUsers() {
 
-
-
-
         User user = new User();
 
         user.setUsername("ste");
@@ -73,10 +82,6 @@ public class UserFactory {
     public void addUsers(User u) {
         users.add(u);
     }
-
-
-
-
 
     public void addPersonal(PersonalTrainer u){coach.add(u);}
 

@@ -20,10 +20,10 @@ public class ModificaProfilo extends AppCompatActivity {
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_modifica_profilo);
+        setContentView(R.layout.activity_modifica_peso);
 
-        current_height = findViewById(R.id.current_height);
-        select_height = findViewById(R.id.seekbar_height);
+        /*current_height = findViewById(R.id.current_height);
+        select_height = findViewById(R.id.seekbar_height);*/
         current_peso = findViewById(R.id.current_peso);
         select_peso = findViewById(R.id.seekbar_peso);
 

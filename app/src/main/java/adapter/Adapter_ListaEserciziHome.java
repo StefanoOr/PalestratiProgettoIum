@@ -22,9 +22,6 @@ public class Adapter_ListaEserciziHome extends  RecyclerView.Adapter<Adapter_Lis
     private  final RecycleViewInterface recycleViewInterface;
 
 
-
-
-
     public Adapter_ListaEserciziHome(List <Esercizio> exampleList,RecycleViewInterface recycleViewInterface) {
         this.mExampleList = exampleList;
         this.recycleViewInterface=recycleViewInterface;

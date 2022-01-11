@@ -23,6 +23,7 @@ import java.io.Serializable;
 import java.util.Objects;
 
 import classi.User;
+import classi.UserFactory;
 
 public class ModifyPassword extends AppCompatActivity {
 

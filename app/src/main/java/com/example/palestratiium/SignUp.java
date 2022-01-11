@@ -27,6 +27,7 @@ import java.util.List;
 import java.util.Objects;
 
 import classi.User;
+import classi.UserFactory;
 
 public class SignUp extends AppCompatActivity {
 

@@ -22,6 +22,7 @@ import com.google.android.material.textfield.TextInputLayout;
 import java.util.List;
 
 import classi.User;
+import classi.UserFactory;
 
 public class Login extends AppCompatActivity {
 
