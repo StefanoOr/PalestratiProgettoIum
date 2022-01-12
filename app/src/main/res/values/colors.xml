@@ -13,6 +13,6 @@
     <color name="barra_separatoria_secondaria">#FF6433</color>
     <color name="card_background">#2c2c2c</color>
     <color name="card_text">#FF6433</color>
-    <color name="nega">#FF0000</color>
-    <color name="conferma">#56EA35</color>
+    <color name="nega">#94FF0000</color>
+    <color name="conferma">#8D2EFF00</color>
 </resources>

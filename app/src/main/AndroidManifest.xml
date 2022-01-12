@@ -10,7 +10,7 @@
         android:supportsRtl="true"
         android:theme="@style/Theme.AppCompat.NoActionBar">
         <activity
-            android:name=".ModificaProfilo"
+            android:name=".ModificaPeso"
             android:exported="false" />
         <activity android:name=".Esercizi" />
         <activity

@@ -4,7 +4,7 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="wrap_content"
-    tools:context=".ModificaProfilo">
+    tools:context=".ModificaPeso">
 
     <androidx.constraintlayout.widget.ConstraintLayout
         android:id="@+id/peso_layout"
@@ -21,7 +21,7 @@
             android:id="@+id/textView17"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:text="Peso"
+            android:text="Seleziona il tuo peso:"
             android:textAlignment="center"
             android:textColor="@color/white"
             android:textSize="20dp"
@@ -31,7 +31,7 @@
             app:layout_constraintHorizontal_bias="0.0"
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toTopOf="parent"
-            app:layout_constraintVertical_bias="0.098">
+            app:layout_constraintVertical_bias="0.043">
 
         </TextView>
 
@@ -79,7 +79,7 @@
             app:layout_constraintHorizontal_bias="0.0"
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toBottomOf="@+id/current_peso"
-            app:layout_constraintVertical_bias="0.214">
+            app:layout_constraintVertical_bias="0.119">
 
         </SeekBar>
 
@@ -87,26 +87,32 @@
             android:id="@+id/indietro_peso"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:background="@color/nega"
+            android:layout_marginStart="10dp"
+            android:layout_marginBottom="5dp"
+            android:background="@drawable/nega_button"
             android:text="Indietro"
             app:layout_constraintBottom_toBottomOf="parent"
             app:layout_constraintEnd_toEndOf="parent"
-            app:layout_constraintHorizontal_bias="0.098"
+            app:layout_constraintHorizontal_bias="0.0"
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toBottomOf="@+id/seekbar_peso"
-            app:layout_constraintVertical_bias="1.0" />
+            app:layout_constraintVertical_bias="0.961" />
 
         <Button
             android:id="@+id/conferma_peso"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:layout_marginTop="8dp"
-            android:background="@color/conferma"
+            android:layout_marginTop="24dp"
+            android:layout_marginEnd="10dp"
+            android:layout_marginBottom="5dp"
+            android:background="@drawable/conferma_button"
             android:text="Conferma"
+            app:layout_constraintBottom_toBottomOf="parent"
             app:layout_constraintEnd_toEndOf="parent"
-            app:layout_constraintHorizontal_bias="0.885"
+            app:layout_constraintHorizontal_bias="1.0"
             app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toBottomOf="@+id/seekbar_peso" />
+            app:layout_constraintTop_toBottomOf="@+id/seekbar_peso"
+            app:layout_constraintVertical_bias="1.0" />
 
 
     </androidx.constraintlayout.widget.ConstraintLayout>

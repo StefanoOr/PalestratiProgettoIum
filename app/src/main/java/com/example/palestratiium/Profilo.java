@@ -83,8 +83,6 @@ public class Profilo extends AppCompatActivity {
                         peso_attuale.setText(peso);
                     }
                 });
-
-                dialog.setCancelable(false);
             }
         });
 
