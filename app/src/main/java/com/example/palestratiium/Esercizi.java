@@ -6,6 +6,7 @@ import android.content.Intent;
 import android.os.Bundle;
 import android.view.View;
 import android.widget.ImageView;
+import android.widget.TextView;
 
 import java.io.Serializable;
 
@@ -15,6 +16,7 @@ public class Esercizi extends AppCompatActivity {
 
     User user;
     ImageView back;
+    TextView nomeEsercizio,descrizioneEsercizio;
 
     public static final String EXTRA_USER = "package com.example.BonusLogin";
 
@@ -24,10 +26,23 @@ public class Esercizi extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_esercizi);
 
+
+
+
         back = findViewById(R.id.back_button);
 
         Intent intent = getIntent();
         Serializable obj = intent.getSerializableExtra(Login.EXTRA_USER);
+
+        String name = getIntent().getStringExtra("NAME");
+        String descrizione = getIntent().getStringExtra("DESCRIPTION");
+
+
+        nomeEsercizio= findViewById(R.id.esercizio_title);
+        descrizioneEsercizio = findViewById(R.id.text_corpo_descrizione);
+
+        nomeEsercizio.setText(name);
+        descrizioneEsercizio.setText(descrizione);
 
         if(obj instanceof User){
             user = (User) obj;

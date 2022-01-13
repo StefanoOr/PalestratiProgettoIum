@@ -22,19 +22,23 @@ import java.util.List;
 
 import adapter.RecycleViewInterface;
 import classi.Esercizio;
+import classi.PersonalTrainer;
 import classi.User;
 import adapter.Adapter_ListaEserciziHome;
+import classi.UserFactory;
 
 public class Home extends AppCompatActivity implements RecycleViewInterface {
 
+
     User user;
+    PersonalTrainer pt;
     Button profilo;
     TextView welcome, username, password, city, datetext, modifyPassword;
     Button logout;
 
 
     //TODO test esercizi da elimiare
-    private List<Esercizio> esercizi = new ArrayList<>();
+    List<Esercizio> listaEserciziCard;
 
     private RecyclerView.LayoutManager mLayoutManager;
     RecyclerView mRecyclerView;
@@ -54,9 +58,12 @@ public class Home extends AppCompatActivity implements RecycleViewInterface {
 
         if(obj instanceof User){
             user = (User) obj;
+
         }else{
             user = new User();
         }
+
+
 
         profilo.setOnClickListener(new View.OnClickListener() {
             @Override
@@ -93,21 +100,16 @@ public class Home extends AppCompatActivity implements RecycleViewInterface {
             }
         });
 */
-        Esercizio uno = new Esercizio("a","aa","aaa",1);
-        Esercizio due = new Esercizio("b","bb","bbb",2);
-        Esercizio tre = new Esercizio("c","aa","aaa",1);
-        Esercizio quattro = new Esercizio("d","bb","bbb",2);
-        esercizi.add(uno);
-        esercizi.add(due);
-        esercizi.add(tre);
-        esercizi.add(quattro);
+
+        listaEserciziCard = UserFactory.getInstance().getAllEsercizi();
 
 
-        if(esercizi.size()>0){
+
+        if(listaEserciziCard.size()>0){
             mRecyclerView = findViewById(R.id.listRecyclerView_esercizi);
             mRecyclerView.setHasFixedSize(true);
-            mLayoutManager = new GridLayoutManager(this,3);
-            adapter = new Adapter_ListaEserciziHome(esercizi,this);
+            mLayoutManager = new GridLayoutManager(this,2);
+            adapter = new Adapter_ListaEserciziHome(listaEserciziCard,this);
             mRecyclerView.setLayoutManager(mLayoutManager);
             mRecyclerView.setAdapter(adapter);
         }
@@ -122,8 +124,11 @@ public class Home extends AppCompatActivity implements RecycleViewInterface {
     @Override
     public void onItemClick(int position) {
         Intent intent = new Intent(Home.this, Esercizi.class);
+
+        intent.putExtra("NAME",listaEserciziCard.get(position).getNome());
+        intent.putExtra("DESCRIPTION",listaEserciziCard.get(position).getDescrizioene());
         intent.putExtra(EXTRA_USER, user);
-        
+
         startActivity(intent);
     }
 }

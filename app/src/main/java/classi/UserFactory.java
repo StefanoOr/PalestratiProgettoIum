@@ -7,6 +7,7 @@
 package classi;
 
 import com.example.palestratiium.DatePickerFragment;
+import com.example.palestratiium.Esercizi;
 
 import java.util.ArrayList;
 import java.util.Calendar;
@@ -19,7 +20,7 @@ public class UserFactory {
     private List<PersonalTrainer> coach = new ArrayList<>();
     private List<Esercizio> esercizio = new ArrayList<>();
     DatePickerFragment datePickerFragment = new DatePickerFragment();
-
+    public static boolean fine_user = true , fine_pt=true;
     private UserFactory() {
     }
 
@@ -32,9 +33,7 @@ public class UserFactory {
         return singleton;
     }
 
-    public List<Esercizio> getEsercizio(){
-        return esercizio;
-    }
+
 
     /*public void setListaEsercizio(){
         for(int i=0;i<coach.size();i++){
@@ -44,39 +43,86 @@ public class UserFactory {
         }
     }*/
 
+
+    public void addEsercizio(PersonalTrainer pt,Esercizio esercizio){
+
+        for (int i=0; i<coach.size();i++){
+            //TODO da verificare se funziona
+            if(coach.get(i).equals(pt)){
+                coach.get(i).addEsercizi(esercizio);
+
+            }
+        }
+    }
+
+
+    public List<Esercizio> getEserciziPt(PersonalTrainer pt) {
+
+        for (int i = 0; i < coach.size(); i++) {
+            //TODO da verificare se funziona
+            if (coach.get(i).equals(pt)) {
+                return coach.get(i).getAllListaEsercizi();
+            }
+        }
+        System.out.println("errore get Esercizi pt , nessun pt trovato");
+        return null;
+    }
+
+    public List<Esercizio> getAllEsercizi(){
+            return esercizio;
+    }
+
     public List<PersonalTrainer> getPersonal(){
-        PersonalTrainer atzeni = new PersonalTrainer();
-        atzeni.setUsername("Atezenis");
-        atzeni.setPassword("atz");
-        atzeni.setCity("Cagliari");
 
-        atzeni.getDate().set(Calendar.YEAR,1992);
-        atzeni.getDate().set(Calendar.MONTH, Calendar.MARCH);
-        atzeni.getDate().set(Calendar.DAY_OF_MONTH,16);
-        atzeni.setTeam("Atzenis Team");
+        if(fine_pt) {
+            fine_pt = false;
+            PersonalTrainer atzeni = new PersonalTrainer();
+            atzeni.setUsername("Atezenis");
+            atzeni.setPassword("atz");
+            atzeni.setCity("Cagliari");
+            atzeni.setDate(Calendar.getInstance());
+            atzeni.getDate().set(Calendar.YEAR, 1992);
+            atzeni.getDate().set(Calendar.MONTH, Calendar.MARCH);
+            atzeni.getDate().set(Calendar.DAY_OF_MONTH, 16);
+            atzeni.setTeam("Atzenis Team");
 
-
-        coach.add(atzeni);
+            atzeni.initEsercizi(esercizio);
+            coach.add(atzeni);
+        }
         return  coach;
     }
 
 
     public List<User> getUsers() {
+        if(fine_user) {
+            fine_user = false;
+            User user = new User();
 
-        User user = new User();
+            user.setUsername("ste");
+            user.setPassword("a");
+            user.setCity("Girasole");
+            user.setDate(Calendar.getInstance());
+            user.getDate().set(Calendar.YEAR, 1992);
+            user.getDate().set(Calendar.MONTH, Calendar.MARCH);
+            user.getDate().set(Calendar.DAY_OF_MONTH, 16);
 
-        user.setUsername("ste");
-        user.setPassword("a");
-        user.setCity("Girasole");
-        user.setDate(Calendar.getInstance());
-        user.getDate().set(Calendar.YEAR,1992);
-        user.getDate().set(Calendar.MONTH, Calendar.MARCH);
-        user.getDate().set(Calendar.DAY_OF_MONTH,16);
-        users.add(user);
+            initEsercizi();
 
 
+
+            users.add(user);
+
+        }
 
         return users;
+    }
+
+    public void initEsercizi(){
+
+        esercizio.add(new Esercizio("Dip.Distensioni di braccia","aa","aaa",1));
+        esercizio.add(new Esercizio("Barca","bb","bbb",2));
+        esercizio.add(new Esercizio("Crunch","aa","aaa",1));
+        esercizio.add(new Esercizio("Front squat","bb","bbb",2));
     }
 
     public void addUsers(User u) {

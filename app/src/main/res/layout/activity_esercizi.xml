@@ -93,7 +93,7 @@
                 android:layout_alignBottom="@id/text_descrizione"
                 android:layout_marginLeft="10dp"
                 android:layout_marginBottom="-20dp"
-                android:text="........................."
+                android:text="@string/corpo_descrizioe"
                 android:textColor="@color/white"
                 android:textSize="18dp" />
 

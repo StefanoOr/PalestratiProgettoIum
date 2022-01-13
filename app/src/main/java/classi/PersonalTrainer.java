@@ -1,5 +1,7 @@
 package classi;
 
+import com.example.palestratiium.Esercizi;
+
 import java.util.ArrayList;
 import java.util.Calendar;
 import java.util.List;
@@ -34,9 +36,14 @@ public class PersonalTrainer {
     }
 
 
+    public void initEsercizi(List<Esercizio> ese){
 
+            listaEsercizi.addAll(ese);
+
+    }
     public void addEsercizi(Esercizio esercizio){
         listaEsercizi.add(esercizio);
+
     }
 
     public List<Esercizio> getAllListaEsercizi(){

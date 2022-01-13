@@ -42,7 +42,7 @@ public class Adapter_ListaEserciziHome extends  RecyclerView.Adapter<Adapter_Lis
         Esercizio currentItem = mExampleList.get(position);
 
 
-        holder.nEsercizio.setText(currentItem.getNome());
+       holder.nEsercizio.setText((mExampleList.get(position).getNome()));
         holder.bindData(position);
     }
 

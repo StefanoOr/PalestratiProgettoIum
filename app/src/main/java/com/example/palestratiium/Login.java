@@ -21,12 +21,14 @@ import com.google.android.material.textfield.TextInputLayout;
 
 import java.util.List;
 
+import classi.PersonalTrainer;
 import classi.User;
 import classi.UserFactory;
 
 public class Login extends AppCompatActivity {
 
     List<User> userList;
+    List<PersonalTrainer> ptList;
     User user;
     TextInputLayout username, password;
     Button signIn_button;
@@ -77,7 +79,10 @@ public class Login extends AppCompatActivity {
     private boolean checkInput() {
 
         //how many error occurred? We need to save the number
+
         userList = UserFactory.getInstance().getUsers();
+        ptList =  UserFactory.getInstance().getPersonal();
+
         int errors = 0;
 
         if(username.getEditText().getText().toString().length() == 0){  //the second condition is for the case where the user wrote and then erased all
