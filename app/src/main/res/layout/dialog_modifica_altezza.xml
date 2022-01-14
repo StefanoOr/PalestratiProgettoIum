@@ -6,7 +6,7 @@
     android:layout_height="wrap_content">
 
     <androidx.constraintlayout.widget.ConstraintLayout
-        android:id="@+id/peso_layout"
+        android:id="@+id/altezza_layout"
         android:layout_centerInParent="true"
         android:layout_width="351dp"
         android:layout_height="189dp"
@@ -20,7 +20,7 @@
             android:id="@+id/textView17"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:text="Seleziona il tuo peso:"
+            android:text="Seleziona la tua altezza:"
             android:textAlignment="center"
             android:textColor="@color/white"
             android:textSize="20dp"
@@ -35,12 +35,12 @@
         </TextView>
 
         <TextView
-            android:id="@+id/current_peso"
+            android:id="@+id/current_altezza"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_alignParentBottom="true"
             android:layout_centerInParent="true"
-            android:text="80"
+            android:text="160"
             android:textColor="@color/white"
             android:textSize="40dp"
             android:textStyle="bold"
@@ -51,26 +51,26 @@
         </TextView>
 
         <TextView
-            android:id="@+id/misura_peso"
+            android:id="@+id/misura_altezza"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_marginTop="16dp"
-            android:text="Kg"
+            android:text="cm"
             android:textColor="@color/white"
             android:textSize="20dp"
             android:textStyle="bold"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintHorizontal_bias="0.085"
-            app:layout_constraintStart_toEndOf="@+id/current_peso"
+            app:layout_constraintStart_toEndOf="@+id/current_altezza"
             app:layout_constraintTop_toBottomOf="@+id/textView17">
 
         </TextView>
 
         <SeekBar
-            android:id="@+id/seekbar_peso"
+            android:id="@+id/seekbar_altezza"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:max="200"
+            android:max="280"
             android:progressBackgroundTint="@color/barra_separatoria_principale"
             android:progressTint="@color/barra_separatoria_secondaria"
             android:thumbTint="@color/barra_separatoria_principale"
@@ -78,13 +78,13 @@
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintHorizontal_bias="0.0"
             app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toBottomOf="@+id/current_peso"
+            app:layout_constraintTop_toBottomOf="@+id/current_altezza"
             app:layout_constraintVertical_bias="0.119">
 
         </SeekBar>
 
         <Button
-            android:id="@+id/indietro_peso"
+            android:id="@+id/indietro_altezza"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_marginStart="10dp"
@@ -95,11 +95,11 @@
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintHorizontal_bias="0.0"
             app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toBottomOf="@+id/seekbar_peso"
+            app:layout_constraintTop_toBottomOf="@+id/seekbar_altezza"
             app:layout_constraintVertical_bias="0.961" />
 
         <Button
-            android:id="@+id/conferma_peso"
+            android:id="@+id/conferma_altezza"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_marginTop="24dp"
@@ -111,7 +111,7 @@
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintHorizontal_bias="1.0"
             app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toBottomOf="@+id/seekbar_peso"
+            app:layout_constraintTop_toBottomOf="@+id/seekbar_altezza"
             app:layout_constraintVertical_bias="1.0" />
 
 

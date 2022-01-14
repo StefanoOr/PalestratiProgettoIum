@@ -11,6 +11,7 @@
         <entry key="..\:/Users/matte/OneDrive/Documenti/GitHub/ProgettoIum/app/src/main/res/drawable/ic_baseline_face_24.xml" value="0.290625" />
         <entry key="..\:/Users/matte/OneDrive/Documenti/GitHub/ProgettoIum/app/src/main/res/drawable/ic_baseline_person_24.xml" value="0.1824074074074074" />
         <entry key="..\:/Users/matte/OneDrive/Documenti/GitHub/ProgettoIum/app/src/main/res/drawable/ic_baseline_video_label_24.xml" value="0.21875" />
+        <entry key="..\:/Users/matte/OneDrive/Documenti/GitHub/ProgettoIum/app/src/main/res/drawable/ic_home.xml" value="0.37864583333333335" />
         <entry key="..\:/Users/matte/OneDrive/Documenti/GitHub/ProgettoIum/app/src/main/res/drawable/ic_kisspng_logo_gym_5ac7fd9535ed42_7005685715230560212209.xml" value="3.0" />
         <entry key="..\:/Users/matte/OneDrive/Documenti/GitHub/ProgettoIum/app/src/main/res/drawable/ic_launcher_background.xml" value="0.21875" />
         <entry key="..\:/Users/matte/OneDrive/Documenti/GitHub/ProgettoIum/app/src/main/res/drawable/ic_launcher_foreground.xml" value="0.19444444444444445" />
@@ -28,7 +29,9 @@
         <entry key="..\:/Users/matte/OneDrive/Documenti/GitHub/ProgettoIum/app/src/main/res/layout/activity_sign_up.xml" value="0.33" />
         <entry key="..\:/Users/matte/OneDrive/Documenti/GitHub/ProgettoIum/app/src/main/res/layout/card_video.xml" value="0.67" />
         <entry key="..\:/Users/matte/OneDrive/Documenti/GitHub/ProgettoIum/app/src/main/res/layout/custom_dialog.xml" value="0.35833333333333334" />
+        <entry key="..\:/Users/matte/OneDrive/Documenti/GitHub/ProgettoIum/app/src/main/res/layout/dialog_modifica_altezza.xml" value="0.17603850050658562" />
         <entry key="..\:/Users/matte/OneDrive/Documenti/GitHub/ProgettoIum/app/src/main/res/layout/dialog_modifica_peso.xml" value="0.1" />
+        <entry key="..\:/Users/matte/OneDrive/Documenti/GitHub/ProgettoIum/app/src/main/res/menu/menu_navigation.xml" value="0.3625" />
         <entry key="..\:/Users/matte/OneDrive/Documenti/GitHub/ProgettoIum/app/src/main/res/mipmap-anydpi-v26/ic_profileImage.xml" value="0.290625" />
         <entry key="..\:/Users/matte/OneDrive/Documenti/GitHub/ProgettoIum/app/src/main/res/mipmap-anydpi-v26/ic_profileImage_round.xml" value="0.21614583333333334" />
       </map>

@@ -23,14 +23,14 @@ import com.example.palestratiium.classi.User;
 public class Profilo extends AppCompatActivity {
 
     User user;
-    TextView modify_password, username, nome, peso_attuale;
+    TextView modify_password, username, nome, peso_attuale, altezza_attuale;
     Button home;
     ImageView edit_peso, edit_altezza;
-    int tmp_peso;
-    String tmp_progress;
-    TextView peso_attuale_tmp;
-    SeekBar seek_peso;
-    Button conferma_peso, nega_peso;
+    int tmp_peso, tmp_altezza;
+    String tmp_progress_peso, tmp_progress_altezza;
+    TextView peso_attuale_tmp, altezza_attuale_tmp;
+    SeekBar seek_peso, seek_altezza;
+    Button conferma_peso, nega_peso, conferma_altezza, nega_altezza;
     AlertDialog dialog;
 
     public static final String EXTRA_USER = "package com.example.palestratiium";
@@ -49,6 +49,7 @@ public class Profilo extends AppCompatActivity {
         edit_peso = findViewById(R.id.edit_peso);
         edit_altezza = findViewById(R.id.edit_altezza);
         peso_attuale = findViewById(R.id.peso_attuale);
+        altezza_attuale = findViewById(R.id.altezza_attuale);
 
         Intent intent = getIntent();
         Serializable obj = intent.getSerializableExtra(Login.EXTRA_USER);
@@ -69,7 +70,7 @@ public class Profilo extends AppCompatActivity {
                 AlertDialog.Builder alert = new AlertDialog.Builder(Profilo.this);
                 View mView = getLayoutInflater().inflate(R.layout.dialog_modifica_peso, null);
 
-                peso_attuale_tmp = mView.findViewById(R.id.peso_attuale);
+                peso_attuale_tmp = mView.findViewById(R.id.current_peso);
                 seek_peso = mView.findViewById(R.id.seekbar_peso);
                 conferma_peso = mView.findViewById(R.id.conferma_peso);
                 nega_peso =  mView.findViewById(R.id.indietro_peso);
@@ -78,14 +79,13 @@ public class Profilo extends AppCompatActivity {
                 dialog = alert.create();
                 dialog.setCanceledOnTouchOutside(false);
 
-                seek_peso.setMax(200);
                 seek_peso.setProgress(80);
                 seek_peso.setOnSeekBarChangeListener(new SeekBar.OnSeekBarChangeListener() {
                     @Override
                     public void onProgressChanged(SeekBar seekBar, int progress, boolean fromUser) {
                         tmp_peso = progress;
-                        tmp_progress =  String.valueOf(tmp_peso);
-                        peso_attuale_tmp.setText(tmp_progress);
+                        tmp_progress_peso =  String.valueOf(tmp_peso);
+                        peso_attuale_tmp.setText(tmp_progress_peso);
                     }
 
                     @Override
@@ -109,7 +109,61 @@ public class Profilo extends AppCompatActivity {
                 conferma_peso.setOnClickListener(new View.OnClickListener() {
                     @Override
                     public void onClick(View v) {
-                        peso_attuale.setText(peso_attuale_tmp.getText().toString());
+                        peso_attuale.setText(peso_attuale_tmp.getText().toString() + " Kg");
+                        dialog.dismiss();
+                    }
+                });
+                dialog.show();
+            }
+        });
+
+        edit_altezza.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+
+                AlertDialog.Builder alert = new AlertDialog.Builder(Profilo.this);
+                View mView = getLayoutInflater().inflate(R.layout.dialog_modifica_altezza, null);
+
+                altezza_attuale_tmp = mView.findViewById(R.id.current_altezza);
+                seek_altezza = mView.findViewById(R.id.seekbar_altezza);
+                conferma_altezza = mView.findViewById(R.id.conferma_altezza);
+                nega_altezza =  mView.findViewById(R.id.indietro_altezza);
+
+                alert.setView(mView);
+                dialog = alert.create();
+                dialog.setCanceledOnTouchOutside(false);
+
+                seek_altezza.setProgress(80);
+                seek_altezza.setOnSeekBarChangeListener(new SeekBar.OnSeekBarChangeListener() {
+                    @Override
+                    public void onProgressChanged(SeekBar seekBar, int progress, boolean fromUser) {
+                        tmp_altezza = progress;
+                        tmp_progress_altezza =  String.valueOf(tmp_altezza);
+                        altezza_attuale_tmp.setText(tmp_progress_altezza);
+                    }
+
+                    @Override
+                    public void onStartTrackingTouch(SeekBar seekBar) {
+
+                    }
+
+                    @Override
+                    public void onStopTrackingTouch(SeekBar seekBar) {
+
+                    }
+                });
+
+                nega_altezza.setOnClickListener(new View.OnClickListener() {
+                    @Override
+                    public void onClick(View v) {
+                        dialog.dismiss();
+                    }
+                });
+
+                conferma_altezza.setOnClickListener(new View.OnClickListener() {
+                    @Override
+                    public void onClick(View v) {
+                        altezza_attuale.setText(altezza_attuale_tmp.getText().toString() + " cm");
                         dialog.dismiss();
                     }
                 });
