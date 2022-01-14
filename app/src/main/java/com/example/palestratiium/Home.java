@@ -22,15 +22,14 @@ import android.widget.TextView;
 import com.google.android.material.bottomnavigation.BottomNavigationView;
 
 import java.io.Serializable;
-import java.util.ArrayList;
 import java.util.List;
 
-import adapter.RecycleViewInterface;
-import classi.Esercizio;
-import classi.PersonalTrainer;
-import classi.User;
-import adapter.Adapter_ListaEserciziHome;
-import classi.UserFactory;
+import com.example.palestratiium.adapter.RecycleViewInterface;
+import com.example.palestratiium.classi.Esercizio;
+import com.example.palestratiium.classi.PersonalTrainer;
+import com.example.palestratiium.classi.User;
+import com.example.palestratiium.adapter.Adapter_ListaEserciziHome;
+import com.example.palestratiium.classi.UserFactory;
 
 public class Home extends AppCompatActivity implements RecycleViewInterface {
 

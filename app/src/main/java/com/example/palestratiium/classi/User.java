@@ -4,7 +4,7 @@
     Esercitazione Bonus
  */
 
-package classi;
+package com.example.palestratiium.classi;
 
 import java.io.Serializable;
 import java.util.Calendar;

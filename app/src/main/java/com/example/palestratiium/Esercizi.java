@@ -10,7 +10,7 @@ import android.widget.TextView;
 
 import java.io.Serializable;
 
-import classi.User;
+import com.example.palestratiium.classi.User;
 
 public class Esercizi extends AppCompatActivity {
 

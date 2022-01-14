@@ -22,8 +22,8 @@ import com.google.android.material.textfield.TextInputLayout;
 import java.io.Serializable;
 import java.util.Objects;
 
-import classi.User;
-import classi.UserFactory;
+import com.example.palestratiium.classi.User;
+import com.example.palestratiium.classi.UserFactory;
 
 public class ModifyPassword extends AppCompatActivity {
 

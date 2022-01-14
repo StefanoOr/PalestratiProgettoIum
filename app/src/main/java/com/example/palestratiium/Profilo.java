@@ -5,14 +5,10 @@ import androidx.appcompat.app.AppCompatActivity;
 
 import android.annotation.SuppressLint;
 import android.app.AlertDialog;
-import android.app.Dialog;
-import android.content.Context;
 import android.content.Intent;
-import android.os.Build;
 import android.os.Bundle;
 import android.view.MenuItem;
 import android.view.View;
-import android.view.ViewGroup;
 import android.widget.Button;
 import android.widget.ImageView;
 import android.widget.SeekBar;
@@ -22,7 +18,7 @@ import com.google.android.material.bottomnavigation.BottomNavigationView;
 
 import java.io.Serializable;
 
-import classi.User;
+import com.example.palestratiium.classi.User;
 
 public class Profilo extends AppCompatActivity {
 
@@ -37,7 +33,7 @@ public class Profilo extends AppCompatActivity {
     Button conferma_peso, nega_peso;
     AlertDialog dialog;
 
-    public static final String EXTRA_USER = "package com.example.BonusLogin";
+    public static final String EXTRA_USER = "package com.example.palestratiium";
 
 
     @Override
@@ -142,7 +138,7 @@ public class Profilo extends AppCompatActivity {
 
         BottomNavigationView bottomNavigationView = findViewById(R.id.bottom_navigation);
 
-        bottomNavigationView.setSelectedItemId(R.id.home);
+        bottomNavigationView.setSelectedItemId(R.id.profilo);
 
         bottomNavigationView.setOnNavigationItemSelectedListener(new BottomNavigationView.OnNavigationItemSelectedListener() {
             @SuppressLint("NonConstantResourceId")

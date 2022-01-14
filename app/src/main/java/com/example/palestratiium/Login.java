@@ -21,9 +21,9 @@ import com.google.android.material.textfield.TextInputLayout;
 
 import java.util.List;
 
-import classi.PersonalTrainer;
-import classi.User;
-import classi.UserFactory;
+import com.example.palestratiium.classi.PersonalTrainer;
+import com.example.palestratiium.classi.User;
+import com.example.palestratiium.classi.UserFactory;
 
 public class Login extends AppCompatActivity {
 

@@ -1,4 +1,4 @@
-package adapter;
+package com.example.palestratiium.adapter;
 
 import android.view.LayoutInflater;
 import android.view.View;
@@ -8,7 +8,7 @@ import android.widget.TextView;
 import androidx.annotation.NonNull;
 import androidx.recyclerview.widget.RecyclerView;
 
-import classi.Esercizio;
+import com.example.palestratiium.classi.Esercizio;
 
 import com.example.palestratiium.R;
 

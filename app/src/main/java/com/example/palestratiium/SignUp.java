@@ -26,8 +26,8 @@ import java.util.Calendar;
 import java.util.List;
 import java.util.Objects;
 
-import classi.User;
-import classi.UserFactory;
+import com.example.palestratiium.classi.User;
+import com.example.palestratiium.classi.UserFactory;
 
 public class SignUp extends AppCompatActivity {
 

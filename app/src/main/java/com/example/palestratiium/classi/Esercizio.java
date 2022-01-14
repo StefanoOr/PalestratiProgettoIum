@@ -1,4 +1,4 @@
-package classi;
+package com.example.palestratiium.classi;
 
 public class Esercizio {
 

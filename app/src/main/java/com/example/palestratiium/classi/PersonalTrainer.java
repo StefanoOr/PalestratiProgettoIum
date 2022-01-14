@@ -1,12 +1,8 @@
-package classi;
-
-import com.example.palestratiium.Esercizi;
+package com.example.palestratiium.classi;
 
 import java.util.ArrayList;
 import java.util.Calendar;
 import java.util.List;
-
-import classi.Esercizio;
 
 public class PersonalTrainer {
 

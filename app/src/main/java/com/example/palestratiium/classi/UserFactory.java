@@ -4,10 +4,9 @@
     Esercitazione Bonus
  */
 
-package classi;
+package com.example.palestratiium.classi;
 
 import com.example.palestratiium.DatePickerFragment;
-import com.example.palestratiium.Esercizi;
 
 import java.util.ArrayList;
 import java.util.Calendar;
