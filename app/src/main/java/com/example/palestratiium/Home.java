@@ -6,15 +6,20 @@
 
 package com.example.palestratiium;
 
+import androidx.annotation.NonNull;
 import androidx.appcompat.app.AppCompatActivity;
 import androidx.recyclerview.widget.GridLayoutManager;
 import androidx.recyclerview.widget.RecyclerView;
 
+import android.annotation.SuppressLint;
 import android.content.Intent;
 import android.os.Bundle;
+import android.view.MenuItem;
 import android.view.View;
 import android.widget.Button;
 import android.widget.TextView;
+
+import com.google.android.material.bottomnavigation.BottomNavigationView;
 
 import java.io.Serializable;
 import java.util.ArrayList;
@@ -74,32 +79,7 @@ public class Home extends AppCompatActivity implements RecycleViewInterface {
             }
         });
 
-      /*  welcome.setText("Welcome " + user.getUsername().toString() + "!");
-        username.setText(user.getUsername());
-        password.setText(user.getPassword());
-        city.setText(user.getCity());
-        SimpleDateFormat format = new SimpleDateFormat("dd/MM/yyyy");
-        datetext.setText(format.format(user.getDate().getTime()));
 
-        modifyPassword.setOnClickListener(new View.OnClickListener() {
-        @Override
-        public void onClick(View v) {
-                Intent modifyPage = new Intent(Home.this, ModifyPassword.class);
-                modifyPage.putExtra(EXTRA_USER, user);
-                startActivity(modifyPage);
-            }
-        });
-
-        logout.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View v) {
-                user = null;
-                Intent login = new Intent(Home.this, Login.class);
-                login.putExtra(EXTRA_USER, user);
-                startActivity(login);
-            }
-        });
-*/
 
         listaEserciziCard = UserFactory.getInstance().getAllEsercizi();
 
@@ -115,6 +95,33 @@ public class Home extends AppCompatActivity implements RecycleViewInterface {
         }
 
 
+
+
+        BottomNavigationView bottomNavigationView = findViewById(R.id.bottom_navigation);
+
+        bottomNavigationView.setSelectedItemId(R.id.home);
+
+        bottomNavigationView.setOnNavigationItemSelectedListener(new BottomNavigationView.OnNavigationItemSelectedListener() {
+            @SuppressLint("NonConstantResourceId")
+            @Override
+            public boolean onNavigationItemSelected(@NonNull MenuItem item) {
+                Intent showResult;
+                switch (item.getItemId()) {
+                    case R.id.profilo:
+
+                        showResult = new Intent(Home.this, Profilo.class);
+                        showResult.putExtra(EXTRA_USER, user);
+                        startActivity(showResult);
+                        overridePendingTransition(0, 0);
+                        return true;
+
+                    case R.id.menuHome:
+                        return true;
+
+                }
+                return false;
+            }
+        });
 
 
 

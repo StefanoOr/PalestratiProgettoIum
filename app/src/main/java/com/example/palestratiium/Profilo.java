@@ -1,19 +1,24 @@
 package com.example.palestratiium;
 
+import androidx.annotation.NonNull;
 import androidx.appcompat.app.AppCompatActivity;
 
+import android.annotation.SuppressLint;
 import android.app.AlertDialog;
 import android.app.Dialog;
 import android.content.Context;
 import android.content.Intent;
 import android.os.Build;
 import android.os.Bundle;
+import android.view.MenuItem;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.Button;
 import android.widget.ImageView;
 import android.widget.SeekBar;
 import android.widget.TextView;
+
+import com.google.android.material.bottomnavigation.BottomNavigationView;
 
 import java.io.Serializable;
 
@@ -133,5 +138,38 @@ public class Profilo extends AppCompatActivity {
                 startActivity(home);
             }
         });
+
+
+        BottomNavigationView bottomNavigationView = findViewById(R.id.bottom_navigation);
+
+        bottomNavigationView.setSelectedItemId(R.id.home);
+
+        bottomNavigationView.setOnNavigationItemSelectedListener(new BottomNavigationView.OnNavigationItemSelectedListener() {
+            @SuppressLint("NonConstantResourceId")
+            @Override
+            public boolean onNavigationItemSelected(@NonNull MenuItem item) {
+                Intent showResult;
+                switch (item.getItemId()) {
+                    case R.id.menuHome:
+
+                        showResult = new Intent(Profilo.this, Home.class);
+                        showResult.putExtra(EXTRA_USER, user);
+                        startActivity(showResult);
+                        overridePendingTransition(0, 0);
+                        //startActivity(new Intent(Home.this,Calendario.class));
+
+                        return true;
+
+                    case R.id.profilo:
+
+                        return true;
+
+                }
+                return false;
+            }
+        });
     }
+
+
+
 }
