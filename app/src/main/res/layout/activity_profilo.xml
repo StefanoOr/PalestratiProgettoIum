@@ -71,6 +71,7 @@
             android:textColor="@color/white"
             android:textSize="20dp"
             android:textStyle="bold"
+            app:layout_constraintBottom_toTopOf="@+id/view2"
             app:layout_constraintStart_toEndOf="@+id/imageView3"
             app:layout_constraintTop_toBottomOf="@+id/view" />
 
@@ -83,6 +84,7 @@
             android:text="Nome"
             android:textColor="@color/white"
             android:textSize="18dp"
+            app:layout_constraintBottom_toTopOf="@+id/view2"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintStart_toEndOf="@+id/textView10"
             app:layout_constraintTop_toBottomOf="@+id/view" />
@@ -90,7 +92,7 @@
         <View
             android:id="@+id/view2"
             android:layout_width="match_parent"
-            android:layout_height="0.5dp"
+            android:layout_height="1dp"
             android:layout_marginStart="20dp"
             android:layout_marginEnd="20dp"
             android:background="@color/barra_separatoria_secondaria"
@@ -104,7 +106,7 @@
             android:layout_width="30dp"
             android:layout_height="30dp"
             android:layout_marginStart="20dp"
-            android:layout_marginTop="16dp"
+            android:layout_marginTop="23dp"
             android:src="@drawable/ic_baseline_cake_24"
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toBottomOf="@+id/view2" />
@@ -119,6 +121,7 @@
             android:textColor="@color/white"
             android:textSize="20dp"
             android:textStyle="bold"
+            app:layout_constraintBottom_toTopOf="@+id/view3"
             app:layout_constraintStart_toEndOf="@+id/imageView4"
             app:layout_constraintTop_toBottomOf="@+id/view2" />
 
@@ -131,6 +134,7 @@
             android:text="00"
             android:textColor="@color/white"
             android:textSize="18dp"
+            app:layout_constraintBottom_toTopOf="@+id/view3"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintHorizontal_bias="0.288"
             app:layout_constraintStart_toEndOf="@+id/textView13"
@@ -139,7 +143,7 @@
         <View
             android:id="@+id/view3"
             android:layout_width="match_parent"
-            android:layout_height="0.5dp"
+            android:layout_height="1dp"
             android:layout_marginStart="20dp"
             android:layout_marginEnd="20dp"
             android:background="@color/barra_separatoria_secondaria"
@@ -151,10 +155,9 @@
             android:id="@+id/imageView5"
             android:layout_width="30dp"
             android:layout_height="30dp"
-            android:layout_marginTop="20dp"
+            android:layout_marginStart="20dp"
+            android:layout_marginTop="23dp"
             android:src="@drawable/ic_baseline_fitness_center_24"
-            app:layout_constraintEnd_toEndOf="parent"
-            app:layout_constraintHorizontal_bias="0.052"
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toBottomOf="@+id/view3" />
 
@@ -168,6 +171,7 @@
             android:textColor="@color/white"
             android:textSize="20dp"
             android:textStyle="bold"
+            app:layout_constraintBottom_toTopOf="@+id/view4"
             app:layout_constraintStart_toEndOf="@+id/imageView5"
             app:layout_constraintTop_toBottomOf="@+id/view3" />
 
@@ -179,6 +183,7 @@
             android:text="0.0 kg"
             android:textColor="@color/white"
             android:textSize="18dp"
+            app:layout_constraintBottom_toTopOf="@+id/view4"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintHorizontal_bias="0.133"
             app:layout_constraintStart_toEndOf="@+id/textView14"
@@ -199,7 +204,7 @@
         <View
             android:id="@+id/view4"
             android:layout_width="match_parent"
-            android:layout_height="0.5dp"
+            android:layout_height="1dp"
             android:layout_marginStart="20dp"
             android:layout_marginEnd="20dp"
             android:background="@color/barra_separatoria_secondaria"
@@ -211,6 +216,7 @@
             android:id="@+id/edit_altezza"
             android:layout_width="30dp"
             android:layout_height="30dp"
+            android:layout_marginBottom="1dp"
             android:src="@drawable/ic_baseline_change_circle_24"
             app:layout_constraintBottom_toTopOf="@+id/view12"
             app:layout_constraintEnd_toEndOf="parent"
@@ -223,10 +229,9 @@
             android:id="@+id/imageView7"
             android:layout_width="30dp"
             android:layout_height="30dp"
-            android:layout_marginTop="20dp"
+            android:layout_marginStart="20dp"
+            android:layout_marginTop="23dp"
             android:src="@drawable/ic_baseline_height_24"
-            app:layout_constraintEnd_toEndOf="parent"
-            app:layout_constraintHorizontal_bias="0.052"
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toBottomOf="@+id/view4" />
 
@@ -240,6 +245,7 @@
             android:textColor="@color/white"
             android:textSize="20dp"
             android:textStyle="bold"
+            app:layout_constraintBottom_toTopOf="@+id/view12"
             app:layout_constraintStart_toEndOf="@+id/imageView7"
             app:layout_constraintTop_toBottomOf="@+id/view4" />
 
@@ -251,6 +257,7 @@
             android:text="0 cm"
             android:textColor="@color/white"
             android:textSize="18dp"
+            app:layout_constraintBottom_toTopOf="@+id/view12"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintHorizontal_bias="0.052"
             app:layout_constraintStart_toEndOf="@+id/textView15"
@@ -259,8 +266,9 @@
         <View
             android:id="@+id/view12"
             android:layout_width="match_parent"
-            android:layout_height="0.5dp"
+            android:layout_height="1dp"
             android:layout_marginStart="20dp"
+            android:layout_marginTop="2dp"
             android:layout_marginEnd="20dp"
             android:background="@color/barra_separatoria_secondaria"
             app:layout_constraintEnd_toEndOf="parent"
