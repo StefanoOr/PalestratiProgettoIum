@@ -72,7 +72,7 @@ public class Home extends AppCompatActivity implements RecycleViewInterface {
         profilo.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                Intent showResult = new Intent(Home.this, Profilo.class);
+                Intent showResult = new Intent(Home.this, Upload.class);
                 showResult.putExtra(EXTRA_USER, user);
                 startActivity(showResult);
             }
@@ -109,6 +109,14 @@ public class Home extends AppCompatActivity implements RecycleViewInterface {
                     case R.id.profilo:
 
                         showResult = new Intent(Home.this, Profilo.class);
+                        showResult.putExtra(EXTRA_USER, user);
+                        startActivity(showResult);
+                        overridePendingTransition(0, 0);
+                        return true;
+
+                    case R.id.aggiungiVideo:
+
+                        showResult = new Intent(Home.this, Upload.class);
                         showResult.putExtra(EXTRA_USER, user);
                         startActivity(showResult);
                         overridePendingTransition(0, 0);
