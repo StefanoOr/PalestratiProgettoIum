@@ -15,6 +15,8 @@ public class User implements Serializable {
     private String password;
     private String city;
     private Calendar date;
+    private String peso;
+    private String altezza;
 
     public User(){
         this.setUsername("");
@@ -25,6 +27,22 @@ public class User implements Serializable {
     public User(String username, String password){
         this.setUsername(username);
         this.setPassword(password);
+    }
+
+    public String getPeso() {
+        return peso;
+    }
+
+    public void setPeso(String peso) {
+        this.peso = peso;
+    }
+
+    public String getAltezza() {
+        return altezza;
+    }
+
+    public void setAltezza(String altezza) {
+        this.altezza = altezza;
     }
 
     public String getUsername() {

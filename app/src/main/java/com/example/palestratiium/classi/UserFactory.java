@@ -100,6 +100,8 @@ public class UserFactory {
             user.setUsername("ste");
             user.setPassword("a");
             user.setCity("Girasole");
+            user.setAltezza("170");
+            user.setPeso("70");
             user.setDate(Calendar.getInstance());
             user.getDate().set(Calendar.YEAR, 1992);
             user.getDate().set(Calendar.MONTH, Calendar.MARCH);

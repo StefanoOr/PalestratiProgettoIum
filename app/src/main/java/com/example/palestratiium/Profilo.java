@@ -63,6 +63,9 @@ public class Profilo extends AppCompatActivity {
         username.setText(user.getUsername());
         nome.setText(user.getUsername());
 
+        altezza_attuale.setText( user.getAltezza());
+        peso_attuale.setText(user.getPeso());
+
         edit_peso.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
@@ -109,7 +112,8 @@ public class Profilo extends AppCompatActivity {
                 conferma_peso.setOnClickListener(new View.OnClickListener() {
                     @Override
                     public void onClick(View v) {
-                        peso_attuale.setText(peso_attuale_tmp.getText().toString() + " Kg");
+                        user.setPeso(peso_attuale_tmp.getText().toString());
+                        peso_attuale.setText(user.getPeso() + " Kg");
                         dialog.dismiss();
                     }
                 });
@@ -163,7 +167,9 @@ public class Profilo extends AppCompatActivity {
                 conferma_altezza.setOnClickListener(new View.OnClickListener() {
                     @Override
                     public void onClick(View v) {
-                        altezza_attuale.setText(altezza_attuale_tmp.getText().toString() + " cm");
+                        user.setAltezza(altezza_attuale_tmp.getText().toString());
+
+                        altezza_attuale.setText(user.getAltezza() + " cm");
                         dialog.dismiss();
                     }
                 });
