@@ -2,9 +2,10 @@ package com.example.palestratiium.classi;
 
 import android.net.Uri;
 
+import java.io.Serializable;
 import java.net.URI;
 
-public class Esercizio {
+public class Esercizio implements Serializable {
 
     private  String nome;
     private  String descrizioene;

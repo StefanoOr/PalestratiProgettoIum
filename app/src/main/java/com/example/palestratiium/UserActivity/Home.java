@@ -4,7 +4,7 @@
     Esercitazione Bonus
  */
 
-package com.example.palestratiium;
+package com.example.palestratiium.UserActivity;
 
 import androidx.annotation.NonNull;
 import androidx.appcompat.app.AppCompatActivity;
@@ -19,6 +19,10 @@ import android.view.View;
 import android.widget.Button;
 import android.widget.TextView;
 
+import com.example.palestratiium.Esercizi;
+import com.example.palestratiium.Login;
+import com.example.palestratiium.R;
+import com.example.palestratiium.PersonalActivity.Upload;
 import com.google.android.material.bottomnavigation.BottomNavigationView;
 
 import java.io.Serializable;
@@ -117,7 +121,7 @@ public class Home extends AppCompatActivity implements RecycleViewInterface {
 
                     case R.id.aggiungiVideo:
 
-                        showResult = new Intent(Home.this, Upload.class);
+                        showResult = new Intent(Home.this, WorkOut.class);
                         showResult.putExtra(EXTRA_USER, user);
                         startActivity(showResult);
                         overridePendingTransition(0, 0);

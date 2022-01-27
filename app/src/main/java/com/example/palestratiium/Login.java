@@ -17,9 +17,10 @@ import android.widget.Button;
 import android.widget.TextView;
 import android.widget.Toast;
 
+import com.example.palestratiium.PersonalActivity.HomePersonalTrainer;
+import com.example.palestratiium.UserActivity.Home;
 import com.google.android.material.textfield.TextInputLayout;
 
-import java.io.Serializable;
 import java.util.List;
 
 import com.example.palestratiium.classi.PersonalTrainer;
@@ -39,7 +40,7 @@ public class Login extends AppCompatActivity {
     boolean isPasswordVisible = true;
 
     public static final String EXTRA_USER = "package com.example.palestratiium";
-    public static final String EXTRA_PT = "package com.example.palestratiium.classi.PersonalTrainer";
+    public static final String EXTRA_PT = "package com.example.palestratiium";
 
     @SuppressLint("ClickableViewAccessibility")
     @Override
@@ -77,8 +78,8 @@ public class Login extends AppCompatActivity {
                     int duration = Toast.LENGTH_SHORT;
                     Toast toast = Toast.makeText(context, text, duration);
                     toast.show();
-                    Intent homept = new Intent(Login.this, Home.class);
-                    homept.putExtra(EXTRA_USER, personal);
+                    Intent homept = new Intent(Login.this, HomePersonalTrainer.class);
+                    homept.putExtra(EXTRA_PT, personal);
                     startActivity(homept);
                 }
             }

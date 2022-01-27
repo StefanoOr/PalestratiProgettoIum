@@ -10,6 +10,7 @@ import android.widget.TextView;
 
 import java.io.Serializable;
 
+import com.example.palestratiium.UserActivity.Home;
 import com.example.palestratiium.classi.User;
 
 public class Esercizi extends AppCompatActivity {
@@ -18,7 +19,7 @@ public class Esercizi extends AppCompatActivity {
     ImageView back;
     TextView nomeEsercizio,descrizioneEsercizio;
 
-    public static final String EXTRA_USER = "package com.example.BonusLogin";
+    public static final String EXTRA_USER = "package com.example.palestratiium";
 
 
     @Override

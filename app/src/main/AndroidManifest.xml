@@ -12,17 +12,18 @@
         android:roundIcon="@mipmap/ic_launcher_round"
         android:supportsRtl="true"
         android:theme="@style/Theme.AppCompat.NoActionBar">
-        <activity android:name=".HomePersonalTrainer"></activity>
-        <activity android:name=".WorkOut" />
+        <activity android:name=".PersonalActivity.ProfiloPersonalTrainer"></activity>
+        <activity android:name=".PersonalActivity.HomePersonalTrainer" />
+        <activity android:name=".UserActivity.WorkOut" />
         <activity
-            android:name=".Upload"
+            android:name=".PersonalActivity.Upload"
             android:exported="false" />
         <activity android:name=".Esercizi" />
         <activity
-            android:name=".Profilo"
+            android:name=".UserActivity.Profilo"
             android:exported="false" />
         <activity android:name=".ModifyPassword" />
-        <activity android:name=".Home" />
+        <activity android:name=".UserActivity.Home" />
         <activity android:name=".SignUp" /> <!-- No title bar inside app -->
         <activity android:name=".Login">
             <intent-filter>

@@ -43,11 +43,11 @@ public class UserFactory {
     }*/
 
 
-    public void addEsercizio(User pt,Esercizio esercizio){
+    public void addEsercizio(PersonalTrainer pt,Esercizio esercizio){
 
         for (int i=0; i<coach.size();i++){
             //TODO da verificare se funziona
-            if(coach.get(i).equals(pt)){
+            if(coach.get(i).getUsername().equals(pt.getUsername())){
                 coach.get(i).addEsercizi(esercizio);
 
             }

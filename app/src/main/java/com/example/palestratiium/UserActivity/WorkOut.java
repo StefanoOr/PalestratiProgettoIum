@@ -1,11 +1,13 @@
-package com.example.palestratiium;
+package com.example.palestratiium.UserActivity;
 
 import androidx.appcompat.app.AppCompatActivity;
 
 import android.os.Bundle;
 
-public class WorkOut extends AppCompatActivity {
+import com.example.palestratiium.R;
 
+public class WorkOut extends AppCompatActivity {
+    public static final String EXTRA_USER = "package com.example.palestratiium";
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);

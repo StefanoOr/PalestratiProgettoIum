@@ -19,6 +19,7 @@ import android.widget.Button;
 import android.widget.TextView;
 import android.widget.Toast;
 
+import com.example.palestratiium.UserActivity.Home;
 import com.google.android.material.textfield.TextInputLayout;
 
 import java.text.SimpleDateFormat;
@@ -38,8 +39,7 @@ public class SignUp extends AppCompatActivity {
     DatePickerFragment datePickerFragment = new DatePickerFragment();
     boolean isPasswordVisibleNEW, isPasswordVisibleCONFIRM;
 
-    public static final String EXTRA_USER = "package com.example.BonusLogin";
-
+    public static final String EXTRA_USER = "package com.example.palestratiium";
     @SuppressLint("ClickableViewAccessibility")
     @Override
     protected void onCreate(Bundle savedInstanceState) {

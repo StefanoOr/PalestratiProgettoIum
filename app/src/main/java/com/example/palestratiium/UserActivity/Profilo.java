@@ -1,4 +1,4 @@
-package com.example.palestratiium;
+package com.example.palestratiium.UserActivity;
 
 import androidx.annotation.NonNull;
 import androidx.appcompat.app.AppCompatActivity;
@@ -14,6 +14,9 @@ import android.widget.ImageView;
 import android.widget.SeekBar;
 import android.widget.TextView;
 
+import com.example.palestratiium.Login;
+import com.example.palestratiium.ModifyPassword;
+import com.example.palestratiium.R;
 import com.google.android.material.bottomnavigation.BottomNavigationView;
 
 import java.io.Serializable;
