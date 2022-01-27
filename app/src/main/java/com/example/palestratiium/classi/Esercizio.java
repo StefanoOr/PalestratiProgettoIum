@@ -1,5 +1,7 @@
 package com.example.palestratiium.classi;
 
+import android.net.Uri;
+
 import java.net.URI;
 
 public class Esercizio {
@@ -12,9 +14,9 @@ public class Esercizio {
 
 
 
-    private URI video;
+    private Uri video;
 
-    public Esercizio(String nome, String descrizioene, String gruppoMuscolare, int difficolta,URI video){
+    public Esercizio(String nome, String descrizioene, String gruppoMuscolare, int difficolta,Uri video){
         this.nome=nome;
         this.descrizioene=descrizioene;
         this.gruppoMuscolare=gruppoMuscolare;
@@ -23,11 +25,11 @@ public class Esercizio {
     }
 
 
-    public URI getVideo() {
+    public Uri getVideo() {
         return video;
     }
 
-    public void setVideo(URI video) {
+    public void setVideo(Uri video) {
         this.video = video;
     }
 

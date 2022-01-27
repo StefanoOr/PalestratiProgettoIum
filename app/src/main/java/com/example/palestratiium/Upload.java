@@ -22,9 +22,16 @@ import android.widget.MediaController;
 import android.widget.Toast;
 import android.widget.VideoView;
 
+import com.example.palestratiium.classi.Esercizio;
+import com.example.palestratiium.classi.PersonalTrainer;
+import com.example.palestratiium.classi.User;
+import com.example.palestratiium.classi.UserFactory;
 import com.google.android.material.floatingactionbutton.FloatingActionButton;
 
 public class Upload extends AppCompatActivity {
+
+    Esercizio esercizio = new Esercizio();
+    User user = new User();
 
     private EditText titleEt;
     private VideoView videoView;
@@ -39,6 +46,8 @@ public class Upload extends AppCompatActivity {
 
     private Uri videoUri; //uri del video selezionato
 
+    public static final String EXTRA_USER = "package com.example.BonusLogin";
+
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -52,12 +61,15 @@ public class Upload extends AppCompatActivity {
         //permessi camera
         cameraPermissions = new String[]{Manifest.permission.CAMERA, Manifest.permission.WRITE_EXTERNAL_STORAGE};
 
-
-
         uploadVideoBtn.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-
+                esercizio.setNome(titleEt.getText().toString());
+                esercizio.setVideo(videoUri);
+                UserFactory.getInstance().addEsercizio(user, esercizio);
+                Intent ex = new Intent(Upload.this, Esercizi.class);
+                ex.putExtra(EXTRA_USER, user);
+                startActivity(ex);
             }
         });
 

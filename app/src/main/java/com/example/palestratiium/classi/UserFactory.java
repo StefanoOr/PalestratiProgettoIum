@@ -43,7 +43,7 @@ public class UserFactory {
     }*/
 
 
-    public void addEsercizio(PersonalTrainer pt,Esercizio esercizio){
+    public void addEsercizio(User pt,Esercizio esercizio){
 
         for (int i=0; i<coach.size();i++){
             //TODO da verificare se funziona
