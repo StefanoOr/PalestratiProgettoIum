@@ -19,6 +19,7 @@ import android.widget.Toast;
 
 import com.google.android.material.textfield.TextInputLayout;
 
+import java.io.Serializable;
 import java.util.List;
 
 import com.example.palestratiium.classi.PersonalTrainer;
@@ -30,12 +31,15 @@ public class Login extends AppCompatActivity {
     List<User> userList;
     List<PersonalTrainer> ptList;
     User user;
+    PersonalTrainer personal;
     TextInputLayout username, password;
     Button signIn_button;
     TextView signup_text;
+    boolean isPt,isUser;
     boolean isPasswordVisible = true;
 
     public static final String EXTRA_USER = "package com.example.palestratiium";
+    public static final String EXTRA_PT = "package com.example.palestratiium.classi.PersonalTrainer";
 
     @SuppressLint("ClickableViewAccessibility")
     @Override
@@ -44,6 +48,11 @@ public class Login extends AppCompatActivity {
         setContentView(R.layout.activity_login);
 
         user = new User();
+        personal =  new PersonalTrainer();
+
+        isUser=false;
+        isPt=false;
+
         username = findViewById(R.id.input_login_username);
         password = findViewById(R.id.input_login_password);
         signIn_button = findViewById(R.id.signin_button);
@@ -52,7 +61,7 @@ public class Login extends AppCompatActivity {
         signIn_button.setOnClickListener(new View.OnClickListener() {
         @Override
         public void onClick(View v) {
-            if (checkInput()) {
+            if (checkInput() && isUser) {
                 Context context = getApplicationContext();
                 CharSequence text = "Welcome Back " + username.getEditText().getText().toString();
                 int duration = Toast.LENGTH_SHORT;
@@ -61,9 +70,22 @@ public class Login extends AppCompatActivity {
                 Intent home = new Intent(Login.this, Home.class);
                 home.putExtra(EXTRA_USER, user);
                 startActivity(home);
+            }else{
+                if (checkInput() && isPt) {
+                    Context context = getApplicationContext();
+                    CharSequence text = "Welcome Back Personal Trainer " + username.getEditText().getText().toString();
+                    int duration = Toast.LENGTH_SHORT;
+                    Toast toast = Toast.makeText(context, text, duration);
+                    toast.show();
+                    Intent homept = new Intent(Login.this, Home.class);
+                    homept.putExtra(EXTRA_USER, personal);
+                    startActivity(homept);
+                }
             }
          }
         });
+
+
 
         signup_text.setOnClickListener(new View.OnClickListener() {
         @Override
@@ -78,7 +100,7 @@ public class Login extends AppCompatActivity {
 
     private boolean checkInput() {
 
-        //how many error occurred? We need to save the number
+
 
         userList = UserFactory.getInstance().getUsers();
         ptList =  UserFactory.getInstance().getPersonal();
@@ -89,6 +111,7 @@ public class Login extends AppCompatActivity {
             username.setError("Insert Username");
             errors++;
         }else{
+
             username.setError(null);
         }
         if(password.getEditText().getText().toString().length() == 0){  //the second condition is for the case where the user wrote and then erased all
@@ -98,47 +121,25 @@ public class Login extends AppCompatActivity {
             for (User u : userList) {
                 if (u.getUsername().equals(username.getEditText().getText().toString()) && u.getPassword().equals(password.getEditText().getText().toString())){
                     user = u;
+                    isUser=true;
                     return true;
                 }
             }
+
+            for (PersonalTrainer i : ptList) {
+                if (i.getUsername().equals(username.getEditText().getText().toString()) && i.getPassword().equals(password.getEditText().getText().toString())){
+                    personal = i;
+                    isPt=true;
+                    return true;
+                }
+            }
+
             errors++;
             username.setError("Insert Valid Username");
             password.setError("Insert Valid Password");
         }
-/*
-        errors++;
-        // Check with userList in input was not Empty
-        for (User u : userList) {
-            if ( (u.getUsername().equals(username.getEditText().getText().toString()))){
-                username.setError(null);
-                // CASE CORRECT user but WRONG password
-                if ( (u.getUsername().equals(username.getEditText().getText().toString()))
-                        && !(u.getPassword().equals(password.getEditText().getText().toString()))) {
-                    errors++;
-                    password.setError("Wrong Password");
-                }
-                // CASE WRONG user but CORRECT password
-                if ( !(u.getUsername().equals(username.getEditText().getText().toString()))
-                        && (u.getPassword().equals(password.getEditText().getText().toString()))) {
-                    errors++;
-                    username.setError("Wrong Username");
-                }
 
-                // CASE CORRECT user but CORRECT password
-                if (u.getPassword().equals(password.getEditText().getText().toString())
-                     && u.getPassword().equals(password.getEditText().getText().toString())) {
-                    user = u; // USER FOUND
-                    username.setError(null);
-                    password.setError(null);
-                    return true;
-                }
-            }else{
-                errors++;
-                username.setError("Wrong Username");
-            }
-        }
 
-        */
         return (errors == 0);
     }
 

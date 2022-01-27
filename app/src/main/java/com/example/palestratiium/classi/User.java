@@ -1,8 +1,4 @@
-/*
-    Corso IUM - AA 2019 - 2020
-    65577 - Daniele Stochino
-    Esercitazione Bonus
- */
+
 
 package com.example.palestratiium.classi;
 

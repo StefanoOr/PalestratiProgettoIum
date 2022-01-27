@@ -76,8 +76,8 @@ public class UserFactory {
         if(fine_pt) {
             fine_pt = false;
             PersonalTrainer atzeni = new PersonalTrainer();
-            atzeni.setUsername("Atezenis");
-            atzeni.setPassword("atz");
+            atzeni.setUsername("At");
+            atzeni.setPassword("at");
             atzeni.setCity("Cagliari");
             atzeni.setDate(Calendar.getInstance());
             atzeni.getDate().set(Calendar.YEAR, 1992);

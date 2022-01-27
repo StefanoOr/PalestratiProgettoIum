@@ -1,10 +1,11 @@
 package com.example.palestratiium.classi;
 
+import java.io.Serializable;
 import java.util.ArrayList;
 import java.util.Calendar;
 import java.util.List;
 
-public class PersonalTrainer {
+public class PersonalTrainer implements Serializable {
 
     private String username;
     private String password;
