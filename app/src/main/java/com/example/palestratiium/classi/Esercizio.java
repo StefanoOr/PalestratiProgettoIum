@@ -1,5 +1,7 @@
 package com.example.palestratiium.classi;
 
+import java.net.URI;
+
 public class Esercizio {
 
     private  String nome;
@@ -9,11 +11,24 @@ public class Esercizio {
     private int difficolta;
 
 
-    public Esercizio(String nome, String descrizioene, String gruppoMuscolare, int difficolta){
+
+    private URI video;
+
+    public Esercizio(String nome, String descrizioene, String gruppoMuscolare, int difficolta,URI video){
         this.nome=nome;
         this.descrizioene=descrizioene;
         this.gruppoMuscolare=gruppoMuscolare;
         this.difficolta=difficolta;
+        this.video=video;
+    }
+
+
+    public URI getVideo() {
+        return video;
+    }
+
+    public void setVideo(URI video) {
+        this.video = video;
     }
 
     public Esercizio(){}

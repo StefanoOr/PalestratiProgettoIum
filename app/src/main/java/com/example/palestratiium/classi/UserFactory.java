@@ -120,10 +120,11 @@ public class UserFactory {
 
     public void initEsercizi(){
 
-        esercizio.add(new Esercizio("Dip.Distensioni di braccia","aa","aaa",1));
-        esercizio.add(new Esercizio("Barca","bb","bbb",2));
-        esercizio.add(new Esercizio("Crunch","aa","aaa",1));
-        esercizio.add(new Esercizio("Front squat","bb","bbb",2));
+        esercizio.add(new Esercizio("Dip.Distensioni di braccia","aa","aaa",1,null
+        ));
+        esercizio.add(new Esercizio("Barca","bb","bbb",2,null));
+        esercizio.add(new Esercizio("Crunch","aa","aaa",1,null));
+        esercizio.add(new Esercizio("Front squat","bb","bbb",2,null));
     }
 
     public void addUsers(User u) {
