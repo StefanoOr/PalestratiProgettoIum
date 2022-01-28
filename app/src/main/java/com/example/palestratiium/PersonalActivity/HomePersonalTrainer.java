@@ -119,7 +119,7 @@ public class HomePersonalTrainer extends AppCompatActivity implements RecycleVie
     public void init(){
 
 
-        listaEserciziPt = UserFactory.getInstance().getAllEsercizi();
+        listaEserciziPt = UserFactory.getInstance().getEserciziPt(personal);
 
 
 

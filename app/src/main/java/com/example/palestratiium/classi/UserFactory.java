@@ -59,7 +59,7 @@ public class UserFactory {
 
         for (int i = 0; i < coach.size(); i++) {
             //TODO da verificare se funziona
-            if (coach.get(i).equals(pt)) {
+            if (coach.get(i).getUsername().equals(pt.getUsername())) {
                 return coach.get(i).getAllListaEsercizi();
             }
         }
@@ -71,10 +71,14 @@ public class UserFactory {
             return esercizio;
     }
 
+
+
+
     public List<PersonalTrainer> getPersonal(){
 
         if(fine_pt) {
             fine_pt = false;
+
             PersonalTrainer atzeni = new PersonalTrainer();
             atzeni.setUsername("At");
             atzeni.setPassword("at");
@@ -87,6 +91,20 @@ public class UserFactory {
 
             atzeni.initEsercizi(esercizio);
             coach.add(atzeni);
+
+            PersonalTrainer roberto = new PersonalTrainer();
+            roberto.setUsername("Ro");
+            roberto.setPassword("ro");
+            roberto.setCity("Cagliari");
+            roberto.setDate(Calendar.getInstance());
+            roberto.getDate().set(Calendar.YEAR, 1993);
+            roberto.getDate().set(Calendar.MONTH, Calendar.MARCH);
+            roberto.getDate().set(Calendar.DAY_OF_MONTH, 12);
+            roberto.setTeam("RobertosFitness");
+            
+
+            coach.add(roberto);
+
         }
         return  coach;
     }
