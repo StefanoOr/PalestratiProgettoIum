@@ -2,30 +2,51 @@ package com.example.palestratiium.PersonalActivity;
 
 import androidx.annotation.NonNull;
 import androidx.appcompat.app.AppCompatActivity;
+import androidx.recyclerview.widget.GridLayoutManager;
+import androidx.recyclerview.widget.LinearLayoutManager;
+import androidx.recyclerview.widget.RecyclerView;
 
 import android.annotation.SuppressLint;
 import android.content.Intent;
 import android.os.Bundle;
+import android.text.Editable;
+import android.text.TextWatcher;
 import android.view.MenuItem;
+import android.widget.EditText;
 
+import com.example.palestratiium.Esercizi;
 import com.example.palestratiium.Login;
+import com.example.palestratiium.UserActivity.Home;
 import com.example.palestratiium.UserActivity.Profilo;
 import com.example.palestratiium.R;
+import com.example.palestratiium.adapter.Adapter_ListaEserciziHome;
+import com.example.palestratiium.adapter.RecycleViewInterface;
+import com.example.palestratiium.classi.Esercizio;
 import com.example.palestratiium.classi.PersonalTrainer;
+import com.example.palestratiium.classi.UserFactory;
 import com.google.android.material.bottomnavigation.BottomNavigationView;
 
 import java.io.Serializable;
+import java.util.ArrayList;
+import java.util.List;
 
-public class HomePersonalTrainer extends AppCompatActivity {
+public class HomePersonalTrainer extends AppCompatActivity implements RecycleViewInterface {
     public static final String EXTRA_PT = "package com.example.palestratiium";
     PersonalTrainer personal;
+    EditText ricerca;
+    public RecyclerView.LayoutManager mLayoutManager;
+    RecyclerView mRecyclerView;
+    RecyclerView.Adapter adapter;
+    List<Esercizio> listaEserciziPt;
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_home_personal_trainer);
 
-        setContentView(R.layout.activity_home);
 
+
+
+        ricerca = findViewById(R.id.ricercaPtEsercizi);
 
 
         Intent intent = getIntent();
@@ -38,6 +59,26 @@ public class HomePersonalTrainer extends AppCompatActivity {
             personal = new PersonalTrainer();
         }
 
+        ricerca.addTextChangedListener(new TextWatcher() {
+            @Override
+            public void beforeTextChanged(CharSequence s, int start, int count, int after) {
+
+            }
+
+            @Override
+            public void onTextChanged(CharSequence s, int start, int before, int count) {
+
+            }
+
+            @Override
+            public void afterTextChanged(Editable s) {
+                //filter(s.toString());
+
+
+            }
+        });
+
+        init();
 
         BottomNavigationView bottomNavigationView = findViewById(R.id.bottom_navigation);
 
@@ -74,4 +115,47 @@ public class HomePersonalTrainer extends AppCompatActivity {
         });
 
     }
+
+    public void init(){
+
+
+        listaEserciziPt = UserFactory.getInstance().getAllEsercizi();
+
+
+
+        if(listaEserciziPt.size()>0){
+            mRecyclerView = findViewById(R.id.listRecyclerViewEserciziPt);
+            mRecyclerView.setHasFixedSize(true);
+            mLayoutManager = new LinearLayoutManager(this);
+
+            adapter = new Adapter_ListaEserciziHome(listaEserciziPt,this);
+            mRecyclerView.setLayoutManager(mLayoutManager);
+            mRecyclerView.setAdapter(adapter);
+        }
+
+    }
+
+    @Override
+    public void onItemClick(int position) {
+        Intent intent = new Intent(HomePersonalTrainer.this, Esercizi.class);
+
+        intent.putExtra("NAME",listaEserciziPt.get(position).getNome());
+        intent.putExtra("DESCRIPTION",listaEserciziPt.get(position).getDescrizioene());
+        intent.putExtra(EXTRA_PT, personal);
+
+        startActivity(intent);
+    }
+
+   /* private void filter(String text){
+        ArrayList<User> filterdList = new ArrayList<>();
+        for( User item : UserFactory.getInstance().getUsers()){
+            if(item.getUsername().toLowerCase().contains(text.toLowerCase())){
+                filterdList.add(item);
+            }
+        }
+        UserFactory.getInstance().filterList(filterdList);
+
+    }
+
+    */
 }
