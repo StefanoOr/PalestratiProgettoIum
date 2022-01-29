@@ -20,6 +20,7 @@ import com.example.palestratiium.UserActivity.Home;
 import com.example.palestratiium.UserActivity.Profilo;
 import com.example.palestratiium.R;
 import com.example.palestratiium.adapter.Adapter_ListaEserciziHome;
+import com.example.palestratiium.adapter.Adapter_ListaEserciziHomePersonalT;
 import com.example.palestratiium.adapter.RecycleViewInterface;
 import com.example.palestratiium.classi.Esercizio;
 import com.example.palestratiium.classi.PersonalTrainer;
@@ -128,7 +129,7 @@ public class HomePersonalTrainer extends AppCompatActivity implements RecycleVie
             mRecyclerView.setHasFixedSize(true);
             mLayoutManager = new LinearLayoutManager(this);
 
-            adapter = new Adapter_ListaEserciziHome(listaEserciziPt,this);
+            adapter = new Adapter_ListaEserciziHomePersonalT(listaEserciziPt,this);
             mRecyclerView.setLayoutManager(mLayoutManager);
             mRecyclerView.setAdapter(adapter);
         }
