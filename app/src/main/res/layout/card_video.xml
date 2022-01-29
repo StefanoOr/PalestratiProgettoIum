@@ -11,7 +11,9 @@
     android:animateLayoutChanges="true"
     app:cardCornerRadius="20dp"
     app:cardElevation="4dp"
-    app:cardUseCompatPadding="true">
+    app:cardUseCompatPadding="true"
+    android:outlineAmbientShadowColor="@color/barra_separatoria_secondaria"
+    android:outlineSpotShadowColor="@color/barra_separatoria_principale">
 
     <androidx.constraintlayout.widget.ConstraintLayout
         android:id="@+id/layoutCard"

@@ -47,7 +47,7 @@ public class HomePersonalTrainer extends AppCompatActivity implements RecycleVie
 
 
 
-        ricerca = findViewById(R.id.ricercaPtEsercizi);
+        //ricerca = findViewById(R.id.ricercaPtEsercizi);
 
 
         Intent intent = getIntent();
