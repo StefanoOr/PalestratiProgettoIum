@@ -7,29 +7,34 @@
     android1:id="@+id/videoAllenamentoIcon"
     android:layout_width="match_parent"
     android:backgroundTint="@color/card_background_layout"
-    android:layout_height="105dp">
+    android:layout_height="wrap_content"
+    android:animateLayoutChanges="true"
+    app:cardCornerRadius="20dp"
+    app:cardElevation="4dp"
+    app:cardUseCompatPadding="true">
 
     <androidx.constraintlayout.widget.ConstraintLayout
         android:id="@+id/layoutCard"
         android:layout_width="match_parent"
-        android:layout_height="match_parent"
-        android:layout_marginTop="5dp"
-        android:layout_marginLeft="5dp"
-        android:layout_marginBottom="5dp"
-        android:layout_marginRight="5dp"
+        android:layout_height="80dp"
+        android:layout_marginTop="1dp"
+        android:layout_marginLeft="1dp"
+        android:layout_marginBottom="1dp"
+        android:layout_marginRight="1dp"
+        android:animateLayoutChanges="true"
         android:background="@drawable/card_background_edit_profile"
         android:padding="1dp">
 
         <ImageView
             android:id="@+id/iconImage"
-            android:layout_width="120dp"
-            android:layout_height="85dp"
+            android:layout_width="70dp"
+            android:layout_height="55dp"
             android:layout_alignParentStart="true"
             android:layout_alignParentLeft="true"
             android:layout_centerVertical="true"
             android:foregroundGravity="center"
-            android:paddingLeft="14dp"
-            android:paddingRight="14dp"
+            android:paddingLeft="10dp"
+            android:paddingRight="10dp"
             android:src="@drawable/ic_baseline_video_label_24"
             app:layout_constraintBottom_toBottomOf="parent"
             app:layout_constraintStart_toStartOf="parent"
@@ -39,8 +44,8 @@
             android:id="@+id/view11"
             android:layout_width="1dp"
             android:layout_height="match_parent"
-            android:layout_marginTop="5dp"
-            android:layout_marginBottom="5dp"
+            android:layout_marginTop="15dp"
+            android:layout_marginBottom="15dp"
             android:background="@color/barra_separatoria_principale"
             app:layout_constraintBottom_toBottomOf="parent"
             app:layout_constraintStart_toEndOf="@+id/iconImage"
@@ -51,6 +56,8 @@
             android:id="@+id/nomeEsercizio"
             android:layout_width="130dp"
             android:layout_height="30dp"
+            android:layout_marginStart="50dp"
+            android:layout_marginBottom="5dp"
             android:text="Esercizio"
             android:textAlignment="center"
             android:textColor="@color/card_text"
@@ -59,7 +66,7 @@
             app:layout_constraintBottom_toBottomOf="parent"
             app:layout_constraintStart_toEndOf="@+id/view11"
             app:layout_constraintTop_toTopOf="parent"
-            app:layout_constraintVertical_bias="0.493" />
+            app:layout_constraintVertical_bias="0.555" />
 
         <ImageView
             android:layout_width="35dp"
@@ -75,7 +82,7 @@
             android:id="@+id/imageView8"
             android:layout_width="35dp"
             android:layout_height="35dp"
-            android:layout_marginStart="30dp"
+            android:layout_marginStart="32dp"
             android:src="@drawable/ic_baseline_info_24"
             app:layout_constraintBottom_toBottomOf="parent"
             app:layout_constraintStart_toEndOf="@+id/nomeEsercizio"
