@@ -25,7 +25,7 @@ public class ProfiloPersonalTrainer extends AppCompatActivity {
         setContentView(R.layout.activity_profilo_personal_trainer);
 
         Intent intent = getIntent();
-        Serializable obj = intent.getSerializableExtra(Login.EXTRA_USER);
+        Serializable obj = intent.getSerializableExtra(Login.EXTRA_PT);
 
         if(obj instanceof PersonalTrainer){
             personal = (PersonalTrainer) obj;
