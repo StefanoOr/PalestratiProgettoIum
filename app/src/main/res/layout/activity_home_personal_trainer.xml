@@ -85,7 +85,7 @@
             app:layout_constraintHorizontal_bias="0.0"
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toBottomOf="@+id/ricercaPtEsercizi"
-            app:layout_constraintVertical_bias="0.652"
+            app:layout_constraintVertical_bias="0.933"
             app:menu="@menu/menu_navigation" />
 
     </androidx.constraintlayout.widget.ConstraintLayout>

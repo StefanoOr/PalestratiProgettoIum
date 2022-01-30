@@ -18,6 +18,8 @@ public class PersonalTrainer implements Serializable {
     private List<Esercizio> listaEsercizi= new ArrayList<>();
 
 
+
+
     public PersonalTrainer(){
         this.coach=true;
     }

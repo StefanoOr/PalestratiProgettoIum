@@ -38,7 +38,7 @@ import java.io.Serializable;
 public class Upload extends AppCompatActivity {
 
     Esercizio esercizio = new Esercizio();
-   PersonalTrainer  personal =  new PersonalTrainer();
+   PersonalTrainer  personal;
 
     private EditText titleEt;
     private VideoView videoView;
@@ -100,40 +100,7 @@ public class Upload extends AppCompatActivity {
             }
         });
 
-        BottomNavigationView bottomNavigationView = findViewById(R.id.bottom_navigation);
 
-        bottomNavigationView.setSelectedItemId(R.id.aggiungiVideo);
-
-        bottomNavigationView.setOnNavigationItemSelectedListener(new BottomNavigationView.OnNavigationItemSelectedListener() {
-            @SuppressLint("NonConstantResourceId")
-            @Override
-            public boolean onNavigationItemSelected(@NonNull MenuItem item) {
-                Intent showResult;
-                switch (item.getItemId()) {
-                    case R.id.profilo:
-
-                        showResult = new Intent(Upload.this, ProfiloPersonalTrainer.class);
-                        showResult.putExtra(EXTRA_PT, personal);
-                        startActivity(showResult);
-                        overridePendingTransition(0, 0);
-                        return true;
-
-                    case R.id.aggiungiVideo:
-
-
-                        return true;
-
-                    case R.id.menuHome:
-                        showResult = new Intent(Upload.this, HomePersonalTrainer.class);
-                        showResult.putExtra(EXTRA_PT, personal);
-                        startActivity(showResult);
-                        overridePendingTransition(0, 0);
-                        return true;
-
-                }
-                return false;
-            }
-        });
 
     }
 

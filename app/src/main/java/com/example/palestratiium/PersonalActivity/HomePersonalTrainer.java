@@ -47,7 +47,7 @@ public class HomePersonalTrainer extends AppCompatActivity implements RecycleVie
 
 
 
-        //ricerca = findViewById(R.id.ricercaPtEsercizi);
+        ricerca = findViewById(R.id.ricercaPtEsercizi);
 
 
         Intent intent = getIntent();
@@ -101,7 +101,7 @@ public class HomePersonalTrainer extends AppCompatActivity implements RecycleVie
 
                     case R.id.aggiungiVideo:
 
-                        showResult = new Intent(HomePersonalTrainer.this, Upload.class);
+                        showResult = new Intent(HomePersonalTrainer.this, PanelloDiUpload.class);
                         showResult.putExtra(EXTRA_PT, personal);
                         startActivity(showResult);
                         overridePendingTransition(0, 0);

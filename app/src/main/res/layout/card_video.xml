@@ -10,7 +10,7 @@
     android:layout_height="wrap_content"
     android:animateLayoutChanges="true"
     app:cardCornerRadius="20dp"
-    app:cardElevation="4dp"
+    app:cardElevation="2dp"
     app:cardUseCompatPadding="true"
     android:outlineAmbientShadowColor="@color/barra_separatoria_secondaria"
     android:outlineSpotShadowColor="@color/barra_separatoria_principale">
@@ -73,7 +73,7 @@
         <ImageView
             android:layout_width="35dp"
             android:layout_height="35dp"
-            android:src="@drawable/ic_baseline_cancel_24"
+            android:src="@drawable/ic_baseline_change_circle_24"
             app:layout_constraintBottom_toBottomOf="parent"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintHorizontal_bias="0.75"
