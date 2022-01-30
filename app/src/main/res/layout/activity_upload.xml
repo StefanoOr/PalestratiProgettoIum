@@ -4,14 +4,13 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-
     android:id="@+id/relative_layout_upload"
     tools:context=".PersonalActivity.Upload">
 
     <TextView
         android:id="@+id/titolo_upload"
         android:layout_width="401dp"
-        android:layout_height="56dp"
+        android:layout_height="50dp"
         android:gravity="center"
         android:layout_alignParentTop="true"
         android:fontFamily="@font/roboto"
@@ -32,12 +31,14 @@
         android:id="@+id/title_edit_text"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:hint="Inserisci un titolo"
-        android:textColorHint="@color/white"
-        android:textAlignment="center"
-        android:padding="20dp"
+        android:layout_below="@id/title_view_upload"
         android:backgroundTint="@color/barra_separatoria_secondaria"
-        android:layout_below="@id/title_view_upload"/>
+        android:hint="Inserisci un titolo"
+        android:padding="10dp"
+        android:textAlignment="center"
+        android:textColorHint="@color/white"
+        android:layout_marginLeft="20dp"
+        android:layout_marginRight="20dp"/>
 
     <FrameLayout
         android:id="@+id/frame_layout"
@@ -48,27 +49,173 @@
         <VideoView
             android:id="@+id/videoView"
             android:layout_width="match_parent"
-            android:layout_height="250dp"
+            android:layout_height="230dp"
             android:layout_gravity="center"
             android:layout_below="@id/title_edit_text"
             android:layout_marginTop="5dp" />
 
     </FrameLayout>
 
+    <EditText
+        android:id="@+id/descrizione_edit_text"
+        android:layout_width="match_parent"
+        android:layout_height="100dp"
+        android:layout_below="@id/frame_layout"
+        android:layout_marginLeft="20dp"
+        android:layout_marginTop="5dp"
+        android:layout_marginRight="20dp"
+        android:backgroundTint="@color/barra_separatoria_secondaria"
+        android:hint="Inserisci una descrizione"
+        android:inputType="textMultiLine"
+        android:padding="10dp"
+        android:gravity="top"
+        android:maxLines="50"
+        android:textColorHint="@color/white" />
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:id="@+id/check_box_layout"
+        android:layout_width="match_parent"
+        android:layout_height="130dp"
+        android:layout_below="@id/descrizione_edit_text"
+        android:layout_marginTop="20dp"
+        android:background="@drawable/card_background_edit_profile">
+
+        <TextView
+            android:id="@+id/textView18"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Seleziona i muscoli interessati"
+            android:textColor="@color/barra_separatoria_secondaria"
+            android:textSize="20dp"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent"
+            app:layout_constraintVertical_bias="0.044" />
+
+        <CheckBox
+            android:id="@+id/checkBox"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="5dp"
+            android:layout_marginTop="5dp"
+            android:padding="5dp"
+            android:text="Petto"
+            android:textColor="@color/white"
+            android:textSize="20dp"
+            android:textStyle="bold"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/textView18" />
+
+        <CheckBox
+            android:id="@+id/checkBox5"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="5dp"
+            android:layout_marginTop="5dp"
+            android:padding="5dp"
+            android:text="Dorso"
+            android:textColor="@color/white"
+            android:textSize="20dp"
+            android:textStyle="bold"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/checkBox" />
+
+        <CheckBox
+            android:id="@+id/checkBox6"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="5dp"
+            android:layout_marginEnd="5dp"
+            android:padding="5dp"
+            android:text="Bicipiti"
+            android:textColor="@color/white"
+            android:textSize="20dp"
+            android:textStyle="bold"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/textView18" />
+
+        <CheckBox
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="5dp"
+            android:layout_marginEnd="12dp"
+            android:padding="5dp"
+            android:text="Spalle"
+            android:textColor="@color/white"
+            android:textSize="20dp"
+            android:textStyle="bold"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/checkBox6" />
+
+        <CheckBox
+            android:id="@+id/checkBox3"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="51dp"
+            android:layout_marginTop="5dp"
+            android:padding="5dp"
+            android:text="Tricipiti"
+            android:textColor="@color/white"
+            android:textSize="20dp"
+            android:textStyle="bold"
+            app:layout_constraintStart_toEndOf="@+id/checkBox5"
+            app:layout_constraintTop_toBottomOf="@+id/checkBox4" />
+
+        <CheckBox
+            android:id="@+id/checkBox4"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="56dp"
+            android:layout_marginTop="5dp"
+            android:padding="5dp"
+            android:text="Gambe"
+            android:textColor="@color/white"
+            android:textSize="20dp"
+            android:textStyle="bold"
+            app:layout_constraintStart_toEndOf="@+id/checkBox"
+            app:layout_constraintTop_toBottomOf="@+id/textView18" />
+
+    </androidx.constraintlayout.widget.ConstraintLayout>
+
+    <TextView
+        android:id="@+id/difficolta_testo"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_below="@id/check_box_layout"
+        android:layout_centerInParent="true"
+        android:layout_marginTop="5dp"
+        android:text="Seleziona la difficoltà"
+        android:textColor="@color/barra_separatoria_secondaria"
+        android:textSize="20dp" />
+
+    <Spinner
+        android:id="@+id/difficolta_spinner"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_centerInParent="true"
+        android:layout_below="@id/difficolta_testo"/>
+
     <Button
         android:id="@+id/uploadVideoButton"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:layout_above="@+id/bottom_navigation"
-        android:layout_alignParentStart="true"
-        android:layout_marginStart="3dp"
-        android:layout_marginBottom="105dp"
+        android:layout_alignParentBottom="true"
+        android:layout_marginLeft="20dp"
+        android:layout_marginRight="20dp"
+        android:layout_marginBottom="10dp"
         android:background="@drawable/upload_video_btn_layout"
+        android:elevation="5dp"
+        android:outlineSpotShadowColor="@color/barra_separatoria_principale"
+        android:shadowColor="@color/barra_separatoria_principale"
         android:text="Carica Esercizio"
         android:textColor="@color/white"
         android:textStyle="bold" />
 
     <com.google.android.material.floatingactionbutton.FloatingActionButton
+        android:elevation="5dp"
+        android:outlineSpotShadowColor="@color/card_background_layout"
+        android:outlineAmbientShadowColor="@color/card_background_layout"
         android:id="@+id/select_video_button"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
@@ -78,25 +225,5 @@
         android:layout_marginEnd="18dp"
         android:backgroundTint="@color/barra_separatoria_principale"
         android:src="@drawable/ic_baseline_video_library_24" />
-
-    <com.google.android.material.bottomnavigation.BottomNavigationView
-        android:id="@+id/bottom_navigation"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:layout_alignParentStart="true"
-
-        android:layout_alignParentEnd="true"
-        android:layout_alignParentBottom="true"
-
-        android:layout_marginStart="8dp"
-        android:layout_marginEnd="-8dp"
-        android:layout_marginBottom="50dp"
-        app:itemBackground="@color/barra_separatoria_secondaria"
-        app:itemIconTint="@drawable/selector"
-        app:itemTextColor="@drawable/selector"
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent"
-        app:menu="@menu/menu_navigation" />
 
 </RelativeLayout>

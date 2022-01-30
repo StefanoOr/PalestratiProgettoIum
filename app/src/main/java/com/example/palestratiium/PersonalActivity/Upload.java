@@ -18,9 +18,12 @@ import android.os.Bundle;
 import android.provider.MediaStore;
 import android.view.MenuItem;
 import android.view.View;
+import android.widget.AdapterView;
+import android.widget.ArrayAdapter;
 import android.widget.Button;
 import android.widget.EditText;
 import android.widget.MediaController;
+import android.widget.Spinner;
 import android.widget.Toast;
 import android.widget.VideoView;
 
@@ -35,15 +38,16 @@ import com.google.android.material.floatingactionbutton.FloatingActionButton;
 
 import java.io.Serializable;
 
-public class Upload extends AppCompatActivity {
+public class Upload extends AppCompatActivity implements AdapterView.OnItemSelectedListener{
 
     Esercizio esercizio = new Esercizio();
-   PersonalTrainer  personal;
+    PersonalTrainer  personal;
 
     private EditText titleEt;
     private VideoView videoView;
     private Button uploadVideoBtn;
     private FloatingActionButton selectVideoBtn;
+    private Spinner seleziona_difficolta;
 
     private static final int VIDEO_PICK_GALLERY_CODE = 100;
     private static final int VIDEO_PICK_CAMERA_CODE = 100;
@@ -73,6 +77,12 @@ public class Upload extends AppCompatActivity {
         videoView = findViewById(R.id.videoView);
         uploadVideoBtn = findViewById(R.id.uploadVideoButton);
         selectVideoBtn = findViewById(R.id.select_video_button);
+        seleziona_difficolta = findViewById(R.id.difficolta_spinner);
+
+        ArrayAdapter<CharSequence> adapter = ArrayAdapter.createFromResource(this, R.array.difficolta, android.R.layout.simple_spinner_item);
+        adapter.setDropDownViewResource(android.R.layout.simple_spinner_dropdown_item);
+        seleziona_difficolta.setAdapter(adapter);
+        seleziona_difficolta.setOnItemSelectedListener(this);
 
         //permessi camera
         cameraPermissions = new String[]{Manifest.permission.CAMERA, Manifest.permission.WRITE_EXTERNAL_STORAGE};
@@ -212,5 +222,16 @@ public class Upload extends AppCompatActivity {
             }
         }
         super.onActivityResult(requestCode, resultCode, data);
+    }
+
+    @Override
+    public void onItemSelected(AdapterView<?> parent, View view, int position, long id) {
+        String text = parent.getItemAtPosition(position).toString();
+        Toast.makeText(parent.getContext(), text, Toast.LENGTH_SHORT).show();
+    }
+
+    @Override
+    public void onNothingSelected(AdapterView<?> parent) {
+
     }
 }

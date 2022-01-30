@@ -16,5 +16,6 @@
     <color name="nega">#94FF0000</color>
     <color name="conferma">#8D2EFF00</color>
     <color name="card_background_layout">#CC2C2C2C</color>
+    <color name="card_background_darker">#272727</color>
     <color name="info_color">#FFAC04</color>
 </resources>
