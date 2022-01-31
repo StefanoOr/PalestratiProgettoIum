@@ -9,15 +9,14 @@ public class Esercizio implements Serializable {
 
     private  String nome;
     private  String descrizioene;
-
     private  String gruppoMuscolare;
-    private int difficolta;
+    private String difficolta;
 
 
 
     private Uri video;
 
-    public Esercizio(String nome, String descrizioene, String gruppoMuscolare, int difficolta,Uri video){
+    public Esercizio(String nome, String descrizioene, String gruppoMuscolare, String difficolta,Uri video){
         this.nome=nome;
         this.descrizioene=descrizioene;
         this.gruppoMuscolare=gruppoMuscolare;
@@ -60,11 +59,11 @@ public class Esercizio implements Serializable {
         this.gruppoMuscolare = gruppoMuscolare;
     }
 
-    public int getDifficolta() {
+    public String getDifficolta() {
         return difficolta;
     }
 
-    public void setDifficolta(int difficolta) {
+    public void setDifficolta(String difficolta) {
         this.difficolta = difficolta;
     }
 }

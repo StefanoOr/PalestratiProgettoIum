@@ -21,6 +21,7 @@ import android.view.View;
 import android.widget.AdapterView;
 import android.widget.ArrayAdapter;
 import android.widget.Button;
+import android.widget.CheckBox;
 import android.widget.EditText;
 import android.widget.MediaController;
 import android.widget.Spinner;
@@ -38,20 +39,23 @@ import com.google.android.material.floatingactionbutton.FloatingActionButton;
 
 import java.io.Serializable;
 
-public class Upload extends AppCompatActivity implements AdapterView.OnItemSelectedListener{
+public class Upload extends AppCompatActivity implements AdapterView.OnItemSelectedListener, View.OnClickListener {
 
     Esercizio esercizio = new Esercizio();
     PersonalTrainer  personal;
 
-    private EditText titleEt;
+    private EditText titleEt, descrizioneEt;
     private VideoView videoView;
     private Button uploadVideoBtn;
     private FloatingActionButton selectVideoBtn;
     private Spinner seleziona_difficolta;
+    private CheckBox petto, gambe, bicipiti, dorso, tricipiti, spalle;
 
     private static final int VIDEO_PICK_GALLERY_CODE = 100;
     private static final int VIDEO_PICK_CAMERA_CODE = 100;
     private static final int CAMERA_REQUEST_CODE = 100;
+
+    private String gruppoMuscolare = "";
 
     private String[] cameraPermissions;
 
@@ -74,15 +78,29 @@ public class Upload extends AppCompatActivity implements AdapterView.OnItemSelec
         }
 
         titleEt = findViewById(R.id.title_edit_text);
+        descrizioneEt = findViewById(R.id.descrizione_edit_text);
         videoView = findViewById(R.id.videoView);
         uploadVideoBtn = findViewById(R.id.uploadVideoButton);
         selectVideoBtn = findViewById(R.id.select_video_button);
         seleziona_difficolta = findViewById(R.id.difficolta_spinner);
+        petto = findViewById(R.id.checkBox);
+        dorso = findViewById(R.id.checkBox5);
+        gambe = findViewById(R.id.checkBox4);
+        tricipiti = findViewById(R.id.checkBox3);
+        bicipiti = findViewById(R.id.checkBox6);
+        spalle = findViewById(R.id.checkBox2);
 
         ArrayAdapter<CharSequence> adapter = ArrayAdapter.createFromResource(this, R.array.difficolta, android.R.layout.simple_spinner_item);
         adapter.setDropDownViewResource(android.R.layout.simple_spinner_dropdown_item);
         seleziona_difficolta.setAdapter(adapter);
         seleziona_difficolta.setOnItemSelectedListener(this);
+
+        petto.setOnClickListener(this);
+        spalle.setOnClickListener(this);
+        gambe.setOnClickListener(this);
+        bicipiti.setOnClickListener(this);
+        tricipiti.setOnClickListener(this);
+        dorso.setOnClickListener(this);
 
         //permessi camera
         cameraPermissions = new String[]{Manifest.permission.CAMERA, Manifest.permission.WRITE_EXTERNAL_STORAGE};
@@ -91,11 +109,12 @@ public class Upload extends AppCompatActivity implements AdapterView.OnItemSelec
             @Override
             public void onClick(View v) {
 
-
-
                 esercizio.setNome(titleEt.getText().toString());
                 esercizio.setVideo(videoUri);
+                esercizio.setDescrizioene(descrizioneEt.getText().toString());
                 personal.addEsercizi(esercizio);
+                esercizio.setDifficolta(seleziona_difficolta.getSelectedItem().toString());
+                esercizio.setGruppoMuscolare(gruppoMuscolare);
                 UserFactory.getInstance().addEsercizio(personal, esercizio);
                 Intent ex = new Intent(Upload.this, HomePersonalTrainer.class);
                 ex.putExtra(EXTRA_PT, personal);
@@ -109,8 +128,6 @@ public class Upload extends AppCompatActivity implements AdapterView.OnItemSelec
                 videoPickDialog();
             }
         });
-
-
 
     }
 
@@ -234,4 +251,55 @@ public class Upload extends AppCompatActivity implements AdapterView.OnItemSelec
     public void onNothingSelected(AdapterView<?> parent) {
 
     }
+
+    @Override
+    public void onClick(View v) {
+
+        switch (v.getId()) {
+            case R.id.checkBox:
+                if (petto.isChecked())
+                    Toast.makeText(getApplicationContext(), "Petto", Toast.LENGTH_LONG).show();
+                if(gruppoMuscolare=="")
+                    gruppoMuscolare = "Petto, ";
+                else gruppoMuscolare = gruppoMuscolare + "petto, ";
+                break;
+            case R.id.checkBox2:
+                if (spalle.isChecked())
+                    Toast.makeText(getApplicationContext(), "Spalle", Toast.LENGTH_LONG).show();
+                if(gruppoMuscolare=="")
+                    gruppoMuscolare = "Spalle, ";
+                else gruppoMuscolare = gruppoMuscolare + "spalle, ";
+                break;
+            case R.id.checkBox3:
+                if (tricipiti.isChecked())
+                    Toast.makeText(getApplicationContext(), "Tricipiti", Toast.LENGTH_LONG).show();
+                if(gruppoMuscolare=="")
+                    gruppoMuscolare = "Tricipiti, ";
+                else gruppoMuscolare = gruppoMuscolare + "tricipiti, ";
+                break;
+            case R.id.checkBox4:
+                if (gambe.isChecked())
+                    Toast.makeText(getApplicationContext(), "Gambe", Toast.LENGTH_LONG).show();
+                if(gruppoMuscolare=="")
+                    gruppoMuscolare = "Gambe, ";
+                else gruppoMuscolare = gruppoMuscolare + "gambe, ";
+                break;
+            case R.id.checkBox5:
+                if (dorso.isChecked())
+                    Toast.makeText(getApplicationContext(), "Dorso", Toast.LENGTH_LONG).show();
+                if(gruppoMuscolare=="")
+                    gruppoMuscolare = "Dorso, ";
+                else gruppoMuscolare = gruppoMuscolare + "dorso, ";
+                break;
+            case R.id.checkBox6:
+                if (bicipiti.isChecked())
+                    Toast.makeText(getApplicationContext(), "Bicipiti", Toast.LENGTH_LONG).show();
+                if(gruppoMuscolare=="")
+                    gruppoMuscolare = "Bicipiti, ";
+                else gruppoMuscolare = gruppoMuscolare + "bicipiti, ";
+                break;
+        }
+
+    }
+
 }

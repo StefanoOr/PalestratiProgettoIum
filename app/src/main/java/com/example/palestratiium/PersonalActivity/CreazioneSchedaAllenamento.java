@@ -25,6 +25,7 @@ public class CreazioneSchedaAllenamento extends AppCompatActivity {
     public RecyclerView.LayoutManager mLayoutManager;
     RecyclerView mRecyclerView;
     RecyclerView.Adapter adapter;
+
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -55,7 +56,7 @@ public class CreazioneSchedaAllenamento extends AppCompatActivity {
 
     }
 
-    public void init(){
+    /*public void init(){
 
 
         listaEserciziPt = UserFactory.getInstance().getEserciziPt(personal);
@@ -72,6 +73,6 @@ public class CreazioneSchedaAllenamento extends AppCompatActivity {
             mRecyclerView.setAdapter(adapter);
         }
 
-    }
+    }*/
 
 }

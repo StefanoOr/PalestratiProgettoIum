@@ -12,7 +12,10 @@
         android:roundIcon="@mipmap/ic_launcher_round"
         android:supportsRtl="true"
         android:theme="@style/Theme.AppCompat.NoActionBar">
-        <activity android:name=".PersonalActivity.PanelloDiUpload"></activity>
+        <activity
+            android:name=".ModificaEsercizio"
+            android:exported="false" />
+        <activity android:name=".PersonalActivity.PanelloDiUpload" />
         <activity android:name=".PersonalActivity.CreazioneSchedaAllenamento" />
         <activity android:name=".PersonalActivity.ProfiloPersonalTrainer" />
         <activity android:name=".PersonalActivity.HomePersonalTrainer" />
