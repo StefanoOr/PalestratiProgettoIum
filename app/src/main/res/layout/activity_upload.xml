@@ -89,9 +89,9 @@
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:text="Seleziona i muscoli interessati"
+            android:textAlignment="center"
             android:textColor="@color/barra_separatoria_secondaria"
             android:textSize="20dp"
-            android:textAlignment="center"
             app:layout_constraintBottom_toBottomOf="parent"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintStart_toStartOf="parent"
@@ -198,10 +198,10 @@
 
     <Spinner
         android:id="@+id/difficolta_spinner"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_centerInParent="true"
-        android:layout_below="@id/difficolta_testo"/>
+        android:layout_width="110dp"
+        android:layout_height="40dp"
+        android:layout_below="@id/difficolta_testo"
+        android:layout_centerInParent="true" />
 
     <Button
         android:id="@+id/uploadVideoButton"

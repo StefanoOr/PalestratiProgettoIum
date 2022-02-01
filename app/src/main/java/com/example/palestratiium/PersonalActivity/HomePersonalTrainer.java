@@ -16,6 +16,7 @@ import android.widget.EditText;
 
 import com.example.palestratiium.Esercizi;
 import com.example.palestratiium.Login;
+import com.example.palestratiium.ModificaEsercizio;
 import com.example.palestratiium.UserActivity.Home;
 import com.example.palestratiium.UserActivity.Profilo;
 import com.example.palestratiium.R;

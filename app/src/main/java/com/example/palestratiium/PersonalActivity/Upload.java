@@ -39,7 +39,7 @@ import com.google.android.material.floatingactionbutton.FloatingActionButton;
 
 import java.io.Serializable;
 
-public class Upload extends AppCompatActivity implements AdapterView.OnItemSelectedListener, View.OnClickListener {
+public class Upload extends AppCompatActivity implements Serializable, AdapterView.OnItemSelectedListener, View.OnClickListener {
 
     Esercizio esercizio = new Esercizio();
     PersonalTrainer  personal;
@@ -112,9 +112,9 @@ public class Upload extends AppCompatActivity implements AdapterView.OnItemSelec
                 esercizio.setNome(titleEt.getText().toString());
                 esercizio.setVideo(videoUri);
                 esercizio.setDescrizioene(descrizioneEt.getText().toString());
-                personal.addEsercizi(esercizio);
                 esercizio.setDifficolta(seleziona_difficolta.getSelectedItem().toString());
                 esercizio.setGruppoMuscolare(gruppoMuscolare);
+                personal.addEsercizi(esercizio);
                 UserFactory.getInstance().addEsercizio(personal, esercizio);
                 Intent ex = new Intent(Upload.this, HomePersonalTrainer.class);
                 ex.putExtra(EXTRA_PT, personal);

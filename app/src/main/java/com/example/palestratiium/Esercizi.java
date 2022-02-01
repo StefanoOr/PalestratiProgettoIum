@@ -15,7 +15,7 @@ import com.example.palestratiium.UserActivity.Home;
 import com.example.palestratiium.classi.PersonalTrainer;
 import com.example.palestratiium.classi.User;
 
-public class Esercizi extends AppCompatActivity {
+public class Esercizi extends AppCompatActivity implements Serializable{
 
     User user;
     PersonalTrainer personalTrainer;
@@ -34,8 +34,6 @@ public class Esercizi extends AppCompatActivity {
         isPt=false;
         isUser=false;
 
-        back = findViewById(R.id.back_button);
-
         Intent intent = getIntent();
         Serializable obj = intent.getSerializableExtra(Login.EXTRA_USER);
         Serializable objT = intent.getSerializableExtra(Login.EXTRA_PT);
@@ -46,6 +44,7 @@ public class Esercizi extends AppCompatActivity {
 
         nomeEsercizio= findViewById(R.id.esercizio_title);
         descrizioneEsercizio = findViewById(R.id.text_corpo_descrizione);
+        back = findViewById(R.id.back_button);
 
         nomeEsercizio.setText(name);
         descrizioneEsercizio.setText(descrizione);
