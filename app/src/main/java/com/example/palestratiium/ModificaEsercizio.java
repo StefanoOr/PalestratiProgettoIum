@@ -6,10 +6,14 @@ import android.content.Intent;
 import android.net.Uri;
 import android.os.Bundle;
 import android.view.View;
+import android.widget.AdapterView;
+import android.widget.ArrayAdapter;
 import android.widget.Button;
+import android.widget.CheckBox;
 import android.widget.EditText;
 import android.widget.Spinner;
 import android.widget.TextView;
+import android.widget.Toast;
 
 import com.example.palestratiium.PersonalActivity.HomePersonalTrainer;
 import com.example.palestratiium.UserActivity.Home;
@@ -19,7 +23,7 @@ import com.example.palestratiium.classi.UserFactory;
 
 import java.io.Serializable;
 
-public class ModificaEsercizio extends AppCompatActivity implements Serializable {
+public class ModificaEsercizio extends AppCompatActivity implements Serializable, AdapterView.OnItemSelectedListener, View.OnClickListener{
 
     Esercizio esercizio = new Esercizio();
     PersonalTrainer personalTrainer;
@@ -28,7 +32,10 @@ public class ModificaEsercizio extends AppCompatActivity implements Serializable
     Uri video;
     boolean isPt;
     Button confirmEdit;
-    TextView gruppoMuscolare, difficoltaAttuale;
+    TextView gruppoM, difficoltaAttuale;
+    private CheckBox petto, gambe, bicipiti, dorso, tricipiti, spalle;
+    private String gruppoMuscolare;
+    private Spinner seleziona_difficolta;
 
 
     public static final String EXTRA_PT = "package com.example.palestratiium";
@@ -49,17 +56,6 @@ public class ModificaEsercizio extends AppCompatActivity implements Serializable
         String gruppo = getIntent().getStringExtra("GRUPPO_MUSCOLARE");
         String difficolta = getIntent().getStringExtra("DIFFICOLTA");
 
-        nomeEsercizio = findViewById(R.id.attributeTitolo);
-        descrizioneEsercizio = findViewById(R.id.attributeDescrizione);
-        gruppoMuscolare = findViewById(R.id.attributeMuscoli);
-        difficoltaAttuale = findViewById(R.id.difficolta_attuale);
-        confirmEdit = findViewById(R.id.editEsercizioButton);
-
-        nomeEsercizio.setHint(name);
-        descrizioneEsercizio.setHint(descrizione);
-        gruppoMuscolare.setText(gruppo);
-        difficoltaAttuale.setText(difficolta);
-
         if(objT instanceof PersonalTrainer){
             personalTrainer = (PersonalTrainer) objT;
             isPt = true;
@@ -67,12 +63,45 @@ public class ModificaEsercizio extends AppCompatActivity implements Serializable
             personalTrainer = new PersonalTrainer();
         }
 
+        nomeEsercizio = findViewById(R.id.attributeTitolo);
+        descrizioneEsercizio = findViewById(R.id.attributeDescrizione);
+        gruppoM = findViewById(R.id.attributeMuscoli);
+        difficoltaAttuale = findViewById(R.id.difficolta_attuale);
+        confirmEdit = findViewById(R.id.editEsercizioButton);
+        petto = findViewById(R.id.checkBox);
+        dorso = findViewById(R.id.checkBox5);
+        gambe = findViewById(R.id.checkBox4);
+        tricipiti = findViewById(R.id.checkBox3);
+        bicipiti = findViewById(R.id.checkBox6);
+        spalle = findViewById(R.id.checkBox2);
+        seleziona_difficolta = findViewById(R.id.attributeDifficolta);
+
+        ArrayAdapter<CharSequence> adapter = ArrayAdapter.createFromResource(this, R.array.difficolta, android.R.layout.simple_spinner_item);
+        adapter.setDropDownViewResource(android.R.layout.simple_spinner_dropdown_item);
+        seleziona_difficolta.setAdapter(adapter);
+        seleziona_difficolta.setOnItemSelectedListener(this);
+
+        nomeEsercizio.setHint(name);
+        descrizioneEsercizio.setHint(descrizione);
+        gruppoM.setText(gruppo);
+        gruppoMuscolare = gruppoM.getText().toString();
+        difficoltaAttuale.setText(difficolta);
+
+        petto.setOnClickListener(this);
+        spalle.setOnClickListener(this);
+        gambe.setOnClickListener(this);
+        bicipiti.setOnClickListener(this);
+        tricipiti.setOnClickListener(this);
+        dorso.setOnClickListener(this);
+
         confirmEdit.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
 
                 esercizio.setNome(nomeEsercizio.getText().toString());
                 esercizio.setDescrizioene(descrizioneEsercizio.getText().toString());
+                esercizio.setDifficolta(seleziona_difficolta.getSelectedItem().toString());
+                esercizio.setGruppoMuscolare(gruppoMuscolare);
                 personalTrainer.addEsercizi(esercizio);
                 UserFactory.getInstance().addEsercizio(personalTrainer, esercizio);
                 Intent home = new Intent(ModificaEsercizio.this, HomePersonalTrainer.class);
@@ -80,6 +109,67 @@ public class ModificaEsercizio extends AppCompatActivity implements Serializable
                 startActivity(home);
             }
         });
+
+    }
+
+    @Override
+    public void onClick(View v) {
+
+        switch (v.getId()) {
+            case R.id.checkBox:
+                if (petto.isChecked())
+                    Toast.makeText(getApplicationContext(), "Petto", Toast.LENGTH_LONG).show();
+                if(gruppoMuscolare=="")
+                    gruppoMuscolare = "Petto, ";
+                else gruppoMuscolare = gruppoMuscolare + "petto, ";
+                break;
+            case R.id.checkBox2:
+                if (spalle.isChecked())
+                    Toast.makeText(getApplicationContext(), "Spalle", Toast.LENGTH_LONG).show();
+                if(gruppoMuscolare=="")
+                    gruppoMuscolare = "Spalle, ";
+                else gruppoMuscolare = gruppoMuscolare + "spalle, ";
+                break;
+            case R.id.checkBox3:
+                if (tricipiti.isChecked())
+                    Toast.makeText(getApplicationContext(), "Tricipiti", Toast.LENGTH_LONG).show();
+                if(gruppoMuscolare=="")
+                    gruppoMuscolare = "Tricipiti, ";
+                else gruppoMuscolare = gruppoMuscolare + "tricipiti, ";
+                break;
+            case R.id.checkBox4:
+                if (gambe.isChecked())
+                    Toast.makeText(getApplicationContext(), "Gambe", Toast.LENGTH_LONG).show();
+                if(gruppoMuscolare=="")
+                    gruppoMuscolare = "Gambe, ";
+                else gruppoMuscolare = gruppoMuscolare + "gambe, ";
+                break;
+            case R.id.checkBox5:
+                if (dorso.isChecked())
+                    Toast.makeText(getApplicationContext(), "Dorso", Toast.LENGTH_LONG).show();
+                if(gruppoMuscolare=="")
+                    gruppoMuscolare = "Dorso, ";
+                else gruppoMuscolare = gruppoMuscolare + "dorso, ";
+                break;
+            case R.id.checkBox6:
+                if (bicipiti.isChecked())
+                    Toast.makeText(getApplicationContext(), "Bicipiti", Toast.LENGTH_LONG).show();
+                if(gruppoMuscolare=="")
+                    gruppoMuscolare = "Bicipiti, ";
+                else gruppoMuscolare = gruppoMuscolare + "bicipiti, ";
+                break;
+        }
+
+    }
+
+    @Override
+    public void onItemSelected(AdapterView<?> parent, View view, int position, long id) {
+        String text = parent.getItemAtPosition(position).toString();
+        Toast.makeText(parent.getContext(), text, Toast.LENGTH_SHORT).show();
+    }
+
+    @Override
+    public void onNothingSelected(AdapterView<?> parent) {
 
     }
 }
