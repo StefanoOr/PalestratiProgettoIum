@@ -129,7 +129,7 @@
             android:layout_height="wrap_content"
             android:layout_marginStart="48dp"
             android:layout_marginTop="16dp"
-            android:marginTop="20dp"
+
             android:text="Gruppo Muscolare:"
             android:textSize="20dp"
             android:textColor="@color/barra_separatoria_secondaria"
@@ -143,7 +143,7 @@
             android:layout_height="wrap_content"
             android:layout_marginStart="5dp"
             android:layout_marginTop="13dp"
-            android:marginTop="20dp"
+
             android:text="Selezione"
             android:textColor="@color/white"
             android:textSize="25dp"
