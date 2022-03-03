@@ -31,14 +31,14 @@
             android:text="lista esercizi" />
 
         <Button
-            android:id="@+id/profilo"
+            android:id="@+id/filtroUserHome"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_alignParentStart="true"
             android:layout_alignParentTop="true"
             android:layout_alignParentEnd="true"
             android:layout_alignParentBottom="true"
-            android:text="profilo"
+            android:text="Filtro"
             app:layout_constraintBottom_toTopOf="@+id/listRecyclerView_esercizi"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintTop_toTopOf="parent" />

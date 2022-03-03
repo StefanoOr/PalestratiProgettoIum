@@ -16,16 +16,11 @@ import android.content.Intent;
 import android.os.Bundle;
 import android.view.MenuItem;
 import android.view.View;
-import android.widget.AdapterView;
 import android.widget.Button;
-import android.widget.Spinner;
-import android.widget.TextView;
-import android.widget.Toast;
 
 import com.example.palestratiium.Esercizi;
 import com.example.palestratiium.Login;
 import com.example.palestratiium.R;
-import com.example.palestratiium.PersonalActivity.Upload;
 import com.example.palestratiium.adapter.CoachAdapter;
 import com.google.android.material.bottomnavigation.BottomNavigationView;
 
@@ -45,12 +40,9 @@ public class Home extends AppCompatActivity implements RecycleViewInterface {
 
     User user;
     PersonalTrainer coach;
-    Button profilo;
-    Spinner spinnerCoach;
-    TextView welcome, username, password, city, datetext, modifyPassword;
-    Button logout;
+    Button filtro;
     private CoachAdapter coachAdapter;
-    String clickedCountryName;
+
 
     //TODO test esercizi da elimiare
     List<Esercizio> listaEserciziCard;
@@ -68,10 +60,11 @@ public class Home extends AppCompatActivity implements RecycleViewInterface {
 
         coachAdapter = new CoachAdapter(this, (ArrayList<PersonalTrainer>) UserFactory.getInstance().getPersonal());
 
-        profilo = findViewById(R.id.profilo);
-        spinnerCoach = findViewById(R.id.spinner_coachUser);
+        filtro = findViewById(R.id.filtroUserHome);
+
         Intent intent = getIntent();
         Serializable obj = intent.getSerializableExtra(Login.EXTRA_USER);
+        //PersonalTrainer coachSelect = get
 
         if(obj instanceof User){
             user = (User) obj;
@@ -82,35 +75,19 @@ public class Home extends AppCompatActivity implements RecycleViewInterface {
 
 
 
-        profilo.setOnClickListener(new View.OnClickListener() {
+        filtro.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                Intent showResult = new Intent(Home.this, Upload.class);
+                Intent showResult = new Intent(Home.this, FiltroUser.class);
                 showResult.putExtra(EXTRA_USER, user);
                 startActivity(showResult);
             }
         });
 
-        spinnerCoach.setAdapter(coachAdapter);
-        spinnerCoach.setOnItemSelectedListener(new AdapterView.OnItemSelectedListener() {
-            @Override
-            public void onItemSelected(AdapterView<?> parent, View view, int position, long id) {
-                coach = (PersonalTrainer) parent.getItemAtPosition(position);
-                PersonalTrainer clickedItem = (PersonalTrainer) parent.getItemAtPosition(position);
-                 clickedCountryName = clickedItem.getUsername();
-                 System.out.println(clickedCountryName);
-
-            }
-
-            @Override
-            public void onNothingSelected(AdapterView<?> parent) {
-
-            }
-        });
 
 
 
-        listaEserciziCard = UserFactory.getInstance().getAllEsercizi();
+            listaEserciziCard=   UserFactory.getInstance().getAllEsercizi();
 
 
 
@@ -119,7 +96,7 @@ public class Home extends AppCompatActivity implements RecycleViewInterface {
             mRecyclerView.setHasFixedSize(true);
             mLayoutManager = new GridLayoutManager(this,3);
 
-            adapter = new Adapter_ListaEserciziHome(listaEserciziCard,this,clickedCountryName);
+            adapter = new Adapter_ListaEserciziHome(listaEserciziCard,this);
             mRecyclerView.setLayoutManager(mLayoutManager);
             mRecyclerView.setAdapter(adapter);
         }

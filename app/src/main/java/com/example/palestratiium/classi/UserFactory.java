@@ -17,7 +17,9 @@ public class UserFactory {
     private static UserFactory singleton;
     private List<User> users = new ArrayList<>();
     private List<PersonalTrainer> coach = new ArrayList<>();
-    private List<Esercizio> esercizio = new ArrayList<>();
+    private List<Esercizio> eserciziAtzeni = new ArrayList<>();
+    private List<Esercizio> eserciziRoberto = new ArrayList<>();
+    private List<Esercizio> allEsercizi = new ArrayList<>();
     DatePickerFragment datePickerFragment = new DatePickerFragment();
     public static boolean fine_user = true , fine_pt=true;
     private UserFactory() {
@@ -68,7 +70,7 @@ public class UserFactory {
     }
 
     public List<Esercizio> getAllEsercizi(){
-            return esercizio;
+            return allEsercizi;
     }
 
 
@@ -89,7 +91,7 @@ public class UserFactory {
             atzeni.getDate().set(Calendar.DAY_OF_MONTH, 16);
             atzeni.setTeam("Atzenis Team");
 
-            atzeni.initEsercizi(esercizio);
+            atzeni.initEsercizi(eserciziAtzeni);
             coach.add(atzeni);
 
             PersonalTrainer roberto = new PersonalTrainer();
@@ -101,6 +103,7 @@ public class UserFactory {
             roberto.getDate().set(Calendar.MONTH, Calendar.MARCH);
             roberto.getDate().set(Calendar.DAY_OF_MONTH, 12);
             roberto.setTeam("RobertosFitness");
+            roberto.initEsercizi(eserciziRoberto);
             
 
             coach.add(roberto);
@@ -138,10 +141,16 @@ public class UserFactory {
 
     public void initEsercizi(){
 
-        esercizio.add(new Esercizio("Dip.Distensioni di braccia","aa","aaa","1",null));
-        esercizio.add(new Esercizio("Barca","bb","bbb","2",null));
-        esercizio.add(new Esercizio("Crunch","aa","aaa","3",null));
-        esercizio.add(new Esercizio("Front squat","bb","bbb","2",null));
+        eserciziAtzeni.add(new Esercizio("Dip.Distensioni di braccia","aa","aaa","1",null));
+        eserciziAtzeni.add(new Esercizio("Barca","bb","bbb","2",null));
+        eserciziAtzeni.add(new Esercizio("Crunch","aa","aaa","3",null));
+        eserciziAtzeni.add(new Esercizio("Front squat","bb","bbb","2",null));
+        eserciziRoberto.add(new Esercizio("Panca piana","vv","provs","3",null));
+        eserciziRoberto.add(new Esercizio("Panca verticale","vv","provs","3",null));
+
+        allEsercizi.addAll(eserciziAtzeni);
+        allEsercizi.addAll(eserciziRoberto);
+        System.out.println(allEsercizi.size());
     }
 
     public void addUsers(User u) {
