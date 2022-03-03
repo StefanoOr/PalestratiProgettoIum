@@ -45,7 +45,7 @@
 
 
         <Spinner
-            android:id="@+id/spinner_coachUser"
+            android:id="@+id/spinner_coachUser1"
             style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox.Dense.ExposedDropdownMenu"
             android:layout_width="wrap_content"
             android:layout_height="58dp"

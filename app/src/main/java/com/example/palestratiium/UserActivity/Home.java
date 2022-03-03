@@ -16,7 +16,10 @@ import android.content.Intent;
 import android.os.Bundle;
 import android.view.MenuItem;
 import android.view.View;
+import android.widget.AdapterView;
 import android.widget.Button;
+import android.widget.Spinner;
+import android.widget.Toast;
 
 import com.example.palestratiium.Esercizi;
 import com.example.palestratiium.Login;
@@ -43,6 +46,10 @@ public class Home extends AppCompatActivity implements RecycleViewInterface {
     Button filtro;
     private CoachAdapter coachAdapter;
 
+    Spinner spinnerCoach;
+    String clickedCountryName;
+
+
 
     //TODO test esercizi da elimiare
     List<Esercizio> listaEserciziCard;
@@ -59,13 +66,14 @@ public class Home extends AppCompatActivity implements RecycleViewInterface {
         setContentView(R.layout.activity_home);
 
         coachAdapter = new CoachAdapter(this, (ArrayList<PersonalTrainer>) UserFactory.getInstance().getPersonal());
-
+        spinnerCoach = findViewById(R.id.spinner_coachUser1);
         filtro = findViewById(R.id.filtroUserHome);
 
         Intent intent = getIntent();
         Serializable obj = intent.getSerializableExtra(Login.EXTRA_USER);
+        PersonalTrainer name =  (PersonalTrainer) getIntent().getSerializableExtra("PERSONAL");
         //PersonalTrainer coachSelect = get
-
+        System.out.println(name);
         if(obj instanceof User){
             user = (User) obj;
 
@@ -86,20 +94,44 @@ public class Home extends AppCompatActivity implements RecycleViewInterface {
 
 
 
+        spinnerCoach.setAdapter(coachAdapter);
+        spinnerCoach.setOnItemSelectedListener(new AdapterView.OnItemSelectedListener() {
+            @Override
+            public void onItemSelected(AdapterView<?> parent, View view, int position, long id) {
+                coach = (PersonalTrainer) parent.getItemAtPosition(position);
+                PersonalTrainer clickedItem = (PersonalTrainer) parent.getItemAtPosition(position);
+                clickedCountryName = clickedItem.getUsername();
+                System.out.println(clickedCountryName);
 
-            listaEserciziCard=   UserFactory.getInstance().getAllEsercizi();
+
+                if(coach.getUsername() == "all") {
+                    listaEserciziCard = UserFactory.getInstance().getAllEsercizi();
+                }else{
+                    listaEserciziCard = UserFactory.getInstance().getEserciziPt(coach);
+                }
+
+
+                if(listaEserciziCard.size()>0){
+                    mRecyclerView = findViewById(R.id.listRecyclerView_esercizi);
+                    mRecyclerView.setHasFixedSize(true);
+                    mLayoutManager = new GridLayoutManager(Home.this,3);
+
+                    adapter = new Adapter_ListaEserciziHome(listaEserciziCard,Home.this);
+                    mRecyclerView.setLayoutManager(mLayoutManager);
+                    mRecyclerView.setAdapter(adapter);
+                }
 
 
 
-        if(listaEserciziCard.size()>0){
-            mRecyclerView = findViewById(R.id.listRecyclerView_esercizi);
-            mRecyclerView.setHasFixedSize(true);
-            mLayoutManager = new GridLayoutManager(this,3);
+            }
 
-            adapter = new Adapter_ListaEserciziHome(listaEserciziCard,this);
-            mRecyclerView.setLayoutManager(mLayoutManager);
-            mRecyclerView.setAdapter(adapter);
-        }
+            @Override
+            public void onNothingSelected(AdapterView<?> parent) {
+
+            }
+        });
+
+
 
 
 

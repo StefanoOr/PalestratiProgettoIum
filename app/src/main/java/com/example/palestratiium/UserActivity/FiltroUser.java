@@ -38,9 +38,9 @@ public class FiltroUser extends AppCompatActivity {
         confermaButton=findViewById(R.id.buttonCOnfermaFiltro);
 
 
-        Intent intent = getIntent();
+        final Intent intent = getIntent();
         Serializable obj = intent.getSerializableExtra(Login.EXTRA_USER);
-        
+
 
         if(obj instanceof User){
             user = (User) obj;
@@ -73,7 +73,9 @@ public class FiltroUser extends AppCompatActivity {
             @Override
             public void onClick(View v) {
                 Intent showResult = new Intent(FiltroUser.this, Home.class);
-                showResult.putExtra(EXTRA_USER, user);
+
+                intent.putExtra(EXTRA_USER, user);
+                intent.putExtra("PERSONAL",coach);
                 startActivity(showResult);
             }
         });

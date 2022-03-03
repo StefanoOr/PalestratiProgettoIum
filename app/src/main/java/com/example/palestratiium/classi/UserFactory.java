@@ -81,6 +81,10 @@ public class UserFactory {
         if(fine_pt) {
             fine_pt = false;
 
+            PersonalTrainer all =new PersonalTrainer();
+            all.setUsername("all");
+            coach.add(all);
+
             PersonalTrainer atzeni = new PersonalTrainer();
             atzeni.setUsername("At");
             atzeni.setPassword("at");
