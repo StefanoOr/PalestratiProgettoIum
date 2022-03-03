@@ -20,11 +20,12 @@ import java.util.List;
 public class Adapter_ListaEserciziHome extends  RecyclerView.Adapter<Adapter_ListaEserciziHome.ExampleViewHolder>{
     private List<Esercizio> mExampleList;
     private  final RecycleViewInterface recycleViewInterface;
+    private  String nameSelect;
 
-
-    public Adapter_ListaEserciziHome(List <Esercizio> exampleList,RecycleViewInterface recycleViewInterface) {
+    public Adapter_ListaEserciziHome(List <Esercizio> exampleList,RecycleViewInterface recycleViewInterface,String nameSelect) {
         this.mExampleList = exampleList;
         this.recycleViewInterface=recycleViewInterface;
+        this.nameSelect=nameSelect;
     }
 
 
