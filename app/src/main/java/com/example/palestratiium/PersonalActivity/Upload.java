@@ -44,26 +44,22 @@ public class Upload extends AppCompatActivity implements Serializable, AdapterVi
     Esercizio esercizio = new Esercizio();
     PersonalTrainer  personal;
 
-
     private EditText titleEt, descrizioneEt;
     private VideoView videoView;
     private Button uploadVideoBtn;
     private FloatingActionButton selectVideoBtn;
     private Spinner seleziona_difficolta;
     private CheckBox petto, gambe, bicipiti, dorso, tricipiti, spalle;
+    private Esercizio.GruppoMuscolare gruppoSelezionato; //TODO
 
     private static final int VIDEO_PICK_GALLERY_CODE = 100;
     private static final int VIDEO_PICK_CAMERA_CODE = 100;
     private static final int CAMERA_REQUEST_CODE = 100;
 
-    private String gruppoMuscolare = "";
-
     private String[] cameraPermissions;
 
     private Uri videoUri; //uri del video selezionato
     private String stringUri;
-
-
 
     public static final String EXTRA_PT = "package com.example.palestratiium";
     @Override
@@ -80,8 +76,6 @@ public class Upload extends AppCompatActivity implements Serializable, AdapterVi
         }else{
             personal = new PersonalTrainer();
         }
-
-
 
         titleEt = findViewById(R.id.title_edit_text);
         descrizioneEt = findViewById(R.id.descrizione_edit_text);
@@ -119,7 +113,7 @@ public class Upload extends AppCompatActivity implements Serializable, AdapterVi
                 esercizio.setVideo(stringUri);
                 esercizio.setDescrizioene(descrizioneEt.getText().toString());
                 esercizio.setDifficolta(seleziona_difficolta.getSelectedItem().toString());
-                esercizio.setGruppoMuscolare(gruppoMuscolare);
+                esercizio.setGruppoMuscolare(gruppoSelezionato);
                 personal.addEsercizi(esercizio);
                 UserFactory.getInstance().addEsercizio(personal, esercizio);
                 Intent ex = new Intent(Upload.this, HomePersonalTrainer.class);
@@ -267,44 +261,32 @@ public class Upload extends AppCompatActivity implements Serializable, AdapterVi
             case R.id.checkBox:
                 if (petto.isChecked())
                     Toast.makeText(getApplicationContext(), "Petto", Toast.LENGTH_LONG).show();
-                if(gruppoMuscolare=="")
-                    gruppoMuscolare = "Petto, ";
-                else gruppoMuscolare = gruppoMuscolare + "petto, ";
+                gruppoSelezionato = Esercizio.GruppoMuscolare.PETTO;
                 break;
             case R.id.checkBox2:
                 if (spalle.isChecked())
                     Toast.makeText(getApplicationContext(), "Spalle", Toast.LENGTH_LONG).show();
-                if(gruppoMuscolare=="")
-                    gruppoMuscolare = "Spalle, ";
-                else gruppoMuscolare = gruppoMuscolare + "spalle, ";
+                gruppoSelezionato = Esercizio.GruppoMuscolare.SPALLE;
                 break;
             case R.id.checkBox3:
                 if (tricipiti.isChecked())
                     Toast.makeText(getApplicationContext(), "Tricipiti", Toast.LENGTH_LONG).show();
-                if(gruppoMuscolare=="")
-                    gruppoMuscolare = "Tricipiti, ";
-                else gruppoMuscolare = gruppoMuscolare + "tricipiti, ";
+                gruppoSelezionato = Esercizio.GruppoMuscolare.TRICIPITI;
                 break;
             case R.id.checkBox4:
                 if (gambe.isChecked())
                     Toast.makeText(getApplicationContext(), "Gambe", Toast.LENGTH_LONG).show();
-                if(gruppoMuscolare=="")
-                    gruppoMuscolare = "Gambe, ";
-                else gruppoMuscolare = gruppoMuscolare + "gambe, ";
+                gruppoSelezionato = Esercizio.GruppoMuscolare.GAMBE;
                 break;
             case R.id.checkBox5:
                 if (dorso.isChecked())
                     Toast.makeText(getApplicationContext(), "Dorso", Toast.LENGTH_LONG).show();
-                if(gruppoMuscolare=="")
-                    gruppoMuscolare = "Dorso, ";
-                else gruppoMuscolare = gruppoMuscolare + "dorso, ";
+                gruppoSelezionato = Esercizio.GruppoMuscolare.DORSO;
                 break;
             case R.id.checkBox6:
                 if (bicipiti.isChecked())
                     Toast.makeText(getApplicationContext(), "Bicipiti", Toast.LENGTH_LONG).show();
-                if(gruppoMuscolare=="")
-                    gruppoMuscolare = "Bicipiti, ";
-                else gruppoMuscolare = gruppoMuscolare + "bicipiti, ";
+                gruppoSelezionato = Esercizio.GruppoMuscolare.BICIPITI;
                 break;
         }
 

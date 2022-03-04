@@ -34,7 +34,7 @@ public class ModificaEsercizio extends AppCompatActivity implements Serializable
     Button confirmEdit;
     TextView gruppoM, difficoltaAttuale;
     private CheckBox petto, gambe, bicipiti, dorso, tricipiti, spalle;
-    private String gruppoMuscolare;
+    private Esercizio.GruppoMuscolare gruppoSelezionato;
     private Spinner seleziona_difficolta;
 
 
@@ -84,8 +84,8 @@ public class ModificaEsercizio extends AppCompatActivity implements Serializable
         nomeEsercizio.setHint(name);
         descrizioneEsercizio.setHint(descrizione);
         gruppoM.setText(gruppo);
-        gruppoMuscolare = gruppoM.getText().toString();
         difficoltaAttuale.setText(difficolta);
+        gruppoSelezionato = Esercizio.GruppoMuscolare.valueOf(gruppo);
 
         petto.setOnClickListener(this);
         spalle.setOnClickListener(this);
@@ -101,7 +101,7 @@ public class ModificaEsercizio extends AppCompatActivity implements Serializable
                 esercizio.setNome(nomeEsercizio.getText().toString());
                 esercizio.setDescrizioene(descrizioneEsercizio.getText().toString());
                 esercizio.setDifficolta(seleziona_difficolta.getSelectedItem().toString());
-                esercizio.setGruppoMuscolare(gruppoMuscolare);
+                esercizio.setGruppoMuscolare(gruppoSelezionato);
                 personalTrainer.addEsercizi(esercizio);
                 UserFactory.getInstance().addEsercizio(personalTrainer, esercizio);
                 Intent home = new Intent(ModificaEsercizio.this, HomePersonalTrainer.class);
@@ -119,44 +119,32 @@ public class ModificaEsercizio extends AppCompatActivity implements Serializable
             case R.id.checkBox:
                 if (petto.isChecked())
                     Toast.makeText(getApplicationContext(), "Petto", Toast.LENGTH_LONG).show();
-                if(gruppoMuscolare=="")
-                    gruppoMuscolare = "Petto, ";
-                else gruppoMuscolare = gruppoMuscolare + "petto, ";
+                gruppoSelezionato = Esercizio.GruppoMuscolare.PETTO;
                 break;
             case R.id.checkBox2:
                 if (spalle.isChecked())
                     Toast.makeText(getApplicationContext(), "Spalle", Toast.LENGTH_LONG).show();
-                if(gruppoMuscolare=="")
-                    gruppoMuscolare = "Spalle, ";
-                else gruppoMuscolare = gruppoMuscolare + "spalle, ";
+                gruppoSelezionato = Esercizio.GruppoMuscolare.SPALLE;
                 break;
             case R.id.checkBox3:
                 if (tricipiti.isChecked())
                     Toast.makeText(getApplicationContext(), "Tricipiti", Toast.LENGTH_LONG).show();
-                if(gruppoMuscolare=="")
-                    gruppoMuscolare = "Tricipiti, ";
-                else gruppoMuscolare = gruppoMuscolare + "tricipiti, ";
+                gruppoSelezionato = Esercizio.GruppoMuscolare.TRICIPITI;
                 break;
             case R.id.checkBox4:
                 if (gambe.isChecked())
                     Toast.makeText(getApplicationContext(), "Gambe", Toast.LENGTH_LONG).show();
-                if(gruppoMuscolare=="")
-                    gruppoMuscolare = "Gambe, ";
-                else gruppoMuscolare = gruppoMuscolare + "gambe, ";
+                gruppoSelezionato = Esercizio.GruppoMuscolare.GAMBE;
                 break;
             case R.id.checkBox5:
                 if (dorso.isChecked())
                     Toast.makeText(getApplicationContext(), "Dorso", Toast.LENGTH_LONG).show();
-                if(gruppoMuscolare=="")
-                    gruppoMuscolare = "Dorso, ";
-                else gruppoMuscolare = gruppoMuscolare + "dorso, ";
+                gruppoSelezionato = Esercizio.GruppoMuscolare.DORSO;
                 break;
             case R.id.checkBox6:
                 if (bicipiti.isChecked())
                     Toast.makeText(getApplicationContext(), "Bicipiti", Toast.LENGTH_LONG).show();
-                if(gruppoMuscolare=="")
-                    gruppoMuscolare = "Bicipiti, ";
-                else gruppoMuscolare = gruppoMuscolare + "bicipiti, ";
+                gruppoSelezionato = Esercizio.GruppoMuscolare.BICIPITI;
                 break;
         }
 

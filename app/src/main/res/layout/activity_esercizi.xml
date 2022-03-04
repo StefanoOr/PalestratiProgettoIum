@@ -111,7 +111,7 @@
         </RelativeLayout>
 
         <RelativeLayout
-            android:id="@+id/card_altro"
+            android:id="@+id/card_gruppo"
             android:layout_width="match_parent"
             android:layout_height="100dp"
             android:background="@drawable/card_background_edit_profile"
@@ -121,31 +121,31 @@
             app:layout_constraintTop_toBottomOf="@+id/card_descrizione">
 
             <TextView
-                android:id="@+id/text_altro"
+                android:id="@+id/text_gruppo"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_marginLeft="10dp"
                 android:layout_marginTop="10dp"
-                android:text="Altro"
+                android:text="GruppoMuscolare"
                 android:textColor="@color/barra_separatoria_secondaria"
                 android:textSize="25dp"
                 android:textStyle="bold" />
 
             <TextView
-                android:id="@+id/text_corpo_altro"
+                android:id="@+id/text_corpo_gruppo_muscolare"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:layout_alignBottom="@id/text_altro"
+                android:layout_alignBottom="@id/text_gruppo"
                 android:layout_marginLeft="10dp"
                 android:layout_marginBottom="-20dp"
-                android:text="........................."
+                android:text="corpo_gruppo_muscolare"
                 android:textColor="@color/white"
                 android:textSize="18dp" />
 
             <View
                 android:layout_width="match_parent"
                 android:layout_height="0.5dp"
-                android:layout_alignBottom="@id/text_corpo_altro"
+                android:layout_alignBottom="@id/text_corpo_gruppo_muscolare"
                 android:layout_marginBottom="-20dp"
                 android:layout_marginStart="25dp"
                 android:layout_marginEnd="25dp"
@@ -161,7 +161,7 @@
             android:background="@drawable/card_background_edit_profile"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toBottomOf="@id/card_altro">
+            app:layout_constraintTop_toBottomOf="@id/card_gruppo">
 
             <TextView
                 android:id="@+id/text_vota"

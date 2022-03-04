@@ -141,8 +141,15 @@ public class HomePersonalTrainer extends AppCompatActivity implements RecycleVie
     public void onItemClick(int position) {
         Intent intent = new Intent(HomePersonalTrainer.this, Esercizi.class);
 
+        Esercizio ex = personal.getEsercizio("a");
+
+        if(ex != null){
+            Esercizio.GruppoMuscolare muscolo = ex.getGruppoMuscolare();
+        }
+
         intent.putExtra("NAME",listaEserciziPt.get(position).getNome());
         intent.putExtra("DESCRIPTION",listaEserciziPt.get(position).getDescrizioene());
+        intent.putExtra("GRUPPOMUSCOLARE",listaEserciziPt.get(position).getGruppoMuscolare());
         intent.putExtra(EXTRA_PT, personal);
 
         startActivity(intent);

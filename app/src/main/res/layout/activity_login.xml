@@ -126,6 +126,7 @@
             android:backgroundTint="@color/barra_separatoria_principale"
             android:text="Sign In"
             android:textSize="24sp"
+            android:background="@drawable/upload_video_btn_layout"
             app:layout_constraintBottom_toBottomOf="parent"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintHorizontal_bias="0.497"

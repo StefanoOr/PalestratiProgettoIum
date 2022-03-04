@@ -147,12 +147,12 @@ public class UserFactory implements Serializable {
 
     public void initEsercizi(){
 
-        eserciziAtzeni.add(new Esercizio("Dip.Distensioni di braccia","aa","aaa","1",null));
-        eserciziAtzeni.add(new Esercizio("Barca","bb","bbb","2",null));
-        eserciziAtzeni.add(new Esercizio("Crunch","aa","aaa","3",null));
-        eserciziAtzeni.add(new Esercizio("Front squat","bb","bbb","2",null));
-        eserciziRoberto.add(new Esercizio("Panca piana","vv","provs","3",null));
-        eserciziRoberto.add(new Esercizio("Panca verticale","vv","provs","3",null));
+        eserciziAtzeni.add(new Esercizio("Dip.Distensioni di braccia","aa", Esercizio.GruppoMuscolare.BICIPITI,"1",null));
+        eserciziAtzeni.add(new Esercizio("Barca","bb", Esercizio.GruppoMuscolare.DORSO,"2",null));
+        eserciziAtzeni.add(new Esercizio("Crunch","aa", Esercizio.GruppoMuscolare.PETTO,"3",null));
+        eserciziAtzeni.add(new Esercizio("Front squat","bb", Esercizio.GruppoMuscolare.DORSO,"2",null));
+        eserciziRoberto.add(new Esercizio("Panca piana","vv", Esercizio.GruppoMuscolare.TRICIPITI,"3",null));
+        eserciziRoberto.add(new Esercizio("Panca verticale","vv", Esercizio.GruppoMuscolare.GAMBE,"3",null));
 
         allEsercizi.addAll(eserciziAtzeni);
         allEsercizi.addAll(eserciziRoberto);

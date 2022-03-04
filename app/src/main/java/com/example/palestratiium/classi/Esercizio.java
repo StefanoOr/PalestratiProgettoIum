@@ -7,21 +7,28 @@ import java.net.URI;
 
 public class Esercizio implements Serializable {
 
-    private  String nome;
-    private  String descrizioene;
-    private  String gruppoMuscolare;
+    private String nome;
+    private String descrizioene;
+
+    public enum GruppoMuscolare {
+        PETTO,
+        DORSO,
+        GAMBE,
+        TRICIPITI,
+        BICIPITI,
+        SPALLE
+    }
+
+    private GruppoMuscolare gruppoMuscolare;
+
     private String difficolta;
-
-
-
 
     private String video;
 
-
-    public Esercizio(String nome, String descrizioene, String gruppoMuscolare, String difficolta,String video){
+    public Esercizio(String nome, String descrizioene, GruppoMuscolare gruppoMuscolare, String difficolta,String video){
         this.nome=nome;
-        this.descrizioene=descrizioene;
-        this.gruppoMuscolare=gruppoMuscolare;
+        this.descrizioene= descrizioene;
+        this.gruppoMuscolare = gruppoMuscolare;
         this.difficolta=difficolta;
         this.video=video;
     }
@@ -53,11 +60,11 @@ public class Esercizio implements Serializable {
         this.descrizioene = descrizioene;
     }
 
-    public String getGruppoMuscolare() {
+    public GruppoMuscolare getGruppoMuscolare() {
         return gruppoMuscolare;
     }
 
-    public void setGruppoMuscolare(String gruppoMuscolare) {
+    public void setGruppoMuscolare(GruppoMuscolare gruppoMuscolare) {
         this.gruppoMuscolare = gruppoMuscolare;
     }
 
