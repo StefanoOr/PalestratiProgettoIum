@@ -44,6 +44,7 @@ public class Upload extends AppCompatActivity implements Serializable, AdapterVi
     Esercizio esercizio = new Esercizio();
     PersonalTrainer  personal;
 
+
     private EditText titleEt, descrizioneEt;
     private VideoView videoView;
     private Button uploadVideoBtn;
@@ -60,6 +61,9 @@ public class Upload extends AppCompatActivity implements Serializable, AdapterVi
     private String[] cameraPermissions;
 
     private Uri videoUri; //uri del video selezionato
+    private String stringUri;
+
+
 
     public static final String EXTRA_PT = "package com.example.palestratiium";
     @Override
@@ -76,6 +80,8 @@ public class Upload extends AppCompatActivity implements Serializable, AdapterVi
         }else{
             personal = new PersonalTrainer();
         }
+
+
 
         titleEt = findViewById(R.id.title_edit_text);
         descrizioneEt = findViewById(R.id.descrizione_edit_text);
@@ -110,7 +116,7 @@ public class Upload extends AppCompatActivity implements Serializable, AdapterVi
             public void onClick(View v) {
 
                 esercizio.setNome(titleEt.getText().toString());
-                esercizio.setVideo(videoUri);
+                esercizio.setVideo(stringUri);
                 esercizio.setDescrizioene(descrizioneEt.getText().toString());
                 esercizio.setDifficolta(seleziona_difficolta.getSelectedItem().toString());
                 esercizio.setGruppoMuscolare(gruppoMuscolare);
@@ -238,6 +244,8 @@ public class Upload extends AppCompatActivity implements Serializable, AdapterVi
                 setVideoToVideoView();
             }
         }
+        stringUri= videoUri.toString();
+
         super.onActivityResult(requestCode, resultCode, data);
     }
 

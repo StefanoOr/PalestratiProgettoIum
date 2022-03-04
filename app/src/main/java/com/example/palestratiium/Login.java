@@ -101,8 +101,6 @@ public class Login extends AppCompatActivity {
 
     private boolean checkInput() {
 
-
-
         userList = UserFactory.getInstance().getUsers();
         ptList =  UserFactory.getInstance().getPersonal();
 
@@ -112,7 +110,6 @@ public class Login extends AppCompatActivity {
             username.setError("Insert Username");
             errors++;
         }else{
-
             username.setError(null);
         }
         if(password.getEditText().getText().toString().length() == 0){  //the second condition is for the case where the user wrote and then erased all

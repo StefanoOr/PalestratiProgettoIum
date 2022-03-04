@@ -8,11 +8,12 @@ package com.example.palestratiium.classi;
 
 import com.example.palestratiium.DatePickerFragment;
 
+import java.io.Serializable;
 import java.util.ArrayList;
 import java.util.Calendar;
 import java.util.List;
 
-public class UserFactory {
+public class UserFactory implements Serializable {
 
     private static UserFactory singleton;
     private List<User> users = new ArrayList<>();
@@ -51,6 +52,7 @@ public class UserFactory {
             //TODO da verificare se funziona
             if(coach.get(i).getUsername().equals(pt.getUsername())){
                 coach.get(i).addEsercizi(esercizio);
+                allEsercizi.add(esercizio);
 
             }
         }

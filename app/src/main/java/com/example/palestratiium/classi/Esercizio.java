@@ -14,9 +14,11 @@ public class Esercizio implements Serializable {
 
 
 
-    private Uri video;
 
-    public Esercizio(String nome, String descrizioene, String gruppoMuscolare, String difficolta,Uri video){
+    private String video;
+
+
+    public Esercizio(String nome, String descrizioene, String gruppoMuscolare, String difficolta,String video){
         this.nome=nome;
         this.descrizioene=descrizioene;
         this.gruppoMuscolare=gruppoMuscolare;
@@ -25,11 +27,11 @@ public class Esercizio implements Serializable {
     }
 
 
-    public Uri getVideo() {
+    public String getVideo() {
         return video;
     }
 
-    public void setVideo(Uri video) {
+    public void setVideo(String video) {
         this.video = video;
     }
 
