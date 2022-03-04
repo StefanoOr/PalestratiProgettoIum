@@ -41,7 +41,7 @@ public class Esercizi extends AppCompatActivity implements Serializable{
 
         String name = getIntent().getStringExtra("NAME");
         String descrizione = getIntent().getStringExtra("DESCRIPTION");
-        String gruppo = getIntent().getStringExtra("GRUPPOMUSCOLARE");
+        Esercizio.GruppoMuscolare gruppo = (Esercizio.GruppoMuscolare) intent.getSerializableExtra("GRUPPOMUSCOLARE");
 
 
         nomeEsercizio= findViewById(R.id.esercizio_title);
@@ -51,7 +51,7 @@ public class Esercizi extends AppCompatActivity implements Serializable{
 
         nomeEsercizio.setText(name);
         descrizioneEsercizio.setText(descrizione);
-        gruppoMuscolare.setText(gruppo);
+        gruppoMuscolare.setText(gruppo.name());
 
         if(obj instanceof User){
             user = (User) obj;

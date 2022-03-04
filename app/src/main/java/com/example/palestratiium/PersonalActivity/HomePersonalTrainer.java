@@ -145,7 +145,10 @@ public class HomePersonalTrainer extends AppCompatActivity implements RecycleVie
 
         if(ex != null){
             Esercizio.GruppoMuscolare muscolo = ex.getGruppoMuscolare();
+            System.out.println(muscolo);
         }
+
+        Esercizio.GruppoMuscolare a = listaEserciziPt.get(position).getGruppoMuscolare();
 
         intent.putExtra("NAME",listaEserciziPt.get(position).getNome());
         intent.putExtra("DESCRIPTION",listaEserciziPt.get(position).getDescrizioene());

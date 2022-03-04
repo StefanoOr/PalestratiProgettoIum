@@ -94,7 +94,7 @@ public class PersonalTrainer implements Serializable {
 
     public Esercizio getEsercizio (String ex){
         for(int i=0;i<listaEsercizi.size();i++){
-            if(listaEsercizi.get(i).getNome() == ex){
+            if(listaEsercizi.get(i).getNome().equals(ex)){
                 return listaEsercizi.get(i);
             }
         }
