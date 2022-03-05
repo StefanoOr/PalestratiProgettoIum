@@ -5,6 +5,7 @@ import androidx.appcompat.app.AppCompatActivity;
 import android.content.Intent;
 import android.os.Bundle;
 import android.view.View;
+import android.widget.Button;
 import android.widget.ImageView;
 import android.widget.TextView;
 
@@ -20,8 +21,8 @@ public class EserciziActivity extends AppCompatActivity implements Serializable{
 
     User user;
     PersonalTrainer personalTrainer;
-    ImageView back;
-    TextView nomeEsercizio,descrizioneEsercizio,gruppoMuscolare;
+    Button back;
+    TextView nomeEsercizio,descrizioneEsercizio,gruppoMuscolare,difficoltaEsercizio;
     boolean isPt,isUser;
     public static final String EXTRA_USER = "package com.example.palestratiium";
     public static final String EXTRA_PT = "package com.example.palestratiium";
@@ -41,6 +42,7 @@ public class EserciziActivity extends AppCompatActivity implements Serializable{
 
         String name = getIntent().getStringExtra("NAME");
         String descrizione = getIntent().getStringExtra("DESCRIPTION");
+        String difficolta = getIntent().getStringExtra("DIFFICOLTA");
         MyEnum gruppo = (MyEnum) intent.getSerializableExtra("GRUPPOMUSCOLARE");
 
 
@@ -48,10 +50,12 @@ public class EserciziActivity extends AppCompatActivity implements Serializable{
         descrizioneEsercizio = findViewById(R.id.text_corpo_descrizione);
         back = findViewById(R.id.back_button);
         gruppoMuscolare = findViewById(R.id.text_corpo_gruppo_muscolare);
+        difficoltaEsercizio = findViewById(R.id.text_corpo_difficolta);
 
         nomeEsercizio.setText(name);
         descrizioneEsercizio.setText(descrizione);
         gruppoMuscolare.setText(gruppo.name());
+        difficoltaEsercizio.setText(difficolta);
 
         if(obj instanceof User){
             user = (User) obj;
