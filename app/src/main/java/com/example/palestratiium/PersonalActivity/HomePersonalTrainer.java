@@ -2,7 +2,6 @@ package com.example.palestratiium.PersonalActivity;
 
 import androidx.annotation.NonNull;
 import androidx.appcompat.app.AppCompatActivity;
-import androidx.recyclerview.widget.GridLayoutManager;
 import androidx.recyclerview.widget.LinearLayoutManager;
 import androidx.recyclerview.widget.RecyclerView;
 
@@ -14,13 +13,9 @@ import android.text.TextWatcher;
 import android.view.MenuItem;
 import android.widget.EditText;
 
-import com.example.palestratiium.Esercizi;
+import com.example.palestratiium.EserciziActivity;
 import com.example.palestratiium.Login;
-import com.example.palestratiium.ModificaEsercizio;
-import com.example.palestratiium.UserActivity.Home;
-import com.example.palestratiium.UserActivity.Profilo;
 import com.example.palestratiium.R;
-import com.example.palestratiium.adapter.Adapter_ListaEserciziHome;
 import com.example.palestratiium.adapter.Adapter_ListaEserciziHomePersonalT;
 import com.example.palestratiium.adapter.RecycleViewInterface;
 import com.example.palestratiium.classi.Esercizio;
@@ -29,7 +24,6 @@ import com.example.palestratiium.classi.UserFactory;
 import com.google.android.material.bottomnavigation.BottomNavigationView;
 
 import java.io.Serializable;
-import java.util.ArrayList;
 import java.util.List;
 
 public class HomePersonalTrainer extends AppCompatActivity implements RecycleViewInterface {
@@ -139,16 +133,9 @@ public class HomePersonalTrainer extends AppCompatActivity implements RecycleVie
 
     @Override
     public void onItemClick(int position) {
-        Intent intent = new Intent(HomePersonalTrainer.this, Esercizi.class);
+        Intent intent = new Intent(HomePersonalTrainer.this, EserciziActivity.class);
 
-        Esercizio ex = personal.getEsercizio("a");
 
-        if(ex != null){
-            Esercizio.GruppoMuscolare muscolo = ex.getGruppoMuscolare();
-            System.out.println(muscolo);
-        }
-
-        Esercizio.GruppoMuscolare a = listaEserciziPt.get(position).getGruppoMuscolare();
 
         intent.putExtra("NAME",listaEserciziPt.get(position).getNome());
         intent.putExtra("DESCRIPTION",listaEserciziPt.get(position).getDescrizioene());

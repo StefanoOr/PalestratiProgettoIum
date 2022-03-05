@@ -6,12 +6,17 @@
 
 package com.example.palestratiium.classi;
 
-import com.example.palestratiium.DatePickerFragment;
-
 import java.io.Serializable;
 import java.util.ArrayList;
 import java.util.Calendar;
 import java.util.List;
+
+import static com.example.palestratiium.classi.MyEnum.BICIPITI;
+import static com.example.palestratiium.classi.MyEnum.DORSO;
+import static com.example.palestratiium.classi.MyEnum.GAMBE;
+import static com.example.palestratiium.classi.MyEnum.PETTO;
+import static com.example.palestratiium.classi.MyEnum.TRICIPITI;
+import static com.example.palestratiium.classi.MyEnum.TUTTI;
 
 public class UserFactory implements Serializable {
 
@@ -34,16 +39,6 @@ public class UserFactory implements Serializable {
         }
         return singleton;
     }
-
-
-
-    /*public void setListaEsercizio(){
-        for(int i=0;i<coach.size();i++){
-            for(int j=0;j<coach.get(i).getEsercizio(j);j++){
-
-            }
-        }
-    }*/
 
 
     public void addEsercizio(PersonalTrainer pt,Esercizio esercizio){
@@ -74,8 +69,6 @@ public class UserFactory implements Serializable {
     public List<Esercizio> getAllEsercizi(){
             return allEsercizi;
     }
-
-
 
 
     public List<PersonalTrainer> getPersonal(){
@@ -147,12 +140,12 @@ public class UserFactory implements Serializable {
 
     public void initEsercizi(){
 
-        eserciziAtzeni.add(new Esercizio("Dip.Distensioni di braccia","aa", Esercizio.GruppoMuscolare.BICIPITI,"1",null));
-        eserciziAtzeni.add(new Esercizio("Barca","bb", Esercizio.GruppoMuscolare.DORSO,"2",null));
-        eserciziAtzeni.add(new Esercizio("Crunch","aa", Esercizio.GruppoMuscolare.PETTO,"3",null));
-        eserciziAtzeni.add(new Esercizio("Front squat","bb", Esercizio.GruppoMuscolare.DORSO,"2",null));
-        eserciziRoberto.add(new Esercizio("Panca piana","vv", Esercizio.GruppoMuscolare.TRICIPITI,"3",null));
-        eserciziRoberto.add(new Esercizio("Panca verticale","vv", Esercizio.GruppoMuscolare.GAMBE,"3",null));
+        eserciziAtzeni.add(new Esercizio("Dip.Distensioni di braccia","aa", BICIPITI,"1",null));
+        eserciziAtzeni.add(new Esercizio("Barca","bb", DORSO,"2",null));
+        eserciziAtzeni.add(new Esercizio("Crunch","aa", PETTO,"3",null));
+        eserciziAtzeni.add(new Esercizio("Front squat","bb", DORSO,"2",null));
+        eserciziRoberto.add(new Esercizio("Panca piana","vv", TRICIPITI,"3",null));
+        eserciziRoberto.add(new Esercizio("Panca verticale","vv", GAMBE,"3",null));
 
         allEsercizi.addAll(eserciziAtzeni);
         allEsercizi.addAll(eserciziRoberto);
@@ -181,6 +174,35 @@ public class UserFactory implements Serializable {
                 users.add(user);
             }
         }
+    }
+
+    public List<Esercizio> lisTest(PersonalTrainer pt, MyEnum gruppoMuscolare){
+
+        List<Esercizio> exe ;
+        List<Esercizio> esercizi = new ArrayList<>();
+
+        if(pt.getUsername().equals("all") && gruppoMuscolare.equals(TUTTI) ){
+            return getAllEsercizi();
+        }
+
+        if(pt.getUsername().equals("all")){
+            exe=getAllEsercizi();
+        }else{
+            exe=(getEserciziPt(pt));
+        }
+
+        if(gruppoMuscolare.equals(TUTTI)){
+            return exe;
+        }
+
+       for (int j=0; j<exe.size(); j++){
+           if(exe.get(j).getGruppoMuscolare()==gruppoMuscolare){
+               esercizi.add(exe.get(j));
+           }
+       }
+
+
+        return  esercizi;
     }
 
 }

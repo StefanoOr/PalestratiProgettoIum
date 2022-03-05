@@ -4,7 +4,7 @@
     Esercitazione Bonus
  */
 
-package com.example.palestratiium;
+package com.example.palestratiium.classi;
 
 import android.app.AlertDialog;
 import android.app.Dialog;

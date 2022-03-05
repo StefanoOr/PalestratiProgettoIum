@@ -24,7 +24,7 @@
         <activity
             android:name=".PersonalActivity.Upload"
             android:exported="false" />
-        <activity android:name=".Esercizi" />
+        <activity android:name=".EserciziActivity" />
         <activity
             android:name=".UserActivity.Profilo"
             android:exported="false" />

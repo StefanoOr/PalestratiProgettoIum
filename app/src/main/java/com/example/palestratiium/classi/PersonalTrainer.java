@@ -92,7 +92,7 @@ public class PersonalTrainer implements Serializable {
         this.team = team;
     }
 
-    public Esercizio getEsercizio (String ex){
+    public Esercizio getEsercizioString (String ex){
         for(int i=0;i<listaEsercizi.size();i++){
             if(listaEsercizi.get(i).getNome().equals(ex)){
                 return listaEsercizi.get(i);
@@ -101,6 +101,9 @@ public class PersonalTrainer implements Serializable {
         return null;
     }
 
+    public Esercizio getEsercizio(int index){
+        return listaEsercizi.get(index);
+    }
 
 
 

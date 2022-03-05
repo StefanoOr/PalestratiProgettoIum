@@ -18,6 +18,7 @@ import android.widget.Toast;
 import com.example.palestratiium.PersonalActivity.HomePersonalTrainer;
 import com.example.palestratiium.UserActivity.Home;
 import com.example.palestratiium.classi.Esercizio;
+import com.example.palestratiium.classi.MyEnum;
 import com.example.palestratiium.classi.PersonalTrainer;
 import com.example.palestratiium.classi.UserFactory;
 
@@ -85,7 +86,7 @@ public class ModificaEsercizio extends AppCompatActivity implements Serializable
         descrizioneEsercizio.setHint(descrizione);
         gruppoM.setText(gruppo);
         difficoltaAttuale.setText(difficolta);
-        gruppoSelezionato = Esercizio.GruppoMuscolare.valueOf(gruppo);
+      // gruppoSelezionato = MyEnum.valueOf(gruppo);
 
         petto.setOnClickListener(this);
         spalle.setOnClickListener(this);
@@ -101,7 +102,7 @@ public class ModificaEsercizio extends AppCompatActivity implements Serializable
                 esercizio.setNome(nomeEsercizio.getText().toString());
                 esercizio.setDescrizioene(descrizioneEsercizio.getText().toString());
                 esercizio.setDifficolta(seleziona_difficolta.getSelectedItem().toString());
-                esercizio.setGruppoMuscolare(gruppoSelezionato);
+               // esercizio.setGruppoMuscolare(gruppoSelezionato);
                 personalTrainer.addEsercizi(esercizio);
                 UserFactory.getInstance().addEsercizio(personalTrainer, esercizio);
                 Intent home = new Intent(ModificaEsercizio.this, HomePersonalTrainer.class);

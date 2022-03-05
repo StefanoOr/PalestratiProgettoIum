@@ -12,11 +12,11 @@ import java.io.Serializable;
 
 import com.example.palestratiium.PersonalActivity.HomePersonalTrainer;
 import com.example.palestratiium.UserActivity.Home;
-import com.example.palestratiium.classi.Esercizio;
+import com.example.palestratiium.classi.MyEnum;
 import com.example.palestratiium.classi.PersonalTrainer;
 import com.example.palestratiium.classi.User;
 
-public class Esercizi extends AppCompatActivity implements Serializable{
+public class EserciziActivity extends AppCompatActivity implements Serializable{
 
     User user;
     PersonalTrainer personalTrainer;
@@ -41,7 +41,7 @@ public class Esercizi extends AppCompatActivity implements Serializable{
 
         String name = getIntent().getStringExtra("NAME");
         String descrizione = getIntent().getStringExtra("DESCRIPTION");
-        Esercizio.GruppoMuscolare gruppo = (Esercizio.GruppoMuscolare) intent.getSerializableExtra("GRUPPOMUSCOLARE");
+        MyEnum gruppo = (MyEnum) intent.getSerializableExtra("GRUPPOMUSCOLARE");
 
 
         nomeEsercizio= findViewById(R.id.esercizio_title);
@@ -74,11 +74,11 @@ public class Esercizi extends AppCompatActivity implements Serializable{
             @Override
             public void onClick(View v) {
                 if(isUser) {
-                    Intent home = new Intent(Esercizi.this, Home.class);
+                    Intent home = new Intent(EserciziActivity.this, Home.class);
                     home.putExtra(EXTRA_USER, user);
                     startActivity(home);
                 }else if(isPt) {
-                    Intent home = new Intent(Esercizi.this, HomePersonalTrainer.class);
+                    Intent home = new Intent(EserciziActivity.this, HomePersonalTrainer.class);
                     home.putExtra(EXTRA_PT, personalTrainer);
                     startActivity(home);
                 }

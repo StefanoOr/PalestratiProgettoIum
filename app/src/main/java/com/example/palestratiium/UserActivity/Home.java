@@ -1,8 +1,4 @@
-/*
-    Corso IUM - AA 2019 - 2020
-    65577 - Daniele Stochino
-    Esercitazione Bonus
- */
+
 
 package com.example.palestratiium.UserActivity;
 
@@ -17,14 +13,16 @@ import android.os.Bundle;
 import android.view.MenuItem;
 import android.view.View;
 import android.widget.AdapterView;
+import android.widget.ArrayAdapter;
 import android.widget.Button;
 import android.widget.Spinner;
-import android.widget.Toast;
 
-import com.example.palestratiium.Esercizi;
+import com.example.palestratiium.EserciziActivity;
 import com.example.palestratiium.Login;
 import com.example.palestratiium.R;
 import com.example.palestratiium.adapter.CoachAdapter;
+import com.example.palestratiium.adapter.GruppoMuscolareAdapter;
+import com.example.palestratiium.classi.MyEnum;
 import com.google.android.material.bottomnavigation.BottomNavigationView;
 
 import java.io.Serializable;
@@ -46,7 +44,8 @@ public class Home extends AppCompatActivity implements RecycleViewInterface {
     Button filtro;
     private CoachAdapter coachAdapter;
 
-    Spinner spinnerCoach;
+    Spinner spinnerCoach,spinnerGruppoMuscolare;
+
     String clickedCountryName;
 
 
@@ -57,6 +56,7 @@ public class Home extends AppCompatActivity implements RecycleViewInterface {
     private RecyclerView.LayoutManager mLayoutManager;
     RecyclerView mRecyclerView;
     RecyclerView.Adapter adapter;
+    MyEnum gruppoMuscolare=MyEnum.TUTTI;
     public static final String EXTRA_USER = "package com.example.palestratiium";
 
 
@@ -66,14 +66,15 @@ public class Home extends AppCompatActivity implements RecycleViewInterface {
         setContentView(R.layout.activity_home);
 
         coachAdapter = new CoachAdapter(this, (ArrayList<PersonalTrainer>) UserFactory.getInstance().getPersonal());
+
         spinnerCoach = findViewById(R.id.spinner_coachUser1);
+        spinnerGruppoMuscolare = findViewById(R.id.spinner_gruppo_muscolare);
         filtro = findViewById(R.id.filtroUserHome);
+
 
         Intent intent = getIntent();
         Serializable obj = intent.getSerializableExtra(Login.EXTRA_USER);
-        PersonalTrainer name =  (PersonalTrainer) getIntent().getSerializableExtra("PERSONAL");
-        //PersonalTrainer coachSelect = get
-        System.out.println(name);
+
         if(obj instanceof User){
             user = (User) obj;
 
@@ -99,29 +100,11 @@ public class Home extends AppCompatActivity implements RecycleViewInterface {
             @Override
             public void onItemSelected(AdapterView<?> parent, View view, int position, long id) {
                 coach = (PersonalTrainer) parent.getItemAtPosition(position);
-                PersonalTrainer clickedItem = (PersonalTrainer) parent.getItemAtPosition(position);
-                clickedCountryName = clickedItem.getUsername();
+
                 System.out.println(clickedCountryName);
 
 
-                if(coach.getUsername() == "all") {
-                    listaEserciziCard = UserFactory.getInstance().getAllEsercizi();
-                }else{
-                    listaEserciziCard = UserFactory.getInstance().getEserciziPt(coach);
-                }
-
-
-                if(listaEserciziCard.size()>0){
-                    mRecyclerView = findViewById(R.id.listRecyclerView_esercizi);
-                    mRecyclerView.setHasFixedSize(true);
-                    mLayoutManager = new GridLayoutManager(Home.this,3);
-
-                    adapter = new Adapter_ListaEserciziHome(listaEserciziCard,Home.this);
-                    mRecyclerView.setLayoutManager(mLayoutManager);
-                    mRecyclerView.setAdapter(adapter);
-                }
-
-
+                adapterCard();
 
             }
 
@@ -131,6 +114,22 @@ public class Home extends AppCompatActivity implements RecycleViewInterface {
             }
         });
 
+
+        spinnerGruppoMuscolare.setAdapter(new ArrayAdapter<MyEnum>(this, android.R.layout.simple_spinner_item, MyEnum.values()));
+        spinnerGruppoMuscolare.setOnItemSelectedListener(new AdapterView.OnItemSelectedListener() {
+            @Override
+            public void onItemSelected(AdapterView<?> parent, View view, int position, long id) {
+                gruppoMuscolare = (MyEnum) parent.getItemAtPosition(position);
+
+                adapterCard();
+                System.out.println(clickedCountryName);
+            }
+
+            @Override
+            public void onNothingSelected(AdapterView<?> parent) {
+
+            }
+        });
 
 
 
@@ -177,12 +176,29 @@ public class Home extends AppCompatActivity implements RecycleViewInterface {
 
     @Override
     public void onItemClick(int position) {
-        Intent intent = new Intent(Home.this, Esercizi.class);
+        Intent intent = new Intent(Home.this, EserciziActivity.class);
 
         intent.putExtra("NAME",listaEserciziCard.get(position).getNome());
         intent.putExtra("DESCRIPTION",listaEserciziCard.get(position).getDescrizioene());
+        intent.putExtra("GRUPPOMUSCOLARE",listaEserciziCard.get(position).getGruppoMuscolare());
         intent.putExtra(EXTRA_USER, user);
 
         startActivity(intent);
+    }
+
+
+    public void adapterCard (){
+
+
+        listaEserciziCard = UserFactory.getInstance().lisTest(coach,gruppoMuscolare);
+
+            mRecyclerView = findViewById(R.id.listRecyclerView_esercizi);
+            mRecyclerView.setHasFixedSize(true);
+            mLayoutManager = new GridLayoutManager(Home.this,3);
+
+            adapter = new Adapter_ListaEserciziHome(listaEserciziCard,Home.this);
+            mRecyclerView.setLayoutManager(mLayoutManager);
+            mRecyclerView.setAdapter(adapter);
+       // }
     }
 }

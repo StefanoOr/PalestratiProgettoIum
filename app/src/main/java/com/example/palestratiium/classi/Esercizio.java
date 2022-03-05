@@ -1,16 +1,13 @@
 package com.example.palestratiium.classi;
 
-import android.net.Uri;
-
 import java.io.Serializable;
-import java.net.URI;
 
 public class Esercizio implements Serializable {
 
     private String nome;
     private String descrizioene;
 
-    public enum GruppoMuscolare {
+    public  enum GruppoMuscolare {
         PETTO,
         DORSO,
         GAMBE,
@@ -19,13 +16,13 @@ public class Esercizio implements Serializable {
         SPALLE
     }
 
-    private GruppoMuscolare gruppoMuscolare;
+    private MyEnum gruppoMuscolare;
 
     private String difficolta;
 
     private String video;
 
-    public Esercizio(String nome, String descrizioene, GruppoMuscolare gruppoMuscolare, String difficolta,String video){
+    public Esercizio(String nome, String descrizioene, MyEnum gruppoMuscolare, String difficolta,String video){
         this.nome=nome;
         this.descrizioene= descrizioene;
         this.gruppoMuscolare = gruppoMuscolare;
@@ -60,11 +57,13 @@ public class Esercizio implements Serializable {
         this.descrizioene = descrizioene;
     }
 
-    public GruppoMuscolare getGruppoMuscolare() {
+
+
+    public MyEnum getGruppoMuscolare() {
         return gruppoMuscolare;
     }
 
-    public void setGruppoMuscolare(GruppoMuscolare gruppoMuscolare) {
+    public void setGruppoMuscolare(MyEnum gruppoMuscolare) {
         this.gruppoMuscolare = gruppoMuscolare;
     }
 

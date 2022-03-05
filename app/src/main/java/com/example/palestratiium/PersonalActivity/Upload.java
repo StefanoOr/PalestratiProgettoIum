@@ -113,7 +113,7 @@ public class Upload extends AppCompatActivity implements Serializable, AdapterVi
                 esercizio.setVideo(stringUri);
                 esercizio.setDescrizioene(descrizioneEt.getText().toString());
                 esercizio.setDifficolta(seleziona_difficolta.getSelectedItem().toString());
-                esercizio.setGruppoMuscolare(gruppoSelezionato);
+                //esercizio.setGruppoMuscolare(gruppoSelezionato);
                 personal.addEsercizi(esercizio);
                 UserFactory.getInstance().addEsercizio(personal, esercizio);
                 Intent ex = new Intent(Upload.this, HomePersonalTrainer.class);
