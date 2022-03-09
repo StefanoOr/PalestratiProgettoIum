@@ -34,11 +34,13 @@ import com.example.palestratiium.UserActivity.Profilo;
 import com.example.palestratiium.classi.Esercizio;
 import com.example.palestratiium.classi.MyEnum;
 import com.example.palestratiium.classi.PersonalTrainer;
+import com.example.palestratiium.classi.User;
 import com.example.palestratiium.classi.UserFactory;
 import com.google.android.material.bottomnavigation.BottomNavigationView;
 import com.google.android.material.floatingactionbutton.FloatingActionButton;
 
 import java.io.Serializable;
+import java.util.List;
 
 public class Upload extends AppCompatActivity implements Serializable, AdapterView.OnItemSelectedListener, View.OnClickListener {
 
@@ -110,16 +112,18 @@ public class Upload extends AppCompatActivity implements Serializable, AdapterVi
             @Override
             public void onClick(View v) {
 
-                esercizio.setNome(titleEt.getText().toString());
-                esercizio.setVideo(stringUri);
-                esercizio.setDescrizioene(descrizioneEt.getText().toString());
-                esercizio.setDifficolta(seleziona_difficolta.getSelectedItem().toString());
-                esercizio.setGruppoMuscolare(gruppoSelezionato);
-                personal.addEsercizi(esercizio);
-                UserFactory.getInstance().addEsercizio(personal, esercizio);
-                Intent ex = new Intent(Upload.this, HomePersonalTrainer.class);
-                ex.putExtra(EXTRA_PT, personal);
-                startActivity(ex);
+                if(checkInput()) {
+                    esercizio.setNome(titleEt.getText().toString());
+                    esercizio.setVideo(stringUri);
+                    esercizio.setDescrizioene(descrizioneEt.getText().toString());
+                    esercizio.setDifficolta(seleziona_difficolta.getSelectedItem().toString());
+                    esercizio.setGruppoMuscolare(gruppoSelezionato);
+                    personal.addEsercizi(esercizio);
+                    UserFactory.getInstance().addEsercizio(personal, esercizio);
+                    Intent ex = new Intent(Upload.this, HomePersonalTrainer.class);
+                    ex.putExtra(EXTRA_PT, personal);
+                    startActivity(ex);
+                }
             }
         });
 
@@ -130,6 +134,28 @@ public class Upload extends AppCompatActivity implements Serializable, AdapterVi
             }
         });
 
+    }
+
+    private boolean checkInput() {
+
+        //how many error occurred? We need to save the number
+        int errors = 0;
+
+        if(titleEt.getText().toString() == null || titleEt.getText().length() == 0){
+            titleEt.setError("Insert Title");
+            errors++;
+        }else{
+            titleEt.setError(null);
+        }
+
+        if(descrizioneEt.getText().toString() == null || descrizioneEt.getText().length() == 0){
+            descrizioneEt.setError("Insert Title");
+            errors++;
+        }else{
+            descrizioneEt.setError(null);
+        }
+
+        return (errors == 0);
     }
 
     private void videoPickDialog() {
