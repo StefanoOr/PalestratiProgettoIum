@@ -32,6 +32,7 @@ import com.example.palestratiium.Login;
 import com.example.palestratiium.R;
 import com.example.palestratiium.UserActivity.Profilo;
 import com.example.palestratiium.classi.Esercizio;
+import com.example.palestratiium.classi.MyEnum;
 import com.example.palestratiium.classi.PersonalTrainer;
 import com.example.palestratiium.classi.UserFactory;
 import com.google.android.material.bottomnavigation.BottomNavigationView;
@@ -50,7 +51,7 @@ public class Upload extends AppCompatActivity implements Serializable, AdapterVi
     private FloatingActionButton selectVideoBtn;
     private Spinner seleziona_difficolta;
     private CheckBox petto, gambe, bicipiti, dorso, tricipiti, spalle;
-    private Esercizio.GruppoMuscolare gruppoSelezionato; //TODO
+    private MyEnum gruppoSelezionato;
 
     private static final int VIDEO_PICK_GALLERY_CODE = 100;
     private static final int VIDEO_PICK_CAMERA_CODE = 100;
@@ -113,7 +114,7 @@ public class Upload extends AppCompatActivity implements Serializable, AdapterVi
                 esercizio.setVideo(stringUri);
                 esercizio.setDescrizioene(descrizioneEt.getText().toString());
                 esercizio.setDifficolta(seleziona_difficolta.getSelectedItem().toString());
-                //esercizio.setGruppoMuscolare(gruppoSelezionato);
+                esercizio.setGruppoMuscolare(gruppoSelezionato);
                 personal.addEsercizi(esercizio);
                 UserFactory.getInstance().addEsercizio(personal, esercizio);
                 Intent ex = new Intent(Upload.this, HomePersonalTrainer.class);
@@ -261,32 +262,32 @@ public class Upload extends AppCompatActivity implements Serializable, AdapterVi
             case R.id.checkBox:
                 if (petto.isChecked())
                     Toast.makeText(getApplicationContext(), "Petto", Toast.LENGTH_LONG).show();
-                gruppoSelezionato = Esercizio.GruppoMuscolare.PETTO;
+                gruppoSelezionato = MyEnum.PETTO;
                 break;
             case R.id.checkBox2:
                 if (spalle.isChecked())
                     Toast.makeText(getApplicationContext(), "Spalle", Toast.LENGTH_LONG).show();
-                gruppoSelezionato = Esercizio.GruppoMuscolare.SPALLE;
+                gruppoSelezionato = MyEnum.SPALLE;
                 break;
             case R.id.checkBox3:
                 if (tricipiti.isChecked())
                     Toast.makeText(getApplicationContext(), "Tricipiti", Toast.LENGTH_LONG).show();
-                gruppoSelezionato = Esercizio.GruppoMuscolare.TRICIPITI;
+                gruppoSelezionato = MyEnum.TRICIPITI;
                 break;
             case R.id.checkBox4:
                 if (gambe.isChecked())
                     Toast.makeText(getApplicationContext(), "Gambe", Toast.LENGTH_LONG).show();
-                gruppoSelezionato = Esercizio.GruppoMuscolare.GAMBE;
+                gruppoSelezionato = MyEnum.GAMBE;
                 break;
             case R.id.checkBox5:
                 if (dorso.isChecked())
                     Toast.makeText(getApplicationContext(), "Dorso", Toast.LENGTH_LONG).show();
-                gruppoSelezionato = Esercizio.GruppoMuscolare.DORSO;
+                gruppoSelezionato = MyEnum.DORSO;
                 break;
             case R.id.checkBox6:
                 if (bicipiti.isChecked())
                     Toast.makeText(getApplicationContext(), "Bicipiti", Toast.LENGTH_LONG).show();
-                gruppoSelezionato = Esercizio.GruppoMuscolare.BICIPITI;
+                gruppoSelezionato = MyEnum.BICIPITI;
                 break;
         }
 

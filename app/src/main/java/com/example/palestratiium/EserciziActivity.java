@@ -3,11 +3,15 @@ package com.example.palestratiium;
 import androidx.appcompat.app.AppCompatActivity;
 
 import android.content.Intent;
+import android.media.MediaPlayer;
+import android.net.Uri;
 import android.os.Bundle;
 import android.view.View;
 import android.widget.Button;
 import android.widget.ImageView;
+import android.widget.MediaController;
 import android.widget.TextView;
+import android.widget.VideoView;
 
 import java.io.Serializable;
 
@@ -22,6 +26,7 @@ public class EserciziActivity extends AppCompatActivity implements Serializable{
     User user;
     PersonalTrainer personalTrainer;
     Button back;
+    VideoView videoView;
     TextView nomeEsercizio,descrizioneEsercizio,gruppoMuscolare,difficoltaEsercizio;
     boolean isPt,isUser;
     public static final String EXTRA_USER = "package com.example.palestratiium";
@@ -44,6 +49,7 @@ public class EserciziActivity extends AppCompatActivity implements Serializable{
         String descrizione = getIntent().getStringExtra("DESCRIPTION");
         String difficolta = getIntent().getStringExtra("DIFFICOLTA");
         MyEnum gruppo = (MyEnum) intent.getSerializableExtra("GRUPPOMUSCOLARE");
+        String video = getIntent().getStringExtra("VIDEO");
 
 
         nomeEsercizio= findViewById(R.id.esercizio_title);
@@ -51,6 +57,11 @@ public class EserciziActivity extends AppCompatActivity implements Serializable{
         back = findViewById(R.id.back_button);
         gruppoMuscolare = findViewById(R.id.text_corpo_gruppo_muscolare);
         difficoltaEsercizio = findViewById(R.id.text_corpo_difficolta);
+        videoView = findViewById(R.id.videoView);
+
+        if(video != null) {
+            setVideoToVideoView(video);
+        }
 
         nomeEsercizio.setText(name);
         descrizioneEsercizio.setText(descrizione);
@@ -89,5 +100,21 @@ public class EserciziActivity extends AppCompatActivity implements Serializable{
             }
         });
 
+    }
+
+    private void setVideoToVideoView(String v){
+        MediaController mediaController = new MediaController(this);
+        mediaController.setAnchorView(videoView);
+
+        Uri vUri = Uri.parse(v);
+        videoView.setMediaController(mediaController);
+        videoView.setVideoURI(vUri);
+        videoView.requestFocus();
+        videoView.setOnPreparedListener(new MediaPlayer.OnPreparedListener() {
+            @Override
+            public void onPrepared(MediaPlayer mp) {
+                videoView.pause();
+            }
+        });
     }
 }
