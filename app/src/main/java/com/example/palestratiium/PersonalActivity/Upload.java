@@ -25,6 +25,7 @@ import android.widget.CheckBox;
 import android.widget.EditText;
 import android.widget.MediaController;
 import android.widget.Spinner;
+import android.widget.TextView;
 import android.widget.Toast;
 import android.widget.VideoView;
 
@@ -47,13 +48,14 @@ public class Upload extends AppCompatActivity implements Serializable, AdapterVi
     Esercizio esercizio = new Esercizio();
     PersonalTrainer  personal;
 
+    private EditText videoErr, checkBoxErr;
     private EditText titleEt, descrizioneEt;
     private VideoView videoView;
     private Button uploadVideoBtn;
     private FloatingActionButton selectVideoBtn;
     private Spinner seleziona_difficolta;
     private CheckBox petto, gambe, bicipiti, dorso, tricipiti, spalle;
-    private MyEnum gruppoSelezionato;
+    private MyEnum gruppoSelezionato = null;
 
     private static final int VIDEO_PICK_GALLERY_CODE = 100;
     private static final int VIDEO_PICK_CAMERA_CODE = 100;
@@ -80,6 +82,8 @@ public class Upload extends AppCompatActivity implements Serializable, AdapterVi
             personal = new PersonalTrainer();
         }
 
+        checkBoxErr = findViewById(R.id.error_checkBox);
+        videoErr = findViewById(R.id.error_video);
         titleEt = findViewById(R.id.title_edit_text);
         descrizioneEt = findViewById(R.id.descrizione_edit_text);
         videoView = findViewById(R.id.videoView);
@@ -142,18 +146,37 @@ public class Upload extends AppCompatActivity implements Serializable, AdapterVi
         int errors = 0;
 
         if(titleEt.getText().toString() == null || titleEt.getText().length() == 0){
-            titleEt.setError("Insert Title");
+            titleEt.setError("Perfavore inserisci un titolo");
             errors++;
         }else{
             titleEt.setError(null);
         }
 
         if(descrizioneEt.getText().toString() == null || descrizioneEt.getText().length() == 0){
-            descrizioneEt.setError("Insert Title");
+            descrizioneEt.setError("Perfavore inserisci una descrizione");
             errors++;
         }else{
             descrizioneEt.setError(null);
         }
+
+        if(videoUri == null){
+            videoErr.setVisibility(View.VISIBLE);
+            videoErr.setError("Perfavore inserisci un video");
+            errors++;
+        }else{
+            videoErr.setVisibility(View.INVISIBLE);
+            videoErr.setError(null);
+        }
+
+        //TODO
+        /*if(!petto.isChecked() && !gambe.isChecked() && !dorso.isChecked() && !bicipiti.isChecked() && !tricipiti.isChecked() && !spalle.isChecked()){
+            checkBoxErr.setVisibility(View.VISIBLE);
+            checkBoxErr.setError("Perfavore inserisci un gruppo muscolare");
+            errors++;
+        }else{
+            checkBoxErr.setVisibility(View.INVISIBLE);
+            checkBoxErr.setError(null);
+        }*///TODO
 
         return (errors == 0);
     }
