@@ -59,7 +59,7 @@ public class EserciziActivity extends AppCompatActivity implements Serializable{
         String difficolta = getIntent().getStringExtra("DIFFICOLTA");
         MyEnum gruppo = (MyEnum) intent.getSerializableExtra("GRUPPOMUSCOLARE");
         String video = getIntent().getStringExtra("VIDEO");
-        float rate = getIntent().getIntExtra("RATING",0);
+        float rate = getIntent().getExtras().getFloat("RATING");
 
         nomeEsercizio= findViewById(R.id.esercizio_title);
         descrizioneEsercizio = findViewById(R.id.text_corpo_descrizione);

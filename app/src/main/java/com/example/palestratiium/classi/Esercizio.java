@@ -38,11 +38,11 @@ public class Esercizio implements Serializable {
     public float getRating(){
         float rate=0;
         for (int i=0 ; i<rating.size(); i++){
-            rate=+ rating.get(i);
+            rate+=rating.get(i);
         }
         if(rate!=0){
-            rate= rate/rating.size();
-            return rate;
+            return rate/rating.size();
+
         }
         return rate;
     }
