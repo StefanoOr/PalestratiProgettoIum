@@ -205,4 +205,14 @@ public class UserFactory implements Serializable {
         return  esercizi;
     }
 
+
+    public Esercizio getEsercizioNome(String nomeEsercizio){
+        for (int i=0 ; i<allEsercizi.size() ; i++){
+            if(allEsercizi.get(i).getNome().equals(nomeEsercizio)){
+                return allEsercizi.get(i);
+            }
+        }
+        return null;
+    }
+
 }

@@ -1,11 +1,15 @@
 package com.example.palestratiium.classi;
 
 import java.io.Serializable;
+import java.util.ArrayList;
+import java.util.List;
 
 public class Esercizio implements Serializable {
 
     private String nome;
     private String descrizioene;
+    private List<Float> rating= new ArrayList<>();
+
 
     public  enum GruppoMuscolare {
         PETTO,
@@ -28,6 +32,23 @@ public class Esercizio implements Serializable {
         this.gruppoMuscolare = gruppoMuscolare;
         this.difficolta=difficolta;
         this.video=video;
+    }
+
+
+    public float getRating(){
+        float rate=0;
+        for (int i=0 ; i<rating.size(); i++){
+            rate=+ rating.get(i);
+        }
+        if(rate!=0){
+            rate= rate/rating.size();
+            return rate;
+        }
+        return rate;
+    }
+
+    public void setRating(float rate){
+        rating.add(rate);
     }
 
 
