@@ -12,6 +12,7 @@
     <string name="corpo_descrizioe">corpo_descrizione</string>
     <string name="profile">profile</string>
     <string name="Nome_EsercizioPt">EsercizioPt</string>
+    <string name="nuovo_esercizio">Nuovo Esercizio</string>
 
     <string-array name="difficolta">
         <item>1</item>

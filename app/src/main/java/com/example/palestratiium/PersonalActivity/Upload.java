@@ -23,6 +23,7 @@ import android.widget.ArrayAdapter;
 import android.widget.Button;
 import android.widget.CheckBox;
 import android.widget.EditText;
+import android.widget.ImageView;
 import android.widget.MediaController;
 import android.widget.Spinner;
 import android.widget.TextView;
@@ -51,18 +52,22 @@ public class Upload extends AppCompatActivity implements Serializable, AdapterVi
     private EditText videoErr, checkBoxErr;
     private EditText titleEt, descrizioneEt;
     private VideoView videoView;
-    private Button uploadVideoBtn;
+    private ImageView imageView;
+    private Button uploadVideoBtn, uploadImageBtn;
     private FloatingActionButton selectVideoBtn;
     private Spinner seleziona_difficolta;
     private CheckBox petto, gambe, bicipiti, dorso, tricipiti, spalle;
     private MyEnum gruppoSelezionato = null;
 
+
     private static final int VIDEO_PICK_GALLERY_CODE = 100;
     private static final int VIDEO_PICK_CAMERA_CODE = 100;
     private static final int CAMERA_REQUEST_CODE = 100;
+    private static final int SELECT_IMAGE_CODE = 200;
 
     private String[] cameraPermissions;
 
+    private Uri imageUri;
     private Uri videoUri; //uri del video selezionato
     private String stringUri;
 
@@ -72,7 +77,7 @@ public class Upload extends AppCompatActivity implements Serializable, AdapterVi
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_upload);
 
-        Intent intent = getIntent();
+        final Intent intent = getIntent();
         Serializable obj = intent.getSerializableExtra(Login.EXTRA_PT);
 
         if(obj instanceof PersonalTrainer){
@@ -86,7 +91,9 @@ public class Upload extends AppCompatActivity implements Serializable, AdapterVi
         videoErr = findViewById(R.id.error_video);
         titleEt = findViewById(R.id.title_edit_text);
         descrizioneEt = findViewById(R.id.descrizione_edit_text);
+        imageView = findViewById(R.id.imageView);
         videoView = findViewById(R.id.videoView);
+        uploadImageBtn = findViewById(R.id.image_catch);
         uploadVideoBtn = findViewById(R.id.uploadVideoButton);
         selectVideoBtn = findViewById(R.id.select_video_button);
         seleziona_difficolta = findViewById(R.id.difficolta_spinner);
@@ -111,6 +118,16 @@ public class Upload extends AppCompatActivity implements Serializable, AdapterVi
 
         //permessi camera
         cameraPermissions = new String[]{Manifest.permission.CAMERA, Manifest.permission.WRITE_EXTERNAL_STORAGE};
+
+        uploadImageBtn.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                Intent intent = new Intent();
+                intent.setType("image/*");
+                intent.setAction(Intent.ACTION_GET_CONTENT);
+                startActivityForResult(Intent.createChooser(intent, "Seleziona Imagine per l'icona"), SELECT_IMAGE_CODE);
+            }
+        });
 
         uploadVideoBtn.setOnClickListener(new View.OnClickListener() {
             @Override
@@ -275,22 +292,27 @@ public class Upload extends AppCompatActivity implements Serializable, AdapterVi
 
     @Override
     protected void onActivityResult(int requestCode, int resultCode, @Nullable Intent data) {
-        //chiamata dopo aver preso il video dalla camera/galleria
-        if(resultCode == RESULT_OK){
-            if(requestCode == VIDEO_PICK_GALLERY_CODE){
-                videoUri = data.getData();
-                //mostra il video selezionato nella VideoView
-                setVideoToVideoView();
-            }
-            else if(requestCode == VIDEO_PICK_CAMERA_CODE){
-                videoUri = data.getData();
-                //mostra il video selezionato nella VideoView
-                setVideoToVideoView();
-            }
-        }
-        stringUri= videoUri.toString();
 
         super.onActivityResult(requestCode, resultCode, data);
+
+        //chiamata dopo aver preso il video dalla camera/galleria
+        if (resultCode == RESULT_OK) {
+            if (requestCode == VIDEO_PICK_GALLERY_CODE) {
+                videoUri = data.getData();
+                //mostra il video selezionato nella VideoView
+                setVideoToVideoView();
+                stringUri = videoUri.toString();
+            } else if (requestCode == VIDEO_PICK_CAMERA_CODE) {
+                videoUri = data.getData();
+                //mostra il video selezionato nella VideoView
+                setVideoToVideoView();
+                stringUri = videoUri.toString();
+            } else if(requestCode==SELECT_IMAGE_CODE){
+                imageUri = data.getData();
+                imageView.setImageURI(imageUri);
+                uploadImageBtn.setText("Modifica Icona");
+            }
+        }
     }
 
     @Override
