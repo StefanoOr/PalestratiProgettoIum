@@ -18,7 +18,6 @@
             android:fontFamily="@font/roboto"
             android:text="@string/nuovo_esercizio"
             android:textAlignment="center"
-            android:textAppearance="@style/TextAppearance.AppCompat.Body2"
             android:textColor="@color/barra_separatoria_principale"
             android:textSize="36sp"
             android:textStyle="bold"

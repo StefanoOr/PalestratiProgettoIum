@@ -64,6 +64,7 @@ public class Upload extends AppCompatActivity implements Serializable, AdapterVi
     private static final int VIDEO_PICK_CAMERA_CODE = 100;
     private static final int CAMERA_REQUEST_CODE = 100;
     private static final int SELECT_IMAGE_CODE = 200;
+    private static final int IMAGE_PICK_CAMERA_CODE = 200;
 
     private String[] cameraPermissions;
 
@@ -122,10 +123,7 @@ public class Upload extends AppCompatActivity implements Serializable, AdapterVi
         uploadImageBtn.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                Intent intent = new Intent();
-                intent.setType("image/*");
-                intent.setAction(Intent.ACTION_GET_CONTENT);
-                startActivityForResult(Intent.createChooser(intent, "Seleziona Imagine per l'icona"), SELECT_IMAGE_CODE);
+                imagePickDialog();
             }
         });
 
@@ -198,6 +196,35 @@ public class Upload extends AppCompatActivity implements Serializable, AdapterVi
         return (errors == 0);
     }
 
+    private void imagePickDialog() {
+        //opzioni per il dialog
+        String[] options = {"Camera", "Galleria"};
+
+        //dialog
+        AlertDialog.Builder builder = new AlertDialog.Builder(this);
+        builder.setTitle("Seleziona l'immagine da")
+                .setItems(options, new DialogInterface.OnClickListener() {
+                    @Override
+                    public void onClick(DialogInterface dialogInterface, int i) {
+                        if (i==0){
+                            //camera selezionata
+                            if (!checkCameraPermission()) {
+                                //permesso non dato, richiedilo
+                                requestCameraPermission();
+                            }else{
+                                //permesso dato, fai il video
+                                videoPickCamera();
+                            }
+                        }
+                        else if (i==1){
+                            //galleria selezionata
+                            videoPickGallery();
+                        }
+                    }
+                })
+                .show();
+    }
+
     private void videoPickDialog() {
         //opzioni per il dialog
         String[] options = {"Camera", "Galleria"};
@@ -215,12 +242,12 @@ public class Upload extends AppCompatActivity implements Serializable, AdapterVi
                                 requestCameraPermission();
                             }else{
                                 //permesso dato, fai il video
-                                videoPickCamera();
+                                imagePickCamera();
                             }
                         }
                         else if (i==1){
                             //galleria selezionata
-                            videoPickGallery();
+                            imagePickGallery();
                         }
                     }
                 })
@@ -248,9 +275,20 @@ public class Upload extends AppCompatActivity implements Serializable, AdapterVi
         startActivityForResult(Intent.createChooser(intent, "Seleziona Video"), VIDEO_PICK_GALLERY_CODE);
     }
 
+    private void imagePickGallery() {
+        Intent intent = new Intent();
+        intent.setType("image/*");
+        intent.setAction(Intent.ACTION_GET_CONTENT);
+        startActivityForResult(Intent.createChooser(intent, "Seleziona Imagine per l'icona"), SELECT_IMAGE_CODE);
+    }
+
+    private void imagePickCamera() {
+        Intent intent = new Intent(MediaStore.ACTION_IMAGE_CAPTURE);
+        startActivityForResult(intent, IMAGE_PICK_CAMERA_CODE);
+    }
+
     private void videoPickCamera(){
         //pick video from camera - intent
-
         Intent intent = new Intent(MediaStore.ACTION_VIDEO_CAPTURE);
         startActivityForResult(intent, VIDEO_PICK_CAMERA_CODE);
     }
