@@ -213,12 +213,12 @@ public class Upload extends AppCompatActivity implements Serializable, AdapterVi
                                 requestCameraPermission();
                             }else{
                                 //permesso dato, fai il video
-                                videoPickCamera();
+                                imagePickCamera();
                             }
                         }
                         else if (i==1){
                             //galleria selezionata
-                            videoPickGallery();
+                            imagePickGallery();
                         }
                     }
                 })
@@ -242,12 +242,12 @@ public class Upload extends AppCompatActivity implements Serializable, AdapterVi
                                 requestCameraPermission();
                             }else{
                                 //permesso dato, fai il video
-                                imagePickCamera();
+                                videoPickCamera();
                             }
                         }
                         else if (i==1){
                             //galleria selezionata
-                            imagePickGallery();
+                            videoPickGallery();
                         }
                     }
                 })
@@ -346,9 +346,10 @@ public class Upload extends AppCompatActivity implements Serializable, AdapterVi
                 setVideoToVideoView();
                 stringUri = videoUri.toString();
             } else if(requestCode==SELECT_IMAGE_CODE){
-                imageUri = data.getData();
-                imageView.setImageURI(imageUri);
-                uploadImageBtn.setText("Modifica Icona");
+                Uri selectedImageUri = data.getData();
+                if(null!=selectedImageUri){
+                    imageView.setImageURI(selectedImageUri);
+                }
             }
         }
     }

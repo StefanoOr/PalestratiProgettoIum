@@ -41,7 +41,6 @@ public class Home extends AppCompatActivity implements RecycleViewInterface {
 
     User user;
     PersonalTrainer coach;
-    Button filtro;
     private CoachAdapter coachAdapter;
 
     Spinner spinnerCoach,spinnerGruppoMuscolare;
@@ -69,8 +68,6 @@ public class Home extends AppCompatActivity implements RecycleViewInterface {
 
         spinnerCoach = findViewById(R.id.spinner_coachUser1);
         spinnerGruppoMuscolare = findViewById(R.id.spinner_gruppo_muscolare);
-        filtro = findViewById(R.id.filtroUserHome);
-
 
         Intent intent = getIntent();
         Serializable obj = intent.getSerializableExtra(Login.EXTRA_USER);
@@ -81,19 +78,6 @@ public class Home extends AppCompatActivity implements RecycleViewInterface {
         }else{
             user = new User();
         }
-
-
-
-        filtro.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View v) {
-                Intent showResult = new Intent(Home.this, FiltroUser.class);
-                showResult.putExtra(EXTRA_USER, user);
-                startActivity(showResult);
-            }
-        });
-
-
 
         spinnerCoach.setAdapter(coachAdapter);
         spinnerCoach.setOnItemSelectedListener(new AdapterView.OnItemSelectedListener() {
