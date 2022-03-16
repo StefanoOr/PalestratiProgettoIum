@@ -180,19 +180,18 @@ public class Upload extends AppCompatActivity implements Serializable, AdapterVi
             videoErr.setError("Perfavore inserisci un video");
             errors++;
         }else{
-            videoErr.setVisibility(View.INVISIBLE);
             videoErr.setError(null);
         }
 
         //TODO
-        /*if(!petto.isChecked() && !gambe.isChecked() && !dorso.isChecked() && !bicipiti.isChecked() && !tricipiti.isChecked() && !spalle.isChecked()){
+        if(!petto.isChecked() && !gambe.isChecked() && !dorso.isChecked() && !bicipiti.isChecked() && !tricipiti.isChecked() && !spalle.isChecked()){
             checkBoxErr.setVisibility(View.VISIBLE);
             checkBoxErr.setError("Perfavore inserisci un gruppo muscolare");
             errors++;
         }else{
-            checkBoxErr.setVisibility(View.INVISIBLE);
             checkBoxErr.setError(null);
-        }*///TODO
+        }
+        //TODO
 
         return (errors == 0);
     }
@@ -301,6 +300,7 @@ public class Upload extends AppCompatActivity implements Serializable, AdapterVi
         videoView.setMediaController(mediaController);
         videoView.setVideoURI(videoUri);
         videoView.requestFocus();
+        videoErr.setVisibility(View.INVISIBLE);
         videoView.setOnPreparedListener(new MediaPlayer.OnPreparedListener() {
             @Override
             public void onPrepared(MediaPlayer mp) {
@@ -345,6 +345,7 @@ public class Upload extends AppCompatActivity implements Serializable, AdapterVi
                 videoUri = data.getData();
                 //mostra il video selezionato nella VideoView
                 setVideoToVideoView();
+                videoErr.setVisibility(View.INVISIBLE);
                 stringUriVideo = videoUri.toString();
             } else if(requestCode==SELECT_IMAGE_CODE){
                 Uri selectedImageUri = data.getData();
@@ -376,31 +377,38 @@ public class Upload extends AppCompatActivity implements Serializable, AdapterVi
                 if (petto.isChecked())
                     Toast.makeText(getApplicationContext(), "Petto", Toast.LENGTH_LONG).show();
                 gruppoSelezionato = MyEnum.PETTO;
+                checkBoxErr.setVisibility(View.INVISIBLE);
                 break;
             case R.id.checkBox2:
                 if (spalle.isChecked())
                     Toast.makeText(getApplicationContext(), "Spalle", Toast.LENGTH_LONG).show();
                 gruppoSelezionato = MyEnum.SPALLE;
+                checkBoxErr.setVisibility(View.INVISIBLE);
+
                 break;
             case R.id.checkBox3:
                 if (tricipiti.isChecked())
                     Toast.makeText(getApplicationContext(), "Tricipiti", Toast.LENGTH_LONG).show();
                 gruppoSelezionato = MyEnum.TRICIPITI;
+                checkBoxErr.setVisibility(View.INVISIBLE);
                 break;
             case R.id.checkBox4:
                 if (gambe.isChecked())
                     Toast.makeText(getApplicationContext(), "Gambe", Toast.LENGTH_LONG).show();
                 gruppoSelezionato = MyEnum.GAMBE;
+                checkBoxErr.setVisibility(View.INVISIBLE);
                 break;
             case R.id.checkBox5:
                 if (dorso.isChecked())
                     Toast.makeText(getApplicationContext(), "Dorso", Toast.LENGTH_LONG).show();
                 gruppoSelezionato = MyEnum.DORSO;
+                checkBoxErr.setVisibility(View.INVISIBLE);
                 break;
             case R.id.checkBox6:
                 if (bicipiti.isChecked())
                     Toast.makeText(getApplicationContext(), "Bicipiti", Toast.LENGTH_LONG).show();
                 gruppoSelezionato = MyEnum.BICIPITI;
+                checkBoxErr.setVisibility(View.INVISIBLE);
                 break;
         }
 
