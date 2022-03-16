@@ -352,6 +352,7 @@ public class Upload extends AppCompatActivity implements Serializable, AdapterVi
                     imageView.setImageURI(selectedImageUri);
                     stringUriImage = selectedImageUri.toString();
                 }
+
             }
         }
     }

@@ -34,7 +34,7 @@
                 android:foregroundGravity="center"
                 android:paddingLeft="14dp"
                 android:paddingRight="14dp"
-                android:src="@drawable/ic_baseline_video_label_24"
+
                 app:layout_constraintBottom_toBottomOf="parent"
                 app:layout_constraintStart_toStartOf="parent"
                 app:layout_constraintTop_toTopOf="parent"

@@ -39,7 +39,8 @@ public class Adapter_ListaEserciziHomePersonalT extends  RecyclerView.Adapter<Ad
     public void onBindViewHolder(@NonNull Adapter_ListaEserciziHomePersonalT.ExampleViewHolder holder, int position) {
         Esercizio currentItem = mExampleList.get(position);
         if(mExampleList.get(position).getImage()!=null){
-            holder.icona.setImageURI(Uri.parse(mExampleList.get(position).getImage()));
+            Uri myuri= Uri.parse(mExampleList.get(position).getImage());
+            holder.icona.setImageURI(myuri);
         }
         holder.nEsercizio.setText((mExampleList.get(position).getNome()));
         holder.bindData(position);
@@ -58,7 +59,7 @@ public class Adapter_ListaEserciziHomePersonalT extends  RecyclerView.Adapter<Ad
             super(itemView);
 
             nEsercizio= itemView.findViewById(R.id.nomeEsercizio);
-            icona = itemView.findViewById(R.id.iconaIDpt);
+            icona = itemView.findViewById(R.id.iconIDpT);
 
             itemView.setOnClickListener(new View.OnClickListener() {
                 @Override

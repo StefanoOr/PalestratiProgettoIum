@@ -6,6 +6,8 @@
 
 package com.example.palestratiium.classi;
 
+import android.net.Uri;
+
 import java.io.Serializable;
 import java.util.ArrayList;
 import java.util.Calendar;
@@ -140,7 +142,7 @@ public class UserFactory implements Serializable {
 
     public void initEsercizi(){
 
-        eserciziAtzeni.add(new Esercizio("Dip.Distensioni di braccia","aa", BICIPITI,"1",null,null));
+        eserciziAtzeni.add(new Esercizio("Dip.Distensioni di braccia","aa", BICIPITI,"1",null,"content://com.android.providers.media.documents/document/image%3A32"));
         eserciziAtzeni.add(new Esercizio("Barca","bb", DORSO,"2",null,null));
         eserciziAtzeni.add(new Esercizio("Crunch","aa", PETTO,"3",null,null));
         eserciziAtzeni.add(new Esercizio("Front squat","bb", DORSO,"2",null,null));
