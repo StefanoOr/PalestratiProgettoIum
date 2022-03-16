@@ -26,7 +26,7 @@ import com.example.palestratiium.classi.User;
 public class Profilo extends AppCompatActivity {
 
     User user;
-    TextView modify_password, username, nome, peso_attuale, altezza_attuale;
+    TextView modify_password, username, nome, peso_attuale, altezza_attuale,eta;
     Button home;
     ImageView edit_peso, edit_altezza;
     int tmp_peso, tmp_altezza;
@@ -53,6 +53,8 @@ public class Profilo extends AppCompatActivity {
         edit_altezza = findViewById(R.id.edit_altezza);
         peso_attuale = findViewById(R.id.peso_attuale);
         altezza_attuale = findViewById(R.id.altezza_attuale);
+        eta=findViewById(R.id.eta_user);
+
 
         Intent intent = getIntent();
         Serializable obj = intent.getSerializableExtra(Login.EXTRA_USER);
@@ -65,6 +67,7 @@ public class Profilo extends AppCompatActivity {
 
         username.setText(user.getUsername());
         nome.setText(user.getUsername());
+        eta.setText(user.getAge());
 
         altezza_attuale.setText( user.getAltezza());
         peso_attuale.setText(user.getPeso());

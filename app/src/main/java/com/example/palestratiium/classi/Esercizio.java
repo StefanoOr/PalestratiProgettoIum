@@ -1,5 +1,7 @@
 package com.example.palestratiium.classi;
 
+import android.widget.ImageView;
+
 import java.io.Serializable;
 import java.util.ArrayList;
 import java.util.List;
@@ -9,6 +11,7 @@ public class Esercizio implements Serializable {
     private String nome;
     private String descrizioene;
     private List<Float> rating= new ArrayList<>();
+    private ImageView imagineMiniatura;
 
 
     public  enum GruppoMuscolare {
@@ -21,17 +24,16 @@ public class Esercizio implements Serializable {
     }
 
     private MyEnum gruppoMuscolare;
-
     private String difficolta;
-
     private String video;
 
-    public Esercizio(String nome, String descrizioene, MyEnum gruppoMuscolare, String difficolta,String video){
+    public Esercizio(String nome, String descrizioene, MyEnum gruppoMuscolare, String difficolta,String video,ImageView imageView){
         this.nome=nome;
         this.descrizioene= descrizioene;
         this.gruppoMuscolare = gruppoMuscolare;
         this.difficolta=difficolta;
         this.video=video;
+        this.imagineMiniatura=imageView;
     }
 
 

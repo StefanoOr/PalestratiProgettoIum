@@ -3,6 +3,7 @@ package com.example.palestratiium.adapter;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
+import android.widget.ImageView;
 import android.widget.TextView;
 
 import androidx.annotation.NonNull;
@@ -44,6 +45,7 @@ public class Adapter_ListaEserciziHome extends  RecyclerView.Adapter<Adapter_Lis
 
 
        holder.nEsercizio.setText((mExampleList.get(position).getNome()));
+       //holder.imageView.setImageDrawable(mExampleList.get(position).);
         holder.bindData(position);
     }
 
@@ -55,10 +57,12 @@ public class Adapter_ListaEserciziHome extends  RecyclerView.Adapter<Adapter_Lis
     public static class ExampleViewHolder extends RecyclerView.ViewHolder {
 
         public TextView nEsercizio;
+        public ImageView imageView;
         public ExampleViewHolder(@NonNull View itemView, final RecycleViewInterface recycleViewInterface) {
             super(itemView);
 
             nEsercizio= itemView.findViewById(R.id.nomeEsercizio);
+            itemView=itemView.findViewById(R.id.iconImage);
 
             itemView.setOnClickListener(new View.OnClickListener() {
                 @Override

@@ -61,6 +61,7 @@ public class EserciziActivity extends AppCompatActivity implements Serializable{
         String video = getIntent().getStringExtra("VIDEO");
         float rate = getIntent().getExtras().getFloat("RATING");
 
+
         nomeEsercizio= findViewById(R.id.esercizio_title);
         descrizioneEsercizio = findViewById(R.id.text_corpo_descrizione);
         back = findViewById(R.id.back_button);
