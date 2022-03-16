@@ -114,10 +114,7 @@ public class HomePersonalTrainer extends AppCompatActivity implements RecycleVie
 
     public void init(){
 
-
         listaEserciziPt = UserFactory.getInstance().getEserciziPt(personal);
-
-
 
         if(listaEserciziPt.size()>0){
             mRecyclerView = findViewById(R.id.listRecyclerViewEserciziPt);

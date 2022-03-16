@@ -70,7 +70,7 @@ public class Upload extends AppCompatActivity implements Serializable, AdapterVi
 
     private Uri imageUri;
     private Uri videoUri; //uri del video selezionato
-    private String stringUri;
+    private String stringUriVideo, stringUriImage;
 
     public static final String EXTRA_PT = "package com.example.palestratiium";
     @Override
@@ -92,7 +92,7 @@ public class Upload extends AppCompatActivity implements Serializable, AdapterVi
         videoErr = findViewById(R.id.error_video);
         titleEt = findViewById(R.id.title_edit_text);
         descrizioneEt = findViewById(R.id.descrizione_edit_text);
-        imageView = findViewById(R.id.imageView);
+        imageView = findViewById(R.id.image_view);
         videoView = findViewById(R.id.videoView);
         uploadImageBtn = findViewById(R.id.image_catch);
         uploadVideoBtn = findViewById(R.id.uploadVideoButton);
@@ -133,7 +133,8 @@ public class Upload extends AppCompatActivity implements Serializable, AdapterVi
 
                 if(checkInput()) {
                     esercizio.setNome(titleEt.getText().toString());
-                    esercizio.setVideo(stringUri);
+                    esercizio.setVideo(stringUriVideo);
+                    esercizio.setImage(stringUriImage);
                     esercizio.setDescrizioene(descrizioneEt.getText().toString());
                     esercizio.setDifficolta(seleziona_difficolta.getSelectedItem().toString());
                     esercizio.setGruppoMuscolare(gruppoSelezionato);
@@ -339,16 +340,17 @@ public class Upload extends AppCompatActivity implements Serializable, AdapterVi
                 videoUri = data.getData();
                 //mostra il video selezionato nella VideoView
                 setVideoToVideoView();
-                stringUri = videoUri.toString();
+                stringUriVideo = videoUri.toString();
             } else if (requestCode == VIDEO_PICK_CAMERA_CODE) {
                 videoUri = data.getData();
                 //mostra il video selezionato nella VideoView
                 setVideoToVideoView();
-                stringUri = videoUri.toString();
+                stringUriVideo = videoUri.toString();
             } else if(requestCode==SELECT_IMAGE_CODE){
                 Uri selectedImageUri = data.getData();
                 if(null!=selectedImageUri){
                     imageView.setImageURI(selectedImageUri);
+                    stringUriImage = selectedImageUri.toString();
                 }
             }
         }

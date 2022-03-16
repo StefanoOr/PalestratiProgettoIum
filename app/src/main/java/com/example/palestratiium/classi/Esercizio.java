@@ -11,7 +11,7 @@ public class Esercizio implements Serializable {
     private String nome;
     private String descrizioene;
     private List<Float> rating= new ArrayList<>();
-    private ImageView imagineMiniatura;
+    private String imagineMiniatura;
 
 
     public  enum GruppoMuscolare {
@@ -27,7 +27,7 @@ public class Esercizio implements Serializable {
     private String difficolta;
     private String video;
 
-    public Esercizio(String nome, String descrizioene, MyEnum gruppoMuscolare, String difficolta,String video,ImageView imageView){
+    public Esercizio(String nome, String descrizioene, MyEnum gruppoMuscolare, String difficolta,String video,String imageView){
         this.nome=nome;
         this.descrizioene= descrizioene;
         this.gruppoMuscolare = gruppoMuscolare;
@@ -36,6 +36,13 @@ public class Esercizio implements Serializable {
         this.imagineMiniatura=imageView;
     }
 
+    public String getImage() {
+        return imagineMiniatura;
+    }
+
+    public void setImage(String imagineMiniatura) {
+        this.imagineMiniatura = imagineMiniatura;
+    }
 
     public float getRating(){
         float rate=0;

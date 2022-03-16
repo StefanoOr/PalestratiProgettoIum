@@ -1,8 +1,10 @@
 package com.example.palestratiium.adapter;
 
+import android.net.Uri;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
+import android.widget.ImageView;
 import android.widget.TextView;
 
 import androidx.annotation.NonNull;
@@ -36,8 +38,9 @@ public class Adapter_ListaEserciziHomePersonalT extends  RecyclerView.Adapter<Ad
     @Override
     public void onBindViewHolder(@NonNull Adapter_ListaEserciziHomePersonalT.ExampleViewHolder holder, int position) {
         Esercizio currentItem = mExampleList.get(position);
-
-
+        if(mExampleList.get(position).getImage()!=null){
+            holder.icona.setImageURI(Uri.parse(mExampleList.get(position).getImage()));
+        }
         holder.nEsercizio.setText((mExampleList.get(position).getNome()));
         holder.bindData(position);
     }
@@ -50,10 +53,12 @@ public class Adapter_ListaEserciziHomePersonalT extends  RecyclerView.Adapter<Ad
     public static class ExampleViewHolder extends RecyclerView.ViewHolder {
 
         public TextView nEsercizio;
+        public ImageView icona;
         public ExampleViewHolder(@NonNull View itemView, final RecycleViewInterface recycleViewInterface) {
             super(itemView);
 
             nEsercizio= itemView.findViewById(R.id.nomeEsercizio);
+            icona = itemView.findViewById(R.id.iconaIDpt);
 
             itemView.setOnClickListener(new View.OnClickListener() {
                 @Override
