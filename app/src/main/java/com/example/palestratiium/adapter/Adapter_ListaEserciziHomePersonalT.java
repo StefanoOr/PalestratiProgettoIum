@@ -38,7 +38,7 @@ public class Adapter_ListaEserciziHomePersonalT extends  RecyclerView.Adapter<Ad
 
     @Override
     public void onBindViewHolder(@NonNull Adapter_ListaEserciziHomePersonalT.ExampleViewHolder holder, int position) {
-        Esercizio currentItem = mExampleList.get(position);
+
         if(mExampleList.get(position).getImage()!=null){
             Uri myuri= Uri.parse(mExampleList.get(position).getImage());
             holder.icona.setImageURI(myuri);
@@ -86,7 +86,7 @@ public class Adapter_ListaEserciziHomePersonalT extends  RecyclerView.Adapter<Ad
                         int pos=getAdapterPosition();
 
                         if(pos != RecyclerView.NO_POSITION){
-                            recycleViewInterface.onItemClick(pos,false);
+                            recycleViewInterface.onItemClick(pos);
                         }
                     }
                 }

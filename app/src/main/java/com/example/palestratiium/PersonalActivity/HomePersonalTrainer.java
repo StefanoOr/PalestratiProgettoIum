@@ -132,7 +132,7 @@ public class HomePersonalTrainer extends AppCompatActivity implements RecycleVie
 
 
     @Override
-    public void onItemClick(int position,boolean isModify) {
+    public void onItemClick(int position) {
 
         Intent intent = new Intent(HomePersonalTrainer.this, EserciziActivity.class);
 
