@@ -4,6 +4,7 @@ import android.net.Uri;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
+import android.widget.Button;
 import android.widget.ImageView;
 import android.widget.TextView;
 
@@ -55,11 +56,28 @@ public class Adapter_ListaEserciziHomePersonalT extends  RecyclerView.Adapter<Ad
 
         public TextView nEsercizio;
         public ImageView icona;
+        public ImageView mButtonModifica;
+
         public ExampleViewHolder(@NonNull View itemView, final RecycleViewInterface recycleViewInterface) {
             super(itemView);
 
+            mButtonModifica = itemView.findViewById(R.id.edit_esercizio);
             nEsercizio= itemView.findViewById(R.id.nomeEsercizio);
             icona = itemView.findViewById(R.id.iconIDpT);
+
+
+            mButtonModifica.setOnClickListener(new View.OnClickListener() {
+                @Override
+                public void onClick(View v) {
+                    if(recycleViewInterface != null){
+                        int pos=getAdapterPosition();
+
+                        if(pos != RecyclerView.NO_POSITION){
+                            recycleViewInterface.OnItemClickModify(pos);
+                        }
+                    }
+                }
+            });
 
             itemView.setOnClickListener(new View.OnClickListener() {
                 @Override
@@ -68,7 +86,7 @@ public class Adapter_ListaEserciziHomePersonalT extends  RecyclerView.Adapter<Ad
                         int pos=getAdapterPosition();
 
                         if(pos != RecyclerView.NO_POSITION){
-                            recycleViewInterface.onItemClick(pos);
+                            recycleViewInterface.onItemClick(pos,false);
                         }
                     }
                 }
@@ -76,6 +94,9 @@ public class Adapter_ListaEserciziHomePersonalT extends  RecyclerView.Adapter<Ad
         }
 
         void bindData(int position){
+
+
+
 
             nEsercizio.setOnClickListener(new View.OnClickListener() {
                 @Override

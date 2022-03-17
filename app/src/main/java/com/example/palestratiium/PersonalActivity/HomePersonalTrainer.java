@@ -15,6 +15,7 @@ import android.widget.EditText;
 
 import com.example.palestratiium.EserciziActivity;
 import com.example.palestratiium.Login;
+import com.example.palestratiium.ModificaEsercizio;
 import com.example.palestratiium.R;
 import com.example.palestratiium.adapter.Adapter_ListaEserciziHomePersonalT;
 import com.example.palestratiium.adapter.RecycleViewInterface;
@@ -128,8 +129,11 @@ public class HomePersonalTrainer extends AppCompatActivity implements RecycleVie
 
     }
 
+
+
     @Override
-    public void onItemClick(int position) {
+    public void onItemClick(int position,boolean isModify) {
+
         Intent intent = new Intent(HomePersonalTrainer.this, EserciziActivity.class);
 
 
@@ -144,16 +148,19 @@ public class HomePersonalTrainer extends AppCompatActivity implements RecycleVie
         startActivity(intent);
     }
 
-   /* private void filter(String text){
-        ArrayList<User> filterdList = new ArrayList<>();
-        for( User item : UserFactory.getInstance().getUsers()){
-            if(item.getUsername().toLowerCase().contains(text.toLowerCase())){
-                filterdList.add(item);
-            }
-        }
-        UserFactory.getInstance().filterList(filterdList);
+    @Override
+    public void OnItemClickModify(int position) {
 
+        Intent intent = new Intent(HomePersonalTrainer.this, ModificaEsercizio.class);
+        intent.putExtra("NAME",listaEserciziPt.get(position).getNome());
+        intent.putExtra("DESCRIPTION",listaEserciziPt.get(position).getDescrizioene());
+        intent.putExtra("GRUPPOMUSCOLARE",listaEserciziPt.get(position).getGruppoMuscolare());
+        intent.putExtra("DIFFICOLTA",listaEserciziPt.get(position).getDifficolta());
+        intent.putExtra("VIDEO",listaEserciziPt.get(position).getVideo());
+        intent.putExtra(EXTRA_PT, personal);
+        startActivity(intent);
     }
 
-    */
+
+
 }

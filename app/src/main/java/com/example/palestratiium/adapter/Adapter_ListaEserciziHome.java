@@ -71,7 +71,7 @@ public class Adapter_ListaEserciziHome extends  RecyclerView.Adapter<Adapter_Lis
                         int pos=getAdapterPosition();
 
                         if(pos != RecyclerView.NO_POSITION){
-                            recycleViewInterface.onItemClick(pos);
+                            recycleViewInterface.onItemClick(pos,false);
                         }
                     }
                 }

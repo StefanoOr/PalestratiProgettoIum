@@ -159,7 +159,7 @@ public class Home extends AppCompatActivity implements RecycleViewInterface {
     }
 
     @Override
-    public void onItemClick(int position) {
+    public void onItemClick(int position,boolean is) {
         Intent intent = new Intent(Home.this, EserciziActivity.class);
 
         intent.putExtra("NAME",listaEserciziCard.get(position).getNome());
@@ -171,6 +171,11 @@ public class Home extends AppCompatActivity implements RecycleViewInterface {
         intent.putExtra(EXTRA_USER, user);
 
         startActivity(intent);
+    }
+
+    @Override
+    public void OnItemClickModify(int position) {
+
     }
 
 
