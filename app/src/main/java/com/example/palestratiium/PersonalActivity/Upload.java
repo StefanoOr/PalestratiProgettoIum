@@ -8,7 +8,6 @@ import androidx.core.app.ActivityCompat;
 import androidx.core.content.ContextCompat;
 
 import android.Manifest;
-import android.annotation.SuppressLint;
 import android.content.DialogInterface;
 import android.content.Intent;
 import android.content.pm.PackageManager;
@@ -16,7 +15,6 @@ import android.media.MediaPlayer;
 import android.net.Uri;
 import android.os.Bundle;
 import android.provider.MediaStore;
-import android.view.MenuItem;
 import android.view.View;
 import android.widget.AdapterView;
 import android.widget.ArrayAdapter;
@@ -26,23 +24,18 @@ import android.widget.EditText;
 import android.widget.ImageView;
 import android.widget.MediaController;
 import android.widget.Spinner;
-import android.widget.TextView;
 import android.widget.Toast;
 import android.widget.VideoView;
 
 import com.example.palestratiium.Login;
 import com.example.palestratiium.R;
-import com.example.palestratiium.UserActivity.Profilo;
 import com.example.palestratiium.classi.Esercizio;
 import com.example.palestratiium.classi.MyEnum;
 import com.example.palestratiium.classi.PersonalTrainer;
-import com.example.palestratiium.classi.User;
 import com.example.palestratiium.classi.UserFactory;
-import com.google.android.material.bottomnavigation.BottomNavigationView;
 import com.google.android.material.floatingactionbutton.FloatingActionButton;
 
 import java.io.Serializable;
-import java.util.List;
 
 public class Upload extends AppCompatActivity implements Serializable, AdapterView.OnItemSelectedListener, View.OnClickListener {
 

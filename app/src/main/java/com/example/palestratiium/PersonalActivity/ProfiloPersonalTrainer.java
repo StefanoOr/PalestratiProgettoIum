@@ -7,10 +7,11 @@ import android.annotation.SuppressLint;
 import android.content.Intent;
 import android.os.Bundle;
 import android.view.MenuItem;
+import android.view.View;
+import android.widget.Button;
 
 import com.example.palestratiium.Login;
 import com.example.palestratiium.R;
-import com.example.palestratiium.UserActivity.Profilo;
 import com.example.palestratiium.classi.PersonalTrainer;
 import com.google.android.material.bottomnavigation.BottomNavigationView;
 
@@ -19,6 +20,7 @@ import java.io.Serializable;
 public class ProfiloPersonalTrainer extends AppCompatActivity {
     public static final String EXTRA_PT = "package com.example.palestratiium";
     PersonalTrainer personal;
+    Button logout;
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -33,6 +35,8 @@ public class ProfiloPersonalTrainer extends AppCompatActivity {
         }else{
             personal = new PersonalTrainer();
         }
+
+        logout=findViewById(R.id.logoutPersonal);
 
 
         BottomNavigationView bottomNavigationView = findViewById(R.id.bottom_navigation);
@@ -69,5 +73,16 @@ public class ProfiloPersonalTrainer extends AppCompatActivity {
                 return false;
             }
         });
+
+        logout.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                personal = null;
+                Intent login = new Intent(ProfiloPersonalTrainer.this, Login.class);
+                login.putExtra(EXTRA_PT, personal);
+                startActivity(login);
+            }
+        });
+
     }
 }

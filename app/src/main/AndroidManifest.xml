@@ -26,7 +26,7 @@
             android:exported="false" />
         <activity android:name=".EserciziActivity" />
         <activity
-            android:name=".UserActivity.Profilo"
+            android:name=".UserActivity.ProfiloUser"
             android:exported="false" />
         <activity android:name=".ModifyPassword" />
         <activity android:name=".UserActivity.Home" />

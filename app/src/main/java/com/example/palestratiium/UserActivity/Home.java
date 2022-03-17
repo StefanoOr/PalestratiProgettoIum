@@ -14,14 +14,12 @@ import android.view.MenuItem;
 import android.view.View;
 import android.widget.AdapterView;
 import android.widget.ArrayAdapter;
-import android.widget.Button;
 import android.widget.Spinner;
 
 import com.example.palestratiium.EserciziActivity;
 import com.example.palestratiium.Login;
 import com.example.palestratiium.R;
 import com.example.palestratiium.adapter.CoachAdapter;
-import com.example.palestratiium.adapter.GruppoMuscolareAdapter;
 import com.example.palestratiium.classi.MyEnum;
 import com.google.android.material.bottomnavigation.BottomNavigationView;
 
@@ -131,7 +129,7 @@ public class Home extends AppCompatActivity implements RecycleViewInterface {
                 switch (item.getItemId()) {
                     case R.id.profilo:
 
-                        showResult = new Intent(Home.this, Profilo.class);
+                        showResult = new Intent(Home.this, ProfiloUser.class);
                         showResult.putExtra(EXTRA_USER, user);
                         startActivity(showResult);
                         overridePendingTransition(0, 0);

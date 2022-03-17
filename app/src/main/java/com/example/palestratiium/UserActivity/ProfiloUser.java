@@ -23,7 +23,7 @@ import java.io.Serializable;
 
 import com.example.palestratiium.classi.User;
 
-public class Profilo extends AppCompatActivity {
+public class ProfiloUser extends AppCompatActivity {
 
     User user;
     TextView modify_password, username, nome, peso_attuale, altezza_attuale,eta;
@@ -78,7 +78,7 @@ public class Profilo extends AppCompatActivity {
             @Override
             public void onClick(View v) {
 
-                AlertDialog.Builder alert = new AlertDialog.Builder(Profilo.this);
+                AlertDialog.Builder alert = new AlertDialog.Builder(ProfiloUser.this);
                 View mView = getLayoutInflater().inflate(R.layout.dialog_modifica_peso, null);
 
                 peso_attuale_tmp = mView.findViewById(R.id.current_peso);
@@ -134,7 +134,7 @@ public class Profilo extends AppCompatActivity {
             @Override
             public void onClick(View v) {
                 user = null;
-                Intent login = new Intent(Profilo.this, Login.class);
+                Intent login = new Intent(ProfiloUser.this, Login.class);
                 login.putExtra(EXTRA_USER, user);
                 startActivity(login);
             }
@@ -145,7 +145,7 @@ public class Profilo extends AppCompatActivity {
             @Override
             public void onClick(View v) {
 
-                AlertDialog.Builder alert = new AlertDialog.Builder(Profilo.this);
+                AlertDialog.Builder alert = new AlertDialog.Builder(ProfiloUser.this);
                 View mView = getLayoutInflater().inflate(R.layout.dialog_modifica_altezza, null);
 
                 altezza_attuale_tmp = mView.findViewById(R.id.current_altezza);
@@ -200,7 +200,7 @@ public class Profilo extends AppCompatActivity {
         modify_password.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                Intent showResult = new Intent(Profilo.this, ModifyPassword.class);
+                Intent showResult = new Intent(ProfiloUser.this, ModifyPassword.class);
                 showResult.putExtra(EXTRA_USER, user);
                 startActivity(showResult);
             }
@@ -209,7 +209,7 @@ public class Profilo extends AppCompatActivity {
         home.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                Intent home = new Intent(Profilo.this, Home.class);
+                Intent home = new Intent(ProfiloUser.this, Home.class);
                 home.putExtra(EXTRA_USER, user);
                 startActivity(home);
             }
@@ -228,7 +228,7 @@ public class Profilo extends AppCompatActivity {
                 switch (item.getItemId()) {
                     case R.id.menuHome:
 
-                        showResult = new Intent(Profilo.this, Home.class);
+                        showResult = new Intent(ProfiloUser.this, Home.class);
                         showResult.putExtra(EXTRA_USER, user);
                         startActivity(showResult);
                         overridePendingTransition(0, 0);
