@@ -38,6 +38,8 @@ public class UserFactory implements Serializable {
     private List<Esercizio> allEsercizi = new ArrayList<>();
     DatePickerFragment datePickerFragment = new DatePickerFragment();
     public static boolean fine_user = true , fine_pt=true;
+    private Integer[] imgDefault;
+
     private UserFactory() {
     }
 
@@ -151,12 +153,12 @@ public class UserFactory implements Serializable {
     public void initEsercizi( )  {
 
 
-        eserciziAtzeni.add(new Esercizio("Dip.Distensioni di braccia","aa", BICIPITI,"1",null));
-        eserciziAtzeni.add(new Esercizio("Barca","bb", DORSO,"2",null));
-        eserciziAtzeni.add(new Esercizio("Crunch","aa", PETTO,"3",null));
-        eserciziAtzeni.add(new Esercizio("Front squat","bb", DORSO,"2",null));
-        eserciziRoberto.add(new Esercizio("Panca piana","vv", TRICIPITI,"3",null));
-        eserciziRoberto.add(new Esercizio("Panca verticale","vv", GAMBE,"3",null));
+        eserciziAtzeni.add(new Esercizio("Dip.Distensioni di braccia","aa", BICIPITI,"1",null,imgDefault[0]));
+        eserciziAtzeni.add(new Esercizio("Barca","bb", DORSO,"2",null,imgDefault[1]));
+        eserciziAtzeni.add(new Esercizio("Crunch","aa", PETTO,"3",null,imgDefault[2]));
+        eserciziAtzeni.add(new Esercizio("Front squat","bb", DORSO,"2",null,imgDefault[3]));
+        eserciziRoberto.add(new Esercizio("Panca piana","vv", TRICIPITI,"3",null,imgDefault[4]));
+        eserciziRoberto.add(new Esercizio("Panca verticale","vv", GAMBE,"3",null,imgDefault[5]));
 
 
 
@@ -228,4 +230,7 @@ public class UserFactory implements Serializable {
         return null;
     }
 
+    public void setImgDafault(Integer[] imgDefault) {
+        this.imgDefault=imgDefault;
+    }
 }

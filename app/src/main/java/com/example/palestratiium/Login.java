@@ -104,22 +104,11 @@ public class Login extends AppCompatActivity {
 
     private boolean checkInput() {
 
-
-
+        Integer[] img = {R.drawable.bicipiti,R.drawable.crunch,R.drawable.pancapiana,R.drawable.pancaverticale,R.drawable.quadricipitisquatbilanciereparallelo
+                ,R.drawable.tricipitidipspanchebg};
+        UserFactory.getInstance().setImgDafault(img);
         userList = UserFactory.getInstance().getUsers();
         ptList =  UserFactory.getInstance().getPersonal();
-
-
-        Integer img = R.drawable.bicipiti;
-
-
-
-        for (int i=0 ; i<ptList.size(); i++){
-            for (int j=0 ; j<ptList.get(i).getAllListaEsercizi().size(); j++){
-                ptList.get(i).getEsercizio(j).setImageDafault(img);
-            }
-
-        }
 
         int errors = 0;
 
