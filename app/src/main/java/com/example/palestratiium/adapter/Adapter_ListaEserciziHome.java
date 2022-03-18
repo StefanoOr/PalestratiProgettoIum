@@ -47,7 +47,9 @@ public class Adapter_ListaEserciziHome extends  RecyclerView.Adapter<Adapter_Lis
         if(mExampleList.get(position).getImage()!=null){
             Uri myuri= Uri.parse(mExampleList.get(position).getImage());
             holder.icona.setImageURI(myuri);
-        }
+        } else {
+        holder.icona.setImageResource(mExampleList.get(position).getImageDefault());
+    }
 
        holder.nEsercizio.setText((mExampleList.get(position).getNome()));
 

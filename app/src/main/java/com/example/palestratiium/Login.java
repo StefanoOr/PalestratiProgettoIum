@@ -11,9 +11,11 @@ import androidx.appcompat.app.AppCompatActivity;
 import android.annotation.SuppressLint;
 import android.content.Context;
 import android.content.Intent;
+import android.graphics.drawable.Drawable;
 import android.os.Bundle;
 import android.view.View;
 import android.widget.Button;
+import android.widget.ImageView;
 import android.widget.TextView;
 import android.widget.Toast;
 
@@ -21,6 +23,7 @@ import com.example.palestratiium.PersonalActivity.HomePersonalTrainer;
 import com.example.palestratiium.UserActivity.Home;
 import com.google.android.material.textfield.TextInputLayout;
 
+import java.util.ArrayList;
 import java.util.List;
 
 import com.example.palestratiium.classi.PersonalTrainer;
@@ -101,8 +104,22 @@ public class Login extends AppCompatActivity {
 
     private boolean checkInput() {
 
+
+
         userList = UserFactory.getInstance().getUsers();
         ptList =  UserFactory.getInstance().getPersonal();
+
+
+        Integer img = R.drawable.bicipiti;
+
+
+
+        for (int i=0 ; i<ptList.size(); i++){
+            for (int j=0 ; j<ptList.get(i).getAllListaEsercizi().size(); j++){
+                ptList.get(i).getEsercizio(j).setImageDafault(img);
+            }
+
+        }
 
         int errors = 0;
 

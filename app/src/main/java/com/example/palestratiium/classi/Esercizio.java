@@ -1,6 +1,6 @@
 package com.example.palestratiium.classi;
 
-import android.widget.ImageView;
+import android.graphics.drawable.Drawable;
 
 import java.io.Serializable;
 import java.util.ArrayList;
@@ -12,6 +12,7 @@ public class Esercizio implements Serializable {
     private String descrizioene;
     private List<Float> rating= new ArrayList<>();
     private String imagineMiniatura;
+    private int miniatureDafalut;
 
 
     public  enum GruppoMuscolare {
@@ -27,17 +28,24 @@ public class Esercizio implements Serializable {
     private String difficolta;
     private String video;
 
-    public Esercizio(String nome, String descrizioene, MyEnum gruppoMuscolare, String difficolta,String video,String imageView){
+    public Esercizio(String nome, String descrizioene, MyEnum gruppoMuscolare, String difficolta,String video){
         this.nome=nome;
         this.descrizioene= descrizioene;
         this.gruppoMuscolare = gruppoMuscolare;
         this.difficolta=difficolta;
         this.video=video;
-        this.imagineMiniatura=imageView;
+
     }
 
+    public int getImageDefault(){
+        return this.miniatureDafalut;
+    }
+ public void setImageDafault(int imageDafault){
+        this.miniatureDafalut=imageDafault;
+ }
     public String getImage() {
-        return imagineMiniatura;
+
+        return this.imagineMiniatura;
     }
 
     public void setImage(String imagineMiniatura) {

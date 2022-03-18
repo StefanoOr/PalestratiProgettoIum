@@ -1,5 +1,9 @@
 package com.example.palestratiium.adapter;
 
+import android.content.ContentResolver;
+import android.content.Context;
+import android.content.res.Resources;
+import android.graphics.drawable.Drawable;
 import android.net.Uri;
 import android.view.LayoutInflater;
 import android.view.View;
@@ -14,16 +18,20 @@ import androidx.recyclerview.widget.RecyclerView;
 import com.example.palestratiium.R;
 import com.example.palestratiium.classi.Esercizio;
 
+import java.io.FileNotFoundException;
+import java.io.InputStream;
 import java.util.List;
 
 public class Adapter_ListaEserciziHomePersonalT extends  RecyclerView.Adapter<Adapter_ListaEserciziHomePersonalT.ExampleViewHolder>{
     private List<Esercizio> mExampleList;
     private  final RecycleViewInterface recycleViewInterface;
+    public Context context;
 
 
-    public Adapter_ListaEserciziHomePersonalT(List <Esercizio> exampleList,RecycleViewInterface recycleViewInterface) {
+    public Adapter_ListaEserciziHomePersonalT(List <Esercizio> exampleList, RecycleViewInterface recycleViewInterface, Context context) {
         this.mExampleList = exampleList;
         this.recycleViewInterface=recycleViewInterface;
+        this.context=context;
     }
 
 
@@ -42,6 +50,10 @@ public class Adapter_ListaEserciziHomePersonalT extends  RecyclerView.Adapter<Ad
         if(mExampleList.get(position).getImage()!=null){
             Uri myuri= Uri.parse(mExampleList.get(position).getImage());
             holder.icona.setImageURI(myuri);
+
+        }else {
+            holder.icona.setImageResource(mExampleList.get(position).getImageDefault());
+
         }
         holder.nEsercizio.setText((mExampleList.get(position).getNome()));
         holder.bindData(position);

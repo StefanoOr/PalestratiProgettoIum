@@ -7,6 +7,7 @@ import androidx.recyclerview.widget.RecyclerView;
 
 import android.annotation.SuppressLint;
 import android.content.Intent;
+import android.net.Uri;
 import android.os.Bundle;
 import android.text.Editable;
 import android.text.TextWatcher;
@@ -24,6 +25,8 @@ import com.example.palestratiium.classi.PersonalTrainer;
 import com.example.palestratiium.classi.UserFactory;
 import com.google.android.material.bottomnavigation.BottomNavigationView;
 
+import java.io.FileNotFoundException;
+import java.io.InputStream;
 import java.io.Serializable;
 import java.util.List;
 
@@ -122,7 +125,7 @@ public class HomePersonalTrainer extends AppCompatActivity implements RecycleVie
             mRecyclerView.setHasFixedSize(true);
             mLayoutManager = new LinearLayoutManager(this);
 
-            adapter = new Adapter_ListaEserciziHomePersonalT(listaEserciziPt,this);
+            adapter = new Adapter_ListaEserciziHomePersonalT(listaEserciziPt,this,this);
             mRecyclerView.setLayoutManager(mLayoutManager);
             mRecyclerView.setAdapter(adapter);
         }
@@ -133,6 +136,12 @@ public class HomePersonalTrainer extends AppCompatActivity implements RecycleVie
 
     @Override
     public void onItemClick(int position) {
+        Uri uri = Uri.parse("android.resource://your.package.here/drawable/image_name");
+        try {
+            InputStream stream = getContentResolver().openInputStream(uri);
+        } catch (FileNotFoundException e) {
+            e.printStackTrace();
+        }
 
         Intent intent = new Intent(HomePersonalTrainer.this, EserciziActivity.class);
 

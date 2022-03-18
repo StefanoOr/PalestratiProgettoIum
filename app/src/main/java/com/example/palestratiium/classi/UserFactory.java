@@ -6,8 +6,16 @@
 
 package com.example.palestratiium.classi;
 
+import android.content.ContentResolver;
+import android.content.Context;
+import android.graphics.drawable.Drawable;
 import android.net.Uri;
+import android.widget.ImageView;
 
+import com.example.palestratiium.R;
+
+import java.io.FileNotFoundException;
+import java.io.InputStream;
 import java.io.Serializable;
 import java.util.ArrayList;
 import java.util.Calendar;
@@ -114,7 +122,7 @@ public class UserFactory implements Serializable {
     }
 
 
-    public List<User> getUsers() {
+    public List<User> getUsers()  {
         if(fine_user) {
             fine_user = false;
             User user = new User();
@@ -140,14 +148,17 @@ public class UserFactory implements Serializable {
         return users;
     }
 
-    public void initEsercizi(){
+    public void initEsercizi( )  {
 
-        eserciziAtzeni.add(new Esercizio("Dip.Distensioni di braccia","aa", BICIPITI,"1",null,null));
-        eserciziAtzeni.add(new Esercizio("Barca","bb", DORSO,"2",null,null));
-        eserciziAtzeni.add(new Esercizio("Crunch","aa", PETTO,"3",null,null));
-        eserciziAtzeni.add(new Esercizio("Front squat","bb", DORSO,"2",null,null));
-        eserciziRoberto.add(new Esercizio("Panca piana","vv", TRICIPITI,"3",null,null));
-        eserciziRoberto.add(new Esercizio("Panca verticale","vv", GAMBE,"3",null,null));
+
+        eserciziAtzeni.add(new Esercizio("Dip.Distensioni di braccia","aa", BICIPITI,"1",null));
+        eserciziAtzeni.add(new Esercizio("Barca","bb", DORSO,"2",null));
+        eserciziAtzeni.add(new Esercizio("Crunch","aa", PETTO,"3",null));
+        eserciziAtzeni.add(new Esercizio("Front squat","bb", DORSO,"2",null));
+        eserciziRoberto.add(new Esercizio("Panca piana","vv", TRICIPITI,"3",null));
+        eserciziRoberto.add(new Esercizio("Panca verticale","vv", GAMBE,"3",null));
+
+
 
         allEsercizi.addAll(eserciziAtzeni);
         allEsercizi.addAll(eserciziRoberto);
