@@ -36,6 +36,7 @@ public class EserciziActivity extends AppCompatActivity implements Serializable{
     private  Boolean vote=false;
 
     VideoView videoView;
+    ImageView imageView;
     TextView nomeEsercizio,descrizioneEsercizio,gruppoMuscolare,difficoltaEsercizio;
     boolean isPt,isUser;
     public static final String EXTRA_USER = "package com.example.palestratiium";
@@ -69,11 +70,16 @@ public class EserciziActivity extends AppCompatActivity implements Serializable{
         gruppoMuscolare = findViewById(R.id.text_corpo_gruppo_muscolare);
         difficoltaEsercizio = findViewById(R.id.text_corpo_difficolta);
         videoView = findViewById(R.id.videoView);
+        imageView = findViewById(R.id.imageView);
         ratingBar = findViewById(R.id.ratingBar);
 
 
         if(video != null) {
             setVideoToVideoView(video);
+        }
+
+        if(image != null) {
+            setImageToImageView(image);
         }
 
         nomeEsercizio.setText(name);
@@ -131,6 +137,11 @@ public class EserciziActivity extends AppCompatActivity implements Serializable{
 
     }
 
+    private void setImageToImageView(String image) {
+        Uri iUri = Uri.parse(image);
+        imageView.setImageURI(iUri);
+    }
+
     private void setVideoToVideoView(String v){
         MediaController mediaController = new MediaController(this);
         mediaController.setAnchorView(videoView);
@@ -146,4 +157,6 @@ public class EserciziActivity extends AppCompatActivity implements Serializable{
             }
         });
     }
+
+
 }

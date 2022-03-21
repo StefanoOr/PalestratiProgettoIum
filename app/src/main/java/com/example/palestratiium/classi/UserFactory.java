@@ -39,6 +39,7 @@ public class UserFactory implements Serializable {
     DatePickerFragment datePickerFragment = new DatePickerFragment();
     public static boolean fine_user = true , fine_pt=true;
     private Integer[] imgDefault;
+    private Integer videoDefault;
 
     private UserFactory() {
     }
@@ -153,14 +154,12 @@ public class UserFactory implements Serializable {
     public void initEsercizi( )  {
 
 
-        eserciziAtzeni.add(new Esercizio("Dip.Distensioni di braccia","aa", BICIPITI,"1",null,imgDefault[0]));
+        eserciziAtzeni.add(new Esercizio("Dip.Distensioni di braccia","aa", BICIPITI,"1",videoDefault,imgDefault[0]));
         eserciziAtzeni.add(new Esercizio("Barca","bb", DORSO,"2",null,imgDefault[1]));
         eserciziAtzeni.add(new Esercizio("Crunch","aa", PETTO,"3",null,imgDefault[2]));
         eserciziAtzeni.add(new Esercizio("Front squat","bb", DORSO,"2",null,imgDefault[3]));
         eserciziRoberto.add(new Esercizio("Panca piana","vv", TRICIPITI,"3",null,imgDefault[4]));
         eserciziRoberto.add(new Esercizio("Panca verticale","vv", GAMBE,"3",null,imgDefault[5]));
-
-
 
         allEsercizi.addAll(eserciziAtzeni);
         allEsercizi.addAll(eserciziRoberto);
@@ -232,5 +231,9 @@ public class UserFactory implements Serializable {
 
     public void setImgDafault(Integer[] imgDefault) {
         this.imgDefault=imgDefault;
+    }
+
+    public void setVideoDefault(Integer videoDefault) {
+        this.videoDefault=videoDefault;
     }
 }

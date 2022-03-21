@@ -38,20 +38,31 @@
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toBottomOf="@id/esercizio_title" />
 
+        <ImageView
+            android:id="@+id/imageView"
+            android:layout_width="140dp"
+            android:layout_height="140dp"
+            android:layout_marginTop="40dp"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintHorizontal_bias="0.059"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@id/barra_uno" />
+
         <FrameLayout
             android:id="@+id/frameL"
             android:layout_width="match_parent"
             android:layout_height="220dp"
-            app:layout_constraintTop_toBottomOf="@id/barra_uno"
+            android:layout_marginTop="40dp"
+            app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintEnd_toEndOf="parent">
+            app:layout_constraintTop_toBottomOf="@+id/barra_due">
 
             <VideoView
                 android:id="@+id/videoView"
                 android:layout_width="330dp"
                 android:layout_height="185dp"
-                android:layout_gravity="center"
-                android:layout_centerHorizontal="true" />
+                android:layout_centerHorizontal="true"
+                android:layout_gravity="center" />
 
         </FrameLayout>
 
@@ -59,13 +70,14 @@
             android:id="@+id/text_descrizione"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:layout_marginTop="20dp"
+            android:layout_marginTop="16dp"
+            android:gravity="center_horizontal"
             android:text="Descrizione"
             android:textColor="@color/barra_separatoria_secondaria"
             android:textSize="25sp"
             android:textStyle="bold"
             app:layout_constraintEnd_toEndOf="parent"
-            app:layout_constraintHorizontal_bias="0.089"
+            app:layout_constraintHorizontal_bias="0.118"
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toBottomOf="@id/frameL" />
 
@@ -74,12 +86,14 @@
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_marginLeft="10dp"
-            android:layout_marginTop="12dp"
+            android:layout_marginTop="8dp"
+            android:gravity="center_horizontal"
             android:text="@string/corpo_descrizioe"
+            android:textAlignment="center"
             android:textColor="@color/white"
             android:textSize="18sp"
             app:layout_constraintEnd_toEndOf="parent"
-            app:layout_constraintHorizontal_bias="0.094"
+            app:layout_constraintHorizontal_bias="0.124"
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toBottomOf="@id/text_descrizione" />
 
@@ -87,102 +101,79 @@
             android:id="@+id/barra_due"
             android:layout_width="match_parent"
             android:layout_height="2dp"
-            app:layout_constraintTop_toBottomOf="@id/text_corpo_descrizione"
-            app:layout_constraintStart_toStartOf="parent"
+            android:background="@color/barra_separatoria_secondaria"
+            android:layout_marginTop="40dp"
             app:layout_constraintEnd_toEndOf="parent"
-            android:layout_marginTop="5dp"
-            android:layout_marginBottom="-70dp"
-            android:layout_marginStart="25dp"
-            android:layout_marginEnd="25dp"
-            android:background="@color/barra_separatoria_secondaria" />
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/imageView" />
 
         <TextView
             android:id="@+id/text_gruppo"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:layout_marginTop="36dp"
+            android:layout_marginTop="12dp"
             android:text="Gruppo Muscolare"
             android:textColor="@color/barra_separatoria_secondaria"
             android:textSize="22sp"
             android:textStyle="bold"
             app:layout_constraintEnd_toEndOf="parent"
-            app:layout_constraintHorizontal_bias="0.109"
-            app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toBottomOf="@id/barra_due" />
+            app:layout_constraintStart_toEndOf="@+id/imageView"
+            app:layout_constraintTop_toBottomOf="@+id/text_corpo_difficolta" />
 
         <TextView
             android:id="@+id/text_corpo_gruppo_muscolare"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:layout_marginTop="12dp"
+            android:layout_marginTop="4dp"
             android:text="corpo_gruppo_muscolare"
             android:textColor="@color/white"
             android:textSize="18sp"
             app:layout_constraintEnd_toEndOf="parent"
-            app:layout_constraintHorizontal_bias="0.162"
-            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintHorizontal_bias="0.679"
+            app:layout_constraintStart_toEndOf="@id/imageView"
             app:layout_constraintTop_toBottomOf="@id/text_gruppo" />
-
-        <View
-            android:id="@+id/barra_tre"
-            android:layout_width="match_parent"
-            android:layout_height="2dp"
-            android:layout_marginBottom="-20dp"
-            android:layout_marginStart="25dp"
-            android:layout_marginEnd="25dp"
-            android:layout_marginTop="5dp"
-            app:layout_constraintTop_toBottomOf="@id/text_corpo_gruppo_muscolare"
-            android:background="@color/barra_separatoria_secondaria" />
 
         <TextView
             android:id="@+id/text_difficolta"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:layout_marginTop="36dp"
+            android:layout_marginTop="40dp"
             android:text="Difficoltà"
             android:textColor="@color/barra_separatoria_secondaria"
             android:textSize="22sp"
             android:textStyle="bold"
             app:layout_constraintEnd_toEndOf="parent"
-            app:layout_constraintHorizontal_bias="0.077"
-            app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toBottomOf="@id/barra_tre" />
+            app:layout_constraintHorizontal_bias="0.218"
+            app:layout_constraintStart_toEndOf="@id/imageView"
+            app:layout_constraintTop_toBottomOf="@id/barra_uno" />
 
         <TextView
             android:id="@+id/text_corpo_difficolta"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:layout_marginTop="12dp"
+            android:layout_marginTop="4dp"
             android:text="corpo_difficolta"
             android:textColor="@color/white"
             android:textSize="18sp"
             app:layout_constraintEnd_toEndOf="parent"
-            app:layout_constraintHorizontal_bias="0.119"
-            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintHorizontal_bias="0.272"
+            app:layout_constraintStart_toEndOf="@id/imageView"
             app:layout_constraintTop_toBottomOf="@id/text_difficolta" />
-
-        <View
-            android:id="@+id/barra_quattro"
-            android:layout_width="match_parent"
-            android:layout_height="2dp"
-            android:layout_marginBottom="-20dp"
-            android:layout_marginStart="25dp"
-            android:layout_marginEnd="25dp"
-            android:layout_marginTop="5dp"
-            app:layout_constraintTop_toBottomOf="@id/text_corpo_difficolta"
-            android:background="@color/barra_separatoria_secondaria" />
 
         <TextView
             android:id="@+id/text_vota"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:layout_marginTop="20dp"
+            android:layout_marginTop="28dp"
             android:text="Vota:"
             android:textAlignment="center"
             android:textColor="@color/barra_separatoria_secondaria"
             android:textSize="25sp"
             android:textStyle="bold"
-            app:layout_constraintTop_toBottomOf="@id/barra_quattro">
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintHorizontal_bias="0.0"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/text_corpo_descrizione">
 
         </TextView>
 
@@ -199,7 +190,7 @@
             app:layout_constraintHorizontal_bias="0.497"
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toBottomOf="@id/text_vota"
-            app:layout_constraintVertical_bias="0.0" />
+            app:layout_constraintVertical_bias="0.185" />
 
         <Button
             android:id="@+id/back_button"

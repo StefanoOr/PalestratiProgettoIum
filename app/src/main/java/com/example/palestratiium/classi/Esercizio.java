@@ -14,7 +14,7 @@ public class Esercizio implements Serializable {
     private String imagineMiniatura;
 
     private Integer img;
-
+    private Integer videoDefault;
 
     public  enum GruppoMuscolare {
         PETTO,
@@ -29,18 +29,23 @@ public class Esercizio implements Serializable {
     private String difficolta;
     private String video;
 
-    public Esercizio(String nome, String descrizioene, MyEnum gruppoMuscolare, String difficolta,String video,Integer img){
+    public Esercizio(String nome, String descrizioene, MyEnum gruppoMuscolare, String difficolta,Integer videoDefault,Integer img){
         this.nome=nome;
         this.descrizioene= descrizioene;
         this.gruppoMuscolare = gruppoMuscolare;
         this.difficolta=difficolta;
-        this.video=video;
+        this.videoDefault=videoDefault;
         this.img=img;
+
 
     }
 
     public int getImageDefault(){
         return this.img;
+    }
+
+    public int getVideoDefault(){
+        return this.videoDefault;
     }
 
     public String getImage() {

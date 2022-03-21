@@ -18,6 +18,7 @@ import android.widget.Button;
 import android.widget.ImageView;
 import android.widget.TextView;
 import android.widget.Toast;
+import android.widget.VideoView;
 
 import com.example.palestratiium.PersonalActivity.HomePersonalTrainer;
 import com.example.palestratiium.UserActivity.Home;
@@ -106,6 +107,9 @@ public class Login extends AppCompatActivity {
 
         Integer[] img = {R.drawable.bicipiti,R.drawable.crunch,R.drawable.pancapiana,R.drawable.pancaverticale,R.drawable.quadricipitisquatbilanciereparallelo
                 ,R.drawable.tricipitidipspanchebg};
+        Integer video = R.raw.pancapiana;
+
+        UserFactory.getInstance().setVideoDefault(video);
         UserFactory.getInstance().setImgDafault(img);
         userList = UserFactory.getInstance().getUsers();
         ptList =  UserFactory.getInstance().getPersonal();

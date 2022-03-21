@@ -11,6 +11,7 @@ import android.view.ViewGroup;
 import android.widget.Button;
 import android.widget.ImageView;
 import android.widget.TextView;
+import android.widget.VideoView;
 
 import androidx.annotation.NonNull;
 import androidx.recyclerview.widget.RecyclerView;
@@ -76,7 +77,6 @@ public class Adapter_ListaEserciziHomePersonalT extends  RecyclerView.Adapter<Ad
             mButtonModifica = itemView.findViewById(R.id.edit_esercizio);
             nEsercizio= itemView.findViewById(R.id.nomeEsercizio);
             icona = itemView.findViewById(R.id.iconIDpT);
-
 
             mButtonModifica.setOnClickListener(new View.OnClickListener() {
                 @Override
