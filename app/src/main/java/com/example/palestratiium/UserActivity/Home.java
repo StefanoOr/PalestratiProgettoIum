@@ -163,7 +163,15 @@ public class Home extends AppCompatActivity implements RecycleViewInterface {
         intent.putExtra("GRUPPOMUSCOLARE",listaEserciziCard.get(position).getGruppoMuscolare());
         intent.putExtra("RATING",(float)listaEserciziCard.get(position).getRating());
         intent.putExtra("DIFFICOLTA",listaEserciziCard.get(position).getDifficolta());
-        intent.putExtra("IMAGE",listaEserciziCard.get(position).getImage());
+        if(listaEserciziCard.get(position).getImage()==null){
+            intent.putExtra("IMAGEDAFAULT",listaEserciziCard.get(position).getImageDefault());
+        }else {
+            intent.putExtra("IMAGE", listaEserciziCard.get(position).getImage());
+        }
+
+        if(listaEserciziCard.get(position).getVideo()==null){
+            intent.putExtra("VIDEODEFAULT",listaEserciziCard.get(position).getVideoDefault());
+        }
         intent.putExtra(EXTRA_USER, user);
 
         startActivity(intent);

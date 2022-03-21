@@ -1,10 +1,12 @@
 package com.example.palestratiium;
 
+import androidx.annotation.RequiresApi;
 import androidx.appcompat.app.AppCompatActivity;
 
 import android.content.Intent;
 import android.media.MediaPlayer;
 import android.net.Uri;
+import android.os.Build;
 import android.os.Bundle;
 import android.view.View;
 import android.widget.Button;
@@ -42,6 +44,7 @@ public class EserciziActivity extends AppCompatActivity implements Serializable{
     public static final String EXTRA_USER = "package com.example.palestratiium";
     public static final String EXTRA_PT = "package com.example.palestratiium";
 
+    @RequiresApi(api = Build.VERSION_CODES.Q)
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -60,8 +63,13 @@ public class EserciziActivity extends AppCompatActivity implements Serializable{
         String difficolta = getIntent().getStringExtra("DIFFICOLTA");
         MyEnum gruppo = (MyEnum) intent.getSerializableExtra("GRUPPOMUSCOLARE");
         String video = getIntent().getStringExtra("VIDEO");
+
         String image = getIntent().getStringExtra("IMAGE");
+        int videoDefault=intent.getExtras().getInt("VIDEODEFAULT");
+        int imageDefault = intent.getExtras().getInt("IMAGEDAFAULT");
         float rate = getIntent().getExtras().getFloat("RATING");
+
+
 
 
         nomeEsercizio= findViewById(R.id.esercizio_title);
@@ -78,9 +86,22 @@ public class EserciziActivity extends AppCompatActivity implements Serializable{
             setVideoToVideoView(video);
         }
 
-        if(image != null) {
+        if(image!=null) {
             setImageToImageView(image);
         }
+
+        if(imageDefault>0){
+            imageView.setImageResource(imageDefault);
+        }
+
+        if(videoDefault>0) {
+            setVideoToVideoViewDefault(videoDefault);
+
+        }
+
+
+
+
 
         nomeEsercizio.setText(name);
         descrizioneEsercizio.setText(descrizione);
@@ -135,6 +156,27 @@ public class EserciziActivity extends AppCompatActivity implements Serializable{
         });
 
 
+    }
+
+    @RequiresApi(api = Build.VERSION_CODES.Q)
+    private void setVideoToVideoViewDefault(int videoDefault) {
+        MediaController mediaController = new MediaController(this);
+        mediaController.setAnchorView(videoView);
+
+String uriPath="android.resource//:" + getOpPackageName() + "/" +R.raw.pancapiana;
+Uri uri=Uri.parse(uriPath);
+
+
+        videoView.setMediaController(mediaController);
+        videoView.setVideoURI(uri);
+
+        videoView.requestFocus();
+        videoView.setOnPreparedListener(new MediaPlayer.OnPreparedListener() {
+            @Override
+            public void onPrepared(MediaPlayer mp) {
+                videoView.pause();
+            }
+        });
     }
 
     private void setImageToImageView(String image) {

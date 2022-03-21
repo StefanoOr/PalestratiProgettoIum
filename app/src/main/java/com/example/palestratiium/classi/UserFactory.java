@@ -151,8 +151,7 @@ public class UserFactory implements Serializable {
         return users;
     }
 
-    public void initEsercizi( )  {
-
+    public void initEsercizi( ) {
 
         eserciziAtzeni.add(new Esercizio("Dip.Distensioni di braccia","aa", BICIPITI,"1",videoDefault,imgDefault[0]));
         eserciziAtzeni.add(new Esercizio("Barca","bb", DORSO,"2",null,imgDefault[1]));
