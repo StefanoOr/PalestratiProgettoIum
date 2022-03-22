@@ -161,16 +161,17 @@ public class EserciziActivity extends AppCompatActivity implements Serializable{
     @RequiresApi(api = Build.VERSION_CODES.Q)
     private void setVideoToVideoViewDefault(int videoDefault) {
         MediaController mediaController = new MediaController(this);
-        mediaController.setAnchorView(videoView);
 
-String uriPath="android.resource//:" + getOpPackageName() + "/" +R.raw.pancapiana;
+
+String uriPath="android.resource://"+ getPackageName()+"/"+  videoDefault ;
 Uri uri=Uri.parse(uriPath);
 
 
         videoView.setMediaController(mediaController);
         videoView.setVideoURI(uri);
-
+        mediaController.setAnchorView(videoView);
         videoView.requestFocus();
+        videoView.start();
         videoView.setOnPreparedListener(new MediaPlayer.OnPreparedListener() {
             @Override
             public void onPrepared(MediaPlayer mp) {

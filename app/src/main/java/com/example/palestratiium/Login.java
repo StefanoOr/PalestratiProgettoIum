@@ -107,7 +107,7 @@ public class Login extends AppCompatActivity {
 
         Integer[] img = {R.drawable.bicipiti,R.drawable.crunch,R.drawable.pancapiana,R.drawable.pancaverticale,R.drawable.quadricipitisquatbilanciereparallelo
                 ,R.drawable.tricipitidipspanchebg};
-        Integer video = R.raw.pancapiana;
+        Integer[] video = {R.raw.pancapiana,R.raw.f,R.raw.video};
 
         UserFactory.getInstance().setVideoDefault(video);
         UserFactory.getInstance().setImgDafault(img);
