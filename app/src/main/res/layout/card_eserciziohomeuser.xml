@@ -8,9 +8,8 @@
     android:backgroundTint="@color/card_background_layout"
     android:layout_height="wrap_content"
     app:cardCornerRadius="15dp"
-    app:cardElevation="1dp"
-    android:outlineSpotShadowColor="@color/barra_separatoria_principale"
-    android:outlineAmbientShadowColor="@color/barra_separatoria_secondaria"
+    android:elevation="7dp"
+    android:outlineSpotShadowColor="@color/barra_separatoria_secondaria"
     app:cardUseCompatPadding="true">
 
     <androidx.constraintlayout.widget.ConstraintLayout
@@ -38,7 +37,7 @@
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintHorizontal_bias="0.0"
             app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toBottomOf="@+id/iconImage" />
+            app:layout_constraintTop_toBottomOf="@+id/imgMiniaturaCarduser" />
 
         <TextView
             android:id="@+id/nomeEsercizio"

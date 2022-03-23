@@ -6,6 +6,8 @@ import androidx.appcompat.app.AppCompatActivity;
 import android.annotation.SuppressLint;
 import android.app.AlertDialog;
 import android.content.Intent;
+import android.graphics.Color;
+import android.graphics.drawable.ColorDrawable;
 import android.os.Bundle;
 import android.view.MenuItem;
 import android.view.View;
@@ -89,6 +91,7 @@ public class ProfiloUser extends AppCompatActivity {
                 alert.setView(mView);
                 dialog = alert.create();
                 dialog.setCanceledOnTouchOutside(false);
+                dialog.getWindow().setBackgroundDrawable(new ColorDrawable(Color.TRANSPARENT));
 
                 seek_peso.setProgress(80);
                 seek_peso.setOnSeekBarChangeListener(new SeekBar.OnSeekBarChangeListener() {
@@ -156,6 +159,7 @@ public class ProfiloUser extends AppCompatActivity {
                 alert.setView(mView);
                 dialog = alert.create();
                 dialog.setCanceledOnTouchOutside(false);
+                dialog.getWindow().setBackgroundDrawable(new ColorDrawable(Color.TRANSPARENT));
 
                 seek_altezza.setProgress(80);
                 seek_altezza.setOnSeekBarChangeListener(new SeekBar.OnSeekBarChangeListener() {
