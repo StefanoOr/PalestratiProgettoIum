@@ -46,7 +46,7 @@ public class Upload extends AppCompatActivity implements Serializable, AdapterVi
     private EditText titleEt, descrizioneEt;
     private VideoView videoView;
     private ImageView imageView;
-    private Button uploadVideoBtn, uploadImageBtn;
+    private Button uploadVideoBtn, uploadImageBtn,back_home;
     private FloatingActionButton selectVideoBtn;
     private Spinner seleziona_difficolta;
     private CheckBox petto, gambe, bicipiti, dorso, tricipiti, spalle;
@@ -81,6 +81,7 @@ public class Upload extends AppCompatActivity implements Serializable, AdapterVi
             personal = new PersonalTrainer();
         }
 
+        back_home=findViewById(R.id.back_home_upload);
         checkBoxErr = findViewById(R.id.error_checkBox);
         videoErr = findViewById(R.id.error_video);
         titleEt = findViewById(R.id.title_edit_text);
@@ -117,6 +118,17 @@ public class Upload extends AppCompatActivity implements Serializable, AdapterVi
             @Override
             public void onClick(View v) {
                 imagePickDialog();
+            }
+        });
+
+        back_home.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                Intent showResult;
+                showResult = new Intent(Upload.this, HomePersonalTrainer.class);
+                showResult.putExtra(EXTRA_PT, personal);
+                startActivity(showResult);
+                overridePendingTransition(0, 0);
             }
         });
 

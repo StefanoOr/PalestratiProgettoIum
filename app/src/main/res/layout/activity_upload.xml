@@ -300,14 +300,25 @@
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintEnd_toEndOf="parent"/>
 
+
+        <Button
+            android:id="@+id/back_home_upload"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Home"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent" />
+
+
         <Button
             android:id="@+id/uploadVideoButton"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:layout_marginTop="40dp"
             android:layout_marginLeft="20dp"
+            android:layout_marginTop="40dp"
             android:layout_marginRight="20dp"
-            android:layout_marginBottom="80dp"
+            android:layout_marginBottom="16dp"
             android:background="@drawable/upload_video_btn_layout"
             android:elevation="5dp"
             android:outlineSpotShadowColor="@color/barra_separatoria_principale"
@@ -315,10 +326,10 @@
             android:text="Carica Esercizio"
             android:textColor="@color/white"
             android:textStyle="bold"
-            app:layout_constraintTop_toBottomOf="@id/difficolta_spinner"
-            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintBottom_toBottomOf="parent"
             app:layout_constraintEnd_toEndOf="parent"
-            app:layout_constraintBottom_toBottomOf="parent"/>
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@id/difficolta_spinner" />
 
     </androidx.constraintlayout.widget.ConstraintLayout>
 
