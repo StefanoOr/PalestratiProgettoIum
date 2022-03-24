@@ -136,23 +136,27 @@ public class HomePersonalTrainer extends AppCompatActivity implements RecycleVie
 
     @Override
     public void onItemClick(int position) {
-        Uri uri = Uri.parse("android.resource://your.package.here/drawable/image_name");
-        try {
-            InputStream stream = getContentResolver().openInputStream(uri);
-        } catch (FileNotFoundException e) {
-            e.printStackTrace();
-        }
-
         Intent intent = new Intent(HomePersonalTrainer.this, EserciziActivity.class);
-
 
 
         intent.putExtra("NAME",listaEserciziPt.get(position).getNome());
         intent.putExtra("DESCRIPTION",listaEserciziPt.get(position).getDescrizioene());
         intent.putExtra("GRUPPOMUSCOLARE",listaEserciziPt.get(position).getGruppoMuscolare());
+        intent.putExtra("RATING",(float)listaEserciziPt.get(position).getRating());
         intent.putExtra("DIFFICOLTA",listaEserciziPt.get(position).getDifficolta());
-        intent.putExtra("VIDEO",listaEserciziPt.get(position).getVideo());
-        intent.putExtra("IMAGE",listaEserciziPt.get(position).getImage());
+        if(listaEserciziPt.get(position).getImage()==null){
+            intent.putExtra("IMAGEDAFAULT",listaEserciziPt.get(position).getImageDefault());
+        }else {
+            intent.putExtra("IMAGE", listaEserciziPt.get(position).getImage());
+        }
+
+        if(listaEserciziPt.get(position).getVideo()==null){
+            intent.putExtra("VIDEODEFAULT",listaEserciziPt.get(position).getVideoDefault());
+        }
+
+
+
+
         intent.putExtra(EXTRA_PT, personal);
 
         startActivity(intent);

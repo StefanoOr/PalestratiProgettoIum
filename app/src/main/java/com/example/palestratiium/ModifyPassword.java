@@ -17,7 +17,11 @@ import android.widget.Button;
 import android.widget.TextView;
 import android.widget.Toast;
 
+import com.example.palestratiium.PersonalActivity.HomePersonalTrainer;
+import com.example.palestratiium.PersonalActivity.ProfiloPersonalTrainer;
 import com.example.palestratiium.UserActivity.Home;
+import com.example.palestratiium.UserActivity.ProfiloUser;
+import com.example.palestratiium.classi.PersonalTrainer;
 import com.google.android.material.textfield.TextInputLayout;
 
 import java.io.Serializable;
@@ -32,10 +36,12 @@ public class ModifyPassword extends AppCompatActivity {
     TextInputLayout newpass, newpassconf;
     Button modify, home;
     User user;
+    PersonalTrainer personalTrainer;
     boolean isPasswordVisibleNEW, isPasswordVisibleCONFIRM;
+    boolean isPt,isUser;
 
     public static final String EXTRA_USER = "package com.example.BonusLogin";
-
+    public static final String EXTRA_PT = "package com.example.palestratiium";
 
     @SuppressLint("ClickableViewAccessibility")
     @Override
@@ -54,21 +60,35 @@ public class ModifyPassword extends AppCompatActivity {
 
         Intent intent = getIntent();
         Serializable obj = intent.getSerializableExtra(Login.EXTRA_USER);
+        Serializable objT = intent.getSerializableExtra(Login.EXTRA_PT);
 
         if(obj instanceof User){
             user = (User) obj;
+            isUser=true;
+            username.setText(user.getUsername());
+            oldPass.setText(user.getPassword());
         }else{
             user = new User();
         }
 
-        username.setText(user.getUsername());
-        oldPass.setText(user.getPassword());
+
+        if(objT instanceof PersonalTrainer){
+            personalTrainer = (PersonalTrainer) objT;
+            isPt=true;
+            username.setText(personalTrainer.getUsername());
+            oldPass.setText(personalTrainer.getPassword());
+        }else{
+            personalTrainer = new PersonalTrainer();
+        }
+
+
+
 
         modify.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
 
-                if (checkInput()) {
+                if (checkInput() && isUser) {
 
                     user.setPassword(Objects.requireNonNull(newpass.getEditText()).getText().toString());
                     UserFactory.getInstance().modifyPass(user);
@@ -82,9 +102,18 @@ public class ModifyPassword extends AppCompatActivity {
                     toast.show();
 
                     startActivity(home);
-                }else{
+                }else if(checkInput() && isPt){
 
+                    personalTrainer.setPassword(Objects.requireNonNull(newpass.getEditText()).getText().toString());
+                    UserFactory.getInstance().modifyPassPersonal(personalTrainer);
+                    Intent home = new Intent(ModifyPassword.this, ModifyPassword.class);
+                    home.putExtra(EXTRA_USER, user);
 
+                    Context context = getApplicationContext();
+                    CharSequence text = "Password Updated";
+                    int duration = Toast.LENGTH_SHORT;
+                    Toast toast = Toast.makeText(context, text, duration);
+                    toast.show();
                     //todo trhow exception for mismathch new passwords
                 }
             }
@@ -94,10 +123,17 @@ public class ModifyPassword extends AppCompatActivity {
         home.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                Intent home = new Intent(ModifyPassword.this, Home.class);
+                if(isUser){
+                Intent home = new Intent(ModifyPassword.this, ProfiloUser.class);
                 home.putExtra(EXTRA_USER, user);
                 startActivity(home);
+            }else if(isPt){
+                    Intent homePt = new Intent(ModifyPassword.this, ProfiloPersonalTrainer.class);
+                    homePt.putExtra(EXTRA_PT, personalTrainer);
+                    startActivity(homePt);
+                }
             }
+
         });
     }
 

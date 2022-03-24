@@ -9,9 +9,12 @@ import android.os.Bundle;
 import android.view.MenuItem;
 import android.view.View;
 import android.widget.Button;
+import android.widget.TextView;
 
 import com.example.palestratiium.Login;
+import com.example.palestratiium.ModifyPassword;
 import com.example.palestratiium.R;
+import com.example.palestratiium.UserActivity.ProfiloUser;
 import com.example.palestratiium.classi.PersonalTrainer;
 import com.google.android.material.bottomnavigation.BottomNavigationView;
 
@@ -21,6 +24,7 @@ public class ProfiloPersonalTrainer extends AppCompatActivity {
     public static final String EXTRA_PT = "package com.example.palestratiium";
     PersonalTrainer personal;
     Button logout;
+    TextView modify_password;
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -36,7 +40,8 @@ public class ProfiloPersonalTrainer extends AppCompatActivity {
             personal = new PersonalTrainer();
         }
 
-        logout=findViewById(R.id.logoutPersonal);
+        logout=findViewById(R.id.logoutPT);
+         modify_password=findViewById(R.id.modify_password_pt);
 
 
         BottomNavigationView bottomNavigationView = findViewById(R.id.bottom_navigation);
@@ -84,6 +89,15 @@ public class ProfiloPersonalTrainer extends AppCompatActivity {
             }
         });
 
+
+        modify_password.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                Intent showResult = new Intent(ProfiloPersonalTrainer.this, ModifyPassword.class);
+                showResult.putExtra(EXTRA_PT, personal);
+                startActivity(showResult);
+            }
+        });
     }
 }
 

@@ -35,11 +35,12 @@ public class EserciziActivity extends AppCompatActivity implements Serializable{
     String name;
     float voteInt;
 
+
     private  Boolean vote=false;
 
     VideoView videoView;
     ImageView imageView;
-    TextView nomeEsercizio,descrizioneEsercizio,gruppoMuscolare,difficoltaEsercizio;
+    TextView nomeEsercizio,descrizioneEsercizio,gruppoMuscolare,difficoltaEsercizio,text_vota;
     boolean isPt,isUser;
     public static final String EXTRA_USER = "package com.example.palestratiium";
     public static final String EXTRA_PT = "package com.example.palestratiium";
@@ -80,6 +81,7 @@ public class EserciziActivity extends AppCompatActivity implements Serializable{
         videoView = findViewById(R.id.videoView);
         imageView = findViewById(R.id.imageView);
         ratingBar = findViewById(R.id.ratingBar);
+        text_vota= findViewById(R.id.text_vota);
 
 
         if(video != null) {
@@ -118,6 +120,10 @@ public class EserciziActivity extends AppCompatActivity implements Serializable{
 
         if(objT instanceof PersonalTrainer){
             personalTrainer = (PersonalTrainer) objT;
+            CharSequence a ="Media voti";
+            text_vota.setText(a);
+            ratingBar.setActivated(false);
+
             isPt=true;
 
         }else{
@@ -146,14 +152,18 @@ public class EserciziActivity extends AppCompatActivity implements Serializable{
             }
         });
 
-        ratingBar.setOnRatingBarChangeListener(new RatingBar.OnRatingBarChangeListener() {
-            @Override
-            public void onRatingChanged(RatingBar ratingBar, float rating, boolean fromUser) {
-                vote=true;
 
-                voteInt= rating;
-            }
-        });
+        if(isUser) {
+
+            ratingBar.setOnRatingBarChangeListener(new RatingBar.OnRatingBarChangeListener() {
+                @Override
+                public void onRatingChanged(RatingBar ratingBar, float rating, boolean fromUser) {
+                    vote = true;
+
+                    voteInt = rating;
+                }
+            });
+        }
 
 
     }

@@ -176,6 +176,7 @@ public class UserFactory implements Serializable {
             if (u.getUsername().equals(personal.getUsername()) && u.getCity().equals(personal.getCity())){
                 coach.remove(u);
                 coach.add(personal);
+                return;
             }
         }
     }
@@ -185,9 +186,12 @@ public class UserFactory implements Serializable {
             if (u.getUsername().equals(user.getUsername()) && u.getCity().equals(user.getCity())){
                 users.remove(u);
                 users.add(user);
+                return;
             }
         }
     }
+
+
 
     public List<Esercizio> lisTest(PersonalTrainer pt, MyEnum gruppoMuscolare){
 

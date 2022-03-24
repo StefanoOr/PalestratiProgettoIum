@@ -12,35 +12,19 @@
         android:layout_height="match_parent">
 
 
-        <Spinner
-            android:id="@+id/countries"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_centerHorizontal="true"
-            android:layout_marginEnd="24dp"
-            android:entries="@array/titoli"
-            app:layout_constraintEnd_toEndOf="parent"
-            tools:layout_editor_absoluteY="332dp" />
-
-        <Spinner
-            android:id="@+id/countries"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_centerHorizontal="true"
-            android:entries="@array/città"
-            tools:layout_editor_absoluteX="258dp"
-            tools:layout_editor_absoluteY="383dp" />
-
         <TextView
             android:id="@+id/textView12"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
+            android:layout_marginStart="5dp"
             android:text="Contatti"
             android:textColor="@color/white"
             android:textSize="20dp"
             android:textStyle="bold"
-            tools:layout_editor_absoluteX="55dp"
-            tools:layout_editor_absoluteY="435dp" />
+            app:layout_constraintBottom_toBottomOf="@+id/view14"
+            app:layout_constraintEnd_toEndOf="@+id/view14"
+            app:layout_constraintHorizontal_bias="0.0"
+            app:layout_constraintStart_toEndOf="@+id/imageView6" />
 
         <ImageView
             android:id="@+id/imageView"
@@ -93,17 +77,18 @@
             app:layout_constraintTop_toBottomOf="@+id/view" />
 
         <Button
-            android:id="@+id/logoutUser"
+            android:id="@+id/logoutPT"
 
             android:layout_width="183dp"
             android:layout_height="51dp"
-            android:layout_marginBottom="12dp"
+            android:layout_marginBottom="8dp"
             android:backgroundTint="@color/homeButton"
             android:text="Logout"
             app:layout_constraintBottom_toTopOf="@+id/bottom_navigation"
             app:layout_constraintEnd_toEndOf="parent"
-            app:layout_constraintHorizontal_bias="0.929"
-            app:layout_constraintStart_toStartOf="parent" />
+            app:layout_constraintHorizontal_bias="0.478"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/modify_password" />
 
         <TextView
             android:id="@+id/textView10"
@@ -276,35 +261,33 @@
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toBottomOf="@+id/view4" />
 
+
         <TextView
             android:id="@+id/textView15"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:layout_marginTop="20dp"
+            android:layout_marginTop="24dp"
             android:text="Città"
             android:textColor="@color/white"
             android:textSize="20dp"
             android:textStyle="bold"
-            app:layout_constraintTop_toBottomOf="@+id/view4"
-            tools:layout_editor_absoluteX="55dp" />
-
-
-        <ImageView
-            android:layout_width="30dp"
-            android:layout_height="30dp"
-            android:src="@drawable/ic_baseline_keyboard_arrow_right_24"
-            tools:layout_editor_absoluteX="98dp"
-            tools:layout_editor_absoluteY="560dp" />
+            app:layout_constraintEnd_toEndOf="@+id/view7"
+            app:layout_constraintHorizontal_bias="0.0"
+            app:layout_constraintStart_toEndOf="@+id/imageView7"
+            app:layout_constraintTop_toBottomOf="@+id/view4" />
 
         <TextView
-            android:id="@+id/modify_password"
+            android:id="@+id/modify_password_pt"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
+            android:layout_marginTop="116dp"
             android:text="Modifica Password"
             android:textColor="@color/barra_separatoria_principale"
             android:textSize="20dp"
-            tools:layout_editor_absoluteX="128dp"
-            tools:layout_editor_absoluteY="560dp" />
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintHorizontal_bias="0.497"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/view7" />
 
         <View
             android:id="@+id/view5"
@@ -318,14 +301,7 @@
             app:layout_constraintStart_toStartOf="@+id/modify_password"
             app:layout_constraintTop_toBottomOf="@+id/modify_password" />
 
-        <Button
-            android:id="@+id/back_home"
-            android:layout_width="190dp"
-            android:layout_height="50dp"
-            android:backgroundTint="@color/barra_separatoria_principale"
-            android:text="Home"
-            tools:layout_editor_absoluteX="22dp"
-            tools:layout_editor_absoluteY="613dp" />
+
 
         <com.google.android.material.bottomnavigation.BottomNavigationView
             android:id="@+id/bottom_navigation"
