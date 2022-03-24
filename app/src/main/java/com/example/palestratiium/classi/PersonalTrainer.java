@@ -104,7 +104,3 @@ public class PersonalTrainer implements Serializable {
     public Esercizio getEsercizio(int index){
         return listaEsercizi.get(index);
     }
-
-
-
-}
