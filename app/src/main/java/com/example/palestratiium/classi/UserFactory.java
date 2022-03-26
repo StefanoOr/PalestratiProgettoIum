@@ -31,13 +31,20 @@ import static com.example.palestratiium.classi.MyEnum.TUTTI;
 public class UserFactory implements Serializable {
 
     private static UserFactory singleton;
-    private List<User> users = new ArrayList<>();
+
     private List<PersonalTrainer> coach = new ArrayList<>();
+
+    //LISTE
+    private List<User> users = new ArrayList<>();
     private List<Esercizio> eserciziAtzeni = new ArrayList<>();
     private List<Esercizio> eserciziRoberto = new ArrayList<>();
     private List<Esercizio> allEsercizi = new ArrayList<>();
+    private List<SchedeAllenamento> schedeAllenamento = new ArrayList<>();
+
     DatePickerFragment datePickerFragment = new DatePickerFragment();
+
     public static boolean fine_user = true , fine_pt=true;
+
     private Integer[] imgDefault;
     private Integer[] videoDefault;
 
@@ -239,4 +246,19 @@ public class UserFactory implements Serializable {
     public void setVideoDefault(Integer[] videoDefault) {
         this.videoDefault=videoDefault;
     }
+
+
+    public void setAllenamentoDefault(){
+
+       List<Esercizio> default1 = new ArrayList<>();
+
+       default1.add(allEsercizi.get(1));
+       default1.add(allEsercizi.get(0));
+       default1.add(allEsercizi.get(2));
+        SchedeAllenamento schedaDefault1 = new SchedeAllenamento("Scheda Base","scheda per iniziare ad allenarsi",default1);
+        schedeAllenamento.add(schedaDefault1);
+
+
+    }
+
 }
