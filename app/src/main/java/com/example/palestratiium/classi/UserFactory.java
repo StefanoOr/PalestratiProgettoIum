@@ -154,7 +154,7 @@ public class UserFactory implements Serializable {
     public void initEsercizi( ) {
 
         eserciziAtzeni.add(new Esercizio("Dip.Distensioni di braccia","aa", BICIPITI,"1",videoDefault[0],imgDefault[0]));
-        eserciziAtzeni.add(new Esercizio("Barca","bb", DORSO,"2",videoDefault[1],imgDefault[1]));
+        eserciziAtzeni.add(new Esercizio("Barca","bbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbb", DORSO,"2",videoDefault[1],imgDefault[1]));
         eserciziAtzeni.add(new Esercizio("Crunch","aa", PETTO,"3",videoDefault[2],imgDefault[2]));
         eserciziAtzeni.add(new Esercizio("Front squat","bb", DORSO,"2",null,imgDefault[3]));
         eserciziRoberto.add(new Esercizio("Panca piana","vv", TRICIPITI,"3",null,imgDefault[4]));

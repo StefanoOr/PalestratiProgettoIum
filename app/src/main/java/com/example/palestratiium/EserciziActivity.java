@@ -8,6 +8,7 @@ import android.media.MediaPlayer;
 import android.net.Uri;
 import android.os.Build;
 import android.os.Bundle;
+import android.text.method.ScrollingMovementMethod;
 import android.view.View;
 import android.widget.Button;
 import android.widget.ImageView;
@@ -107,6 +108,7 @@ public class EserciziActivity extends AppCompatActivity implements Serializable{
 
         nomeEsercizio.setText(name);
         descrizioneEsercizio.setText(descrizione);
+        descrizioneEsercizio.setMovementMethod(new ScrollingMovementMethod());
         gruppoMuscolare.setText(gruppo.name());
         difficoltaEsercizio.setText(difficolta);
         ratingBar.setRating(rate);

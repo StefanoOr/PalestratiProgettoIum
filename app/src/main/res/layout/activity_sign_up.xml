@@ -4,12 +4,11 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
+    android:background="@color/card_background"
     android:layout_gravity="center"
     android:gravity="center"
     android:orientation="vertical"
     tools:context=".SignUp">
-
-
 
     <ScrollView
         android:id="@+id/scrollView2"
@@ -47,6 +46,7 @@
                 android:id="@+id/input_signup_username"
                 android:layout_width="match_parent"
                 android:layout_height="match_parent"
+                android:background="@drawable/card_background_edit_profile"
                 android:layout_marginLeft="50dp"
                 android:layout_marginRight="50dp"
                 android:transitionName="user_transition">
@@ -172,6 +172,8 @@
                 android:layout_height="wrap_content"
                 android:layout_marginTop="40dp"
                 android:layout_marginBottom="50dp"
+                android:elevation="7dp"
+                android:background="@drawable/card_background_edit_profile"
                 android:backgroundTint="@color/barra_separatoria_principale"
                 android:text="Sign Up"
                 />
