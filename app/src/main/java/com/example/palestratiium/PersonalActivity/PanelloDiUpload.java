@@ -75,6 +75,7 @@ public class PanelloDiUpload extends AppCompatActivity {
             }
         });
 
+        
 
     aggiungiEsercizio.setOnClickListener(new View.OnClickListener() {
         @Override
@@ -85,6 +86,15 @@ public class PanelloDiUpload extends AppCompatActivity {
         }
     });
 
+
+    aggiungiSchedaAllenamento.setOnClickListener(new View.OnClickListener() {
+        @Override
+        public void onClick(View v) {
+            Intent showResult = new Intent(PanelloDiUpload.this, CreazioneSchedaAllenamento.class);
+            showResult.putExtra(EXTRA_PT, personal);
+            startActivity(showResult);
+        }
+    });
     }
 
 }

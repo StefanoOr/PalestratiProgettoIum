@@ -91,6 +91,8 @@ public class UserFactory implements Serializable {
     }
 
 
+
+
     public List<PersonalTrainer> getPersonal(){
 
         if(fine_pt) {
@@ -255,8 +257,8 @@ public class UserFactory implements Serializable {
        default1.add(allEsercizi.get(1));
        default1.add(allEsercizi.get(0));
        default1.add(allEsercizi.get(2));
-        SchedeAllenamento schedaDefault1 = new SchedeAllenamento("Scheda Base","scheda per iniziare ad allenarsi",default1);
-        schedeAllenamento.add(schedaDefault1);
+        //SchedeAllenamento schedaDefault1 = new SchedeAllenamento("Scheda Base","scheda per iniziare ad allenarsi",default1);
+       // schedeAllenamento.add(schedaDefault1);
 
 
     }

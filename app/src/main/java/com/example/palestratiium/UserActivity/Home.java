@@ -47,12 +47,15 @@ public class Home extends AppCompatActivity implements RecycleViewInterface {
 
 
 
-    //TODO test esercizi da elimiare
+
     List<Esercizio> listaEserciziCard;
 
+
+    //todo recycle view per le card esercizi
     private RecyclerView.LayoutManager mLayoutManager;
     RecyclerView mRecyclerView;
     RecyclerView.Adapter adapter;
+
     MyEnum gruppoMuscolare=MyEnum.TUTTI;
     public static final String EXTRA_USER = "package com.example.palestratiium";
 

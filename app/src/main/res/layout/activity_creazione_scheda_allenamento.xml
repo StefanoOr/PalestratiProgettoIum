@@ -33,14 +33,15 @@
         app:layout_constraintTop_toBottomOf="@+id/textView16" />
 
     <androidx.recyclerview.widget.RecyclerView
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
+        android:id="@+id/item_Lista_allenamento"
+        android:layout_width="418dp"
+        android:layout_height="436dp"
         app:layout_constraintBottom_toTopOf="@+id/indietroCreazioneAllenamento"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.0"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/nomeSchedaAllenamento"
-        app:layout_constraintVertical_bias="0.171" />
+        app:layout_constraintVertical_bias="0.212" />
 
     <Button
         android:id="@+id/indietroCreazioneAllenamento"
@@ -48,6 +49,19 @@
         android:layout_height="wrap_content"
         android:layout_marginBottom="24dp"
         android:text="Indietro"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.498"
+        app:layout_constraintStart_toStartOf="parent" />
+
+
+    <Button
+        android:id="@+id/addSchedaAllenamento"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginBottom="92dp"
+        android:backgroundTint="@color/homeButton"
+        android:text="Aggiungi"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.498"

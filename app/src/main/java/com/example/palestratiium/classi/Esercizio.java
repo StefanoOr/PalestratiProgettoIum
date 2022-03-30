@@ -40,6 +40,19 @@ public class Esercizio implements Serializable {
 
     }
 
+
+    public Esercizio(String nome){
+        this.nome=nome;
+    }
+
+
+    public Esercizio(){
+
+    }
+
+
+
+
     public int getImageDefault(){
         return this.img;
     }
@@ -82,7 +95,7 @@ public class Esercizio implements Serializable {
         this.video = video;
     }
 
-    public Esercizio(){}
+
 
     public String getNome() {
         return nome;

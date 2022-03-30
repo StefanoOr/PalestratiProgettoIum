@@ -6,11 +6,11 @@ public class SchedeAllenamento {
 
     private  String nomeScheda;
     private  String descrizione;
-    private List<Esercizio> listaEsercizi;
+    private List<EsercizioSchedaAllenamento> listaEsercizi;
 
 
 
-    public SchedeAllenamento(String nomeScheda,String descrizione,List<Esercizio> listaEsercizi){
+    public SchedeAllenamento(String nomeScheda,String descrizione,List<EsercizioSchedaAllenamento> listaEsercizi){
 
         this.nomeScheda=nomeScheda;
         this.descrizione=descrizione;
@@ -34,16 +34,16 @@ public class SchedeAllenamento {
         this.descrizione = descrizione;
     }
 
-    public List<Esercizio> getEsercizi() {
+    public List<EsercizioSchedaAllenamento> getEsercizi() {
         return listaEsercizi;
     }
 
-    public void setEsercizi(List<Esercizio> ListaEsercizi) {
+    public void setEsercizi(List<EsercizioSchedaAllenamento> ListaEsercizi) {
         this.listaEsercizi = ListaEsercizi;
     }
 
 
-    public void addEsercizio(Esercizio esercizio){
+    public void addEsercizio(EsercizioSchedaAllenamento esercizio){
         this.listaEsercizi.add(esercizio);
     }
 
