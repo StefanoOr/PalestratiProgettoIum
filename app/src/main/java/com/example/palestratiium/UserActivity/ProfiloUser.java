@@ -241,9 +241,15 @@ public class ProfiloUser extends AppCompatActivity {
                         return true;
 
                     case R.id.profilo:
-
                         return true;
 
+                    case R.id.aggiungiVideo:
+
+                        showResult = new Intent(ProfiloUser.this, WorkOut.class);
+                        showResult.putExtra(EXTRA_USER, user);
+                        startActivity(showResult);
+                        overridePendingTransition(0, 0);
+                        return true;
                 }
                 return false;
             }

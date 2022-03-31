@@ -273,4 +273,7 @@ public class UserFactory implements Serializable {
 
     }
 
+    public List<SchedeAllenamento> getListAllenamento() {
+        return  schedeAllenamento;
+    }
 }
