@@ -16,6 +16,10 @@ public class EsercizioSchedaAllenamento implements Serializable {
         this.tempoRecupero = tempoRecupero;
     }
 
+    public EsercizioSchedaAllenamento(){
+
+    }
+
 
     public Esercizio getEsercizio() {
         return esercizio;

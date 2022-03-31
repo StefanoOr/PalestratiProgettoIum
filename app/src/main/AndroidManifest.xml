@@ -12,6 +12,7 @@
         android:roundIcon="@mipmap/ic_launcher_round"
         android:supportsRtl="true"
         android:theme="@style/Theme.AppCompat.NoActionBar">
+        <activity android:name=".UserActivity.ActivitySchedaAllenamentoUser"></activity>
         <activity android:name=".UserActivity.FiltroUser" />
         <activity
             android:name=".ModificaEsercizio"

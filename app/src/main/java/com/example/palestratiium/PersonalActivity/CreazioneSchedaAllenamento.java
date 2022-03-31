@@ -77,6 +77,8 @@ public class CreazioneSchedaAllenamento extends AppCompatActivity implements Rec
             }
         });
 
+        EsercizioSchedaAllenamento init = new EsercizioSchedaAllenamento();
+        EsercizioAllenameto.add(init);
 
         mRecyclerView = findViewById(R.id.item_Lista_allenamento);
         mRecyclerView.setHasFixedSize(true);
