@@ -18,6 +18,10 @@ public class SchedeAllenamento {
 
     }
 
+    public SchedeAllenamento(){
+
+    }
+
     public String getNomeScheda() {
         return nomeScheda;
     }
@@ -52,8 +56,7 @@ public class SchedeAllenamento {
     }
 
 
-
-
-
-
+    public void addListEsercizi(List<EsercizioSchedaAllenamento> lista) {
+        this.listaEsercizi=lista;
+    }
 }

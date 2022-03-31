@@ -4,6 +4,7 @@ import android.content.Context;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
+import android.widget.AdapterView;
 import android.widget.ArrayAdapter;
 import android.widget.Button;
 import android.widget.Spinner;
@@ -67,6 +68,7 @@ public class AdapterListaCreazioneAllenamento extends RecyclerView.Adapter<Adapt
         AdapterSpinnerEsercizi adapterEsercizio = new AdapterSpinnerEsercizi(context, listaEsercizi);
       holder.esercizio.setAdapter(adapterEsercizio);
 
+
         //holder.test.setText(esercizioAllenameto.get(position).getNome());
 
         holder.binData(position);
@@ -106,6 +108,41 @@ public class AdapterListaCreazioneAllenamento extends RecyclerView.Adapter<Adapt
                 }
             });
 
+            ripetizioni.setOnItemSelectedListener(new AdapterView.OnItemSelectedListener() {
+                @Override
+                public void onItemSelected(AdapterView<?> parent, View view, int ripetizioni, long id) {
+                    esercizioAllenameto.get(position).setRipetizioni(ripetizioni);
+                }
+
+                @Override
+                public void onNothingSelected(AdapterView<?> parent) {
+
+                }
+            });
+
+            serie.setOnItemSelectedListener(new AdapterView.OnItemSelectedListener() {
+                @Override
+                public void onItemSelected(AdapterView<?> parent, View view, int serie, long id) {
+                    esercizioAllenameto.get(position).setRipetizioni(serie);
+                }
+
+                @Override
+                public void onNothingSelected(AdapterView<?> parent) {
+
+                }
+            });
+
+            esercizio.setOnItemSelectedListener(new AdapterView.OnItemSelectedListener() {
+                @Override
+                public void onItemSelected(AdapterView<?> parent, View view, int esercizio, long id) {
+                    esercizioAllenameto.get(position).setEsercizio(UserFactory.getInstance().getEsercizioByPosition(esercizio));
+                }
+
+                @Override
+                public void onNothingSelected(AdapterView<?> parent) {
+
+                }
+            });
 
         }
     }

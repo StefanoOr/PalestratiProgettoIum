@@ -9,7 +9,9 @@ import android.content.Intent;
 import android.os.Bundle;
 import android.view.View;
 import android.widget.Button;
+import android.widget.EditText;
 import android.widget.LinearLayout;
+import android.widget.TextView;
 
 import com.example.palestratiium.Login;
 import com.example.palestratiium.R;
@@ -18,6 +20,9 @@ import com.example.palestratiium.adapter.RecycleViewInterface;
 import com.example.palestratiium.classi.Esercizio;
 import com.example.palestratiium.classi.EsercizioSchedaAllenamento;
 import com.example.palestratiium.classi.PersonalTrainer;
+import com.example.palestratiium.classi.SchedeAllenamento;
+import com.example.palestratiium.classi.User;
+import com.example.palestratiium.classi.UserFactory;
 
 import java.io.Serializable;
 import java.util.ArrayList;
@@ -25,13 +30,18 @@ import java.util.List;
 
 public class CreazioneSchedaAllenamento extends AppCompatActivity implements RecycleViewInterface {
 
-    Button indietro,aggiungiEsercizioAllenamento;
-    PersonalTrainer personal;
+    Button indietro,aggiungiEsercizioAllenamento,confermaAllenamento;
+    EditText titolo,descrizione;
+
     public static final String EXTRA_PT = "package com.example.palestratiium";
     public RecyclerView.LayoutManager mLayoutManager;
     RecyclerView mRecyclerView;
     RecyclerView.Adapter adapter;
+
+
+    PersonalTrainer personal;
     List<EsercizioSchedaAllenamento> EsercizioAllenameto;
+    SchedeAllenamento allenamento;
 
     @SuppressLint("WrongConstant")
     @Override
@@ -40,8 +50,13 @@ public class CreazioneSchedaAllenamento extends AppCompatActivity implements Rec
         setContentView(R.layout.activity_creazione_scheda_allenamento);
 
         indietro = findViewById(R.id.indietroCreazioneAllenamento);
+        confermaAllenamento=findViewById(R.id.addSchedaAllnamento);
+        aggiungiEsercizioAllenamento=findViewById(R.id.addEsercizioSchedaAllenamento);
+        titolo=findViewById(R.id.nomeSchedaAllenamento);
+
+        allenamento= new SchedeAllenamento();
         EsercizioAllenameto=new ArrayList<>();
-        aggiungiEsercizioAllenamento=findViewById(R.id.addSchedaAllenamento);
+
         Intent intent = getIntent();
         Serializable obj = intent.getSerializableExtra(Login.EXTRA_PT);
 
@@ -72,11 +87,21 @@ public class CreazioneSchedaAllenamento extends AppCompatActivity implements Rec
         mRecyclerView.setAdapter(adapter);
 
 
+        confermaAllenamento.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                allenamento.setNomeScheda(titolo.getText().toString());
+                allenamento.addListEsercizi(EsercizioAllenameto);
+                UserFactory.getInstance().addAllenamento(allenamento);
+            }
+        });
+
         aggiungiEsercizioAllenamento.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
 
-                EsercizioAllenameto.add(new EsercizioSchedaAllenamento(new Esercizio("1"),1,1,"4"));
+
+                EsercizioAllenameto.add(new EsercizioSchedaAllenamento(new Esercizio(null),1,1,null));
                 adapter.notifyDataSetChanged();
 
             }

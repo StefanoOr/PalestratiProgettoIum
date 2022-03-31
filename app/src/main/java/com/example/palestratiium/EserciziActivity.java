@@ -36,7 +36,6 @@ public class EserciziActivity extends AppCompatActivity implements Serializable{
     String name;
     float voteInt;
 
-
     private  Boolean vote=false;
 
     VideoView videoView;

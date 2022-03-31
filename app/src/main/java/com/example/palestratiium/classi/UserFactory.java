@@ -60,6 +60,10 @@ public class UserFactory implements Serializable {
         return singleton;
     }
 
+    public void addAllenamento(SchedeAllenamento allenamento){
+        schedeAllenamento.add(allenamento);
+    }
+
 
     public void addEsercizio(PersonalTrainer pt,Esercizio esercizio){
 
@@ -89,6 +93,12 @@ public class UserFactory implements Serializable {
     public List<Esercizio> getAllEsercizi(){
             return allEsercizi;
     }
+
+    public Esercizio getEsercizioByPosition(int position){
+        return allEsercizi.get(position);
+    }
+
+
 
 
 

@@ -43,9 +43,6 @@ public class HomePersonalTrainer extends AppCompatActivity implements RecycleVie
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_home_personal_trainer);
 
-
-
-
         ricerca = findViewById(R.id.ricercaPtEsercizi);
 
 
@@ -155,10 +152,7 @@ public class HomePersonalTrainer extends AppCompatActivity implements RecycleVie
         }
 
 
-
-
         intent.putExtra(EXTRA_PT, personal);
-
         startActivity(intent);
     }
 
