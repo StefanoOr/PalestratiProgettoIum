@@ -49,14 +49,14 @@ public class AdapterListaCreazioneAllenamento extends RecyclerView.Adapter<Adapt
     public void onBindViewHolder(@NonNull ExampleViewHolder holder, int position) {
 
 
-        ArrayAdapter<CharSequence> adapterRipetizione = ArrayAdapter.createFromResource(context,R.array.ripetizioni, android.R.layout.simple_dropdown_item_1line);
-        adapterRipetizione.setDropDownViewResource(android.R.layout.simple_spinner_dropdown_item);
+        ArrayAdapter<CharSequence> adapterRipetizione = ArrayAdapter.createFromResource(context,R.array.ripetizioni, R.layout.colored_spinner);
+        adapterRipetizione.setDropDownViewResource(R.layout.colored_spinner);
 
         holder.ripetizioni.setAdapter(adapterRipetizione);
 
 
-        ArrayAdapter<CharSequence> adapterSerie = ArrayAdapter.createFromResource(context,R.array.serie, android.R.layout.simple_dropdown_item_1line);
-        adapterRipetizione.setDropDownViewResource(android.R.layout.simple_spinner_dropdown_item);
+        ArrayAdapter<CharSequence> adapterSerie = ArrayAdapter.createFromResource(context,R.array.serie, R.layout.colored_spinner);
+        adapterRipetizione.setDropDownViewResource(R.layout.colored_spinner);
 
         holder.serie.setAdapter(adapterSerie);
 
@@ -66,7 +66,7 @@ public class AdapterListaCreazioneAllenamento extends RecyclerView.Adapter<Adapt
 
 
         AdapterSpinnerEsercizi adapterEsercizio = new AdapterSpinnerEsercizi(context, listaEsercizi);
-      holder.esercizio.setAdapter(adapterEsercizio);
+       holder.esercizio.setAdapter(adapterEsercizio);
 
 
         //holder.test.setText(esercizioAllenameto.get(position).getNome());
@@ -88,7 +88,7 @@ public class AdapterListaCreazioneAllenamento extends RecyclerView.Adapter<Adapt
         public ExampleViewHolder(@NonNull View itemView, RecycleViewInterface recycleViewInterface) {
             super(itemView);
 
-            eliminaEsercizioAllenamento=itemView.findViewById(R.id.button_elimina);
+            //eliminaEsercizioAllenamento=itemView.findViewById(R.id.button_elimina);
             ripetizioni=itemView.findViewById(R.id.Ripetizioni);
             serie=itemView.findViewById(R.id.Serie);
             esercizio=itemView.findViewById(R.id.iconIDpT);
@@ -98,7 +98,7 @@ public class AdapterListaCreazioneAllenamento extends RecyclerView.Adapter<Adapt
 
         public void binData(final int position) {
 
-            eliminaEsercizioAllenamento.setOnClickListener(new View.OnClickListener() {
+            /*eliminaEsercizioAllenamento.setOnClickListener(new View.OnClickListener() {
                 @Override
                 public void onClick(View v) {
 
@@ -106,7 +106,7 @@ public class AdapterListaCreazioneAllenamento extends RecyclerView.Adapter<Adapt
                     notifyDataSetChanged();
 
                 }
-            });
+            });*/
 
             ripetizioni.setOnItemSelectedListener(new AdapterView.OnItemSelectedListener() {
                 @Override

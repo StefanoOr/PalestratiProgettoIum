@@ -18,159 +18,109 @@
     <androidx.constraintlayout.widget.ConstraintLayout
         android:id="@+id/layoutCard"
         android:layout_width="match_parent"
-        android:layout_height="124dp"
+        android:layout_height="wrap_content"
         android:layout_marginLeft="1dp"
         android:layout_marginTop="1dp"
         android:layout_marginRight="1dp"
         android:layout_marginBottom="1dp"
         android:animateLayoutChanges="true"
         android:background="@drawable/card_background_edit_profile"
-        android:padding="1dp">
+        android:padding="1dp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.5"
+        app:layout_constraintStart_toStartOf="parent"
+        tools:layout_editor_absoluteX="9dp">
+
+
+        <!-- todo CAMBIARE ID SPINNER ESERCIZI-->
 
         <TextView
             android:id="@+id/elimina_card_esercizio_allenamento"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:layout_marginBottom="8dp"
+            android:layout_marginStart="10dp"
+            android:layout_marginTop="5dp"
             android:text="Esercizio"
-            app:layout_constraintBottom_toTopOf="@+id/iconIDpT"
-            app:layout_constraintEnd_toEndOf="parent"
-            app:layout_constraintHorizontal_bias="0.092"
+            android:textColor="@color/barra_separatoria_secondaria"
+            android:textSize="16dp"
             app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toTopOf="parent"
-            app:layout_constraintVertical_bias="1.0"/>
-
-
-        <!-- todo CAMBIARE ID SPINNER ESERCIZI-->
-        <Spinner
-            android:id="@+id/iconIDpT"
-            android:layout_width="60dp"
-            android:layout_height="50dp"
-            android:layout_centerVertical="true"
-            android:layout_marginStart="16dp"
-            android:foregroundGravity="center"
-            android:src="@drawable/ic_baseline_video_label_24"
-            app:layout_constraintBottom_toBottomOf="parent"
-            app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toTopOf="parent"
-            app:layout_constraintVertical_bias="0.52" />
-
-        <View
-            android:id="@+id/view11"
-            android:layout_width="1dp"
-            android:layout_height="match_parent"
-            android:layout_marginStart="8dp"
-            android:layout_marginTop="15dp"
-            android:layout_marginBottom="15dp"
-            android:background="@color/barra_separatoria_principale"
-            app:layout_constraintBottom_toBottomOf="parent"
-            app:layout_constraintStart_toEndOf="@+id/iconIDpT"
             app:layout_constraintTop_toTopOf="parent" />
 
+        <Spinner
+            android:id="@+id/iconIDpT"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:backgroundTint="@color/white"
+            android:foregroundGravity="center"
+            android:src="@drawable/ic_baseline_video_label_24"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@id/elimina_card_esercizio_allenamento" />
 
         <TextView
             android:id="@+id/textView20"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:layout_marginTop="8dp"
-            android:layout_marginEnd="232dp"
-            android:layout_marginBottom="24dp"
+            android:layout_marginStart="10dp"
+            android:layout_marginTop="5dp"
             android:text="Ripetizioni"
-            app:layout_constraintBottom_toTopOf="@+id/nomeEsercizio"
-            app:layout_constraintEnd_toEndOf="parent"
-            app:layout_constraintTop_toTopOf="parent" />
+            android:textSize="16dp"
+            android:textColor="@color/barra_separatoria_secondaria"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/iconIDpT" />
 
         <Spinner
             android:id="@+id/Ripetizioni"
-            android:layout_width="60dp"
-            android:layout_height="50dp"
-            android:layout_marginStart="8dp"
-            android:layout_marginBottom="5dp"
-
-            android:textAlignment="center"
-            android:textColor="@color/card_text"
-
-            android:textStyle="bold"
-            app:layout_constraintBottom_toBottomOf="parent"
-            app:layout_constraintStart_toEndOf="@+id/view11"
-            app:layout_constraintTop_toTopOf="parent"
-            app:layout_constraintVertical_bias="0.559" />
-
-        <View
-            android:id="@+id/view1"
-            android:layout_width="1dp"
-            android:layout_height="match_parent"
-            android:layout_marginStart="160dp"
-            android:layout_marginTop="15dp"
-            android:layout_marginBottom="15dp"
-            android:background="@color/barra_separatoria_principale"
-            app:layout_constraintBottom_toBottomOf="parent"
-            app:layout_constraintStart_toEndOf="@+id/iconIDpT"
-            app:layout_constraintTop_toTopOf="parent" />
-
-        <TextView
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:layout_marginTop="8dp"
+            android:backgroundTint="@color/white"
+            android:textColor="@color/card_text"
+            android:textStyle="bold"
+            app:layout_constraintStart_toStartOf="@+id/textView20"
+            app:layout_constraintTop_toBottomOf="@id/textView20" />
+
+        <TextView
+            android:id="@+id/textserie"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="5dp"
             android:text="Serie"
-            app:layout_constraintBottom_toTopOf="@+id/edit_esercizio"
-            app:layout_constraintEnd_toEndOf="parent"
-            app:layout_constraintHorizontal_bias="0.502"
+            android:textSize="16dp"
+            android:textColor="@color/barra_separatoria_secondaria"
+            app:layout_constraintEnd_toStartOf="@+id/textView21"
             app:layout_constraintStart_toEndOf="@+id/textView20"
-            app:layout_constraintTop_toTopOf="parent"
-            app:layout_constraintVertical_bias="0.545" />
+            app:layout_constraintTop_toBottomOf="@+id/iconIDpT" />
 
         <Spinner
             android:id="@+id/Serie"
-            android:layout_width="60dp"
-            android:layout_height="50dp"
-            android:layout_marginEnd="164dp"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:backgroundTint="@color/white"
             android:src="@drawable/ic_baseline_change_circle_24"
-            app:layout_constraintBottom_toBottomOf="parent"
-            app:layout_constraintEnd_toEndOf="parent"
-            app:layout_constraintHorizontal_bias="0.75"
-            app:layout_constraintStart_toEndOf="@+id/imageView8"
-            app:layout_constraintTop_toTopOf="parent"
-            app:layout_constraintVertical_bias="0.554" />
+            app:layout_constraintTop_toBottomOf="@id/textserie"
+            app:layout_constraintStart_toStartOf="@id/textserie"/>
 
         <TextView
             android:id="@+id/textView21"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:layout_marginTop="8dp"
+            android:layout_marginTop="5dp"
+            android:layout_marginEnd="10dp"
             android:text="T.Recupero"
-            app:layout_constraintBottom_toTopOf="@+id/edit_esercizio"
+            android:textSize="16dp"
+            android:textColor="@color/barra_separatoria_secondaria"
             app:layout_constraintEnd_toEndOf="parent"
-            app:layout_constraintHorizontal_bias="0.0"
-            app:layout_constraintStart_toEndOf="@+id/textView20"
-            app:layout_constraintTop_toTopOf="parent"
-            app:layout_constraintVertical_bias="0.727" />
+            app:layout_constraintTop_toBottomOf="@+id/iconIDpT" />
 
         <EditText
             android:id="@+id/text_recupero"
-            android:layout_width="50dp"
+            android:layout_width="60dp"
             android:layout_height="wrap_content"
-            android:layout_marginEnd="92dp"
-            app:layout_constraintBottom_toBottomOf="parent"
-            app:layout_constraintEnd_toEndOf="parent"
-            app:layout_constraintHorizontal_bias="0.086"
-            app:layout_constraintStart_toEndOf="@+id/edit_esercizio"
-            app:layout_constraintTop_toBottomOf="@+id/textView21"
-            app:layout_constraintVertical_bias="0.44" />
-
-        <Button
-            android:id="@+id/button_elimina"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_marginStart="62dp"
-            android:layout_marginEnd="4dp"
-            android:layout_marginBottom="36dp"
-            android:text="Button"
-            android:backgroundTint="@color/barra_separatoria_principale"
-            app:layout_constraintBottom_toBottomOf="parent"
-            app:layout_constraintEnd_toEndOf="parent"
-            app:layout_constraintHorizontal_bias="0.0"
-            app:layout_constraintStart_toStartOf="@+id/text_recupero" />
+            android:backgroundTint="@color/white"
+            android:textColor="@color/white"
+            app:layout_constraintEnd_toEndOf="@id/textView21"
+            app:layout_constraintStart_toStartOf="@+id/textView21"
+            app:layout_constraintTop_toBottomOf="@id/textView21" />
 
     </androidx.constraintlayout.widget.ConstraintLayout>
 
