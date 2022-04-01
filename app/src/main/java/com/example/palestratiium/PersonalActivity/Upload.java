@@ -8,6 +8,7 @@ import androidx.core.app.ActivityCompat;
 import androidx.core.content.ContextCompat;
 
 import android.Manifest;
+import android.content.Context;
 import android.content.DialogInterface;
 import android.content.Intent;
 import android.content.pm.PackageManager;
@@ -145,6 +146,14 @@ public class Upload extends AppCompatActivity implements Serializable, AdapterVi
                     esercizio.setGruppoMuscolare(gruppoSelezionato);
                     personal.addEsercizi(esercizio);
                     UserFactory.getInstance().addEsercizio(personal, esercizio);
+
+
+                    Context context = getApplicationContext();
+                    CharSequence text =  esercizio.getNome()+ " Esercizio aggiunto con successo";
+                    int duration = Toast.LENGTH_SHORT;
+                    Toast toast = Toast.makeText(context, text, duration);
+                    toast.show();
+
                     Intent ex = new Intent(Upload.this, HomePersonalTrainer.class);
                     ex.putExtra(EXTRA_PT, personal);
                     startActivity(ex);

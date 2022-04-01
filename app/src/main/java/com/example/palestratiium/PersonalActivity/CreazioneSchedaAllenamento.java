@@ -5,6 +5,7 @@ import androidx.recyclerview.widget.LinearLayoutManager;
 import androidx.recyclerview.widget.RecyclerView;
 
 import android.annotation.SuppressLint;
+import android.content.Context;
 import android.content.Intent;
 import android.os.Bundle;
 import android.view.View;
@@ -12,6 +13,7 @@ import android.widget.Button;
 import android.widget.EditText;
 import android.widget.LinearLayout;
 import android.widget.TextView;
+import android.widget.Toast;
 
 import com.example.palestratiium.Login;
 import com.example.palestratiium.R;
@@ -95,6 +97,17 @@ public class CreazioneSchedaAllenamento extends AppCompatActivity implements Rec
                 allenamento.setNomeScheda(titolo.getText().toString());
                 allenamento.addListEsercizi(EsercizioAllenameto);
                 UserFactory.getInstance().addAllenamento(allenamento);
+
+
+                Context context = getApplicationContext();
+                CharSequence text =  allenamento.getNomeScheda()+ " Scheda aggiunta con successo";
+                int duration = Toast.LENGTH_SHORT;
+                Toast toast = Toast.makeText(context, text, duration);
+                toast.show();
+                Intent showResult = new Intent(CreazioneSchedaAllenamento.this, PanelloDiUpload.class);
+                showResult.putExtra(EXTRA_PT, personal);
+                startActivity(showResult);
+
             }
         });
 
