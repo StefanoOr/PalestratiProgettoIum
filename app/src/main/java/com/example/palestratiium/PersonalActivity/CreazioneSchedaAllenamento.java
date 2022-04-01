@@ -94,20 +94,22 @@ public class CreazioneSchedaAllenamento extends AppCompatActivity implements Rec
         confermaAllenamento.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                allenamento.setNomeScheda(titolo.getText().toString());
-                allenamento.addListEsercizi(EsercizioAllenameto);
-                UserFactory.getInstance().addAllenamento(allenamento);
+
+                if(checkInput()) {
+                    allenamento.setNomeScheda(titolo.getText().toString());
+                    allenamento.addListEsercizi(EsercizioAllenameto);
+                    UserFactory.getInstance().addAllenamento(allenamento);
 
 
-                Context context = getApplicationContext();
-                CharSequence text =  allenamento.getNomeScheda()+ " Scheda aggiunta con successo";
-                int duration = Toast.LENGTH_SHORT;
-                Toast toast = Toast.makeText(context, text, duration);
-                toast.show();
-                Intent showResult = new Intent(CreazioneSchedaAllenamento.this, PanelloDiUpload.class);
-                showResult.putExtra(EXTRA_PT, personal);
-                startActivity(showResult);
-
+                    Context context = getApplicationContext();
+                    CharSequence text = allenamento.getNomeScheda() + " Scheda aggiunta con successo";
+                    int duration = Toast.LENGTH_SHORT;
+                    Toast toast = Toast.makeText(context, text, duration);
+                    toast.show();
+                    Intent showResult = new Intent(CreazioneSchedaAllenamento.this, PanelloDiUpload.class);
+                    showResult.putExtra(EXTRA_PT, personal);
+                    startActivity(showResult);
+                }
             }
         });
 
@@ -142,6 +144,30 @@ public class CreazioneSchedaAllenamento extends AppCompatActivity implements Rec
     public void OnItemClickModify(int position) {
 
     }
+
+
+
+    public boolean checkInput() {
+
+        //how many error occurred? We need to save the number
+        int errors = 0;
+
+        if(titolo.getText().toString() == null || titolo.getText().length() == 0){
+            Context context = getApplicationContext();
+            CharSequence text =  " Inserisci un titolo alla scheda Allenamento";
+            int duration = Toast.LENGTH_SHORT;
+            Toast toast = Toast.makeText(context, text, duration);
+            toast.show();
+            titolo.setError("Perfavore inserisci un titolo all'allenamento");
+            errors++;
+        }else{
+            titolo.setError(null);
+        }
+
+
+        return (errors == 0);
+    }
+
 
 
     /*public void init(){

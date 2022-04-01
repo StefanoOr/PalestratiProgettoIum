@@ -89,7 +89,7 @@ public class AdapterListaCreazioneAllenamento extends RecyclerView.Adapter<Adapt
         public ExampleViewHolder(@NonNull View itemView, RecycleViewInterface recycleViewInterface) {
             super(itemView);
 
-            //eliminaEsercizioAllenamento=itemView.findViewById(R.id.button_elimina);
+
             ripetizioni=itemView.findViewById(R.id.Ripetizioni);
             serie=itemView.findViewById(R.id.Serie);
             esercizio=itemView.findViewById(R.id.iconIDpT);
