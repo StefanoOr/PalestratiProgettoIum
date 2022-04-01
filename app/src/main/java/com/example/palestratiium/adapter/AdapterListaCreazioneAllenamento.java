@@ -85,6 +85,7 @@ public class AdapterListaCreazioneAllenamento extends RecyclerView.Adapter<Adapt
 
 
 
+
         public ExampleViewHolder(@NonNull View itemView, RecycleViewInterface recycleViewInterface) {
             super(itemView);
 
@@ -92,21 +93,22 @@ public class AdapterListaCreazioneAllenamento extends RecyclerView.Adapter<Adapt
             ripetizioni=itemView.findViewById(R.id.Ripetizioni);
             serie=itemView.findViewById(R.id.Serie);
             esercizio=itemView.findViewById(R.id.iconIDpT);
+            eliminaEsercizioAllenamento=itemView.findViewById(R.id.eliminaEsercizio);
 
 
         }
 
         public void binData(final int position) {
 
-            /*eliminaEsercizioAllenamento.setOnClickListener(new View.OnClickListener() {
+            eliminaEsercizioAllenamento.setOnClickListener(new View.OnClickListener() {
                 @Override
                 public void onClick(View v) {
-
-                    esercizioAllenameto.remove(position);
-                    notifyDataSetChanged();
-
+                    if(esercizioAllenameto.size()>1) {
+                        esercizioAllenameto.remove(position);
+                        notifyDataSetChanged();
+                    }
                 }
-            });*/
+            });
 
             ripetizioni.setOnItemSelectedListener(new AdapterView.OnItemSelectedListener() {
                 @Override

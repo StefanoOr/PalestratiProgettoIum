@@ -34,6 +34,19 @@
 
         <!-- todo CAMBIARE ID SPINNER ESERCIZI-->
 
+
+        <Button
+            android:id="@+id/eliminaEsercizio"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="4dp"
+            android:backgroundTint="@color/barra_separatoria_principale"
+            android:text="Elimina"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintHorizontal_bias="0.93"
+            app:layout_constraintStart_toEndOf="@+id/elimina_card_esercizio_allenamento"
+            app:layout_constraintTop_toTopOf="parent" />
+
         <TextView
             android:id="@+id/elimina_card_esercizio_allenamento"
             android:layout_width="wrap_content"
