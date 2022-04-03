@@ -78,6 +78,13 @@ public class UserFactory implements Serializable {
     }
 
 
+    public List<PersonalTrainer> getCoach(){
+
+        return coach;
+
+    }
+
+
     public List<Esercizio> getEserciziPt(PersonalTrainer pt) {
 
         for (int i = 0; i < coach.size(); i++) {

@@ -12,7 +12,8 @@
         android:roundIcon="@mipmap/ic_launcher_round"
         android:supportsRtl="true"
         android:theme="@style/Theme.AppCompat.NoActionBar">
-        <activity android:name=".UserActivity.ActivityEserciziLDellaListaAllenamento"></activity>
+        <activity android:name=".UserActivity.ActivityListaPt"></activity>
+        <activity android:name=".UserActivity.ActivityEserciziLDellaListaAllenamento" />
         <activity android:name=".UserActivity.ActivityListaSchedaAllenamentoUser" />
         <activity android:name=".UserActivity.FiltroUser" />
         <activity
