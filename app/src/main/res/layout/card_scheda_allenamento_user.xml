@@ -53,6 +53,18 @@
 
 
         <TextView
+            android:id="@+id/textViewNesercizio"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="NEsercizio"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintHorizontal_bias="0.021"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/card_scheda_immagine"
+            app:layout_constraintVertical_bias="0.333" />
+
+        <TextView
             android:id="@+id/textView20"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
@@ -74,6 +86,8 @@
             android:layout_marginTop="24dp"
             android:text="Serie"
             app:layout_constraintBottom_toTopOf="@+id/edit_esercizio"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintHorizontal_bias="0.0"
             app:layout_constraintStart_toEndOf="@+id/textView20"
             app:layout_constraintTop_toTopOf="parent"
             app:layout_constraintVertical_bias="0.545" />
@@ -111,9 +125,11 @@
             android:layout_marginStart="40dp"
             android:text="TextViewR"
             app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintHorizontal_bias="0.0"
             app:layout_constraintStart_toEndOf="@+id/card_scheda_immagine"
             app:layout_constraintTop_toBottomOf="@+id/textView20"
-            app:layout_constraintVertical_bias="0.246" />
+            app:layout_constraintVertical_bias="0.295" />
 
         <TextView
             android:id="@+id/textViewRecupero"
@@ -126,18 +142,20 @@
             app:layout_constraintHorizontal_bias="0.0"
             app:layout_constraintStart_toEndOf="@+id/textViewSerie"
             app:layout_constraintTop_toBottomOf="@+id/textView21"
-            app:layout_constraintVertical_bias="0.245" />
+            app:layout_constraintVertical_bias="0.295" />
 
         <TextView
             android:id="@+id/textViewSerie"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:layout_marginStart="16dp"
+            android:layout_marginStart="4dp"
             android:text="TextView"
             app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintHorizontal_bias="0.105"
             app:layout_constraintStart_toEndOf="@+id/textViewRipetizioni"
             app:layout_constraintTop_toBottomOf="@+id/textView25"
-            app:layout_constraintVertical_bias="0.245" />
+            app:layout_constraintVertical_bias="0.295" />
 
         <TextView
             android:id="@+id/textView27"

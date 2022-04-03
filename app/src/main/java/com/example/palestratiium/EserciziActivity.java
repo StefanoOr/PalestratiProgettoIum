@@ -8,6 +8,8 @@ import android.media.MediaPlayer;
 import android.net.Uri;
 import android.os.Build;
 import android.os.Bundle;
+import android.os.Parcel;
+import android.os.Parcelable;
 import android.text.method.ScrollingMovementMethod;
 import android.view.View;
 import android.widget.Button;
@@ -27,7 +29,7 @@ import com.example.palestratiium.classi.PersonalTrainer;
 import com.example.palestratiium.classi.User;
 import com.example.palestratiium.classi.UserFactory;
 
-public class EserciziActivity extends AppCompatActivity implements Serializable{
+public class EserciziActivity extends AppCompatActivity implements Serializable, Parcelable {
 
     User user;
     PersonalTrainer personalTrainer;
@@ -213,4 +215,13 @@ Uri uri=Uri.parse(uriPath);
     }
 
 
+    @Override
+    public int describeContents() {
+        return 0;
+    }
+
+    @Override
+    public void writeToParcel(Parcel dest, int flags) {
+
+    }
 }

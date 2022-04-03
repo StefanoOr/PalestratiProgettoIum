@@ -49,6 +49,9 @@ public class AdapterListaCreazioneAllenamento extends RecyclerView.Adapter<Adapt
     public void onBindViewHolder(@NonNull ExampleViewHolder holder, int position) {
 
 
+
+
+
         ArrayAdapter<CharSequence> adapterRipetizione = ArrayAdapter.createFromResource(context,R.array.ripetizioni, R.layout.colored_spinner);
         adapterRipetizione.setDropDownViewResource(R.layout.colored_spinner);
 
@@ -67,6 +70,10 @@ public class AdapterListaCreazioneAllenamento extends RecyclerView.Adapter<Adapt
 
         AdapterSpinnerEsercizi adapterEsercizio = new AdapterSpinnerEsercizi(context, listaEsercizi);
        holder.esercizio.setAdapter(adapterEsercizio);
+
+        holder.ripetizioni.setSelection(esercizioAllenameto.get(position).getRipetizioni());
+        holder.serie.setSelection(esercizioAllenameto.get(position).getSerie());
+
 
 
         //holder.test.setText(esercizioAllenameto.get(position).getNome());
@@ -125,7 +132,7 @@ public class AdapterListaCreazioneAllenamento extends RecyclerView.Adapter<Adapt
             serie.setOnItemSelectedListener(new AdapterView.OnItemSelectedListener() {
                 @Override
                 public void onItemSelected(AdapterView<?> parent, View view, int serie, long id) {
-                    esercizioAllenameto.get(position).setRipetizioni(serie);
+                    esercizioAllenameto.get(position).setSerie(serie);
                 }
 
                 @Override

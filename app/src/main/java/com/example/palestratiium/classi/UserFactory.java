@@ -99,7 +99,16 @@ public class UserFactory implements Serializable {
     }
 
 
+    public List<EsercizioSchedaAllenamento> getEserciziAllenamento(String nomeAllenamento){
 
+        for (int i=0; i< schedeAllenamento.size(); i++){
+            if(schedeAllenamento.get(i).getNomeScheda().equals(nomeAllenamento)){
+                return schedeAllenamento.get(i).getEsercizi();
+            }
+        }
+
+        return null;
+    }
 
 
 
@@ -262,13 +271,14 @@ public class UserFactory implements Serializable {
 
     public void setAllenamentoDefault(){
 
-       List<Esercizio> default1 = new ArrayList<>();
+        List<EsercizioSchedaAllenamento> eserciziAllenamento=new ArrayList<>();
 
-       default1.add(allEsercizi.get(1));
-       default1.add(allEsercizi.get(0));
-       default1.add(allEsercizi.get(2));
-        //SchedeAllenamento schedaDefault1 = new SchedeAllenamento("Scheda Base","scheda per iniziare ad allenarsi",default1);
-       // schedeAllenamento.add(schedaDefault1);
+        eserciziAllenamento.add(new EsercizioSchedaAllenamento(allEsercizi.get(1),8,3,"1.30"));
+        eserciziAllenamento.add(new EsercizioSchedaAllenamento(allEsercizi.get(2),8,3,"1.30"));
+        eserciziAllenamento.add(new EsercizioSchedaAllenamento(allEsercizi.get(3),8,3,"1.30"));
+
+
+        schedeAllenamento.add(new SchedeAllenamento("Scheda Principianti","Piccola descrizione dell'allenamento",eserciziAllenamento));
 
 
     }

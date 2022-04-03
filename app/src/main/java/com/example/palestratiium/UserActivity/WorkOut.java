@@ -4,16 +4,13 @@ import androidx.annotation.NonNull;
 import androidx.appcompat.app.AppCompatActivity;
 
 import android.annotation.SuppressLint;
-import android.content.Context;
 import android.content.Intent;
 import android.os.Bundle;
 import android.view.MenuItem;
 import android.view.View;
 import android.widget.Button;
-import android.widget.Toast;
 
 import com.example.palestratiium.Login;
-import com.example.palestratiium.PersonalActivity.HomePersonalTrainer;
 import com.example.palestratiium.R;
 import com.example.palestratiium.classi.User;
 import com.google.android.material.bottomnavigation.BottomNavigationView;
@@ -55,7 +52,7 @@ public class WorkOut extends AppCompatActivity {
             public void onClick(View v) {
 
 
-                Intent allenamenti = new Intent(WorkOut.this, ActivitySchedaAllenamentoUser.class);
+                Intent allenamenti = new Intent(WorkOut.this, ActivityListaSchedaAllenamentoUser.class);
                 allenamenti.putExtra(EXTRA_USER, user);
                 startActivity(allenamenti);
             }

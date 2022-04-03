@@ -4,11 +4,11 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context=".UserActivity.ActivitySchedaAllenamentoUser">
+    tools:context=".UserActivity.ActivityListaSchedaAllenamentoUser">
 
 
     <androidx.recyclerview.widget.RecyclerView
-        android:id="@+id/item_Lista_allenamento"
+        android:id="@+id/item_Lista_allenamento_user"
         android:layout_width="match_parent"
         android:layout_height="500dp"
         android:layout_marginTop="92dp"

@@ -113,6 +113,7 @@ public class Login extends AppCompatActivity {
         UserFactory.getInstance().setImgDafault(img);
         userList = UserFactory.getInstance().getUsers();
         ptList =  UserFactory.getInstance().getPersonal();
+        UserFactory.getInstance().setAllenamentoDefault();
 
         int errors = 0;
 

@@ -70,6 +70,8 @@ public class CreazioneSchedaAllenamento extends AppCompatActivity implements Rec
         }
 
 
+        EsercizioSchedaAllenamento init = new EsercizioSchedaAllenamento();
+
         indietro.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
@@ -79,16 +81,7 @@ public class CreazioneSchedaAllenamento extends AppCompatActivity implements Rec
             }
         });
 
-        EsercizioSchedaAllenamento init = new EsercizioSchedaAllenamento();
-        EsercizioAllenameto.add(init);
 
-        mRecyclerView = findViewById(R.id.item_Lista_allenamento);
-        mRecyclerView.setHasFixedSize(true);
-        mLayoutManager = new LinearLayoutManager(this, LinearLayout.VERTICAL,false);
-
-        adapter = new AdapterListaCreazioneAllenamento(EsercizioAllenameto,this,this);
-        mRecyclerView.setLayoutManager(mLayoutManager);
-        mRecyclerView.setAdapter(adapter);
 
 
         confermaAllenamento.setOnClickListener(new View.OnClickListener() {
@@ -113,16 +106,31 @@ public class CreazioneSchedaAllenamento extends AppCompatActivity implements Rec
             }
         });
 
+
+
         aggiungiEsercizioAllenamento.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
 
 
                 EsercizioAllenameto.add(new EsercizioSchedaAllenamento(new Esercizio(null),1,1,null));
+
                 adapter.notifyDataSetChanged();
+
 
             }
         });
+
+
+        EsercizioAllenameto.add(init);
+
+        mRecyclerView = findViewById(R.id.item_Lista_allenamento);
+        mRecyclerView.setHasFixedSize(true);
+        mLayoutManager = new LinearLayoutManager(this, LinearLayout.VERTICAL,false);
+
+        adapter = new AdapterListaCreazioneAllenamento(EsercizioAllenameto,this,this);
+        mRecyclerView.setLayoutManager(mLayoutManager);
+        mRecyclerView.setAdapter(adapter);
     }
 
 
@@ -163,8 +171,7 @@ public class CreazioneSchedaAllenamento extends AppCompatActivity implements Rec
         }else{
             titolo.setError(null);
         }
-
-
+        
         return (errors == 0);
     }
 
