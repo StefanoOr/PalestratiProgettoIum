@@ -21,7 +21,7 @@ public class WorkOut extends AppCompatActivity {
     public static final String EXTRA_USER = "package com.example.palestratiium";
 
     User user;
-    public Button allenamenti;
+    public Button allenamenti, personalTrainer;
 
 
 
@@ -44,7 +44,7 @@ public class WorkOut extends AppCompatActivity {
 
 
         allenamenti=findViewById(R.id.aggiungiAllenamento);
-
+        personalTrainer=findViewById(R.id.lista_personal_trainer);
 
 
         allenamenti.setOnClickListener(new View.OnClickListener() {
@@ -55,6 +55,17 @@ public class WorkOut extends AppCompatActivity {
                 Intent allenamenti = new Intent(WorkOut.this, ActivityListaSchedaAllenamentoUser.class);
                 allenamenti.putExtra(EXTRA_USER, user);
                 startActivity(allenamenti);
+            }
+        });
+
+        personalTrainer.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+
+
+                Intent listapt = new Intent(WorkOut.this, ActivityListaPt.class);
+                listapt.putExtra(EXTRA_USER, user);
+                startActivity(listapt);
             }
         });
 

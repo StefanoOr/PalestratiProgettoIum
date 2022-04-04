@@ -33,42 +33,89 @@
             android:layout_width="70dp"
             android:layout_height="55dp"
             android:layout_centerVertical="true"
-            android:layout_marginStart="16dp"
             android:foregroundGravity="center"
+            android:background="@drawable/border_spinner"
+            android:layout_marginStart="5dp"
+            android:layout_marginTop="5dp"
             android:src="@drawable/ic_baseline_face_24"
-            app:layout_constraintBottom_toBottomOf="parent"
-            app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toTopOf="parent"
-            app:layout_constraintVertical_bias="0.444" />
+            app:layout_constraintStart_toStartOf="parent"/>
 
         <TextView
+            android:id="@+id/text_name"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:layout_marginTop="16dp"
+            android:layout_marginTop="5dp"
             android:text="Nome Personal"
+            android:textColor="@color/white"
             android:textSize="20dp"
-            app:layout_constraintBottom_toTopOf="@+id/nome_personal"
             app:layout_constraintEnd_toEndOf="parent"
-            app:layout_constraintHorizontal_bias="0.423"
-            app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toTopOf="parent"
-            app:layout_constraintVertical_bias="0.0" />
+            app:layout_constraintStart_toEndOf="@id/iconPersonalTrainer"
+            app:layout_constraintTop_toTopOf="parent" />
 
         <TextView
             android:id="@+id/nome_personal"
-            android:layout_width="130dp"
-            android:layout_height="30dp"
-            android:layout_marginStart="28dp"
-            android:layout_marginBottom="5dp"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
             android:text="Nome Personal"
             android:textAlignment="center"
             android:textColor="@color/card_text"
             android:textSize="25dp"
             android:textStyle="bold"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toEndOf="@id/iconPersonalTrainer"
+            app:layout_constraintTop_toBottomOf="@id/text_name" />
+
+        <TextView
+            android:id="@+id/text_eta"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="5dp"
+            android:layout_marginTop="10dp"
+            android:text="Nato il:"
+            android:textColor="@color/white"
+            android:textSize="20dp"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@id/iconPersonalTrainer" />
+
+        <TextView
+            android:id="@+id/eta_personal"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="5dp"
+            android:text="eta"
+            android:textAlignment="center"
+            android:textColor="@color/card_text"
+            android:textSize="25dp"
+            android:textStyle="bold"
+            app:layout_constraintStart_toEndOf="@id/text_eta"
+            app:layout_constraintTop_toBottomOf="@id/nome_personal" />
+
+        <TextView
+            android:id="@+id/text_team"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="5dp"
+            android:text="Team: "
+            android:textColor="@color/white"
+            android:textSize="20dp"
             app:layout_constraintBottom_toBottomOf="parent"
-            app:layout_constraintStart_toEndOf="@+id/iconPersonalTrainer"
-            app:layout_constraintTop_toTopOf="parent"
-            app:layout_constraintVertical_bias="0.521" />
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/text_eta" />
+
+        <TextView
+            android:id="@+id/team_personal"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="5dp"
+            android:text="team"
+            android:textAlignment="center"
+            android:textColor="@color/card_text"
+            android:textSize="25dp"
+            android:textStyle="bold"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintStart_toEndOf="@id/text_team"
+            app:layout_constraintTop_toBottomOf="@+id/eta_personal" />
 
     </androidx.constraintlayout.widget.ConstraintLayout>
 

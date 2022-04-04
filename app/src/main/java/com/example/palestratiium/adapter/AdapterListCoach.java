@@ -14,6 +14,10 @@ import com.example.palestratiium.R;
 import com.example.palestratiium.classi.Esercizio;
 import com.example.palestratiium.classi.PersonalTrainer;
 
+import java.text.ParseException;
+import java.text.SimpleDateFormat;
+import java.util.Calendar;
+import java.util.Date;
 import java.util.List;
 
 
@@ -34,7 +38,7 @@ import java.util.List;
         @NonNull
         @Override
         public AdapterListCoach.ExampleViewHolder onCreateViewHolder(@NonNull ViewGroup parent, int viewType) {
-            View v = LayoutInflater.from(parent.getContext()).inflate(R.layout.card_eserciziohomeuser, parent, false);
+            View v = LayoutInflater.from(parent.getContext()).inflate(R.layout.card_personal_trainer, parent, false);
             AdapterListCoach.ExampleViewHolder evh = new AdapterListCoach.ExampleViewHolder(v,recycleViewInterface);
             return evh;
         }
@@ -42,7 +46,8 @@ import java.util.List;
         @Override
         public void onBindViewHolder(@NonNull AdapterListCoach.ExampleViewHolder holder, int position) {
 
-
+            holder.nPersonal.setText((mExampleList.get(position).getUsername()));
+            holder.teamPersonal.setText((mExampleList.get(position).getTeam()));
 
             holder.bindData(position);
         }
@@ -54,14 +59,14 @@ import java.util.List;
 
         public static class ExampleViewHolder extends RecyclerView.ViewHolder {
 
-            public TextView nEsercizio;
-            public ImageView icona;
+            public TextView nPersonal, agePersonal, teamPersonal;
             public ExampleViewHolder(@NonNull View itemView, final RecycleViewInterface recycleViewInterface) {
                 super(itemView);
 
 
-                icona=itemView.findViewById(R.id.imgMiniaturaCarduser);
-                nEsercizio= itemView.findViewById(R.id.nomeEsercizio);
+                nPersonal = itemView.findViewById(R.id.nome_personal);
+                 agePersonal = itemView.findViewById(R.id.eta_personal);
+                teamPersonal = itemView.findViewById(R.id.team_personal);
 
 
                 itemView.setOnClickListener(new View.OnClickListener() {
@@ -80,7 +85,7 @@ import java.util.List;
 
             void bindData(int position){
 
-                nEsercizio.setOnClickListener(new View.OnClickListener() {
+                nPersonal.setOnClickListener(new View.OnClickListener() {
                     @Override
                     public void onClick(View v) {
 
