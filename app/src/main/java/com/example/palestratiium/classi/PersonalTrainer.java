@@ -15,6 +15,9 @@ public class PersonalTrainer implements Serializable {
     private String team;
     private boolean coach;
 
+
+    String instagram;
+
     private List<Esercizio> listaEsercizi= new ArrayList<>();
 
 
@@ -24,14 +27,25 @@ public class PersonalTrainer implements Serializable {
         this.coach=true;
     }
 
-    public PersonalTrainer(String username, String password, String city, Calendar date, String team){
+    public PersonalTrainer(String username, String password, String city, Calendar date, String team,String instagram){
         this.username=username;
         this.password=password;
         this.city=city;
         this.date=date;
         this.team=team;
         this.coach=true;
+        this.instagram=instagram;
 
+    }
+
+
+
+    public String getInstagram() {
+        return instagram;
+    }
+
+    public void setInstagram(String instagram) {
+        this.instagram = instagram;
     }
 
 

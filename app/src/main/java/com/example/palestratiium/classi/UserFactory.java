@@ -137,6 +137,7 @@ public class UserFactory implements Serializable {
             atzeni.getDate().set(Calendar.MONTH, Calendar.MARCH);
             atzeni.getDate().set(Calendar.DAY_OF_MONTH, 16);
             atzeni.setTeam("Atzenis Team");
+            atzeni.setInstagram("francesco_atzenii");
 
             atzeni.initEsercizi(eserciziAtzeni);
             coach.add(atzeni);
@@ -150,6 +151,7 @@ public class UserFactory implements Serializable {
             roberto.getDate().set(Calendar.MONTH, Calendar.MARCH);
             roberto.getDate().set(Calendar.DAY_OF_MONTH, 12);
             roberto.setTeam("RobertosFitness");
+            roberto.setInstagram("roberos_Fit");
             roberto.initEsercizi(eserciziRoberto);
             
 
