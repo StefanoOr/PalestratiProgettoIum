@@ -11,17 +11,20 @@ import android.view.View;
 import android.widget.Button;
 import android.widget.LinearLayout;
 
+import com.example.palestratiium.EserciziActivity;
 import com.example.palestratiium.Login;
 import com.example.palestratiium.R;
 import com.example.palestratiium.adapter.AdapterListaCreazioneAllenamento;
 import com.example.palestratiium.adapter.AdapterListaEserciziAllenamento;
 import com.example.palestratiium.adapter.RecycleViewInterface;
+import com.example.palestratiium.classi.Esercizio;
 import com.example.palestratiium.classi.EsercizioSchedaAllenamento;
 import com.example.palestratiium.classi.MyEnum;
 import com.example.palestratiium.classi.User;
 import com.example.palestratiium.classi.UserFactory;
 
 import java.io.Serializable;
+import java.util.ArrayList;
 import java.util.List;
 
 public class ActivityEserciziLDellaListaAllenamento extends AppCompatActivity implements RecycleViewInterface {
@@ -35,7 +38,7 @@ public class ActivityEserciziLDellaListaAllenamento extends AppCompatActivity im
     RecyclerView mRecyclerView;
     RecyclerView.Adapter adapter;
     private RecyclerView.LayoutManager mLayoutManager;
-
+    List<Esercizio> esercizio = new ArrayList<>();
     Button indietro;
 
 
@@ -62,6 +65,9 @@ public class ActivityEserciziLDellaListaAllenamento extends AppCompatActivity im
 
         esercizi= UserFactory.getInstance().getEserciziAllenamento(name);
 
+        for (int i = 0; i< esercizi.size() ; i++){
+            esercizio.add(esercizi.get(i).getEsercizio());
+        }
 
 
         mRecyclerView = findViewById(R.id.reclycleViewListaEserciziDellAllenamento);
@@ -94,6 +100,28 @@ public class ActivityEserciziLDellaListaAllenamento extends AppCompatActivity im
     @Override
     public void onItemClick(int position) {
 
+        Intent intent = new Intent(ActivityEserciziLDellaListaAllenamento.this, EserciziActivity.class);
+
+        intent.putExtra("NAME",esercizio.get(position).getNome());
+        intent.putExtra("DESCRIPTION",esercizio.get(position).getDescrizioene());
+        intent.putExtra("GRUPPOMUSCOLARE",esercizio.get(position).getGruppoMuscolare());
+        intent.putExtra("RATING",(float)esercizio.get(position).getRating());
+        intent.putExtra("DIFFICOLTA",esercizio.get(position).getDifficolta());
+        intent.putExtra("ISALLENAMENTO",true);
+        intent.putExtra("NOMEALLENAMENTO",name);
+        //intent.putExtra("ISALLENAMENTO",false);
+        if(esercizio.get(position).getImage()==null){
+            intent.putExtra("IMAGEDAFAULT",esercizio.get(position).getImageDefault());
+        }else {
+            intent.putExtra("IMAGE", esercizio.get(position).getImage());
+        }
+
+        if(esercizio.get(position).getVideo()==null){
+            intent.putExtra("VIDEODEFAULT",esercizio.get(position).getVideoDefault());
+        }
+        intent.putExtra(EXTRA_USER, user);
+
+        startActivity(intent);
     }
 
     @Override

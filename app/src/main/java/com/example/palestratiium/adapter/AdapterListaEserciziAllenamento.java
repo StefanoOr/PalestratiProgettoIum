@@ -56,14 +56,25 @@ public class AdapterListaEserciziAllenamento extends RecyclerView.Adapter<Adapte
         public TextView nEsercizio,nSerie,nRipetizione;
         public ImageView info;
 
-        public ExampleViewHolder(@NonNull View itemView, RecycleViewInterface recycleViewInterface) {
+        public ExampleViewHolder(@NonNull View itemView, final RecycleViewInterface recycleViewInterface) {
             super(itemView);
 
             nRipetizione=itemView.findViewById(R.id.textViewRipetizioni);
             nSerie=itemView.findViewById(R.id.textViewSerie);
             nEsercizio=itemView.findViewById(R.id.textViewNesercizio);
 
+            itemView.setOnClickListener(new View.OnClickListener() {
+                @Override
+                public void onClick(View v) {
+                    if(recycleViewInterface != null){
+                        int pos=getAdapterPosition();
 
+                        if(pos != RecyclerView.NO_POSITION){
+                            recycleViewInterface.onItemClick(pos);
+                        }
+                    }
+                }
+            });
 
         }
 

@@ -22,6 +22,7 @@ import android.widget.VideoView;
 import java.io.Serializable;
 
 import com.example.palestratiium.PersonalActivity.HomePersonalTrainer;
+import com.example.palestratiium.UserActivity.ActivityEserciziLDellaListaAllenamento;
 import com.example.palestratiium.UserActivity.Home;
 import com.example.palestratiium.classi.Esercizio;
 import com.example.palestratiium.classi.MyEnum;
@@ -29,7 +30,7 @@ import com.example.palestratiium.classi.PersonalTrainer;
 import com.example.palestratiium.classi.User;
 import com.example.palestratiium.classi.UserFactory;
 
-public class EserciziActivity extends AppCompatActivity implements Serializable, Parcelable {
+public class EserciziActivity extends AppCompatActivity implements Serializable {
 
     User user;
     PersonalTrainer personalTrainer;
@@ -46,6 +47,8 @@ public class EserciziActivity extends AppCompatActivity implements Serializable,
     boolean isPt,isUser;
     public static final String EXTRA_USER = "package com.example.palestratiium";
     public static final String EXTRA_PT = "package com.example.palestratiium";
+
+    String nomeallenamento;
 
     @RequiresApi(api = Build.VERSION_CODES.Q)
     @Override
@@ -73,6 +76,12 @@ public class EserciziActivity extends AppCompatActivity implements Serializable,
         float rate = getIntent().getExtras().getFloat("RATING");
 
 
+
+        final boolean isAllenamento= getIntent().getBooleanExtra("ISALLENAMENTO",false);
+
+        if (isAllenamento){
+            nomeallenamento = getIntent().getStringExtra("NOMEALLENAMENTO");
+        }
 
 
         nomeEsercizio= findViewById(R.id.esercizio_title);
@@ -144,9 +153,18 @@ public class EserciziActivity extends AppCompatActivity implements Serializable,
                 }
 
                 if(isUser) {
-                    Intent home = new Intent(EserciziActivity.this, Home.class);
-                    home.putExtra(EXTRA_USER, user);
-                    startActivity(home);
+
+                    if(isAllenamento){
+                        Intent allenamento = new Intent(EserciziActivity.this, ActivityEserciziLDellaListaAllenamento.class);
+                        allenamento.putExtra("NAME",nomeallenamento);
+                        allenamento.putExtra(EXTRA_USER, user);
+                        startActivity(allenamento);
+                    }else {
+
+                        Intent home = new Intent(EserciziActivity.this, Home.class);
+                        home.putExtra(EXTRA_USER, user);
+                        startActivity(home);
+                    }
                 }else if(isPt) {
                     Intent home = new Intent(EserciziActivity.this, HomePersonalTrainer.class);
                     home.putExtra(EXTRA_PT, personalTrainer);
@@ -215,13 +233,5 @@ Uri uri=Uri.parse(uriPath);
     }
 
 
-    @Override
-    public int describeContents() {
-        return 0;
-    }
 
-    @Override
-    public void writeToParcel(Parcel dest, int flags) {
-
-    }
 }
