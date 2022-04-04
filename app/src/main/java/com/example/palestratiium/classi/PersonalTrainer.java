@@ -119,4 +119,20 @@ public class PersonalTrainer implements Serializable {
         return listaEsercizi.get(index);
 
     }
+
+
+    public String getAge(){
+        Calendar today = Calendar.getInstance();
+
+
+
+        int age = today.get(Calendar.YEAR) - date.get(Calendar.YEAR);
+
+        if (today.get(Calendar.DAY_OF_YEAR) < date.get(Calendar.DAY_OF_YEAR)){
+            age--;
+        }
+
+        return new Integer(age).toString();
+
+    }
 }

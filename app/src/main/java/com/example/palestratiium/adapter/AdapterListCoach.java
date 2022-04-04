@@ -48,6 +48,8 @@ import java.util.List;
 
             holder.nPersonal.setText((mExampleList.get(position).getUsername()));
             holder.teamPersonal.setText((mExampleList.get(position).getTeam()));
+            holder.agePersonal.setText((mExampleList.get(position).getAge()));
+            holder.instagram.setText((mExampleList.get(position).getInstagram()));
 
             holder.bindData(position);
         }
@@ -59,7 +61,7 @@ import java.util.List;
 
         public static class ExampleViewHolder extends RecyclerView.ViewHolder {
 
-            public TextView nPersonal, agePersonal, teamPersonal;
+            public TextView nPersonal, agePersonal, teamPersonal,instagram;
             public ExampleViewHolder(@NonNull View itemView, final RecycleViewInterface recycleViewInterface) {
                 super(itemView);
 
@@ -67,6 +69,7 @@ import java.util.List;
                 nPersonal = itemView.findViewById(R.id.nome_personal);
                  agePersonal = itemView.findViewById(R.id.eta_personal);
                 teamPersonal = itemView.findViewById(R.id.team_personal);
+                instagram=itemView.findViewById(R.id.ig);
 
 
                 itemView.setOnClickListener(new View.OnClickListener() {
