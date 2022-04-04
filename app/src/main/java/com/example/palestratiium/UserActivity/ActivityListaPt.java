@@ -48,7 +48,7 @@ public class ActivityListaPt extends AppCompatActivity implements RecycleViewInt
 
 
         List<PersonalTrainer> listaCoach = UserFactory.getInstance().getCoach();
-
+        listaCoach.remove(0);
 
         mRecyclerView = findViewById(R.id.RecycleViewListaCoach);
         mRecyclerView.setHasFixedSize(true);
