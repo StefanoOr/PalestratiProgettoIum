@@ -18,7 +18,7 @@
         <item>Seleziona</item>
         <item>Diploma</item>
         <item>Laurea</item>
-        <item>AttestatoCorso</item>
+        <item>Attestato Corso</item>
     </string-array>
 
     <string-array name="città">
