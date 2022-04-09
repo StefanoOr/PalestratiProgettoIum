@@ -9,6 +9,7 @@ public class PersonalTrainer implements Serializable {
 
     private String username;
     private String password;
+    private String imageProfile;
     private String city;
     private Calendar date;
 
@@ -20,16 +21,14 @@ public class PersonalTrainer implements Serializable {
 
     private List<Esercizio> listaEsercizi= new ArrayList<>();
 
-
-
-
     public PersonalTrainer(){
         this.coach=true;
     }
 
-    public PersonalTrainer(String username, String password, String city, Calendar date, String team,String instagram){
+    public PersonalTrainer(String username, String password, String imageProfile, String city, Calendar date, String team, String instagram){
         this.username=username;
         this.password=password;
+        this.imageProfile = imageProfile;
         this.city=city;
         this.date=date;
         this.team=team;
@@ -134,5 +133,13 @@ public class PersonalTrainer implements Serializable {
 
         return new Integer(age).toString();
 
+    }
+
+    public String getImageProfile() {
+        return imageProfile;
+    }
+
+    public void setImageProfile(String imageProfile) {
+        this.imageProfile = imageProfile;
     }
 }

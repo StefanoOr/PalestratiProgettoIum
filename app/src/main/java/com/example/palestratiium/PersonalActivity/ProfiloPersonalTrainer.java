@@ -1,14 +1,24 @@
 package com.example.palestratiium.PersonalActivity;
 
 import androidx.annotation.NonNull;
+import androidx.annotation.Nullable;
+import androidx.appcompat.app.AlertDialog;
 import androidx.appcompat.app.AppCompatActivity;
+import androidx.core.app.ActivityCompat;
+import androidx.core.content.ContextCompat;
 
+import android.Manifest;
 import android.annotation.SuppressLint;
+import android.content.DialogInterface;
 import android.content.Intent;
+import android.content.pm.PackageManager;
+import android.net.Uri;
 import android.os.Bundle;
+import android.provider.MediaStore;
 import android.view.MenuItem;
 import android.view.View;
 import android.widget.Button;
+import android.widget.ImageView;
 import android.widget.TextView;
 
 import com.example.palestratiium.Login;
@@ -22,9 +32,24 @@ import java.io.Serializable;
 
 public class ProfiloPersonalTrainer extends AppCompatActivity {
     public static final String EXTRA_PT = "package com.example.palestratiium";
+
     PersonalTrainer personal;
     Button logout;
     TextView modify_password;
+
+    private Button catch_image;
+    private ImageView image;
+
+    private static final int CAMERA_REQUEST_CODE = 100;
+    private static final int SELECT_IMAGE_CODE = 200;
+    private static final int IMAGE_PICK_CAMERA_CODE = 200;
+
+    private String[] cameraPermissions;
+
+    private Uri imageUri;
+    private String stringUriImage;
+
+
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -41,8 +66,19 @@ public class ProfiloPersonalTrainer extends AppCompatActivity {
         }
 
         logout=findViewById(R.id.logoutPT);
-         modify_password=findViewById(R.id.modify_password_pt);
+        modify_password=findViewById(R.id.modify_password_pt);
+        image=findViewById(R.id.image_view_profilePersonal);
+        catch_image=findViewById(R.id.image_profile_catch);
 
+        //permessi camera
+        cameraPermissions = new String[]{Manifest.permission.CAMERA, Manifest.permission.WRITE_EXTERNAL_STORAGE};
+
+        catch_image.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                imagePickDialog();
+            }
+        });
 
         BottomNavigationView bottomNavigationView = findViewById(R.id.bottom_navigation);
 
@@ -98,6 +134,78 @@ public class ProfiloPersonalTrainer extends AppCompatActivity {
                 startActivity(showResult);
             }
         });
+    }
+
+    private void imagePickDialog() {
+
+        //opzioni per il dialog
+        String[] options = {"Camera", "Galleria"};
+
+        //dialog
+        AlertDialog.Builder builder = new AlertDialog.Builder(this);
+        builder.setTitle("Seleziona l'immagine da")
+                .setItems(options, new DialogInterface.OnClickListener() {
+                    @Override
+                    public void onClick(DialogInterface dialogInterface, int i) {
+                        if (i==0){
+                            //camera selezionata
+                            if (!checkCameraPermission()) {
+                                //permesso non dato, richiedilo
+                                requestCameraPermission();
+                            }else{
+                                //permesso dato, fai il video
+                                imagePickCamera();
+                            }
+                        }
+                        else if (i==1){
+                            //galleria selezionata
+                            imagePickGallery();
+                        }
+                    }
+                })
+                .show();
+    }
+
+    private void imagePickGallery() {
+        Intent intent = new Intent();
+        intent.setType("image/*");
+        intent.setAction(Intent.ACTION_GET_CONTENT);
+        startActivityForResult(Intent.createChooser(intent, "Seleziona Imagine per l'icona"), SELECT_IMAGE_CODE);
+    }
+
+    private void imagePickCamera() {
+        Intent intent = new Intent(MediaStore.ACTION_IMAGE_CAPTURE);
+        startActivityForResult(intent, IMAGE_PICK_CAMERA_CODE);
+    }
+
+    private void requestCameraPermission(){
+        //richiedi i permessi per la camera
+        ActivityCompat.requestPermissions(this, cameraPermissions, CAMERA_REQUEST_CODE);
+    }
+
+    private boolean checkCameraPermission(){
+        boolean result1 = ContextCompat.checkSelfPermission(this, Manifest.permission.CAMERA) == PackageManager.PERMISSION_GRANTED;
+        boolean result2 = ContextCompat.checkSelfPermission(this, Manifest.permission.WAKE_LOCK) == PackageManager.PERMISSION_GRANTED;
+
+        return result1 && result2;
+    }
+
+    @Override
+    protected void onActivityResult(int requestCode, int resultCode, @Nullable Intent data) {
+
+        super.onActivityResult(requestCode, resultCode, data);
+
+        //chiamata dopo aver preso il video dalla camera/galleria
+        if (resultCode == RESULT_OK) {
+           if(requestCode==SELECT_IMAGE_CODE){
+                Uri selectedImageUri = data.getData();
+                if(null!=selectedImageUri){
+                    image.setImageURI(selectedImageUri);
+                    stringUriImage = selectedImageUri.toString();
+                }
+
+            }
+        }
     }
 }
 
