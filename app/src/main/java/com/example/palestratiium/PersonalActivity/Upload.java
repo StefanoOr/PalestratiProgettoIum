@@ -46,8 +46,8 @@ public class Upload extends AppCompatActivity implements Serializable, AdapterVi
     private EditText videoErr, checkBoxErr;
     private EditText titleEt, descrizioneEt;
     private VideoView videoView;
-    private ImageView imageView;
-    private Button uploadVideoBtn, uploadImageBtn,back_home;
+    private ImageView imageView, back_home;
+    private Button uploadVideoBtn, uploadImageBtn;
     private FloatingActionButton selectVideoBtn;
     private Spinner seleziona_difficolta;
     private CheckBox petto, gambe, bicipiti, dorso, tricipiti, spalle;

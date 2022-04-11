@@ -12,6 +12,16 @@
         android:layout_height="wrap_content"
         android:id="@+id/relative_layout_upload">
 
+        <ImageView
+            android:id="@+id/back_home_upload"
+            android:layout_width="40dp"
+            android:layout_height="40dp"
+            android:src="@drawable/ic_baseline_keyboard_backspace_24"
+            app:layout_constraintTop_toTopOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            android:layout_marginTop="5dp"
+            android:layout_marginStart="10dp"/>
+
         <TextView
             android:id="@+id/titolo_upload"
             android:layout_width="match_parent"
@@ -22,7 +32,7 @@
             android:textColor="@color/barra_separatoria_principale"
             android:textSize="36sp"
             android:textStyle="bold"
-            app:layout_constraintTop_toTopOf="parent"
+            app:layout_constraintTop_toBottomOf="@id/back_home_upload"
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintEnd_toEndOf="parent"/>
 
@@ -299,17 +309,6 @@
             app:layout_constraintTop_toBottomOf="@id/difficolta_testo"
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintEnd_toEndOf="parent"/>
-
-
-        <Button
-            android:id="@+id/back_home_upload"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:text="Home"
-            app:layout_constraintBottom_toBottomOf="parent"
-            app:layout_constraintEnd_toEndOf="parent"
-            app:layout_constraintStart_toStartOf="parent" />
-
 
         <Button
             android:id="@+id/uploadVideoButton"

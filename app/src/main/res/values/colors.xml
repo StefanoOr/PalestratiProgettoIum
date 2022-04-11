@@ -18,5 +18,6 @@
     <color name="card_background_layout">#CC2C2C2C</color>
     <color name="card_background_darker">#272727</color>
     <color name="info_color">#FFAC04</color>
+    <color name="relative_home_user">#A62C2C2C</color>
 
 </resources>
