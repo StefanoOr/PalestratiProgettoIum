@@ -112,10 +112,6 @@ public class EserciziActivity extends AppCompatActivity implements Serializable 
 
         }
 
-
-
-
-
         nomeEsercizio.setText(name);
         descrizioneEsercizio.setText(descrizione);
         descrizioneEsercizio.setMovementMethod(new ScrollingMovementMethod());
