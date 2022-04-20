@@ -63,16 +63,23 @@
 
         <Button
             android:id="@+id/logoutUser"
-
-            android:layout_width="190dp"
-            android:layout_height="50dp"
-            android:layout_marginBottom="16dp"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginLeft="20dp"
+            android:layout_marginTop="40dp"
+            android:layout_marginRight="20dp"
+            android:layout_marginBottom="40dp"
+            android:background="@drawable/upload_video_btn_layout"
             android:backgroundTint="@color/homeButton"
+            android:elevation="5dp"
+            android:outlineSpotShadowColor="@color/barra_separatoria_principale"
+            android:shadowColor="@color/barra_separatoria_principale"
+            android:textColor="@color/white"
+            android:textStyle="bold"
             android:text="Logout"
-            app:layout_constraintBottom_toTopOf="@+id/bottom_navigation"
             app:layout_constraintEnd_toEndOf="parent"
-            app:layout_constraintHorizontal_bias="0.493"
-            app:layout_constraintStart_toStartOf="parent" />
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/view5" />
 
         <TextView
             android:id="@+id/textView10"
@@ -321,19 +328,6 @@
             app:layout_constraintEnd_toEndOf="@+id/modify_password"
             app:layout_constraintStart_toStartOf="@+id/modify_password"
             app:layout_constraintTop_toBottomOf="@+id/modify_password" />
-
-        <Button
-            android:id="@+id/back_home"
-            android:layout_width="190dp"
-            android:layout_height="50dp"
-            android:backgroundTint="@color/barra_separatoria_principale"
-            android:text="Home"
-            app:layout_constraintBottom_toTopOf="@+id/logoutUser"
-            app:layout_constraintEnd_toEndOf="parent"
-            app:layout_constraintHorizontal_bias="0.497"
-            app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toBottomOf="@+id/view5"
-            app:layout_constraintVertical_bias="0.375" />
 
         <com.google.android.material.bottomnavigation.BottomNavigationView
             android:id="@+id/bottom_navigation"

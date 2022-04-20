@@ -16,6 +16,7 @@ import android.os.Bundle;
 import android.text.InputType;
 import android.view.View;
 import android.widget.Button;
+import android.widget.ImageView;
 import android.widget.TextView;
 import android.widget.Toast;
 
@@ -35,8 +36,9 @@ public class SignUp extends AppCompatActivity {
 
     User user = new User();
     TextInputLayout username, city, password, passwordConf;
-    TextView date, back;
+    TextView date;
     Button signup_button;
+    private ImageView back;
     DatePickerFragment datePickerFragment = new DatePickerFragment();
     boolean isPasswordVisibleNEW, isPasswordVisibleCONFIRM;
 
@@ -54,7 +56,7 @@ public class SignUp extends AppCompatActivity {
         date = findViewById(R.id.input_signup_date);
         date.setInputType(InputType.TYPE_NULL);
         signup_button = findViewById(R.id.input_button_signUp);
-        back = findViewById(R.id.textView2);
+        back = findViewById(R.id.back_home_signup);
         isPasswordVisibleNEW = true;
         isPasswordVisibleCONFIRM = true;
 

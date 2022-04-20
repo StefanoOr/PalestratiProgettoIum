@@ -29,7 +29,6 @@ public class ProfiloUser extends AppCompatActivity {
 
     User user;
     TextView modify_password, username, nome, peso_attuale, altezza_attuale,eta;
-    Button home;
     ImageView edit_peso, edit_altezza;
     int tmp_peso, tmp_altezza;
     String tmp_progress_peso, tmp_progress_altezza;
@@ -51,7 +50,6 @@ public class ProfiloUser extends AppCompatActivity {
         modify_password = findViewById(R.id.modify_password);
         username = findViewById(R.id.textView9);
         nome = findViewById(R.id.textView11);
-        home = findViewById(R.id.back_home);
         edit_peso = findViewById(R.id.edit_peso);
         edit_altezza = findViewById(R.id.edit_altezza);
         peso_attuale = findViewById(R.id.peso_attuale);
@@ -209,16 +207,6 @@ public class ProfiloUser extends AppCompatActivity {
                 startActivity(showResult);
             }
         });
-
-        home.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View v) {
-                Intent home = new Intent(ProfiloUser.this, Home.class);
-                home.putExtra(EXTRA_USER, user);
-                startActivity(home);
-            }
-        });
-
 
         BottomNavigationView bottomNavigationView = findViewById(R.id.bottom_navigation);
 

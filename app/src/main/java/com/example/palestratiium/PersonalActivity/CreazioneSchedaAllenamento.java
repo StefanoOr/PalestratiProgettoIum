@@ -11,6 +11,7 @@ import android.os.Bundle;
 import android.view.View;
 import android.widget.Button;
 import android.widget.EditText;
+import android.widget.ImageView;
 import android.widget.LinearLayout;
 import android.widget.TextView;
 import android.widget.Toast;
@@ -32,8 +33,10 @@ import java.util.List;
 
 public class CreazioneSchedaAllenamento extends AppCompatActivity implements RecycleViewInterface {
 
-    Button indietro,aggiungiEsercizioAllenamento,confermaAllenamento;
+    Button aggiungiEsercizioAllenamento,confermaAllenamento;
     EditText titolo,descrizione;
+
+    private ImageView back;
 
     public static final String EXTRA_PT = "package com.example.palestratiium";
     public RecyclerView.LayoutManager mLayoutManager;
@@ -51,7 +54,7 @@ public class CreazioneSchedaAllenamento extends AppCompatActivity implements Rec
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_creazione_scheda_allenamento);
 
-        indietro = findViewById(R.id.indietroCreazioneAllenamento);
+        back = findViewById(R.id.back_home_scheda_allenamento);
         confermaAllenamento=findViewById(R.id.addSchedaAllnamento);
         aggiungiEsercizioAllenamento=findViewById(R.id.addEsercizioSchedaAllenamento);
         titolo=findViewById(R.id.nomeSchedaAllenamento);
@@ -72,7 +75,7 @@ public class CreazioneSchedaAllenamento extends AppCompatActivity implements Rec
 
         EsercizioSchedaAllenamento init = new EsercizioSchedaAllenamento();
 
-        indietro.setOnClickListener(new View.OnClickListener() {
+        back.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
                 Intent showResult = new Intent(CreazioneSchedaAllenamento.this, PanelloDiUpload.class);

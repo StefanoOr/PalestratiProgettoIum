@@ -21,11 +21,19 @@
             android:gravity="center"
             android:orientation="vertical">
 
+            <ImageView
+                android:id="@+id/back_home_signup"
+                android:layout_width="40dp"
+                android:layout_height="40dp"
+                android:src="@drawable/ic_baseline_keyboard_backspace_24"
+                android:layout_gravity="start"
+                android:layout_marginTop="5dp"
+                android:layout_marginStart="10dp"/>
+
             <TextView
                 android:id="@+id/SignUpTitle"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:layout_marginTop="50dp"
                 android:text="Sign Up"
                 android:textSize="46sp"
                 android:textColor="@color/barra_separatoria_secondaria"
@@ -168,41 +176,19 @@
 
             <Button
                 android:id="@+id/input_button_signUp"
-                android:layout_width="210dp"
+                android:layout_width="match_parent"
                 android:layout_height="wrap_content"
+                android:layout_marginLeft="20dp"
                 android:layout_marginTop="40dp"
-                android:layout_marginBottom="50dp"
-                android:elevation="7dp"
-                android:background="@drawable/card_background_edit_profile"
-                android:backgroundTint="@color/barra_separatoria_principale"
-                android:text="Sign Up"
-                />
-
-            <TextView
-                android:id="@+id/textView2"
-                android:layout_width="wrap_content"
-                android:layout_height="match_parent"
-                android:layout_marginTop="2dp"
-                android:text="Back"
-                android:textColor="@color/barra_separatoria_principale"
-                android:textSize="20dp"
+                android:layout_marginRight="20dp"
+                android:layout_marginBottom="40dp"
+                android:background="@drawable/upload_video_btn_layout"
+                android:elevation="5dp"
+                android:outlineSpotShadowColor="@color/barra_separatoria_principale"
+                android:shadowColor="@color/barra_separatoria_principale"
+                android:textColor="@color/white"
                 android:textStyle="bold"
-                app:layout_constraintEnd_toEndOf="parent"
-                app:layout_constraintHorizontal_bias="0.498"
-                app:layout_constraintStart_toStartOf="parent"
-                app:layout_constraintTop_toBottomOf="@+id/input_button_signUp" />
-
-            <ImageView
-                android:layout_width="30dp"
-                android:layout_height="25dp"
-                android:layout_marginTop="4dp"
-                android:src="@drawable/ic_baseline_keyboard_backspace_24"
-                app:layout_constraintEnd_toStartOf="@+id/textView2"
-                app:layout_constraintHorizontal_bias="1.0"
-                app:layout_constraintStart_toStartOf="parent"
-                app:layout_constraintTop_toBottomOf="@+id/input_button_signUp" />
-
-
+                android:text="Sign Up" />
 
         </LinearLayout>
     </ScrollView>

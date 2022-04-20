@@ -132,6 +132,7 @@ public class ModificaEsercizio extends AppCompatActivity implements Serializable
         muscoloAttuale.setText(gruppo.name());
 
 
+
         if(video != null) {
             setVideoToVideoView(video);
         }

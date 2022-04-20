@@ -14,6 +14,7 @@ import android.content.Intent;
 import android.os.Bundle;
 import android.view.View;
 import android.widget.Button;
+import android.widget.ImageView;
 import android.widget.TextView;
 import android.widget.Toast;
 
@@ -34,9 +35,10 @@ public class ModifyPassword extends AppCompatActivity {
 
     TextView username, oldPass;
     TextInputLayout newpass, newpassconf;
-    Button modify, home;
+    Button modify;
     User user;
     PersonalTrainer personalTrainer;
+    private ImageView back;
     boolean isPasswordVisibleNEW, isPasswordVisibleCONFIRM;
     boolean isPt,isUser;
 
@@ -54,7 +56,7 @@ public class ModifyPassword extends AppCompatActivity {
         newpass = findViewById(R.id.input_passwordNew);
         newpassconf = findViewById(R.id.input_passwordNewConfirm);
         modify = findViewById(R.id.input_button_signUp);
-        home = findViewById(R.id.input_button_home);
+        back = findViewById(R.id.back_home_modify_password);
         isPasswordVisibleNEW = true;
         isPasswordVisibleCONFIRM = true;
 
@@ -120,7 +122,7 @@ public class ModifyPassword extends AppCompatActivity {
         });
 
 
-        home.setOnClickListener(new View.OnClickListener() {
+        back.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
                 if(isUser){
