@@ -16,7 +16,6 @@ import android.widget.EditText;
 
 import com.example.palestratiium.EserciziActivity;
 import com.example.palestratiium.Login;
-import com.example.palestratiium.ModificaEsercizio;
 import com.example.palestratiium.R;
 import com.example.palestratiium.adapter.Adapter_ListaEserciziHomePersonalT;
 import com.example.palestratiium.adapter.RecycleViewInterface;
@@ -129,8 +128,6 @@ public class HomePersonalTrainer extends AppCompatActivity implements RecycleVie
 
     }
 
-
-
     @Override
     public void onItemClick(int position) {
         Intent intent = new Intent(HomePersonalTrainer.this, EserciziActivity.class);
@@ -149,6 +146,8 @@ public class HomePersonalTrainer extends AppCompatActivity implements RecycleVie
 
         if(listaEserciziPt.get(position).getVideo()==null){
             intent.putExtra("VIDEODEFAULT",listaEserciziPt.get(position).getVideoDefault());
+        }else{
+            intent.putExtra("VIDEO", listaEserciziPt.get(position).getVideo());
         }
 
 
@@ -164,10 +163,24 @@ public class HomePersonalTrainer extends AppCompatActivity implements RecycleVie
         intent.putExtra("DESCRIPTION",listaEserciziPt.get(position).getDescrizioene());
         intent.putExtra("GRUPPOMUSCOLARE",listaEserciziPt.get(position).getGruppoMuscolare());
         intent.putExtra("DIFFICOLTA",listaEserciziPt.get(position).getDifficolta());
-        intent.putExtra("VIDEO",listaEserciziPt.get(position).getVideo());
+
+        if(listaEserciziPt.get(position).getImage()==null){
+            intent.putExtra("IMAGEDAFAULT",listaEserciziPt.get(position).getImageDefault());
+        }else {
+            intent.putExtra("IMAGE", listaEserciziPt.get(position).getImage());
+        }
+
+        if(listaEserciziPt.get(position).getVideo()==null){
+            intent.putExtra("VIDEODEFAULT",listaEserciziPt.get(position).getVideoDefault());
+        }else{
+            intent.putExtra("VIDEO", listaEserciziPt.get(position).getVideo());
+        }
+
+
         intent.putExtra(EXTRA_PT, personal);
         startActivity(intent);
     }
+
 
 
 

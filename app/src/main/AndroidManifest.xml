@@ -16,9 +16,7 @@
         <activity android:name=".UserActivity.ActivityEserciziLDellaListaAllenamento" />
         <activity android:name=".UserActivity.ActivityListaSchedaAllenamentoUser" />
         <activity android:name=".UserActivity.FiltroUser" />
-        <activity
-            android:name=".ModificaEsercizio"
-            android:exported="false" />
+        <activity android:name=".PersonalActivity.ModificaEsercizio" />
         <activity android:name=".PersonalActivity.PanelloDiUpload" />
         <activity android:name=".PersonalActivity.CreazioneSchedaAllenamento" />
         <activity android:name=".PersonalActivity.ProfiloPersonalTrainer" />

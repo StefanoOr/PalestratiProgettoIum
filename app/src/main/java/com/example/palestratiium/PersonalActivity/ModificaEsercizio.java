@@ -1,4 +1,4 @@
-package com.example.palestratiium;
+package com.example.palestratiium.PersonalActivity;
 
 import androidx.annotation.RequiresApi;
 import androidx.appcompat.app.AlertDialog;
@@ -30,9 +30,8 @@ import android.widget.TextView;
 import android.widget.Toast;
 import android.widget.VideoView;
 
-import com.example.palestratiium.PersonalActivity.HomePersonalTrainer;
-import com.example.palestratiium.PersonalActivity.Upload;
-import com.example.palestratiium.UserActivity.Home;
+import com.example.palestratiium.Login;
+import com.example.palestratiium.R;
 import com.example.palestratiium.classi.Esercizio;
 import com.example.palestratiium.classi.MyEnum;
 import com.example.palestratiium.classi.PersonalTrainer;
@@ -68,7 +67,7 @@ public class ModificaEsercizio extends AppCompatActivity implements Serializable
     private Uri imageUri;
     private Uri videoUri; //uri del video selezionato
     private String stringUriVideo, stringUriImage;
-
+    String name;
     boolean isPt;
 
     public static final String EXTRA_PT = "package com.example.palestratiium";
@@ -91,7 +90,7 @@ public class ModificaEsercizio extends AppCompatActivity implements Serializable
             personalTrainer = new PersonalTrainer();
         }
 
-        String name = getIntent().getStringExtra("NAME");
+        name = getIntent().getStringExtra("NAME");
         String video = getIntent().getStringExtra("VIDEO");
         String descrizione = getIntent().getStringExtra("DESCRIPTION");
         MyEnum gruppo = (MyEnum) intent.getSerializableExtra("GRUPPOMUSCOLARE");
@@ -100,6 +99,7 @@ public class ModificaEsercizio extends AppCompatActivity implements Serializable
 
         int videoDefault=intent.getExtras().getInt("VIDEODEFAULT");
         int imageDefault = intent.getExtras().getInt("IMAGEDAFAULT");
+
 
         nomeEsercizio = findViewById(R.id.title_edit_text_edit);
         descrizioneEsercizio = findViewById(R.id.descrizione_edit_text_edit);
@@ -132,6 +132,32 @@ public class ModificaEsercizio extends AppCompatActivity implements Serializable
         muscoloAttuale.setText(gruppo.name());
 
 
+        switch (gruppo){
+
+            case PETTO:
+                petto.setChecked(true);
+
+                break;
+            case BICIPITI:
+                bicipiti.setChecked(true);
+                break;
+            case GAMBE:
+                gambe.setChecked(true);
+                break;
+            case DORSO:
+                dorso.setChecked(true);
+                break;
+            case SPALLE:
+                spalle.setChecked(true);
+                break;
+            case TRICIPITI:
+                tricipiti.setChecked(true);
+                break;
+
+
+
+        }
+
 
         if(video != null) {
             setVideoToVideoView(video);
@@ -149,12 +175,7 @@ public class ModificaEsercizio extends AppCompatActivity implements Serializable
             setVideoToVideoViewDefault(videoDefault);
         }
 
-        petto.setOnClickListener(this);
-        spalle.setOnClickListener(this);
-        gambe.setOnClickListener(this);
-        bicipiti.setOnClickListener(this);
-        tricipiti.setOnClickListener(this);
-        dorso.setOnClickListener(this);
+
 
         //permessi camera
         cameraPermissions = new String[]{Manifest.permission.CAMERA, Manifest.permission.WRITE_EXTERNAL_STORAGE};
@@ -188,6 +209,7 @@ public class ModificaEsercizio extends AppCompatActivity implements Serializable
             @Override
             public void onClick(View v) {
 
+
                 esercizio.setNome(nomeEsercizio.getText().toString());
                 esercizio.setDescrizioene(descrizioneEsercizio.getText().toString());
                 esercizio.setDifficolta(seleziona_difficolta.getSelectedItem().toString());
@@ -195,7 +217,7 @@ public class ModificaEsercizio extends AppCompatActivity implements Serializable
                 esercizio.setImage(stringUriImage);
                 personalTrainer.addEsercizi(esercizio);
                 esercizio.setGruppoMuscolare(gruppoSelezionato);
-                UserFactory.getInstance().addEsercizio(personalTrainer, esercizio);
+                UserFactory.getInstance().modifyEsercizio( name , personalTrainer,esercizio);
                 Intent home = new Intent(ModificaEsercizio.this, HomePersonalTrainer.class);
                 home.putExtra(EXTRA_PT, personalTrainer);
                 startActivity(home);
@@ -259,7 +281,7 @@ public class ModificaEsercizio extends AppCompatActivity implements Serializable
         //opzioni per il dialog
         String[] options = {"Camera", "Galleria"};
 
-        //dialog
+//dialog
         AlertDialog.Builder builder = new AlertDialog.Builder(this);
         builder.setTitle("Seleziona l'immagine da")
                 .setItems(options, new DialogInterface.OnClickListener() {
