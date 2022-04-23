@@ -110,7 +110,7 @@
         <TextView
             android:id="@+id/EditExTitle"
             android:layout_width="wrap_content"
-            android:layout_height="50dp"
+            android:layout_height="wrap_content"
             android:fontFamily="@font/roboto"
             android:text="Modifica Esercizio"
             android:textColor="@color/barra_separatoria_principale"

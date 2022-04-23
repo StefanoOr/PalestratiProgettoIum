@@ -43,8 +43,9 @@
                     android:fontFamily="@font/roboto"
                     android:gravity="center_horizontal"
                     android:text="@string/bonus_login"
+                    android:textStyle="bold"
                     android:textAppearance="@style/TextAppearance.AppCompat.Body2"
-                    android:textColor="@color/barra_separatoria_secondaria"
+                    android:textColor="@color/barra_separatoria_principale"
                     android:textSize="36sp" />
 
 

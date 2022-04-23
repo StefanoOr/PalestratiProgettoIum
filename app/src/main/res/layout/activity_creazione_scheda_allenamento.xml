@@ -22,7 +22,7 @@
         android:layout_height="wrap_content"
         android:text="Inserisci il nome della nuova scheda"
         android:textColor="@color/barra_separatoria_principale"
-        android:textSize="20dp"
+        android:textSize="22sp"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/back_home_scheda_allenamento"/>

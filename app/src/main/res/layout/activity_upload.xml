@@ -25,7 +25,7 @@
         <TextView
             android:id="@+id/titolo_upload"
             android:layout_width="wrap_content"
-            android:layout_height="50dp"
+            android:layout_height="wrap_content"
             android:fontFamily="@font/roboto"
             android:text="@string/nuovo_esercizio"
             android:textAlignment="center"
