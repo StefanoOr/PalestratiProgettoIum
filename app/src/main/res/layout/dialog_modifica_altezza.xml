@@ -16,19 +16,18 @@
 
         <TextView
             android:id="@+id/textView17"
-            android:layout_width="match_parent"
+            android:layout_width="wrap_content"
             android:layout_height="wrap_content"
+            android:layout_marginTop="20dp"
+            android:fontFamily="@font/roboto"
             android:text="Seleziona la tua altezza:"
             android:textAlignment="center"
             android:textColor="@color/white"
-            android:textSize="20dp"
+            android:textSize="22sp"
             android:textStyle="bold"
-            app:layout_constraintBottom_toBottomOf="parent"
             app:layout_constraintEnd_toEndOf="parent"
-            app:layout_constraintHorizontal_bias="0.0"
             app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toTopOf="parent"
-            app:layout_constraintVertical_bias="0.043">
+            app:layout_constraintTop_toTopOf="parent">
 
         </TextView>
 
@@ -38,9 +37,11 @@
             android:layout_height="wrap_content"
             android:layout_alignParentBottom="true"
             android:layout_centerInParent="true"
+            android:layout_marginTop="20dp"
+            android:fontFamily="@font/roboto"
             android:text="160"
             android:textColor="@color/white"
-            android:textSize="40dp"
+            android:textSize="35sp"
             android:textStyle="bold"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintStart_toStartOf="parent"
@@ -52,15 +53,16 @@
             android:id="@+id/misura_altezza"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:layout_marginTop="16dp"
+            android:fontFamily="@font/roboto"
             android:text="cm"
             android:textColor="@color/white"
-            android:textSize="20dp"
+            android:textSize="22sp"
             android:textStyle="bold"
+            app:layout_constraintBottom_toBottomOf="@+id/current_altezza"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintHorizontal_bias="0.085"
             app:layout_constraintStart_toEndOf="@+id/current_altezza"
-            app:layout_constraintTop_toBottomOf="@+id/textView17">
+            app:layout_constraintTop_toTopOf="@+id/current_altezza">
 
         </TextView>
 
@@ -68,16 +70,18 @@
             android:id="@+id/seekbar_altezza"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
+            android:layout_marginStart="15dp"
+            android:layout_marginTop="10dp"
+            android:layout_marginEnd="15dp"
+            android:fontFamily="@font/roboto"
             android:max="280"
             android:progressBackgroundTint="@color/barra_separatoria_principale"
             android:progressTint="@color/barra_separatoria_secondaria"
             android:thumbTint="@color/barra_separatoria_principale"
-            app:layout_constraintBottom_toBottomOf="parent"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintHorizontal_bias="0.0"
             app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toBottomOf="@+id/current_altezza"
-            app:layout_constraintVertical_bias="0.119">
+            app:layout_constraintTop_toBottomOf="@+id/current_altezza">
 
         </SeekBar>
 
@@ -86,31 +90,30 @@
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_marginStart="10dp"
-            android:layout_marginBottom="5dp"
+            android:layout_marginTop="20dp"
+            android:layout_marginBottom="20dp"
             android:background="@drawable/nega_button"
+            android:fontFamily="@font/roboto"
             android:text="Indietro"
+            android:textSize="14sp"
             app:layout_constraintBottom_toBottomOf="parent"
-            app:layout_constraintEnd_toEndOf="parent"
-            app:layout_constraintHorizontal_bias="0.0"
             app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toBottomOf="@+id/seekbar_altezza"
-            app:layout_constraintVertical_bias="0.961" />
+            app:layout_constraintTop_toBottomOf="@+id/seekbar_altezza" />
 
         <Button
             android:id="@+id/conferma_altezza"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:layout_marginTop="24dp"
+            android:layout_marginTop="20dp"
             android:layout_marginEnd="10dp"
-            android:layout_marginBottom="5dp"
+            android:layout_marginBottom="20dp"
             android:background="@drawable/conferma_button"
+            android:fontFamily="@font/roboto"
             android:text="Conferma"
+            android:textSize="14sp"
             app:layout_constraintBottom_toBottomOf="parent"
             app:layout_constraintEnd_toEndOf="parent"
-            app:layout_constraintHorizontal_bias="1.0"
-            app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toBottomOf="@+id/seekbar_altezza"
-            app:layout_constraintVertical_bias="1.0" />
+            app:layout_constraintTop_toBottomOf="@+id/seekbar_altezza" />
 
 
     </androidx.constraintlayout.widget.ConstraintLayout>

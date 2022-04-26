@@ -4,8 +4,9 @@
     android:layout_height="wrap_content"
     android:padding="10dp"
     android:text="Prova"
-    android:textSize="20sp"
+    android:textSize="18sp"
     android:elevation="7dp"
+    android:fontFamily="@font/roboto"
     android:background="@drawable/border_spinner"
     android:textColor="@color/white">
 

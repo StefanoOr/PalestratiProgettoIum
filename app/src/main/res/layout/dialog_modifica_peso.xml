@@ -17,19 +17,18 @@
 
         <TextView
             android:id="@+id/textView17"
-            android:layout_width="match_parent"
+            android:layout_width="wrap_content"
             android:layout_height="wrap_content"
+            android:layout_marginTop="20dp"
             android:text="Seleziona il tuo peso:"
+            android:fontFamily="@font/roboto"
             android:textAlignment="center"
             android:textColor="@color/white"
-            android:textSize="20dp"
+            android:textSize="22sp"
             android:textStyle="bold"
-            app:layout_constraintBottom_toBottomOf="parent"
             app:layout_constraintEnd_toEndOf="parent"
-            app:layout_constraintHorizontal_bias="0.0"
             app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toTopOf="parent"
-            app:layout_constraintVertical_bias="0.043">
+            app:layout_constraintTop_toTopOf="parent">
 
         </TextView>
 
@@ -39,9 +38,11 @@
             android:layout_height="wrap_content"
             android:layout_alignParentBottom="true"
             android:layout_centerInParent="true"
+            android:layout_marginTop="20dp"
+            android:fontFamily="@font/roboto"
             android:text="80"
             android:textColor="@color/white"
-            android:textSize="40dp"
+            android:textSize="35sp"
             android:textStyle="bold"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintStart_toStartOf="parent"
@@ -53,15 +54,16 @@
             android:id="@+id/misura_peso"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:layout_marginTop="16dp"
             android:text="Kg"
             android:textColor="@color/white"
-            android:textSize="20dp"
+            android:textSize="22sp"
             android:textStyle="bold"
+            android:fontFamily="@font/roboto"
+            app:layout_constraintBottom_toBottomOf="@+id/current_peso"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintHorizontal_bias="0.085"
             app:layout_constraintStart_toEndOf="@+id/current_peso"
-            app:layout_constraintTop_toBottomOf="@+id/textView17">
+            app:layout_constraintTop_toTopOf="@+id/current_peso">
 
         </TextView>
 
@@ -69,16 +71,17 @@
             android:id="@+id/seekbar_peso"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
+            android:layout_marginStart="15dp"
+            android:layout_marginTop="10dp"
+            android:layout_marginEnd="15dp"
             android:max="200"
             android:progressBackgroundTint="@color/barra_separatoria_principale"
             android:progressTint="@color/barra_separatoria_secondaria"
             android:thumbTint="@color/barra_separatoria_principale"
-            app:layout_constraintBottom_toBottomOf="parent"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintHorizontal_bias="0.0"
             app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toBottomOf="@+id/current_peso"
-            app:layout_constraintVertical_bias="0.119">
+            app:layout_constraintTop_toBottomOf="@+id/current_peso">
 
         </SeekBar>
 
@@ -87,12 +90,12 @@
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_marginStart="10dp"
-            android:layout_marginBottom="5dp"
+            android:layout_marginTop="20dp"
+            android:layout_marginBottom="20dp"
             android:background="@drawable/nega_button"
             android:text="Indietro"
+            android:fontFamily="@font/roboto"
             app:layout_constraintBottom_toBottomOf="parent"
-            app:layout_constraintEnd_toEndOf="parent"
-            app:layout_constraintHorizontal_bias="0.0"
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toBottomOf="@+id/seekbar_peso"
             app:layout_constraintVertical_bias="0.961" />
@@ -101,15 +104,14 @@
             android:id="@+id/conferma_peso"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:layout_marginTop="24dp"
+            android:layout_marginTop="20dp"
             android:layout_marginEnd="10dp"
-            android:layout_marginBottom="5dp"
+            android:layout_marginBottom="20dp"
             android:background="@drawable/conferma_button"
+            android:fontFamily="@font/roboto"
             android:text="Conferma"
             app:layout_constraintBottom_toBottomOf="parent"
             app:layout_constraintEnd_toEndOf="parent"
-            app:layout_constraintHorizontal_bias="1.0"
-            app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toBottomOf="@+id/seekbar_peso"
             app:layout_constraintVertical_bias="1.0" />
 

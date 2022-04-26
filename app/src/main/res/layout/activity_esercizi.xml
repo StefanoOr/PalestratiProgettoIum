@@ -66,6 +66,7 @@
                 android:text="Difficoltà"
                 android:layout_marginStart="30dp"
                 android:textColor="@color/barra_separatoria_secondaria"
+                android:fontFamily="@font/roboto"
                 android:textSize="22sp"
                 android:textStyle="bold"
                 android:layout_marginTop="10dp"
@@ -78,6 +79,7 @@
                 android:layout_below="@id/text_difficolta"
                 android:layout_toEndOf="@id/imageView"
                 android:text="corpo_difficolta"
+                android:fontFamily="@font/roboto"
                 android:layout_marginStart="30dp"
                 android:textColor="@color/white"
                 android:textSize="18sp" />
@@ -86,25 +88,27 @@
                 android:id="@+id/text_gruppo"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
+                android:layout_below="@id/text_corpo_difficolta"
+                android:layout_marginStart="30dp"
                 android:layout_marginTop="10dp"
+                android:layout_toEndOf="@id/imageView"
                 android:text="Gruppo Muscolare"
+                android:fontFamily="@font/roboto"
                 android:textColor="@color/barra_separatoria_secondaria"
                 android:textSize="22sp"
-                android:textStyle="bold"
-                android:layout_below="@id/text_corpo_difficolta"
-                android:layout_toEndOf="@id/imageView"
-                android:layout_marginStart="30dp"/>
+                android:textStyle="bold" />
 
             <TextView
                 android:id="@+id/text_corpo_gruppo_muscolare"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:text="corpo_gruppo_muscolare"
-                android:textColor="@color/white"
-                android:textSize="18sp"
                 android:layout_below="@id/text_gruppo"
+                android:layout_marginStart="30dp"
                 android:layout_toEndOf="@id/imageView"
-                android:layout_marginStart="30dp"/>
+                android:text="corpo_gruppo_muscolare"
+                android:fontFamily="@font/roboto"
+                android:textColor="@color/white"
+                android:textSize="18sp" />
 
         </RelativeLayout>
 
@@ -141,12 +145,13 @@
                 android:id="@+id/text_descrizione"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:layout_centerHorizontal="true"
                 android:layout_below="@id/frameL"
+                android:layout_centerHorizontal="true"
                 android:gravity="center"
-                android:text="Descrizione"
+                android:text="@string/descrizione"
+                android:fontFamily="@font/roboto"
                 android:textColor="@color/barra_separatoria_secondaria"
-                android:textSize="25sp"
+                android:textSize="22sp"
                 android:textStyle="bold" />
 
             <TextView
@@ -156,8 +161,9 @@
                 android:layout_below="@id/text_descrizione"
                 android:layout_centerHorizontal="true"
                 android:layout_marginBottom="10dp"
-                android:scrollbars="vertical"
                 android:gravity="center"
+                android:scrollbars="vertical"
+                android:fontFamily="@font/roboto"
                 android:text="@string/corpo_descrizioe"
                 android:textColor="@color/white"
                 android:textSize="18sp" />
@@ -169,9 +175,10 @@
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:text="Vota:"
+            android:fontFamily="@font/roboto"
             android:textAlignment="center"
             android:textColor="@color/barra_separatoria_secondaria"
-            android:textSize="25sp"
+            android:textSize="22sp"
             android:textStyle="bold"
             app:layout_constraintTop_toBottomOf="@id/relative_layout_videoView"
             app:layout_constraintStart_toStartOf="parent"
@@ -203,6 +210,7 @@
             android:layout_marginBottom="40dp"
             android:background="@drawable/upload_video_btn_layout"
             android:elevation="5dp"
+            android:fontFamily="@font/roboto"
             android:outlineSpotShadowColor="@color/barra_separatoria_principale"
             android:shadowColor="@color/barra_separatoria_principale"
             android:textColor="@color/white"

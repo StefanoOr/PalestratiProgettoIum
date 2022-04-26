@@ -10,9 +10,16 @@
     <string name="home">Home</string>
     <string name="Nome_Esercizio">NomeEsercizio_frame</string>
     <string name="corpo_descrizioe">corpo_descrizione</string>
-    <string name="profile">profile</string>
+    <string name="profile">Profile</string>
     <string name="Nome_EsercizioPt">EsercizioPt</string>
     <string name="nuovo_esercizio">Nuovo Esercizio</string>
+    <string name="descrizione">Descrizione</string>
+    <string name="filtra_gli_esercizi_per">Filtra gli esercizi per:</string>
+    <string name="clicca_qua_per_inserire_una_descrizione">Clicca qua per inserire una descrizione..</string>
+    <string name="modifica_i_muscoli_interessati">Modifica i muscoli interessati:</string>
+    <string name="modifica_la_difficolt">Modifica la difficoltà</string>
+    <string name="applica_modifiche">Applica modifiche</string>
+    <string name="nome_personal">Nome Personal</string>
 
     <string-array name="titoli">
         <item>Seleziona</item>

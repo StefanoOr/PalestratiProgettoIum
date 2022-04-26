@@ -78,6 +78,7 @@
             android:textColor="@color/white"
             android:textStyle="bold"
             android:text="Logout"
+            android:fontFamily="@font/roboto"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toBottomOf="@+id/view5" />
@@ -87,28 +88,27 @@
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_marginStart="5dp"
-            android:layout_marginTop="20dp"
+            android:fontFamily="@font/roboto"
             android:text="Nome"
             android:textColor="@color/white"
-            android:textSize="20dp"
+            android:textSize="22sp"
             android:textStyle="bold"
             app:layout_constraintBottom_toTopOf="@+id/view2"
             app:layout_constraintStart_toEndOf="@+id/imageView3"
-            app:layout_constraintTop_toBottomOf="@+id/view" />
+            app:layout_constraintTop_toTopOf="@+id/imageView3" />
 
         <TextView
             android:id="@+id/textView11"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:layout_marginTop="22dp"
-            android:layout_marginEnd="200dp"
+            android:layout_marginStart="30dp"
+            android:fontFamily="@font/roboto"
             android:text="Nome"
             android:textColor="@color/white"
-            android:textSize="18dp"
+            android:textSize="18sp"
             app:layout_constraintBottom_toTopOf="@+id/view2"
-            app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintStart_toEndOf="@+id/textView10"
-            app:layout_constraintTop_toBottomOf="@+id/view" />
+            app:layout_constraintTop_toTopOf="@+id/imageView3" />
 
         <View
             android:id="@+id/view2"
@@ -127,7 +127,7 @@
             android:layout_width="30dp"
             android:layout_height="30dp"
             android:layout_marginStart="20dp"
-            android:layout_marginTop="23dp"
+            android:layout_marginTop="25dp"
             android:src="@drawable/ic_baseline_cake_24"
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toBottomOf="@+id/view2" />
@@ -137,29 +137,26 @@
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_marginStart="4dp"
-            android:layout_marginTop="16dp"
+            android:fontFamily="@font/roboto"
             android:text="Età"
             android:textColor="@color/white"
-            android:textSize="20dp"
+            android:textSize="22sp"
             android:textStyle="bold"
             app:layout_constraintBottom_toTopOf="@+id/view3"
             app:layout_constraintStart_toEndOf="@+id/imageView4"
-            app:layout_constraintTop_toBottomOf="@+id/view2" />
+            app:layout_constraintTop_toTopOf="@+id/imageView4" />
 
         <TextView
             android:id="@+id/eta_user"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:layout_marginTop="18dp"
-            android:layout_marginEnd="124dp"
+            android:fontFamily="@font/roboto"
             android:text="00"
             android:textColor="@color/white"
-            android:textSize="18dp"
+            android:textSize="18sp"
             app:layout_constraintBottom_toTopOf="@+id/view3"
-            app:layout_constraintEnd_toEndOf="parent"
-            app:layout_constraintHorizontal_bias="0.288"
-            app:layout_constraintStart_toEndOf="@+id/textView13"
-            app:layout_constraintTop_toBottomOf="@+id/view2" />
+            app:layout_constraintStart_toStartOf="@+id/textView11"
+            app:layout_constraintTop_toTopOf="@+id/imageView4" />
 
         <View
             android:id="@+id/view3"
@@ -177,7 +174,7 @@
             android:layout_width="30dp"
             android:layout_height="30dp"
             android:layout_marginStart="20dp"
-            android:layout_marginTop="23dp"
+            android:layout_marginTop="25dp"
             android:src="@drawable/ic_baseline_fitness_center_24"
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toBottomOf="@+id/view3" />
@@ -187,28 +184,26 @@
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_marginStart="5dp"
-            android:layout_marginTop="20dp"
+            android:fontFamily="@font/roboto"
             android:text="Peso"
             android:textColor="@color/white"
-            android:textSize="20dp"
+            android:textSize="22sp"
             android:textStyle="bold"
             app:layout_constraintBottom_toTopOf="@+id/view4"
             app:layout_constraintStart_toEndOf="@+id/imageView5"
-            app:layout_constraintTop_toBottomOf="@+id/view3" />
+            app:layout_constraintTop_toTopOf="@+id/imageView5" />
 
         <TextView
             android:id="@+id/peso_attuale"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:layout_marginTop="22dp"
+            android:fontFamily="@font/roboto"
             android:text="0.0 kg"
             android:textColor="@color/white"
-            android:textSize="18dp"
+            android:textSize="18sp"
             app:layout_constraintBottom_toTopOf="@+id/view4"
-            app:layout_constraintEnd_toEndOf="parent"
-            app:layout_constraintHorizontal_bias="0.133"
-            app:layout_constraintStart_toEndOf="@+id/textView14"
-            app:layout_constraintTop_toBottomOf="@+id/view3" />
+            app:layout_constraintStart_toStartOf="@+id/eta_user"
+            app:layout_constraintTop_toTopOf="@+id/imageView5" />
 
         <ImageView
             android:id="@+id/edit_peso"
@@ -251,7 +246,7 @@
             android:layout_width="30dp"
             android:layout_height="30dp"
             android:layout_marginStart="20dp"
-            android:layout_marginTop="23dp"
+            android:layout_marginTop="25dp"
             android:src="@drawable/ic_baseline_height_24"
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toBottomOf="@+id/view4" />
@@ -261,28 +256,26 @@
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_marginStart="5dp"
-            android:layout_marginTop="20dp"
+            android:fontFamily="@font/roboto"
             android:text="Altezza"
             android:textColor="@color/white"
-            android:textSize="20dp"
+            android:textSize="22sp"
             android:textStyle="bold"
             app:layout_constraintBottom_toTopOf="@+id/view12"
             app:layout_constraintStart_toEndOf="@+id/imageView7"
-            app:layout_constraintTop_toBottomOf="@+id/view4" />
+            app:layout_constraintTop_toTopOf="@+id/imageView7" />
 
         <TextView
             android:id="@+id/altezza_attuale"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:layout_marginTop="22dp"
+            android:fontFamily="@font/roboto"
             android:text="0 cm"
             android:textColor="@color/white"
-            android:textSize="18dp"
+            android:textSize="18sp"
             app:layout_constraintBottom_toTopOf="@+id/view12"
-            app:layout_constraintEnd_toEndOf="parent"
-            app:layout_constraintHorizontal_bias="0.052"
-            app:layout_constraintStart_toEndOf="@+id/textView15"
-            app:layout_constraintTop_toBottomOf="@+id/view4" />
+            app:layout_constraintStart_toStartOf="@+id/peso_attuale"
+            app:layout_constraintTop_toTopOf="@+id/imageView7" />
 
         <View
             android:id="@+id/view12"
@@ -297,8 +290,8 @@
             app:layout_constraintTop_toBottomOf="@+id/imageView7" />
 
         <ImageView
-            android:layout_width="30dp"
-            android:layout_height="30dp"
+            android:layout_width="25dp"
+            android:layout_height="25dp"
             android:layout_marginTop="50dp"
             android:src="@drawable/ic_baseline_keyboard_arrow_right_24"
             app:layout_constraintEnd_toStartOf="@+id/modify_password"
@@ -312,10 +305,10 @@
             android:layout_height="wrap_content"
             android:layout_marginTop="50dp"
             android:text="Modifica Password"
+            android:fontFamily="@font/roboto"
             android:textColor="@color/barra_separatoria_principale"
-            android:textSize="20dp"
+            android:textSize="18sp"
             app:layout_constraintEnd_toEndOf="parent"
-            app:layout_constraintHorizontal_bias="0.514"
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toBottomOf="@+id/view12" />
 
