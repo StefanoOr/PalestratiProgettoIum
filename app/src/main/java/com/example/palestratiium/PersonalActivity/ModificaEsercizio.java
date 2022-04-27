@@ -67,7 +67,7 @@ public class ModificaEsercizio extends AppCompatActivity implements Serializable
     private Uri imageUri;
     private Uri videoUri; //uri del video selezionato
     private String stringUriVideo, stringUriImage;
-    String name;
+
     boolean isPt;
 
     public static final String EXTRA_PT = "package com.example.palestratiium";
@@ -90,11 +90,11 @@ public class ModificaEsercizio extends AppCompatActivity implements Serializable
             personalTrainer = new PersonalTrainer();
         }
 
-        name = getIntent().getStringExtra("NAME");
+       String name = getIntent().getStringExtra("NAME");
         String video = getIntent().getStringExtra("VIDEO");
-        String descrizione = getIntent().getStringExtra("DESCRIPTION");
-        MyEnum gruppo = (MyEnum) intent.getSerializableExtra("GRUPPOMUSCOLARE");
-        String difficolta = getIntent().getStringExtra("DIFFICOLTA");
+        final String descrizione = getIntent().getStringExtra("DESCRIPTION");
+        final MyEnum gruppo = (MyEnum) intent.getSerializableExtra("GRUPPOMUSCOLARE");
+        final String difficolta = getIntent().getStringExtra("DIFFICOLTA");
         String image = getIntent().getStringExtra("IMAGE");
 
         int videoDefault=intent.getExtras().getInt("VIDEODEFAULT");
@@ -125,11 +125,14 @@ public class ModificaEsercizio extends AppCompatActivity implements Serializable
         seleziona_difficolta.setAdapter(adapter);
         seleziona_difficolta.setOnItemSelectedListener(this);
 
-        nomeEsercizio.setHint(name);
-        descrizioneEsercizio.setHint(descrizione);
+        nomeEsercizio.setText(name);
+        descrizioneEsercizio.setText(descrizione);
         descrizioneEsercizio.setMovementMethod(new ScrollingMovementMethod());
         difficoltaAttuale.setText(difficolta);
         muscoloAttuale.setText(gruppo.name());
+
+
+        System.out.println("nome dell'esercizio oo oo : "+nomeEsercizio.getText().toString());
 
 
         switch (gruppo){
@@ -177,6 +180,10 @@ public class ModificaEsercizio extends AppCompatActivity implements Serializable
 
 
 
+
+
+
+
         //permessi camera
         cameraPermissions = new String[]{Manifest.permission.CAMERA, Manifest.permission.WRITE_EXTERNAL_STORAGE};
 
@@ -209,7 +216,6 @@ public class ModificaEsercizio extends AppCompatActivity implements Serializable
             @Override
             public void onClick(View v) {
 
-
                 esercizio.setNome(nomeEsercizio.getText().toString());
                 esercizio.setDescrizioene(descrizioneEsercizio.getText().toString());
                 esercizio.setDifficolta(seleziona_difficolta.getSelectedItem().toString());
@@ -217,7 +223,8 @@ public class ModificaEsercizio extends AppCompatActivity implements Serializable
                 esercizio.setImage(stringUriImage);
                 personalTrainer.addEsercizi(esercizio);
                 esercizio.setGruppoMuscolare(gruppoSelezionato);
-                UserFactory.getInstance().modifyEsercizio( name , personalTrainer,esercizio);
+                //TODO cambiare il modifica da quui
+               // UserFactory.getInstance().modifyEsercizio( name,descrizione,gruppo,difficolta,);
                 Intent home = new Intent(ModificaEsercizio.this, HomePersonalTrainer.class);
                 home.putExtra(EXTRA_PT, personalTrainer);
                 startActivity(home);
