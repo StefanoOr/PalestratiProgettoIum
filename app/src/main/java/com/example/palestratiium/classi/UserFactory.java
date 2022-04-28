@@ -292,14 +292,14 @@ public class UserFactory implements Serializable {
 
     }
 
-    public void modifyEsercizio(String name, PersonalTrainer pt, Esercizio esercizio) {
+    public void modifyEsercizio(String nomeOriginale, PersonalTrainer pt, Esercizio esercizio) {
 
         for (int i = 0; i < coach.size(); i++) {
             //TODO da verificare se funziona
             if (coach.get(i).getUsername().equals(pt.getUsername())) {
                 for (int j = 0; j < coach.get(i).getAllListaEsercizi().size(); j++) {
-                    if (coach.get(i).getEsercizio(j).getNome().equals(name) ) {
 
+                    if (coach.get(i).getEsercizio(j).getNome().equals(nomeOriginale)) {
                         allEsercizi.remove(coach.get(i).getEsercizio(j));
 
                         coach.get(i).getAllListaEsercizi().remove(j);

@@ -194,7 +194,7 @@ public class Home extends AppCompatActivity implements RecycleViewInterface {
 
             mRecyclerView = findViewById(R.id.listRecyclerView_esercizi);
             mRecyclerView.setHasFixedSize(true);
-            mLayoutManager = new GridLayoutManager(Home.this,3);
+            mLayoutManager = new GridLayoutManager(Home.this,2);
 
             adapter = new Adapter_ListaEserciziHome(listaEserciziCard,Home.this);
             mRecyclerView.setLayoutManager(mLayoutManager);

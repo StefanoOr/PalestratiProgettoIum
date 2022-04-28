@@ -67,7 +67,7 @@ public class ModificaEsercizio extends AppCompatActivity implements Serializable
     private Uri imageUri;
     private Uri videoUri; //uri del video selezionato
     private String stringUriVideo, stringUriImage;
-
+    String nomeOriginale;
     boolean isPt;
 
     public static final String EXTRA_PT = "package com.example.palestratiium";
@@ -91,14 +91,22 @@ public class ModificaEsercizio extends AppCompatActivity implements Serializable
         }
 
        String name = getIntent().getStringExtra("NAME");
-        String video = getIntent().getStringExtra("VIDEO");
+
         final String descrizione = getIntent().getStringExtra("DESCRIPTION");
         final MyEnum gruppo = (MyEnum) intent.getSerializableExtra("GRUPPOMUSCOLARE");
         final String difficolta = getIntent().getStringExtra("DIFFICOLTA");
         String image = getIntent().getStringExtra("IMAGE");
 
-        int videoDefault=intent.getExtras().getInt("VIDEODEFAULT");
+
+        final String video = getIntent().getStringExtra("VIDEO");//video che abbiamo pubblicato noi a mano  TODO integer
+
+        int videoDefault=intent.getExtras().getInt("VIDEODEFAULT");//video che è gia impostato TODO uri
+
+
         int imageDefault = intent.getExtras().getInt("IMAGEDAFAULT");
+
+
+
 
 
         nomeEsercizio = findViewById(R.id.title_edit_text_edit);
@@ -125,36 +133,45 @@ public class ModificaEsercizio extends AppCompatActivity implements Serializable
         seleziona_difficolta.setAdapter(adapter);
         seleziona_difficolta.setOnItemSelectedListener(this);
 
+
+
+
         nomeEsercizio.setText(name);
         descrizioneEsercizio.setText(descrizione);
         descrizioneEsercizio.setMovementMethod(new ScrollingMovementMethod());
         difficoltaAttuale.setText(difficolta);
         muscoloAttuale.setText(gruppo.name());
 
+        nomeOriginale=nomeEsercizio.getText().toString();
 
-        System.out.println("nome dell'esercizio oo oo : "+nomeEsercizio.getText().toString());
 
 
         switch (gruppo){
 
             case PETTO:
                 petto.setChecked(true);
+                gruppoSelezionato=MyEnum.PETTO;
 
                 break;
             case BICIPITI:
                 bicipiti.setChecked(true);
+                gruppoSelezionato=MyEnum.BICIPITI;
                 break;
             case GAMBE:
                 gambe.setChecked(true);
+                gruppoSelezionato=MyEnum.GAMBE;
                 break;
             case DORSO:
                 dorso.setChecked(true);
+                gruppoSelezionato=MyEnum.DORSO;
                 break;
             case SPALLE:
                 spalle.setChecked(true);
+                gruppoSelezionato=MyEnum.SPALLE;
                 break;
             case TRICIPITI:
                 tricipiti.setChecked(true);
+                gruppoSelezionato=MyEnum.TRICIPITI;
                 break;
 
 
@@ -171,11 +188,18 @@ public class ModificaEsercizio extends AppCompatActivity implements Serializable
         }
 
         if(imageDefault>0){
-            imageView.setImageResource(imageDefault);
+           // imageView.setImageResource(imageDefault);
+
+
+            String uriPath="android.resource://"+ getPackageName()+"/"+  imageDefault ;
+            Uri uri=Uri.parse(uriPath);
+            imageView.setImageURI(uri);
+            imageView.setTag(uri);
+
         }
 
         if(videoDefault>0) {
-            setVideoToVideoViewDefault(videoDefault);
+           setVideoToVideoViewDefault(videoDefault);
         }
 
 
@@ -216,15 +240,20 @@ public class ModificaEsercizio extends AppCompatActivity implements Serializable
             @Override
             public void onClick(View v) {
 
+
+
                 esercizio.setNome(nomeEsercizio.getText().toString());
                 esercizio.setDescrizioene(descrizioneEsercizio.getText().toString());
                 esercizio.setDifficolta(seleziona_difficolta.getSelectedItem().toString());
-                esercizio.setVideo(stringUriVideo);
-                esercizio.setImage(stringUriImage);
-                personalTrainer.addEsercizi(esercizio);
-                esercizio.setGruppoMuscolare(gruppoSelezionato);
+
+
+
+                esercizio.setVideo(videoView.getTag().toString());
+                esercizio.setImage(imageView.getTag().toString());
+                //personalTrainer.addEsercizi(esercizio);
+                esercizio.setGruppoMuscolare(gruppo);
                 //TODO cambiare il modifica da quui
-               // UserFactory.getInstance().modifyEsercizio( name,descrizione,gruppo,difficolta,);
+                UserFactory.getInstance().modifyEsercizio( nomeOriginale,personalTrainer,esercizio);
                 Intent home = new Intent(ModificaEsercizio.this, HomePersonalTrainer.class);
                 home.putExtra(EXTRA_PT, personalTrainer);
                 startActivity(home);
@@ -403,6 +432,7 @@ public class ModificaEsercizio extends AppCompatActivity implements Serializable
 
         videoView.setMediaController(mediaController);
         videoView.setVideoURI(uri);
+        videoView.setTag(uri.toString());
         mediaController.setAnchorView(videoView);
         videoView.requestFocus();
         videoView.start();
@@ -417,8 +447,11 @@ public class ModificaEsercizio extends AppCompatActivity implements Serializable
     private void setImageToImageView(String image) {
         Uri iUri = Uri.parse(image);
         imageView.setImageURI(iUri);
+        imageView.setTag(iUri);
     }
 
+
+    //funzione che prende la stringa e lo trasforma in uri e lo passa a  videovieww
     private void setVideoToVideoView(String v){
         MediaController mediaController = new MediaController(this);
         mediaController.setAnchorView(videoView);
@@ -426,6 +459,7 @@ public class ModificaEsercizio extends AppCompatActivity implements Serializable
         Uri vUri = Uri.parse(v);
         videoView.setMediaController(mediaController);
         videoView.setVideoURI(vUri);
+        videoView.setTag(vUri.toString());
         videoView.requestFocus();
         videoView.setOnPreparedListener(new MediaPlayer.OnPreparedListener() {
             @Override
