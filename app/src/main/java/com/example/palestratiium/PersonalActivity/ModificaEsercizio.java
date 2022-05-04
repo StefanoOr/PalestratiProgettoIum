@@ -41,7 +41,7 @@ import com.google.android.material.floatingactionbutton.FloatingActionButton;
 
 import java.io.Serializable;
 
-public class ModificaEsercizio extends AppCompatActivity implements Serializable, AdapterView.OnItemSelectedListener, View.OnClickListener{
+public class ModificaEsercizio extends AppCompatActivity implements Serializable, AdapterView.OnItemSelectedListener, View.OnClickListener {
 
     Esercizio esercizio = new Esercizio();
     PersonalTrainer personalTrainer;
@@ -84,14 +84,14 @@ public class ModificaEsercizio extends AppCompatActivity implements Serializable
         final Intent intent = getIntent();
         Serializable objT = intent.getSerializableExtra(Login.EXTRA_PT);
 
-        if(objT instanceof PersonalTrainer){
+        if (objT instanceof PersonalTrainer) {
             personalTrainer = (PersonalTrainer) objT;
             isPt = true;
-        }else{
+        } else {
             personalTrainer = new PersonalTrainer();
         }
 
-       String name = getIntent().getStringExtra("NAME");
+        String name = getIntent().getStringExtra("NAME");
 
         final String descrizione = getIntent().getStringExtra("DESCRIPTION");
         final MyEnum gruppo = (MyEnum) intent.getSerializableExtra("GRUPPOMUSCOLARE");
@@ -100,7 +100,7 @@ public class ModificaEsercizio extends AppCompatActivity implements Serializable
 
         final String video = getIntent().getStringExtra("VIDEO");//video che abbiamo pubblicato noi a mano  TODO integer
 
-        int videoDefault=intent.getExtras().getInt("VIDEODEFAULT");//video che è gia impostato TODO uri
+        int videoDefault = intent.getExtras().getInt("VIDEODEFAULT");//video che è gia impostato TODO uri
 
         int imageDefault = intent.getExtras().getInt("IMAGEDAFAULT");
 
@@ -135,60 +135,61 @@ public class ModificaEsercizio extends AppCompatActivity implements Serializable
         difficoltaAttuale.setText(difficolta);
         muscoloAttuale.setText(gruppo.name());
 
-        nomeOriginale=nomeEsercizio.getText().toString();
+        nomeOriginale = nomeEsercizio.getText().toString();
 
-        switch (gruppo){
+        switch (gruppo) {
 
             case PETTO:
                 petto.setChecked(true);
-                gruppoSelezionato=MyEnum.PETTO;
+                gruppoSelezionato = MyEnum.PETTO;
 
                 break;
             case BICIPITI:
                 bicipiti.setChecked(true);
-                gruppoSelezionato=MyEnum.BICIPITI;
+                gruppoSelezionato = MyEnum.BICIPITI;
                 break;
             case GAMBE:
                 gambe.setChecked(true);
-                gruppoSelezionato=MyEnum.GAMBE;
+                gruppoSelezionato = MyEnum.GAMBE;
                 break;
             case DORSO:
                 dorso.setChecked(true);
-                gruppoSelezionato=MyEnum.DORSO;
+                gruppoSelezionato = MyEnum.DORSO;
                 break;
             case SPALLE:
                 spalle.setChecked(true);
-                gruppoSelezionato=MyEnum.SPALLE;
+                gruppoSelezionato = MyEnum.SPALLE;
                 break;
             case TRICIPITI:
                 tricipiti.setChecked(true);
-                gruppoSelezionato=MyEnum.TRICIPITI;
+                gruppoSelezionato = MyEnum.TRICIPITI;
                 break;
 
         }
 
 
-        if(video != null) {
+        if (video != null) {
             setVideoToVideoView(video);
         }
 
-        if(image!=null) {
+        if (image != null) {
             setImageToImageView(image);
         }
 
-        if(imageDefault>0){
-           // imageView.setImageResource(imageDefault);
+        if (imageDefault > 0) {
+            // imageView.setImageResource(imageDefault);
 
 
-            String uriPath="android.resource://"+ getPackageName()+"/"+  imageDefault ;
-            Uri uri=Uri.parse(uriPath);
+            String uriPath = "android.resource://" + getPackageName() + "/" + imageDefault;
+            Uri uri = Uri.parse(uriPath);
             imageView.setImageURI(uri);
             imageView.setTag(uri);
+            stringUriImage = uri.toString();
 
         }
 
-        if(videoDefault>0) {
-           setVideoToVideoViewDefault(videoDefault);
+        if (videoDefault > 0) {
+            setVideoToVideoViewDefault(videoDefault);
         }
 
         //permessi camera
@@ -226,18 +227,18 @@ public class ModificaEsercizio extends AppCompatActivity implements Serializable
                 esercizio.setNome(nomeEsercizio.getText().toString());
                 esercizio.setDescrizioene(descrizioneEsercizio.getText().toString());
                 esercizio.setDifficolta(seleziona_difficolta.getSelectedItem().toString());
-                esercizio.setVideo(videoView.getTag().toString());
-                esercizio.setImage(imageView.getTag().toString());
+                esercizio.setVideo(stringUriVideo);
+                esercizio.setImage(stringUriImage);
                 //personalTrainer.addEsercizi(esercizio);
                 esercizio.setGruppoMuscolare(gruppo);
                 //TODO cambiare il modifica da quui
-                UserFactory.getInstance().modifyEsercizio( nomeOriginale,personalTrainer,esercizio);
+                UserFactory.getInstance().modifyEsercizio(nomeOriginale, personalTrainer, esercizio);
                 Intent home = new Intent(ModificaEsercizio.this, HomePersonalTrainer.class);
                 home.putExtra(EXTRA_PT, personalTrainer);
                 startActivity(home);
 
                 Context context = getApplicationContext();
-                CharSequence text =  esercizio.getNome()+ " Esercizio modificato con successo";
+                CharSequence text = esercizio.getNome() + " Esercizio modificato con successo";
                 int duration = Toast.LENGTH_SHORT;
                 Toast toast = Toast.makeText(context, text, duration);
                 toast.show();
@@ -301,17 +302,16 @@ public class ModificaEsercizio extends AppCompatActivity implements Serializable
                 .setItems(options, new DialogInterface.OnClickListener() {
                     @Override
                     public void onClick(DialogInterface dialogInterface, int i) {
-                        if (i==0){
+                        if (i == 0) {
                             //camera selezionata
                             if (!checkCameraPermission()) {
                                 //permesso non dato, richiedilo
                                 requestCameraPermission();
-                            }else{
+                            } else {
                                 //permesso dato, fai il video
                                 imagePickCamera();
                             }
-                        }
-                        else if (i==1){
+                        } else if (i == 1) {
                             //galleria selezionata
                             imagePickGallery();
                         }
@@ -330,17 +330,16 @@ public class ModificaEsercizio extends AppCompatActivity implements Serializable
                 .setItems(options, new DialogInterface.OnClickListener() {
                     @Override
                     public void onClick(DialogInterface dialogInterface, int i) {
-                        if (i==0){
+                        if (i == 0) {
                             //camera selezionata
                             if (!checkCameraPermission()) {
                                 //permesso non dato, richiedilo
                                 requestCameraPermission();
-                            }else{
+                            } else {
                                 //permesso dato, fai il video
                                 videoPickCamera();
                             }
-                        }
-                        else if (i==1){
+                        } else if (i == 1) {
                             //galleria selezionata
                             videoPickGallery();
                         }
@@ -349,12 +348,12 @@ public class ModificaEsercizio extends AppCompatActivity implements Serializable
                 .show();
     }
 
-    private void requestCameraPermission(){
+    private void requestCameraPermission() {
         //richiedi i permessi per la camera
         ActivityCompat.requestPermissions(this, cameraPermissions, CAMERA_REQUEST_CODE);
     }
 
-    private boolean checkCameraPermission(){
+    private boolean checkCameraPermission() {
         boolean result1 = ContextCompat.checkSelfPermission(this, Manifest.permission.CAMERA) == PackageManager.PERMISSION_GRANTED;
         boolean result2 = ContextCompat.checkSelfPermission(this, Manifest.permission.WAKE_LOCK) == PackageManager.PERMISSION_GRANTED;
 
@@ -378,10 +377,11 @@ public class ModificaEsercizio extends AppCompatActivity implements Serializable
                 //mostra il video selezionato nella VideoView
                 setVideoToVideoView();
                 stringUriVideo = videoUri.toString();
-            } else if(requestCode==SELECT_IMAGE_CODE){
+            } else if (requestCode == SELECT_IMAGE_CODE) {
                 Uri selectedImageUri = data.getData();
-                if(null!=selectedImageUri){
+                if (null != selectedImageUri) {
                     imageView.setImageURI(selectedImageUri);
+                    videoView.setTag(selectedImageUri.toString());
                     stringUriImage = selectedImageUri.toString();
                 }
 
@@ -389,7 +389,7 @@ public class ModificaEsercizio extends AppCompatActivity implements Serializable
         }
     }
 
-    private void setVideoToVideoView(){
+    private void setVideoToVideoView() {
         MediaController mediaController = new MediaController(this);
         mediaController.setAnchorView(videoView);
 
@@ -415,7 +415,7 @@ public class ModificaEsercizio extends AppCompatActivity implements Serializable
 
     }
 
-    private void videoPickGallery(){
+    private void videoPickGallery() {
         //pick video from gallery - intent
 
         Intent intent = new Intent();
@@ -436,7 +436,7 @@ public class ModificaEsercizio extends AppCompatActivity implements Serializable
         startActivityForResult(intent, IMAGE_PICK_CAMERA_CODE);
     }
 
-    private void videoPickCamera(){
+    private void videoPickCamera() {
         //pick video from camera - intent
         Intent intent = new Intent(MediaStore.ACTION_VIDEO_CAPTURE);
         startActivityForResult(intent, VIDEO_PICK_CAMERA_CODE);
@@ -447,11 +447,12 @@ public class ModificaEsercizio extends AppCompatActivity implements Serializable
         MediaController mediaController = new MediaController(this);
 
 
-        String uriPath="android.resource://"+ getPackageName()+"/"+  videoDefault ;
-        Uri uri=Uri.parse(uriPath);
+        String uriPath = "android.resource://" + getPackageName() + "/" + videoDefault;
+        Uri uri = Uri.parse(uriPath);
 
         videoView.setMediaController(mediaController);
         videoView.setVideoURI(uri);
+        stringUriVideo = uri.toString();
         videoView.setTag(uri.toString());
         mediaController.setAnchorView(videoView);
         videoView.requestFocus();
@@ -468,17 +469,21 @@ public class ModificaEsercizio extends AppCompatActivity implements Serializable
         Uri iUri = Uri.parse(image);
         imageView.setImageURI(iUri);
         imageView.setTag(iUri);
+        stringUriImage = iUri.toString();
+
+
     }
 
 
     //funzione che prende la stringa e lo trasforma in uri e lo passa a  videovieww
-    private void setVideoToVideoView(String v){
+    private void setVideoToVideoView(String v) {
         MediaController mediaController = new MediaController(this);
         mediaController.setAnchorView(videoView);
 
         Uri vUri = Uri.parse(v);
         videoView.setMediaController(mediaController);
         videoView.setVideoURI(vUri);
+        stringUriVideo = vUri.toString();
         videoView.setTag(vUri.toString());
         videoView.requestFocus();
         videoView.setOnPreparedListener(new MediaPlayer.OnPreparedListener() {

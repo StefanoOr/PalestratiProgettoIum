@@ -65,27 +65,17 @@
             app:layout_constraintTop_toTopOf="@+id/iconIDpT"
             app:layout_constraintVertical_bias="0.555" />
 
-        <ImageView
+        <Button
             android:id="@+id/edit_esercizio"
-            android:layout_width="35dp"
-            android:layout_height="35dp"
-            android:src="@drawable/ic_baseline_change_circle_24"
-            app:layout_constraintBottom_toBottomOf="@+id/imageView8"
+            android:layout_width="108dp"
+            android:layout_height="38dp"
+            android:backgroundTint="@color/homeButton"
+            android:text="Modifica"
+            app:layout_constraintBottom_toBottomOf="parent"
             app:layout_constraintEnd_toEndOf="parent"
-            app:layout_constraintHorizontal_bias="0.75"
-            app:layout_constraintStart_toEndOf="@+id/imageView8"
-            app:layout_constraintTop_toTopOf="@+id/imageView8" />
-
-        <ImageView
-            android:id="@+id/imageView8"
-            android:layout_width="35dp"
-            android:layout_height="35dp"
-            android:layout_marginStart="20dp"
-            android:src="@drawable/ic_baseline_info_24"
-            app:layout_constraintBottom_toBottomOf="@+id/nomeEsercizio"
             app:layout_constraintStart_toEndOf="@+id/nomeEsercizio"
-            app:layout_constraintTop_toTopOf="@+id/nomeEsercizio"
-            app:layout_constraintVertical_bias="0.511" />
+            app:layout_constraintTop_toTopOf="parent" />
+
 
     </androidx.constraintlayout.widget.ConstraintLayout>
 

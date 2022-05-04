@@ -69,7 +69,7 @@ public class Adapter_ListaEserciziHomePersonalT extends  RecyclerView.Adapter<Ad
 
         public TextView nEsercizio;
         public ImageView icona;
-        public ImageView mButtonModifica;
+        public Button mButtonModifica;
 
         public ExampleViewHolder(@NonNull View itemView, final RecycleViewInterface recycleViewInterface) {
             super(itemView);

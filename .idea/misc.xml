@@ -127,10 +127,26 @@
         <entry key="..\:/Users/matte/OneDrive/Documenti/GitHub/ProgettoIum/app/src/main/res/menu/menu_navigation.xml" value="0.3625" />
         <entry key="..\:/Users/matte/OneDrive/Documenti/GitHub/ProgettoIum/app/src/main/res/mipmap-anydpi-v26/ic_profileImage.xml" value="0.290625" />
         <entry key="..\:/Users/matte/OneDrive/Documenti/GitHub/ProgettoIum/app/src/main/res/mipmap-anydpi-v26/ic_profileImage_round.xml" value="0.21614583333333334" />
+        <entry key="..\:/Users/ste_1/Desktop/PalestratiProgettoIum/app/src/main/res/layout/activity_creazione_scheda_allenamento.xml" value="0.1" />
+        <entry key="..\:/Users/ste_1/Desktop/PalestratiProgettoIum/app/src/main/res/layout/activity_esercizi.xml" value="0.1" />
+        <entry key="..\:/Users/ste_1/Desktop/PalestratiProgettoIum/app/src/main/res/layout/activity_esercizi_l_della_lista_allenamento.xml" value="0.1" />
+        <entry key="..\:/Users/ste_1/Desktop/PalestratiProgettoIum/app/src/main/res/layout/activity_filtro_user.xml" value="0.1" />
+        <entry key="..\:/Users/ste_1/Desktop/PalestratiProgettoIum/app/src/main/res/layout/activity_home.xml" value="0.1" />
+        <entry key="..\:/Users/ste_1/Desktop/PalestratiProgettoIum/app/src/main/res/layout/activity_home_personal_trainer.xml" value="0.1" />
+        <entry key="..\:/Users/ste_1/Desktop/PalestratiProgettoIum/app/src/main/res/layout/activity_modifica_esercizio.xml" value="0.1" />
+        <entry key="..\:/Users/ste_1/Desktop/PalestratiProgettoIum/app/src/main/res/layout/activity_upload.xml" value="0.1" />
+        <entry key="..\:/Users/ste_1/Desktop/PalestratiProgettoIum/app/src/main/res/layout/card_add_allenamento.xml" value="0.1" />
+        <entry key="..\:/Users/ste_1/Desktop/PalestratiProgettoIum/app/src/main/res/layout/card_allenamento.xml" value="0.1" />
+        <entry key="..\:/Users/ste_1/Desktop/PalestratiProgettoIum/app/src/main/res/layout/card_eserciziohomeuser.xml" value="0.1" />
+        <entry key="..\:/Users/ste_1/Desktop/PalestratiProgettoIum/app/src/main/res/layout/card_personal_trainer.xml" value="0.1" />
+        <entry key="..\:/Users/ste_1/Desktop/PalestratiProgettoIum/app/src/main/res/layout/card_video.xml" value="0.33" />
+        <entry key="..\:/Users/ste_1/Desktop/PalestratiProgettoIum/app/src/main/res/layout/colored_spinner.xml" value="0.1" />
+        <entry key="..\:/Users/ste_1/Desktop/PalestratiProgettoIum/app/src/main/res/layout/dialog_modifica_altezza.xml" value="0.1" />
+        <entry key="..\:/Users/ste_1/Desktop/PalestratiProgettoIum/app/src/main/res/layout/dialog_modifica_peso.xml" value="0.1" />
       </map>
     </option>
   </component>
-  <component name="ProjectRootManager" version="2" languageLevel="JDK_1_8" default="true" project-jdk-name="1.8" project-jdk-type="JavaSDK">
+  <component name="ProjectRootManager" version="2" languageLevel="JDK_11" default="true" project-jdk-name="1.8" project-jdk-type="JavaSDK">
     <output url="file://$PROJECT_DIR$/build/classes" />
   </component>
   <component name="ProjectType">

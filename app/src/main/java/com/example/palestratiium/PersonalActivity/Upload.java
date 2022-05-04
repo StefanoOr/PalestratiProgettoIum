@@ -54,7 +54,7 @@ public class Upload extends AppCompatActivity implements Serializable, AdapterVi
     private MyEnum gruppoSelezionato = null;
 
 
-    private static final int VIDEO_PICK_GALLERY_CODE = 100;
+    public static final int VIDEO_PICK_GALLERY_CODE = 100;
     private static final int VIDEO_PICK_CAMERA_CODE = 100;
     private static final int CAMERA_REQUEST_CODE = 100;
     private static final int SELECT_IMAGE_CODE = 200;
