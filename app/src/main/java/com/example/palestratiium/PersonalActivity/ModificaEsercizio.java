@@ -1,5 +1,6 @@
 package com.example.palestratiium.PersonalActivity;
 
+import androidx.annotation.Nullable;
 import androidx.annotation.RequiresApi;
 import androidx.appcompat.app.AlertDialog;
 import androidx.appcompat.app.AppCompatActivity;
@@ -97,17 +98,11 @@ public class ModificaEsercizio extends AppCompatActivity implements Serializable
         final String difficolta = getIntent().getStringExtra("DIFFICOLTA");
         String image = getIntent().getStringExtra("IMAGE");
 
-
         final String video = getIntent().getStringExtra("VIDEO");//video che abbiamo pubblicato noi a mano  TODO integer
 
         int videoDefault=intent.getExtras().getInt("VIDEODEFAULT");//video che è gia impostato TODO uri
 
-
         int imageDefault = intent.getExtras().getInt("IMAGEDAFAULT");
-
-
-
-
 
         nomeEsercizio = findViewById(R.id.title_edit_text_edit);
         descrizioneEsercizio = findViewById(R.id.descrizione_edit_text_edit);
@@ -134,8 +129,6 @@ public class ModificaEsercizio extends AppCompatActivity implements Serializable
         seleziona_difficolta.setOnItemSelectedListener(this);
 
 
-
-
         nomeEsercizio.setText(name);
         descrizioneEsercizio.setText(descrizione);
         descrizioneEsercizio.setMovementMethod(new ScrollingMovementMethod());
@@ -143,8 +136,6 @@ public class ModificaEsercizio extends AppCompatActivity implements Serializable
         muscoloAttuale.setText(gruppo.name());
 
         nomeOriginale=nomeEsercizio.getText().toString();
-
-
 
         switch (gruppo){
 
@@ -174,8 +165,6 @@ public class ModificaEsercizio extends AppCompatActivity implements Serializable
                 gruppoSelezionato=MyEnum.TRICIPITI;
                 break;
 
-
-
         }
 
 
@@ -201,12 +190,6 @@ public class ModificaEsercizio extends AppCompatActivity implements Serializable
         if(videoDefault>0) {
            setVideoToVideoViewDefault(videoDefault);
         }
-
-
-
-
-
-
 
         //permessi camera
         cameraPermissions = new String[]{Manifest.permission.CAMERA, Manifest.permission.WRITE_EXTERNAL_STORAGE};
@@ -240,14 +223,9 @@ public class ModificaEsercizio extends AppCompatActivity implements Serializable
             @Override
             public void onClick(View v) {
 
-
-
                 esercizio.setNome(nomeEsercizio.getText().toString());
                 esercizio.setDescrizioene(descrizioneEsercizio.getText().toString());
                 esercizio.setDifficolta(seleziona_difficolta.getSelectedItem().toString());
-
-
-
                 esercizio.setVideo(videoView.getTag().toString());
                 esercizio.setImage(imageView.getTag().toString());
                 //personalTrainer.addEsercizi(esercizio);
@@ -384,6 +362,49 @@ public class ModificaEsercizio extends AppCompatActivity implements Serializable
     }
 
     @Override
+    protected void onActivityResult(int requestCode, int resultCode, @Nullable Intent data) {
+
+        super.onActivityResult(requestCode, resultCode, data);
+
+        //chiamata dopo aver preso il video dalla camera/galleria
+        if (resultCode == RESULT_OK) {
+            if (requestCode == VIDEO_PICK_GALLERY_CODE) {
+                videoUri = data.getData();
+                //mostra il video selezionato nella VideoView
+                setVideoToVideoView();
+                stringUriVideo = videoUri.toString();
+            } else if (requestCode == VIDEO_PICK_CAMERA_CODE) {
+                videoUri = data.getData();
+                //mostra il video selezionato nella VideoView
+                setVideoToVideoView();
+                stringUriVideo = videoUri.toString();
+            } else if(requestCode==SELECT_IMAGE_CODE){
+                Uri selectedImageUri = data.getData();
+                if(null!=selectedImageUri){
+                    imageView.setImageURI(selectedImageUri);
+                    stringUriImage = selectedImageUri.toString();
+                }
+
+            }
+        }
+    }
+
+    private void setVideoToVideoView(){
+        MediaController mediaController = new MediaController(this);
+        mediaController.setAnchorView(videoView);
+
+        videoView.setMediaController(mediaController);
+        videoView.setVideoURI(videoUri);
+        videoView.requestFocus();
+        videoView.setOnPreparedListener(new MediaPlayer.OnPreparedListener() {
+            @Override
+            public void onPrepared(MediaPlayer mp) {
+                videoView.pause();
+            }
+        });
+    }
+
+    @Override
     public void onItemSelected(AdapterView<?> parent, View view, int position, long id) {
         String text = parent.getItemAtPosition(position).toString();
         Toast.makeText(parent.getContext(), text, Toast.LENGTH_SHORT).show();
@@ -428,7 +449,6 @@ public class ModificaEsercizio extends AppCompatActivity implements Serializable
 
         String uriPath="android.resource://"+ getPackageName()+"/"+  videoDefault ;
         Uri uri=Uri.parse(uriPath);
-
 
         videoView.setMediaController(mediaController);
         videoView.setVideoURI(uri);
