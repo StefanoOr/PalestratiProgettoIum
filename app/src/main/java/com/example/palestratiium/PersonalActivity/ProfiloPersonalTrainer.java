@@ -17,8 +17,11 @@ import android.os.Bundle;
 import android.provider.MediaStore;
 import android.view.MenuItem;
 import android.view.View;
+import android.widget.AdapterView;
+import android.widget.ArrayAdapter;
 import android.widget.Button;
 import android.widget.ImageView;
+import android.widget.Spinner;
 import android.widget.TextView;
 
 import com.example.palestratiium.Login;
@@ -30,15 +33,15 @@ import com.google.android.material.bottomnavigation.BottomNavigationView;
 
 import java.io.Serializable;
 
-public class ProfiloPersonalTrainer extends AppCompatActivity {
+public class ProfiloPersonalTrainer extends AppCompatActivity implements AdapterView.OnItemSelectedListener {
+
     public static final String EXTRA_PT = "package com.example.palestratiium";
 
     PersonalTrainer personal;
     Button logout;
-    TextView modify_password;
 
-    private Button catch_image;
-    private ImageView image;
+    private TextView modifica, nome, eta, citta, username, team, instagram;
+    private Spinner spinnerTitolo, spinnerCitta;
 
     private static final int CAMERA_REQUEST_CODE = 100;
     private static final int SELECT_IMAGE_CODE = 200;
@@ -66,11 +69,34 @@ public class ProfiloPersonalTrainer extends AppCompatActivity {
         }
 
         logout=findViewById(R.id.logoutPT);
-        modify_password=findViewById(R.id.modify_password_pt);
-        image=findViewById(R.id.image_view_profilePersonal);
-        catch_image=findViewById(R.id.image_profile_catch);
+        modifica=findViewById(R.id.modify_password);
 
-        //permessi camera
+        spinnerTitolo = findViewById(R.id.titoli);
+
+        nome=findViewById(R.id.nome_attuale);
+        eta=findViewById(R.id.eta_pt);
+        citta=findViewById(R.id.citta_attuale);
+        username=findViewById(R.id.username_pt);
+        team=findViewById(R.id.team_attuale);
+        instagram=findViewById(R.id.insta_attuale);
+
+        username.setText(personal.getUsername());
+        nome.setText(personal.getNome());
+        eta.setText(personal.getAge());
+        citta.setText(personal.getCity());
+        team.setText(personal.getTeam());
+        instagram.setText(personal.getInstagram());
+
+        ArrayAdapter<CharSequence> adapter = ArrayAdapter.createFromResource(this,
+                R.array.titoli, android.R.layout.simple_spinner_item);
+        adapter.setDropDownViewResource(android.R.layout.simple_spinner_dropdown_item);
+
+        spinnerTitolo.setAdapter(adapter);
+        spinnerTitolo.setOnItemSelectedListener(this);
+
+        personal.setTitolo(spinnerTitolo.getSelectedItem().toString());
+
+        /*//permessi camera
         cameraPermissions = new String[]{Manifest.permission.CAMERA, Manifest.permission.WRITE_EXTERNAL_STORAGE};
 
         catch_image.setOnClickListener(new View.OnClickListener() {
@@ -78,7 +104,7 @@ public class ProfiloPersonalTrainer extends AppCompatActivity {
             public void onClick(View v) {
                 imagePickDialog();
             }
-        });
+        });*/
 
         BottomNavigationView bottomNavigationView = findViewById(R.id.bottom_navigation);
 
@@ -126,7 +152,7 @@ public class ProfiloPersonalTrainer extends AppCompatActivity {
         });
 
 
-        modify_password.setOnClickListener(new View.OnClickListener() {
+        modifica.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
                 Intent showResult = new Intent(ProfiloPersonalTrainer.this, ModifyPassword.class);
@@ -136,7 +162,17 @@ public class ProfiloPersonalTrainer extends AppCompatActivity {
         });
     }
 
-    private void imagePickDialog() {
+    @Override
+    public void onItemSelected(AdapterView<?> parent, View view, int position, long id) {
+
+    }
+
+    @Override
+    public void onNothingSelected(AdapterView<?> parent) {
+
+    }
+
+    /*private void imagePickDialog() {
 
         //opzioni per il dialog
         String[] options = {"Camera", "Galleria"};
@@ -206,6 +242,6 @@ public class ProfiloPersonalTrainer extends AppCompatActivity {
 
             }
         }
-    }
+    }*/
 }
 

@@ -42,7 +42,7 @@ public class ModifyPassword extends AppCompatActivity {
     boolean isPasswordVisibleNEW, isPasswordVisibleCONFIRM;
     boolean isPt,isUser;
 
-    public static final String EXTRA_USER = "package com.example.BonusLogin";
+    public static final String EXTRA_USER = "package com.example.palestratiium";
     public static final String EXTRA_PT = "package com.example.palestratiium";
 
     @SuppressLint("ClickableViewAccessibility")

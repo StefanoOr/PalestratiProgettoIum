@@ -130,6 +130,7 @@ public class UserFactory implements Serializable {
 
             PersonalTrainer atzeni = new PersonalTrainer();
             atzeni.setUsername("At");
+            atzeni.setNome("Michele");
             atzeni.setPassword("at");
             atzeni.setCity("Cagliari");
             atzeni.setDate(Calendar.getInstance());
@@ -144,6 +145,7 @@ public class UserFactory implements Serializable {
 
             PersonalTrainer roberto = new PersonalTrainer();
             roberto.setUsername("Ro");
+            roberto.setNome("Roberto");
             roberto.setPassword("ro");
             roberto.setCity("Cagliari");
             roberto.setDate(Calendar.getInstance());

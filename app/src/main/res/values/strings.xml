@@ -22,10 +22,10 @@
     <string name="nome_personal">Nome Personal</string>
 
     <string-array name="titoli">
-        <item>Seleziona</item>
         <item>Diploma</item>
         <item>Laurea</item>
         <item>Attestato Corso</item>
+        <item>Certificato</item>
     </string-array>
 
     <string-array name="città">

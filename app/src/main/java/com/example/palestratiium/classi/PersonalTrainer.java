@@ -8,14 +8,15 @@ import java.util.List;
 public class PersonalTrainer implements Serializable {
 
     private String username;
+    private String nome;
     private String password;
     private String imageProfile;
     private String city;
+    private String titolo;
     private Calendar date;
 
     private String team;
     private boolean coach;
-
 
     String instagram;
 
@@ -25,11 +26,13 @@ public class PersonalTrainer implements Serializable {
         this.coach=true;
     }
 
-    public PersonalTrainer(String username, String password, String imageProfile, String city, Calendar date, String team, String instagram){
+    public PersonalTrainer(String username, String nome, String password, String imageProfile, String city, String titolo, Calendar date, String team, String instagram){
         this.username=username;
+        this.nome = nome;
         this.password=password;
         this.imageProfile = imageProfile;
         this.city=city;
+        this.titolo = titolo;
         this.date=date;
         this.team=team;
         this.coach=true;
@@ -62,8 +65,21 @@ public class PersonalTrainer implements Serializable {
         return listaEsercizi;
     }
 
+    public String getNome() {
+        return nome;
+    }
 
+    public void setNome(String nome) {
+        this.nome = nome;
+    }
 
+    public String getTitolo() {
+        return titolo;
+    }
+
+    public void setTitolo(String titolo) {
+        this.titolo = titolo;
+    }
 
     public String getUsername() {
         return username;
