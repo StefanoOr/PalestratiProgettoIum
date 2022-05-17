@@ -23,6 +23,7 @@ import android.widget.Button;
 import android.widget.ImageView;
 import android.widget.Spinner;
 import android.widget.TextView;
+import android.widget.Toast;
 
 import com.example.palestratiium.Login;
 import com.example.palestratiium.ModifyPassword;
@@ -50,7 +51,7 @@ public class ProfiloPersonalTrainer extends AppCompatActivity implements Adapter
     private String[] cameraPermissions;
 
     private Uri imageUri;
-    private String stringUriImage;
+    private String personalTitoloAttuale;
 
 
     @Override
@@ -94,7 +95,22 @@ public class ProfiloPersonalTrainer extends AppCompatActivity implements Adapter
         spinnerTitolo.setAdapter(adapter);
         spinnerTitolo.setOnItemSelectedListener(this);
 
-        personal.setTitolo(spinnerTitolo.getSelectedItem().toString());
+        if(personal.getTitolo() != null){
+            personalTitoloAttuale = personal.getTitolo();
+        }
+        else
+            personalTitoloAttuale = "";
+
+        String[] titoloAttualeArray = getResources().getStringArray(R.array.titoli);
+
+        int titoliIndex = 0;
+
+        for(int i = 0; i<titoloAttualeArray.length; i++){
+            if(personalTitoloAttuale.equals(titoloAttualeArray[i]))
+                titoliIndex = i;
+        }
+
+        spinnerTitolo.setSelection(titoliIndex);
 
         /*//permessi camera
         cameraPermissions = new String[]{Manifest.permission.CAMERA, Manifest.permission.WRITE_EXTERNAL_STORAGE};
@@ -164,7 +180,8 @@ public class ProfiloPersonalTrainer extends AppCompatActivity implements Adapter
 
     @Override
     public void onItemSelected(AdapterView<?> parent, View view, int position, long id) {
-
+        personal.setTitolo(spinnerTitolo.getSelectedItem().toString());
+        Toast.makeText(this, "Titolo Aggiornato!", Toast.LENGTH_SHORT).show();
     }
 
     @Override
