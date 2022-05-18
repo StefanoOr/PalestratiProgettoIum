@@ -289,7 +289,7 @@ public class UserFactory implements Serializable {
         eserciziAllenamento.add(new EsercizioSchedaAllenamento(allEsercizi.get(3),8,3,"1.30"));
 
 
-        schedeAllenamento.add(new SchedeAllenamento("Scheda Principianti","Piccola descrizione dell'allenamento",eserciziAllenamento));
+        schedeAllenamento.add(new SchedeAllenamento("Scheda Standard","Piccola descrizione dell'allenamento",eserciziAllenamento));
 
 
     }

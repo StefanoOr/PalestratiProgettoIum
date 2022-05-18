@@ -12,15 +12,9 @@
         android:layout_height="wrap_content"
         tools:context=".ModificaEsercizio">
 
-        <ImageView
-            android:id="@+id/back_home_modifica_esercizio"
-            android:layout_width="40dp"
-            android:layout_height="40dp"
-            android:src="@drawable/ic_baseline_keyboard_backspace_24"
-            app:layout_constraintTop_toTopOf="parent"
-            app:layout_constraintStart_toStartOf="parent"
-            android:layout_marginTop="5dp"
-            android:layout_marginStart="10dp"/>
+        <include
+            android:id="@+id/idToolbar"
+            layout="@layout/toolbar"/>
 
         <ImageView
             android:id="@+id/image_view"
@@ -61,7 +55,7 @@
             android:textColorHint="@color/white"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toBottomOf="@+id/view8" />
+            app:layout_constraintTop_toBottomOf="@+id/idToolbar" />
 
         <FrameLayout
             android:id="@+id/frame_layout"
@@ -110,28 +104,6 @@
 
         </FrameLayout>
 
-        <TextView
-            android:id="@+id/EditExTitle"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:fontFamily="@font/roboto"
-            android:text="Modifica Esercizio"
-            android:textColor="@color/barra_separatoria_principale"
-            android:textSize="36sp"
-            android:textStyle="bold"
-            android:textAlignment="center"
-            app:layout_constraintEnd_toEndOf="parent"
-            app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toBottomOf="@id/back_home_modifica_esercizio" />
-
-        <View
-            android:id="@+id/view8"
-            android:layout_width="match_parent"
-            android:layout_height="1dp"
-            android:background="@color/barra_separatoria_principale"
-            app:layout_constraintEnd_toEndOf="parent"
-            app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toBottomOf="@+id/EditExTitle" />
 
         <EditText
             android:id="@+id/descrizione_edit_text_edit"
