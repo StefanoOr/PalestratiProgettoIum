@@ -15,8 +15,6 @@
             app:layout_constraintTop_toBottomOf="@id/view"
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintEnd_toEndOf="parent"
-            android:layout_marginStart="5dp"
-            android:layout_marginEnd="5dp"
             android:layout_width="match_parent"
             android:background="@color/barra_separatoria_secondaria"
             android:layout_height="50dp">
@@ -26,9 +24,9 @@
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:layout_centerVertical="true"
-                    android:layout_marginStart="5dp"
-                    android:text="@string/filtra_gli_esercizi_per"
                     android:fontFamily="@font/roboto"
+                    android:text="Filtra per: "
+                    android:layout_marginStart="5dp"
                     android:textColor="@color/white"
                     android:textSize="15sp" />
 
@@ -37,23 +35,23 @@
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:layout_alignParentTop="true"
-                    android:layout_marginStart="40dp"
-                    android:fontFamily="@font/roboto"
+                    android:layout_marginStart="50dp"
                     android:layout_toEndOf="@id/textView8"
+                    android:fontFamily="@font/roboto"
                     android:text="Coach: "
                     android:textColor="@color/black"
                     android:textSize="15sp" />
 
                 <Spinner
                     android:id="@+id/spinner_coachUser1"
-                    style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox.Dense.ExposedDropdownMenu"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
-                    android:layout_alignParentBottom="true"
-                    android:layout_marginStart="40dp"
-                    android:fontFamily="@font/roboto"
-                    android:layout_toEndOf="@id/textView8"
+                    android:layout_below="@id/textcoach"
+                    android:layout_alignStart="@id/textcoach"
+                    android:layout_marginEnd="0dp"
+                    android:layout_toStartOf="@+id/spinner_gruppo_muscolare"
                     android:backgroundTint="@color/card_background"
+                    android:fontFamily="@font/roboto"
                     android:gravity="center"
                     android:spinnerMode="dialog" />
 
@@ -62,24 +60,22 @@
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:layout_alignParentTop="true"
-                    android:layout_marginStart="40dp"
-                    android:layout_toEndOf="@id/textcoach"
-                    android:text="Gruppo: "
+                    android:layout_alignParentEnd="true"
+                    android:layout_marginEnd="80dp"
                     android:fontFamily="@font/roboto"
+                    android:text="Gruppo: "
                     android:textColor="@color/black"
                     android:textSize="15sp" />
 
                 <Spinner
                     android:id="@+id/spinner_gruppo_muscolare"
-                    style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox.Dense.ExposedDropdownMenu"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
-                    android:layout_alignParentBottom="true"
-                    android:layout_marginStart="34dp"
-                    android:layout_marginBottom="1dp"
-                    android:fontFamily="@font/roboto"
-                    android:layout_toEndOf="@id/spinner_coachUser1"
+                    android:layout_below="@id/textgruppo"
+                    android:layout_alignStart="@id/textgruppo"
                     android:backgroundTint="@color/card_background"
+                    android:layout_alignParentEnd="true"
+                    android:fontFamily="@font/roboto"
                     android:gravity="center"
                     android:spinnerMode="dialog" />
 
@@ -104,7 +100,7 @@
             app:layout_constraintTop_toTopOf="parent"
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintEnd_toEndOf="parent"
-            android:layout_marginTop="25dp"
+            android:layout_marginTop="15dp"
             android:fontFamily="@font/roboto"
             android:textColor="@color/barra_separatoria_principale"
             android:gravity="center_horizontal"

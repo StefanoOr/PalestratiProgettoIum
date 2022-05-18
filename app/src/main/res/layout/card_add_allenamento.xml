@@ -39,19 +39,21 @@
             android:id="@+id/eliminaEsercizio"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:text="Elimina"
-            android:textSize="14sp"
+            android:backgroundTint="@color/nega"
+            android:drawableLeft="@drawable/ic_baseline_delete_forever_24"
             android:fontFamily="@font/roboto"
-            android:background="@drawable/nega_button"
-            app:layout_constraintTop_toBottomOf="@id/text_recupero"
+            android:text="Elimina"
+            android:layout_marginTop="8dp"
+            android:textSize="14sp"
+            app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintEnd_toEndOf="parent"/>
+            app:layout_constraintTop_toBottomOf="@+id/Serie" />
 
         <TextView
             android:id="@+id/elimina_card_esercizio_allenamento"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:layout_marginStart="10dp"
+            android:layout_marginStart="12dp"
             android:layout_marginTop="10dp"
             android:text="Esercizio"
             android:textColor="@color/barra_separatoria_secondaria"
@@ -61,26 +63,29 @@
 
         <Spinner
             android:id="@+id/iconIDpT"
-            android:layout_width="wrap_content"
+            android:layout_width="0dp"
             android:layout_height="wrap_content"
             android:backgroundTint="@color/white"
-            android:foregroundGravity="center"
+            android:layout_marginStart="5dp"
+            android:layout_marginEnd="5dp"
             android:fontFamily="@font/roboto"
+            android:foregroundGravity="center"
             android:src="@drawable/ic_baseline_video_label_24"
             app:layout_constraintEnd_toEndOf="parent"
-            app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toBottomOf="@id/elimina_card_esercizio_allenamento" />
+            app:layout_constraintStart_toEndOf="@+id/elimina_card_esercizio_allenamento"
+            app:layout_constraintTop_toTopOf="@+id/elimina_card_esercizio_allenamento" />
 
         <TextView
             android:id="@+id/textView20"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:layout_marginStart="10dp"
-            android:layout_marginTop="10dp"
-            android:text="Ripetizioni"
+            android:layout_marginStart="12dp"
+            android:layout_marginTop="20dp"
             android:fontFamily="@font/roboto"
-            android:textSize="14sp"
+            android:text="Ripetizioni"
+            android:textStyle="bold"
             android:textColor="@color/barra_separatoria_secondaria"
+            android:textSize="14sp"
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toBottomOf="@+id/iconIDpT" />
 
@@ -102,6 +107,7 @@
             android:fontFamily="@font/roboto"
             android:textColor="@color/barra_separatoria_secondaria"
             android:textSize="14sp"
+            android:textStyle="bold"
             app:layout_constraintEnd_toStartOf="@+id/textView21"
             app:layout_constraintStart_toEndOf="@+id/textView20"
             app:layout_constraintTop_toTopOf="@+id/textView20" />
@@ -112,21 +118,21 @@
             android:layout_height="wrap_content"
             android:backgroundTint="@color/white"
             android:src="@drawable/ic_baseline_change_circle_24"
-            app:layout_constraintTop_toBottomOf="@id/textserie"
-            app:layout_constraintStart_toStartOf="@id/textserie"/>
+            app:layout_constraintStart_toStartOf="@id/textserie"
+            app:layout_constraintTop_toBottomOf="@id/textserie" />
 
         <TextView
             android:id="@+id/textView21"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:layout_marginTop="10dp"
             android:layout_marginEnd="10dp"
-            android:text="T.Recupero"
             android:fontFamily="@font/roboto"
-            android:textSize="14sp"
+            android:text="T.Recupero"
+            android:textStyle="bold"
             android:textColor="@color/barra_separatoria_secondaria"
+            android:textSize="14sp"
             app:layout_constraintEnd_toEndOf="parent"
-            app:layout_constraintTop_toBottomOf="@+id/iconIDpT" />
+            app:layout_constraintTop_toTopOf="@+id/textserie" />
 
         <EditText
             android:id="@+id/text_recupero"

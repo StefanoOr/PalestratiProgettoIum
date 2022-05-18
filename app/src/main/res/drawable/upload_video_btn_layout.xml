@@ -2,7 +2,7 @@
 <shape xmlns:android="http://schemas.android.com/apk/res/android"
     android:shape="rectangle">
 
-    <solid android:color="@color/barra_separatoria_principale">
+    <solid android:color="#55832F">
 
     </solid>
 
