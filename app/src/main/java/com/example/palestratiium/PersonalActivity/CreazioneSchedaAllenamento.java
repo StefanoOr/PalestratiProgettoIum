@@ -37,6 +37,7 @@ public class CreazioneSchedaAllenamento extends AppCompatActivity implements Rec
     EditText titolo,descrizione;
 
     private ImageView back;
+    private TextView toolbar_title;
 
     public static final String EXTRA_PT = "package com.example.palestratiium";
     public RecyclerView.LayoutManager mLayoutManager;
@@ -54,10 +55,11 @@ public class CreazioneSchedaAllenamento extends AppCompatActivity implements Rec
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_creazione_scheda_allenamento);
 
-        back = findViewById(R.id.back_home_scheda_allenamento);
+        back = findViewById(R.id.back_toolbar);
         confermaAllenamento=findViewById(R.id.addSchedaAllnamento);
         aggiungiEsercizioAllenamento=findViewById(R.id.addEsercizioSchedaAllenamento);
         titolo=findViewById(R.id.nomeSchedaAllenamento);
+        toolbar_title=findViewById(R.id.toolbartag);
 
         allenamento= new SchedeAllenamento();
         EsercizioAllenameto=new ArrayList<>();
@@ -72,6 +74,7 @@ public class CreazioneSchedaAllenamento extends AppCompatActivity implements Rec
             personal = new PersonalTrainer();
         }
 
+        toolbar_title.setText("Creazione scheda Allenamento");
 
         EsercizioSchedaAllenamento init = new EsercizioSchedaAllenamento();
 

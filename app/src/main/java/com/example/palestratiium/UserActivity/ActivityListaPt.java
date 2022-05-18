@@ -6,8 +6,13 @@ import androidx.recyclerview.widget.RecyclerView;
 
 import android.content.Intent;
 import android.os.Bundle;
+import android.view.View;
+import android.widget.ImageView;
+import android.widget.TextView;
 
 import com.example.palestratiium.Login;
+import com.example.palestratiium.ModifyPassword;
+import com.example.palestratiium.PersonalActivity.ProfiloPersonalTrainer;
 import com.example.palestratiium.R;
 import com.example.palestratiium.adapter.AdapterListCoach;
 import com.example.palestratiium.adapter.AdapterListaAllenamento;
@@ -24,6 +29,8 @@ public class ActivityListaPt extends AppCompatActivity implements RecycleViewInt
     RecyclerView mRecyclerView;
     RecyclerView.Adapter adapter;
     private RecyclerView.LayoutManager mLayoutManager;
+    private ImageView back;
+    private TextView toolbar_title;
 
     User user;
 
@@ -38,6 +45,9 @@ public class ActivityListaPt extends AppCompatActivity implements RecycleViewInt
 
         Intent intent = getIntent();
         Serializable obj = intent.getSerializableExtra(Login.EXTRA_USER);
+
+        toolbar_title=findViewById(R.id.toolbartag);
+        back=findViewById(R.id.back_toolbar);
 
         if(obj instanceof User){
             user = (User) obj;
@@ -57,6 +67,19 @@ public class ActivityListaPt extends AppCompatActivity implements RecycleViewInt
         adapter = new AdapterListCoach(listaCoach,this);
         mRecyclerView.setLayoutManager(mLayoutManager);
         mRecyclerView.setAdapter(adapter);
+
+        toolbar_title.setText("Lista Personal Trainer");
+
+        back.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+
+                Intent home = new Intent(ActivityListaPt.this, WorkOut.class);
+                home.putExtra(EXTRA_USER, user);
+                startActivity(home);
+            }
+
+        });
 
     }
 

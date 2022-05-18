@@ -9,7 +9,9 @@ import android.content.Intent;
 import android.os.Bundle;
 import android.view.View;
 import android.widget.Button;
+import android.widget.ImageView;
 import android.widget.LinearLayout;
+import android.widget.TextView;
 
 import com.example.palestratiium.EserciziActivity;
 import com.example.palestratiium.Login;
@@ -39,17 +41,14 @@ public class ActivityEserciziLDellaListaAllenamento extends AppCompatActivity im
     RecyclerView.Adapter adapter;
     private RecyclerView.LayoutManager mLayoutManager;
     List<Esercizio> esercizio = new ArrayList<>();
-    Button indietro;
-
+    private ImageView back;
+    private TextView toolbar_title;
 
     @SuppressLint("WrongConstant")
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_esercizi_l_della_lista_allenamento);
-
-
-        indietro=findViewById(R.id.buttonIndietroListaEserciziAllenamento);
 
         Intent intent = getIntent();
         Serializable obj = intent.getSerializableExtra(Login.EXTRA_USER);
@@ -61,6 +60,8 @@ public class ActivityEserciziLDellaListaAllenamento extends AppCompatActivity im
             user = new User();
         }
 
+        toolbar_title = findViewById(R.id.toolbartag);
+        back = findViewById(R.id.back_toolbar);
         name = getIntent().getStringExtra("NAME");
 
         esercizi= UserFactory.getInstance().getEserciziAllenamento(name);
@@ -78,9 +79,9 @@ public class ActivityEserciziLDellaListaAllenamento extends AppCompatActivity im
         mRecyclerView.setLayoutManager(mLayoutManager);
         mRecyclerView.setAdapter(adapter);
 
+        toolbar_title.setText("Scheda Allenamento");
 
-
-        indietro.setOnClickListener(new View.OnClickListener() {
+        back.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
                 Intent showResult = new Intent(ActivityEserciziLDellaListaAllenamento.this, ActivityListaSchedaAllenamentoUser.class);

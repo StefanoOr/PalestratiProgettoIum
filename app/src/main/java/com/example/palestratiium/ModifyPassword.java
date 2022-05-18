@@ -42,6 +42,8 @@ public class ModifyPassword extends AppCompatActivity {
     boolean isPasswordVisibleNEW, isPasswordVisibleCONFIRM;
     boolean isPt,isUser;
 
+    private TextView toolbar_title;
+
     public static final String EXTRA_USER = "package com.example.palestratiium";
     public static final String EXTRA_PT = "package com.example.palestratiium";
 
@@ -56,7 +58,8 @@ public class ModifyPassword extends AppCompatActivity {
         newpass = findViewById(R.id.input_passwordNew);
         newpassconf = findViewById(R.id.input_passwordNewConfirm);
         modify = findViewById(R.id.input_button_signUp);
-        back = findViewById(R.id.back_home_modify_password);
+        back = findViewById(R.id.back_toolbar);
+        toolbar_title = findViewById(R.id.toolbartag);
         isPasswordVisibleNEW = true;
         isPasswordVisibleCONFIRM = true;
 
@@ -83,8 +86,7 @@ public class ModifyPassword extends AppCompatActivity {
             personalTrainer = new PersonalTrainer();
         }
 
-
-
+        toolbar_title.setText("Modifica Password");
 
         modify.setOnClickListener(new View.OnClickListener() {
             @Override
