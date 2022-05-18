@@ -1,6 +1,7 @@
 package com.example.palestratiium.adapter;
 
 import android.content.Context;
+import android.net.Uri;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
@@ -38,6 +39,14 @@ public class AdapterListaEserciziAllenamento extends RecyclerView.Adapter<Adapte
     public void onBindViewHolder(@NonNull ExampleViewHolder holder, int position) {
 
 
+        if(mExampleList.get(position).getEsercizio().getImage()!=null){
+            Uri myuri= Uri.parse(mExampleList.get(position).getEsercizio().getImage());
+            holder.icona.setImageURI(myuri);
+
+        }else {
+            holder.icona.setImageResource(mExampleList.get(position).getEsercizio().getImageDefault());
+
+        }
 
         holder.nEsercizio.setText((mExampleList.get(position).getNome()));
         holder.nRipetizione.setText(String.valueOf(mExampleList.get(position).getRipetizioni()));
@@ -54,7 +63,7 @@ public class AdapterListaEserciziAllenamento extends RecyclerView.Adapter<Adapte
     public class ExampleViewHolder extends RecyclerView.ViewHolder {
 
         public TextView nEsercizio,nSerie,nRipetizione;
-        public ImageView info;
+        public ImageView icona;
 
         public ExampleViewHolder(@NonNull View itemView, final RecycleViewInterface recycleViewInterface) {
             super(itemView);
@@ -62,6 +71,7 @@ public class AdapterListaEserciziAllenamento extends RecyclerView.Adapter<Adapte
             nRipetizione=itemView.findViewById(R.id.textViewRipetizioni);
             nSerie=itemView.findViewById(R.id.textViewSerie);
             nEsercizio=itemView.findViewById(R.id.textViewNesercizio);
+            icona=itemView.findViewById(R.id.card_scheda_immagine);
 
             itemView.setOnClickListener(new View.OnClickListener() {
                 @Override
