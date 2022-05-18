@@ -45,10 +45,12 @@
             android:layout_height="wrap_content"
             android:layout_marginStart="5dp"
             android:layout_marginTop="10dp"
+            android:layout_marginEnd="5dp"
             android:fontFamily="@font/roboto"
             android:text="NEsercizio"
-            android:textSize="15dp"
             android:textColor="@color/barra_separatoria_principale"
+            android:textSize="15dp"
+            app:layout_constraintEnd_toStartOf="@+id/textView20"
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toTopOf="parent" />
 
@@ -56,12 +58,12 @@
             android:id="@+id/textView20"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:layout_marginStart="25dp"
+            android:layout_marginStart="90dp"
             android:fontFamily="@font/roboto"
             android:text="Ripetizioni"
             android:textColor="@color/white"
             app:layout_constraintBottom_toTopOf="@+id/card_scheda_immagine"
-            app:layout_constraintStart_toEndOf="@+id/textViewNesercizio"
+            app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toTopOf="@+id/textViewNesercizio" />
 
         <TextView

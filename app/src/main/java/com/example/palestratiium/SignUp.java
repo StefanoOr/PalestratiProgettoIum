@@ -39,6 +39,7 @@ public class SignUp extends AppCompatActivity {
     TextView date;
     Button signup_button;
     private ImageView back;
+    private TextView toolbar_title;
     DatePickerFragment datePickerFragment = new DatePickerFragment();
     boolean isPasswordVisibleNEW, isPasswordVisibleCONFIRM;
 
@@ -56,9 +57,12 @@ public class SignUp extends AppCompatActivity {
         date = findViewById(R.id.input_signup_date);
         date.setInputType(InputType.TYPE_NULL);
         signup_button = findViewById(R.id.input_button_signUp);
-        back = findViewById(R.id.back_home_signup);
+        back = findViewById(R.id.back_toolbar);
+        toolbar_title = findViewById(R.id.toolbartag);
         isPasswordVisibleNEW = true;
         isPasswordVisibleCONFIRM = true;
+
+        toolbar_title.setText("Registrazione");
 
         date.setOnClickListener(new View.OnClickListener() {
             @Override

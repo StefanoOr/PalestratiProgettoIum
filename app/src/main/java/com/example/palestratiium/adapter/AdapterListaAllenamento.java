@@ -14,19 +14,15 @@ import com.example.palestratiium.classi.SchedeAllenamento;
 
 import java.util.List;
 
-
     public class AdapterListaAllenamento extends  RecyclerView.Adapter<AdapterListaAllenamento.ExampleViewHolder>{
         private List<SchedeAllenamento> mExampleList;
         private  final RecycleViewInterface recycleViewInterface;
-
 
         public AdapterListaAllenamento(List <SchedeAllenamento> exampleList,RecycleViewInterface recycleViewInterface) {
             this.mExampleList = exampleList;
             this.recycleViewInterface=recycleViewInterface;
 
         }
-
-
 
         @NonNull
         @Override
