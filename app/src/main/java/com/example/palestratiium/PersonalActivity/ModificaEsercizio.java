@@ -53,7 +53,7 @@ public class ModificaEsercizio extends AppCompatActivity implements Serializable
     private Button confirmEdit, editImg;
     private FloatingActionButton selectVideoBtn;
     private Spinner seleziona_difficolta;
-    private TextView difficoltaAttuale, muscoloAttuale;
+    private TextView difficoltaAttuale, muscoloAttuale, toolbar_title;
     private CheckBox petto, gambe, bicipiti, dorso, tricipiti, spalle;
     private MyEnum gruppoSelezionato = null;
 
@@ -107,7 +107,7 @@ public class ModificaEsercizio extends AppCompatActivity implements Serializable
         nomeEsercizio = findViewById(R.id.title_edit_text_edit);
         descrizioneEsercizio = findViewById(R.id.descrizione_edit_text_edit);
         difficoltaAttuale = findViewById(R.id.difficolta_attuale);
-        back_home = findViewById(R.id.back_home_modifica_esercizio);
+        back_home = findViewById(R.id.back_toolbar);
         confirmEdit = findViewById(R.id.editVideoButton);
         selectVideoBtn = findViewById(R.id.select_video_button);
         checkBoxErr = findViewById(R.id.error_checkBox);
@@ -122,13 +122,14 @@ public class ModificaEsercizio extends AppCompatActivity implements Serializable
         spalle = findViewById(R.id.checkBox2);
         seleziona_difficolta = findViewById(R.id.difficolta_spinner);
         muscoloAttuale = findViewById(R.id.muscoli_attuali);
+        toolbar_title = findViewById(R.id.toolbartag);
 
         ArrayAdapter<CharSequence> adapter = ArrayAdapter.createFromResource(this, R.array.difficolta, android.R.layout.simple_spinner_item);
         adapter.setDropDownViewResource(android.R.layout.simple_spinner_dropdown_item);
         seleziona_difficolta.setAdapter(adapter);
         seleziona_difficolta.setOnItemSelectedListener(this);
 
-
+        toolbar_title.setText("Modifica Esercizio");
         nomeEsercizio.setText(name);
         descrizioneEsercizio.setText(descrizione);
         descrizioneEsercizio.setMovementMethod(new ScrollingMovementMethod());

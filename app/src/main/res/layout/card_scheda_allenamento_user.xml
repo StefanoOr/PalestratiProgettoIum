@@ -18,7 +18,7 @@
     <androidx.constraintlayout.widget.ConstraintLayout
         android:id="@+id/layoutCard"
         android:layout_width="match_parent"
-        android:layout_height="wrap_content"
+        android:layout_height="100dp"
         android:layout_marginLeft="1dp"
         android:layout_marginTop="1dp"
         android:layout_marginRight="1dp"
@@ -28,29 +28,15 @@
         android:padding="1dp">
 
 
-        <TextView
-            android:id="@+id/elimina_card_esercizio_allenamento"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_marginStart="10dp"
-            android:layout_marginTop="5dp"
-            android:fontFamily="@font/roboto"
-            android:textSize="14sp"
-            android:text="Esercizio"
-            android:textColor="@color/white"
-            app:layout_constraintBottom_toTopOf="@+id/card_scheda_immagine"
-            app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toTopOf="parent" />
-
         <ImageView
             android:id="@+id/card_scheda_immagine"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_marginStart="10dp"
+            android:layout_width="40dp"
+            android:layout_height="40dp"
             android:src="@drawable/ic_baseline_video_label_24"
             app:layout_constraintBottom_toBottomOf="parent"
-            app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toTopOf="parent" />
+            app:layout_constraintEnd_toEndOf="@+id/textViewNesercizio"
+            app:layout_constraintStart_toStartOf="@+id/textViewNesercizio"
+            app:layout_constraintTop_toBottomOf="@+id/textViewNesercizio" />
 
 
         <TextView
@@ -58,53 +44,48 @@
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_marginStart="10dp"
-            android:layout_marginTop="5dp"
-            android:layout_marginBottom="10dp"
-            android:text="NEsercizio"
+            android:layout_marginTop="10dp"
             android:fontFamily="@font/roboto"
+            android:text="NEsercizio"
             android:textColor="@color/barra_separatoria_principale"
-            app:layout_constraintBottom_toBottomOf="parent"
             app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toBottomOf="@+id/card_scheda_immagine" />
+            app:layout_constraintTop_toTopOf="parent" />
 
         <TextView
             android:id="@+id/textView20"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:layout_marginStart="20dp"
-            android:layout_marginTop="15dp"
+            android:layout_marginStart="25dp"
             android:fontFamily="@font/roboto"
             android:text="Ripetizioni"
             android:textColor="@color/white"
             app:layout_constraintBottom_toTopOf="@+id/card_scheda_immagine"
-            app:layout_constraintStart_toEndOf="@+id/elimina_card_esercizio_allenamento"
-            app:layout_constraintTop_toTopOf="parent" />
+            app:layout_constraintStart_toEndOf="@+id/textViewNesercizio"
+            app:layout_constraintTop_toTopOf="@+id/textViewNesercizio" />
 
         <TextView
             android:id="@+id/textView25"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:layout_marginStart="15dp"
+            android:layout_marginStart="25dp"
             android:fontFamily="@font/roboto"
-            android:layout_marginTop="15dp"
             android:text="Serie"
             android:textColor="@color/white"
-            app:layout_constraintBottom_toTopOf="@+id/card_scheda_immagine"
+            app:layout_constraintBottom_toBottomOf="@+id/textView20"
             app:layout_constraintStart_toEndOf="@+id/textView20"
-            app:layout_constraintTop_toTopOf="parent" />
+            app:layout_constraintTop_toTopOf="@+id/textView20" />
 
         <TextView
             android:id="@+id/textView21"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:layout_marginStart="15dp"
-            android:layout_marginTop="15dp"
-            android:text="T.Recupero"
+            android:layout_marginStart="25dp"
             android:fontFamily="@font/roboto"
+            android:text="T.Recupero"
             android:textColor="@color/white"
-            app:layout_constraintBottom_toTopOf="@+id/card_scheda_immagine"
+            app:layout_constraintBottom_toBottomOf="@+id/textView25"
             app:layout_constraintStart_toEndOf="@+id/textView25"
-            app:layout_constraintTop_toTopOf="parent" />
+            app:layout_constraintTop_toTopOf="@+id/textView25" />
 
         <ImageView
             android:id="@+id/imageView8"
@@ -112,19 +93,19 @@
             android:layout_height="35dp"
             android:layout_marginEnd="16dp"
             android:src="@drawable/ic_baseline_info_24"
-            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintBottom_toBottomOf="@+id/card_scheda_immagine"
             app:layout_constraintEnd_toEndOf="parent"
-            app:layout_constraintTop_toBottomOf="@+id/textView27"
+            app:layout_constraintTop_toTopOf="@+id/card_scheda_immagine"
             app:layout_constraintVertical_bias="0.227" />
 
         <TextView
             android:id="@+id/textViewRipetizioni"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:text="TextViewR"
+            android:layout_marginTop="10dp"
             android:fontFamily="@font/roboto"
+            android:text="TextViewR"
             android:textColor="@color/barra_separatoria_secondaria"
-            app:layout_constraintBottom_toTopOf="@+id/textViewNesercizio"
             app:layout_constraintStart_toStartOf="@+id/textView20"
             app:layout_constraintTop_toBottomOf="@+id/textView20" />
 
@@ -132,10 +113,10 @@
             android:id="@+id/textViewRecupero"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:text="t"
+            android:layout_marginTop="10dp"
             android:fontFamily="@font/roboto"
+            android:text="t"
             android:textColor="@color/barra_separatoria_secondaria"
-            app:layout_constraintBottom_toTopOf="@+id/textViewNesercizio"
             app:layout_constraintStart_toStartOf="@+id/textView21"
             app:layout_constraintTop_toBottomOf="@+id/textView21" />
 
@@ -143,10 +124,10 @@
             android:id="@+id/textViewSerie"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:text="t"
+            android:layout_marginTop="10dp"
             android:fontFamily="@font/roboto"
+            android:text="t"
             android:textColor="@color/barra_separatoria_secondaria"
-            app:layout_constraintBottom_toTopOf="@+id/textViewNesercizio"
             app:layout_constraintStart_toStartOf="@+id/textView25"
             app:layout_constraintTop_toBottomOf="@+id/textView25" />
 
@@ -154,13 +135,12 @@
             android:id="@+id/textView27"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:layout_marginTop="25dp"
             android:layout_marginEnd="20dp"
-            android:text="Info"
             android:fontFamily="@font/roboto"
+            android:text="Info"
             android:textColor="@color/white"
             app:layout_constraintEnd_toEndOf="parent"
-            app:layout_constraintTop_toTopOf="parent" />
+            app:layout_constraintTop_toTopOf="@+id/textViewNesercizio" />
 
     </androidx.constraintlayout.widget.ConstraintLayout>
 
