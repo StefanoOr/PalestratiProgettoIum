@@ -13,6 +13,7 @@ import android.os.Parcelable;
 import android.text.method.ScrollingMovementMethod;
 import android.view.View;
 import android.widget.Button;
+import android.widget.EditText;
 import android.widget.ImageView;
 import android.widget.MediaController;
 import android.widget.RatingBar;
@@ -34,12 +35,13 @@ public class EserciziActivity extends AppCompatActivity implements Serializable 
 
     User user;
     PersonalTrainer personalTrainer;
-    Button back;
     RatingBar ratingBar;
     String name;
     float voteInt;
 
     private  Boolean vote=false;
+    private ImageView back;
+    private TextView nome_toolbar;
 
     VideoView videoView;
     ImageView imageView;
@@ -85,14 +87,16 @@ public class EserciziActivity extends AppCompatActivity implements Serializable 
 
 
         nomeEsercizio= findViewById(R.id.esercizio_title);
+
         descrizioneEsercizio = findViewById(R.id.text_corpo_descrizione);
-        back = findViewById(R.id.back_button);
+        back = findViewById(R.id.back_toolbar);
         gruppoMuscolare = findViewById(R.id.text_corpo_gruppo_muscolare);
         difficoltaEsercizio = findViewById(R.id.text_corpo_difficolta);
         videoView = findViewById(R.id.videoView);
         imageView = findViewById(R.id.imageView);
         ratingBar = findViewById(R.id.ratingBar);
         text_vota= findViewById(R.id.text_vota);
+        nome_toolbar = findViewById(R.id.toolbartag);
 
 
         if(video != null) {
@@ -111,6 +115,8 @@ public class EserciziActivity extends AppCompatActivity implements Serializable 
             setVideoToVideoViewDefault(videoDefault);
 
         }
+
+        nome_toolbar.setText("Esercizio");
 
         nomeEsercizio.setText(name);
         descrizioneEsercizio.setText(descrizione);

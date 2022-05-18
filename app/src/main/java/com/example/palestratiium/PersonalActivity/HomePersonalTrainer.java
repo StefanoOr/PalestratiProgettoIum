@@ -42,9 +42,6 @@ public class HomePersonalTrainer extends AppCompatActivity implements RecycleVie
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_home_personal_trainer);
 
-        ricerca = findViewById(R.id.ricercaPtEsercizi);
-
-
         Intent intent = getIntent();
         Serializable obj = intent.getSerializableExtra(Login.EXTRA_USER);
 
@@ -54,25 +51,6 @@ public class HomePersonalTrainer extends AppCompatActivity implements RecycleVie
         }else{
             personal = new PersonalTrainer();
         }
-
-        ricerca.addTextChangedListener(new TextWatcher() {
-            @Override
-            public void beforeTextChanged(CharSequence s, int start, int count, int after) {
-
-            }
-
-            @Override
-            public void onTextChanged(CharSequence s, int start, int before, int count) {
-
-            }
-
-            @Override
-            public void afterTextChanged(Editable s) {
-                //filter(s.toString());
-
-
-            }
-        });
 
         init();
 

@@ -17,6 +17,7 @@
             android:id="@+id/constraintLayout"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
+            app:layout_constraintBottom_toTopOf="@+id/bottom_navigation"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toTopOf="parent">
@@ -26,8 +27,8 @@
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_alignParentTop="true"
-                android:fontFamily="@font/roboto"
                 android:layout_marginTop="15dp"
+                android:fontFamily="@font/roboto"
                 android:gravity="center"
                 android:text="Home"
                 android:textAppearance="@style/TextAppearance.AppCompat.Body2"
@@ -51,25 +52,15 @@
                 android:id="@+id/listRecyclerViewEserciziPt"
                 android:layout_width="match_parent"
                 android:layout_height="540dp"
-
                 android:layout_alignParentEnd="true"
                 android:layout_marginTop="10dp"
                 android:padding="4dp"
+                app:layout_constraintBottom_toBottomOf="parent"
                 app:layout_constraintEnd_toEndOf="parent"
                 app:layout_constraintStart_toStartOf="parent"
                 app:layout_constraintTop_toBottomOf="@+id/title_view_upload" />
 
         </androidx.constraintlayout.widget.ConstraintLayout>
-
-        <EditText
-            android:id="@+id/ricercaPtEsercizi"
-            android:layout_width="wrap_content"
-            android:layout_height="38dp"
-            android:background="@color/ic_launcher_background"
-            android:hint="Ricerca esercizio"
-            app:layout_constraintEnd_toEndOf="parent"
-            app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toBottomOf="@+id/constraintLayout" />
 
         <com.google.android.material.bottomnavigation.BottomNavigationView
             android:id="@+id/bottom_navigation"
@@ -85,7 +76,6 @@
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintHorizontal_bias="0.0"
             app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toBottomOf="@+id/ricercaPtEsercizi"
             app:layout_constraintVertical_bias="0.933"
             app:menu="@menu/menu_navigation" />
 
