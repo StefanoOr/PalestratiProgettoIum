@@ -120,6 +120,7 @@ private Dialog dialog;
                         dialog.show();
 
                         dialog.setContentView(R.layout.custom_dialog_elimina_esercizio_allenamento);
+
                         if(Build.VERSION.SDK_INT >= Build.VERSION_CODES.LOLLIPOP) {
                             dialog.getWindow().setBackgroundDrawable(context.getDrawable(R.drawable.custom_dialog));
                         }
@@ -127,13 +128,20 @@ private Dialog dialog;
                         dialog.getWindow().setLayout(ViewGroup.LayoutParams.MATCH_PARENT,ViewGroup.LayoutParams.WRAP_CONTENT);
                         dialog.setCancelable(false);
 
+                        TextView nome = dialog.findViewById(R.id.nome_esercizio);
+                        TextView domanda= dialog.findViewById(R.id.textView);
+
+                        domanda.setText("Vuoi eliminare dall'allenamento l'esercizio");
+
+                        nome.setText(esercizioAllenameto.get(position).getNome());
+
                         Button delete = dialog.findViewById(R.id.btn_elimina_cura);
                         Button cancel = dialog.findViewById(R.id.btn_annulla_elimina_cura);
 
                         delete.setOnClickListener(new View.OnClickListener() {
                             @Override
                             public void onClick(View v) {
-                                Toast.makeText(context, "Cura Eliminata con successo", Toast.LENGTH_SHORT).show();
+                                Toast.makeText(context, "Esercizio eliminato con successo", Toast.LENGTH_SHORT).show();
                                 esercizioAllenameto.remove(position);
 
                                 dialog.dismiss();

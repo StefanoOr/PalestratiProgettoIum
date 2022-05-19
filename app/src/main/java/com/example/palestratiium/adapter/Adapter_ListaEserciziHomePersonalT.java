@@ -134,6 +134,12 @@ public class Adapter_ListaEserciziHomePersonalT extends  RecyclerView.Adapter<Ad
                    dialog.getWindow().setLayout(ViewGroup.LayoutParams.MATCH_PARENT,ViewGroup.LayoutParams.WRAP_CONTENT);
                    dialog.setCancelable(false);
 
+                   TextView nome= dialog.findViewById(R.id.nome_esercizio);
+                   TextView domanda = dialog.findViewById(R.id.textView);
+
+                   domanda.setText("Vuoi eliminare l'esercizio?");
+                   nome.setText(mExampleList.get(position).getNome());
+
                    Button delete = dialog.findViewById(R.id.btn_elimina_cura);
                    Button cancel = dialog.findViewById(R.id.btn_annulla_elimina_cura);
 
