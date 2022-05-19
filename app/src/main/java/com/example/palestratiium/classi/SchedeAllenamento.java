@@ -42,6 +42,11 @@ public class SchedeAllenamento {
         return listaEsercizi;
     }
 
+
+    public EsercizioSchedaAllenamento getEsercizio(int position){
+        return this.listaEsercizi.get(position);
+    }
+
     public void setEsercizi(List<EsercizioSchedaAllenamento> ListaEsercizi) {
         this.listaEsercizi = ListaEsercizi;
     }

@@ -53,7 +53,7 @@
             android:id="@+id/nomeEsercizio"
             android:layout_width="130dp"
             android:layout_height="30dp"
-            android:layout_marginStart="32dp"
+            android:layout_marginStart="8dp"
             android:fontFamily="@font/roboto"
             android:text="Esercizio"
             android:textAlignment="center"
@@ -63,18 +63,29 @@
             app:layout_constraintBottom_toBottomOf="@+id/iconIDpT"
             app:layout_constraintStart_toEndOf="@+id/view11"
             app:layout_constraintTop_toTopOf="@+id/iconIDpT"
-            app:layout_constraintVertical_bias="0.555" />
+            app:layout_constraintVertical_bias="0.48" />
 
         <Button
             android:id="@+id/edit_esercizio"
-            android:layout_width="108dp"
-            android:layout_height="38dp"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
             android:backgroundTint="@color/homeButton"
             android:text="Modifica"
             app:layout_constraintBottom_toBottomOf="parent"
             app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintHorizontal_bias="0.128"
             app:layout_constraintStart_toEndOf="@+id/nomeEsercizio"
             app:layout_constraintTop_toTopOf="parent" />
+
+        <ImageView
+            android:id="@+id/delete_esercizio"
+            android:layout_width="39dp"
+            android:layout_height="36dp"
+            android:src="@drawable/ic_baseline_delete_forever_24v2"
+            app:layout_constraintBottom_toBottomOf="@+id/edit_esercizio"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toEndOf="@+id/edit_esercizio"
+            app:layout_constraintTop_toTopOf="@+id/edit_esercizio" />
 
 
     </androidx.constraintlayout.widget.ConstraintLayout>

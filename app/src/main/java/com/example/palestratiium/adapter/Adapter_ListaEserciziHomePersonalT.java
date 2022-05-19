@@ -1,16 +1,19 @@
 package com.example.palestratiium.adapter;
 
+import android.app.Dialog;
 import android.content.ContentResolver;
 import android.content.Context;
 import android.content.res.Resources;
 import android.graphics.drawable.Drawable;
 import android.net.Uri;
+import android.os.Build;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.Button;
 import android.widget.ImageView;
 import android.widget.TextView;
+import android.widget.Toast;
 import android.widget.VideoView;
 
 import androidx.annotation.NonNull;
@@ -18,6 +21,7 @@ import androidx.recyclerview.widget.RecyclerView;
 
 import com.example.palestratiium.R;
 import com.example.palestratiium.classi.Esercizio;
+import com.example.palestratiium.classi.UserFactory;
 
 import java.io.FileNotFoundException;
 import java.io.InputStream;
@@ -27,12 +31,15 @@ public class Adapter_ListaEserciziHomePersonalT extends  RecyclerView.Adapter<Ad
     private List<Esercizio> mExampleList;
     private  final RecycleViewInterface recycleViewInterface;
     public Context context;
+    public Dialog dialog;
+
 
 
     public Adapter_ListaEserciziHomePersonalT(List <Esercizio> exampleList, RecycleViewInterface recycleViewInterface, Context context) {
         this.mExampleList = exampleList;
         this.recycleViewInterface=recycleViewInterface;
         this.context=context;
+        dialog= new Dialog(context);
     }
 
 
@@ -46,7 +53,7 @@ public class Adapter_ListaEserciziHomePersonalT extends  RecyclerView.Adapter<Ad
     }
 
     @Override
-    public void onBindViewHolder(@NonNull Adapter_ListaEserciziHomePersonalT.ExampleViewHolder holder, int position) {
+    public void onBindViewHolder(@NonNull ExampleViewHolder holder, int position) {
 
         if(mExampleList.get(position).getImage()!=null){
             Uri myuri= Uri.parse(mExampleList.get(position).getImage());
@@ -65,11 +72,12 @@ public class Adapter_ListaEserciziHomePersonalT extends  RecyclerView.Adapter<Ad
         return mExampleList.size();
     }
 
-    public static class ExampleViewHolder extends RecyclerView.ViewHolder {
+    public class ExampleViewHolder extends RecyclerView.ViewHolder {
 
         public TextView nEsercizio;
-        public ImageView icona;
+        public ImageView icona,delete;
         public Button mButtonModifica;
+
 
         public ExampleViewHolder(@NonNull View itemView, final RecycleViewInterface recycleViewInterface) {
             super(itemView);
@@ -77,6 +85,9 @@ public class Adapter_ListaEserciziHomePersonalT extends  RecyclerView.Adapter<Ad
             mButtonModifica = itemView.findViewById(R.id.edit_esercizio);
             nEsercizio= itemView.findViewById(R.id.nomeEsercizio);
             icona = itemView.findViewById(R.id.iconIDpT);
+            delete=itemView.findViewById(R.id.delete_esercizio);
+
+
 
             mButtonModifica.setOnClickListener(new View.OnClickListener() {
                 @Override
@@ -103,9 +114,51 @@ public class Adapter_ListaEserciziHomePersonalT extends  RecyclerView.Adapter<Ad
                     }
                 }
             });
+
+
+
         }
 
-        void bindData(int position){
+       public  void bindData(final int position){
+
+           delete.setOnClickListener(new View.OnClickListener() {
+               @Override
+               public void onClick(View v) {
+                   dialog.show();
+
+                   dialog.setContentView(R.layout.custom_dialog_elimina_esercizio_allenamento);
+                   if(Build.VERSION.SDK_INT >= Build.VERSION_CODES.LOLLIPOP) {
+                       dialog.getWindow().setBackgroundDrawable(context.getDrawable(R.drawable.custom_dialog));
+                   }
+
+                   dialog.getWindow().setLayout(ViewGroup.LayoutParams.MATCH_PARENT,ViewGroup.LayoutParams.WRAP_CONTENT);
+                   dialog.setCancelable(false);
+
+                   Button delete = dialog.findViewById(R.id.btn_elimina_cura);
+                   Button cancel = dialog.findViewById(R.id.btn_annulla_elimina_cura);
+
+                   delete.setOnClickListener(new View.OnClickListener() {
+                       @Override
+                       public void onClick(View v) {
+                           UserFactory.getInstance().removeEsercizio(mExampleList.get(position));
+
+                           dialog.dismiss();
+                           notifyDataSetChanged();
+                       }
+                   });
+
+
+                   cancel.setOnClickListener(new View.OnClickListener() {
+                       @Override
+                       public void onClick(View v) {
+                           Toast.makeText(context, "Eliminazione annullata", Toast.LENGTH_SHORT).show();
+                           dialog.dismiss();
+                       }
+                   });
+
+               }
+           });
+
 
 
 

@@ -25,13 +25,8 @@
         <entry key="..\:/Users/matte/AppData/Local/Android/Sdk/platforms/android-29/data/res/layout/simple_spinner_item.xml" value="0.3569230769230769" />
         <entry key="..\:/Users/matte/OneDrive/Documenti/GitHub/PalestratiProgettoIum/app/src/main/res/drawable/background_border_search_bar.xml" value="0.1725" />
         <entry key="..\:/Users/matte/OneDrive/Documenti/GitHub/PalestratiProgettoIum/app/src/main/res/drawable/border_card.xml" value="0.1725" />
-        <entry key="..\:/Users/matte/OneDrive/Documenti/GitHub/PalestratiProgettoIum/app/src/main/res/drawable/border_spinner.xml" value="0.2915" />
-        <entry key="..\:/Users/matte/OneDrive/Documenti/GitHub/PalestratiProgettoIum/app/src/main/res/drawable/card_background_edit_profile.xml" value="0.2915" />
-        <entry key="..\:/Users/matte/OneDrive/Documenti/GitHub/PalestratiProgettoIum/app/src/main/res/drawable/ic_baseline_change_circle_24.xml" value="0.2915" />
-        <entry key="..\:/Users/matte/OneDrive/Documenti/GitHub/PalestratiProgettoIum/app/src/main/res/drawable/nega_button.xml" value="0.2915" />
-        <entry key="..\:/Users/matte/OneDrive/Documenti/GitHub/PalestratiProgettoIum/app/src/main/res/drawable/upload_video_btn_layout.xml" value="0.2915" />
         <entry key="..\:/Users/matte/OneDrive/Documenti/GitHub/PalestratiProgettoIum/app/src/main/res/layout/activity_creazione_scheda_allenamento.xml" value="0.346875" />
-        <entry key="..\:/Users/matte/OneDrive/Documenti/GitHub/PalestratiProgettoIum/app/src/main/res/layout/activity_esercizi.xml" value="0.3089887640449438" />
+        <entry key="..\:/Users/matte/OneDrive/Documenti/GitHub/PalestratiProgettoIum/app/src/main/res/layout/activity_esercizi.xml" value="0.33" />
         <entry key="..\:/Users/matte/OneDrive/Documenti/GitHub/PalestratiProgettoIum/app/src/main/res/layout/activity_esercizi_l_della_lista_allenamento.xml" value="0.346875" />
         <entry key="..\:/Users/matte/OneDrive/Documenti/GitHub/PalestratiProgettoIum/app/src/main/res/layout/activity_filtro_user.xml" value="0.346875" />
         <entry key="..\:/Users/matte/OneDrive/Documenti/GitHub/PalestratiProgettoIum/app/src/main/res/layout/activity_home.xml" value="0.33" />
@@ -45,7 +40,7 @@
         <entry key="..\:/Users/matte/OneDrive/Documenti/GitHub/PalestratiProgettoIum/app/src/main/res/layout/activity_profilo_personal_trainer.xml" value="0.346875" />
         <entry key="..\:/Users/matte/OneDrive/Documenti/GitHub/PalestratiProgettoIum/app/src/main/res/layout/activity_scheda_allenamento_user.xml" value="0.29635416666666664" />
         <entry key="..\:/Users/matte/OneDrive/Documenti/GitHub/PalestratiProgettoIum/app/src/main/res/layout/activity_sign_up.xml" value="0.346875" />
-        <entry key="..\:/Users/matte/OneDrive/Documenti/GitHub/PalestratiProgettoIum/app/src/main/res/layout/activity_upload.xml" value="0.36212278876170656" />
+        <entry key="..\:/Users/matte/OneDrive/Documenti/GitHub/PalestratiProgettoIum/app/src/main/res/layout/activity_upload.xml" value="0.67" />
         <entry key="..\:/Users/matte/OneDrive/Documenti/GitHub/PalestratiProgettoIum/app/src/main/res/layout/activity_work_out.xml" value="0.3625" />
         <entry key="..\:/Users/matte/OneDrive/Documenti/GitHub/PalestratiProgettoIum/app/src/main/res/layout/card_add_allenamento.xml" value="0.3875739644970414" />
         <entry key="..\:/Users/matte/OneDrive/Documenti/GitHub/PalestratiProgettoIum/app/src/main/res/layout/card_allenamento.xml" value="0.29635416666666664" />
@@ -57,7 +52,6 @@
         <entry key="..\:/Users/matte/OneDrive/Documenti/GitHub/PalestratiProgettoIum/app/src/main/res/layout/dialog_modifica_altezza.xml" value="0.346875" />
         <entry key="..\:/Users/matte/OneDrive/Documenti/GitHub/PalestratiProgettoIum/app/src/main/res/layout/dialog_modifica_peso.xml" value="0.346875" />
         <entry key="..\:/Users/matte/OneDrive/Documenti/GitHub/PalestratiProgettoIum/app/src/main/res/layout/item_lista_coach.xml" value="0.3569230769230769" />
-        <entry key="..\:/Users/matte/OneDrive/Documenti/GitHub/PalestratiProgettoIum/app/src/main/res/layout/toolbar.xml" value="0.4330935251798561" />
         <entry key="..\:/Users/matte/OneDrive/Documenti/GitHub/PalestratiProgettoIum/app/src/main/res/menu/menu_navigation.xml" value="0.3625" />
         <entry key="..\:/Users/matte/OneDrive/Documenti/GitHub/ProgettoIum/app/src/main/res/drawable-v24/ic_launcher_foreground.xml" value="0.19444444444444445" />
         <entry key="..\:/Users/matte/OneDrive/Documenti/GitHub/ProgettoIum/app/src/main/res/drawable/add_image_view_layout.xml" value="0.235" />
@@ -133,22 +127,42 @@
         <entry key="..\:/Users/matte/OneDrive/Documenti/GitHub/ProgettoIum/app/src/main/res/menu/menu_navigation.xml" value="0.3625" />
         <entry key="..\:/Users/matte/OneDrive/Documenti/GitHub/ProgettoIum/app/src/main/res/mipmap-anydpi-v26/ic_profileImage.xml" value="0.290625" />
         <entry key="..\:/Users/matte/OneDrive/Documenti/GitHub/ProgettoIum/app/src/main/res/mipmap-anydpi-v26/ic_profileImage_round.xml" value="0.21614583333333334" />
-        <entry key="..\:/Users/ste_1/Desktop/PalestratiProgettoIum/app/src/main/res/layout/activity_creazione_scheda_allenamento.xml" value="0.1" />
+        <entry key="..\:/Users/ste_1/Desktop/PalestratiProgettoIum/app/src/main/res/drawable/card_background_edit_profile.xml" value="0.116" />
+        <entry key="..\:/Users/ste_1/Desktop/PalestratiProgettoIum/app/src/main/res/drawable/conferma_button.xml" value="0.198" />
+        <entry key="..\:/Users/ste_1/Desktop/PalestratiProgettoIum/app/src/main/res/drawable/custom_dialog.xml" value="0.116" />
+        <entry key="..\:/Users/ste_1/Desktop/PalestratiProgettoIum/app/src/main/res/drawable/ic_baseline_change_circle_24.xml" value="0.198" />
+        <entry key="..\:/Users/ste_1/Desktop/PalestratiProgettoIum/app/src/main/res/drawable/ic_baseline_check_circle_24.xml" value="0.36" />
+        <entry key="..\:/Users/ste_1/Desktop/PalestratiProgettoIum/app/src/main/res/drawable/ic_baseline_contact_page_24.xml" value="0.36" />
+        <entry key="..\:/Users/ste_1/Desktop/PalestratiProgettoIum/app/src/main/res/drawable/ic_baseline_delete_forever_24.xml" value="0.1925" />
+        <entry key="..\:/Users/ste_1/Desktop/PalestratiProgettoIum/app/src/main/res/drawable/ic_baseline_fitness_center_24.xml" value="0.36" />
+        <entry key="..\:/Users/ste_1/Desktop/PalestratiProgettoIum/app/src/main/res/drawable/ic_baseline_format_align_left_24.xml" value="0.36" />
+        <entry key="..\:/Users/ste_1/Desktop/PalestratiProgettoIum/app/src/main/res/drawable/ic_baseline_image_24.xml" value="0.36" />
+        <entry key="..\:/Users/ste_1/Desktop/PalestratiProgettoIum/app/src/main/res/layout/activity_creazione_scheda_allenamento.xml" value="0.25" />
         <entry key="..\:/Users/ste_1/Desktop/PalestratiProgettoIum/app/src/main/res/layout/activity_esercizi.xml" value="0.1" />
         <entry key="..\:/Users/ste_1/Desktop/PalestratiProgettoIum/app/src/main/res/layout/activity_esercizi_l_della_lista_allenamento.xml" value="0.1" />
         <entry key="..\:/Users/ste_1/Desktop/PalestratiProgettoIum/app/src/main/res/layout/activity_filtro_user.xml" value="0.1" />
         <entry key="..\:/Users/ste_1/Desktop/PalestratiProgettoIum/app/src/main/res/layout/activity_home.xml" value="0.1" />
         <entry key="..\:/Users/ste_1/Desktop/PalestratiProgettoIum/app/src/main/res/layout/activity_home_personal_trainer.xml" value="0.1" />
         <entry key="..\:/Users/ste_1/Desktop/PalestratiProgettoIum/app/src/main/res/layout/activity_modifica_esercizio.xml" value="0.1" />
+        <entry key="..\:/Users/ste_1/Desktop/PalestratiProgettoIum/app/src/main/res/layout/activity_modify_password.xml" value="0.25" />
+        <entry key="..\:/Users/ste_1/Desktop/PalestratiProgettoIum/app/src/main/res/layout/activity_profilo.xml" value="0.2667572463768116" />
+        <entry key="..\:/Users/ste_1/Desktop/PalestratiProgettoIum/app/src/main/res/layout/activity_profilo_personal_trainer.xml" value="0.36666666666666664" />
+        <entry key="..\:/Users/ste_1/Desktop/PalestratiProgettoIum/app/src/main/res/layout/activity_scheda_allenamento_user.xml" value="0.2667572463768116" />
+        <entry key="..\:/Users/ste_1/Desktop/PalestratiProgettoIum/app/src/main/res/layout/activity_sign_up.xml" value="0.2667572463768116" />
         <entry key="..\:/Users/ste_1/Desktop/PalestratiProgettoIum/app/src/main/res/layout/activity_upload.xml" value="0.1" />
-        <entry key="..\:/Users/ste_1/Desktop/PalestratiProgettoIum/app/src/main/res/layout/card_add_allenamento.xml" value="0.1" />
+        <entry key="..\:/Users/ste_1/Desktop/PalestratiProgettoIum/app/src/main/res/layout/activity_work_out.xml" value="0.13855116514690982" />
+        <entry key="..\:/Users/ste_1/Desktop/PalestratiProgettoIum/app/src/main/res/layout/card_add_allenamento.xml" value="0.25" />
         <entry key="..\:/Users/ste_1/Desktop/PalestratiProgettoIum/app/src/main/res/layout/card_allenamento.xml" value="0.1" />
         <entry key="..\:/Users/ste_1/Desktop/PalestratiProgettoIum/app/src/main/res/layout/card_eserciziohomeuser.xml" value="0.1" />
         <entry key="..\:/Users/ste_1/Desktop/PalestratiProgettoIum/app/src/main/res/layout/card_personal_trainer.xml" value="0.1" />
+        <entry key="..\:/Users/ste_1/Desktop/PalestratiProgettoIum/app/src/main/res/layout/card_scheda_allenamento_user.xml" value="0.13855116514690982" />
         <entry key="..\:/Users/ste_1/Desktop/PalestratiProgettoIum/app/src/main/res/layout/card_video.xml" value="0.33" />
         <entry key="..\:/Users/ste_1/Desktop/PalestratiProgettoIum/app/src/main/res/layout/colored_spinner.xml" value="0.1" />
+        <entry key="..\:/Users/ste_1/Desktop/PalestratiProgettoIum/app/src/main/res/layout/custom_dialog_elimina_esercizio_allenamento.xml" value="0.1716485507246377" />
         <entry key="..\:/Users/ste_1/Desktop/PalestratiProgettoIum/app/src/main/res/layout/dialog_modifica_altezza.xml" value="0.1" />
         <entry key="..\:/Users/ste_1/Desktop/PalestratiProgettoIum/app/src/main/res/layout/dialog_modifica_peso.xml" value="0.1" />
+        <entry key="..\:/Users/ste_1/Desktop/PalestratiProgettoIum/app/src/main/res/layout/item_lista_coach.xml" value="0.13855116514690982" />
+        <entry key="..\:/Users/ste_1/Desktop/PalestratiProgettoIum/app/src/main/res/layout/toolbar.xml" value="0.1716485507246377" />
       </map>
     </option>
   </component>

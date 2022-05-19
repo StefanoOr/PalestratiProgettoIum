@@ -1,6 +1,8 @@
 package com.example.palestratiium.adapter;
 
+import android.app.Dialog;
 import android.content.Context;
+import android.os.Build;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
@@ -26,7 +28,7 @@ public class AdapterListaCreazioneAllenamento extends RecyclerView.Adapter<Adapt
     private  final RecycleViewInterface recycleViewInterface;
     private List<EsercizioSchedaAllenamento> esercizioAllenameto;
     private  Context context;
-
+private Dialog dialog;
 
 
 
@@ -35,6 +37,7 @@ public class AdapterListaCreazioneAllenamento extends RecyclerView.Adapter<Adapt
         this.esercizioAllenameto=esercizioAllenameto;
         this.recycleViewInterface = recycleViewInterface;
         this.context=context;
+        dialog=new Dialog(context);
     }
 
     @NonNull
@@ -103,6 +106,8 @@ public class AdapterListaCreazioneAllenamento extends RecyclerView.Adapter<Adapt
             eliminaEsercizioAllenamento=itemView.findViewById(R.id.eliminaEsercizio);
 
 
+
+
         }
 
         public void binData(final int position) {
@@ -111,8 +116,40 @@ public class AdapterListaCreazioneAllenamento extends RecyclerView.Adapter<Adapt
                 @Override
                 public void onClick(View v) {
                     if(esercizioAllenameto.size()>1) {
-                        esercizioAllenameto.remove(position);
-                        notifyDataSetChanged();
+
+                        dialog.show();
+
+                        dialog.setContentView(R.layout.custom_dialog_elimina_esercizio_allenamento);
+                        if(Build.VERSION.SDK_INT >= Build.VERSION_CODES.LOLLIPOP) {
+                            dialog.getWindow().setBackgroundDrawable(context.getDrawable(R.drawable.custom_dialog));
+                        }
+
+                        dialog.getWindow().setLayout(ViewGroup.LayoutParams.MATCH_PARENT,ViewGroup.LayoutParams.WRAP_CONTENT);
+                        dialog.setCancelable(false);
+
+                        Button delete = dialog.findViewById(R.id.btn_elimina_cura);
+                        Button cancel = dialog.findViewById(R.id.btn_annulla_elimina_cura);
+
+                        delete.setOnClickListener(new View.OnClickListener() {
+                            @Override
+                            public void onClick(View v) {
+                                Toast.makeText(context, "Cura Eliminata con successo", Toast.LENGTH_SHORT).show();
+                                esercizioAllenameto.remove(position);
+
+                                dialog.dismiss();
+                                notifyDataSetChanged();
+                            }
+                        });
+
+
+                        cancel.setOnClickListener(new View.OnClickListener() {
+                            @Override
+                            public void onClick(View v) {
+                                Toast.makeText(context, "Eliminazione annullata", Toast.LENGTH_SHORT).show();
+                                dialog.dismiss();
+                            }
+                        });
+
                     }
                 }
             });
