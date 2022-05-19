@@ -9,6 +9,7 @@ import android.view.ViewGroup;
 import android.widget.AdapterView;
 import android.widget.ArrayAdapter;
 import android.widget.Button;
+import android.widget.ImageView;
 import android.widget.Spinner;
 import android.widget.TextView;
 import android.widget.Toast;
@@ -90,7 +91,7 @@ private Dialog dialog;
     }
 
     public class ExampleViewHolder extends RecyclerView.ViewHolder {
-        public Button eliminaEsercizioAllenamento;
+        public ImageView eliminaEsercizioAllenamento;
         Spinner ripetizioni,serie,esercizio;
 
 

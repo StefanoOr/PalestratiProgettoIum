@@ -58,7 +58,7 @@
         android:layout_marginTop="16dp"
         android:layout_marginEnd="16dp"
         android:gravity="center_horizontal"
-        android:text="Una volta confermata l'eliminazione i dati  non potrànno piu essere recuperati !"
+        android:text="Una volta confermata l'eliminazione i dati  non potrànno piu essere recuperati !."
         android:textAlignment="center"
         android:textColor="@color/black"
         app:layout_constraintEnd_toEndOf="parent"
