@@ -19,11 +19,11 @@
             android:fillColor="#E9EDF0"
             />
 
-        <path
+        <!--<path
             android:pathData="M16 0H312C320.837 0 328 7.16344 328 16V49C328 57.8366 320.837 65 312 65H16C7.16344 65 0 57.8366 0 49V16C0 7.16344 7.16344 0 16 0Z"
             android:strokeWidth="1"
             android:strokeColor="#BCBCC3"
-            />
+            />-->
 
     </group>
 

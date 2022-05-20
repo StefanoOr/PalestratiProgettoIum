@@ -39,7 +39,7 @@ public class AdapterSpinnerEsercizi extends ArrayAdapter<Esercizio> {
     private View initView(int position, View convertView, ViewGroup parent) {
         if (convertView == null) {
             convertView = LayoutInflater.from(getContext()).inflate(
-                    R.layout.item_lista_coach, parent, false
+                    R.layout.spinner_esercizi, parent, false
             );
         }
 

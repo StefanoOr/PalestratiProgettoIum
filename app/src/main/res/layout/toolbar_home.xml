@@ -4,33 +4,29 @@
     android:layout_height="wrap_content"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     android:background="@color/card_background"
-    android:elevation="4dp">
+    android:elevation="20dp">
 
-    <LinearLayout
+    <androidx.constraintlayout.widget.ConstraintLayout
         android:layout_width="match_parent"
         android:layout_height="wrap_content">
-
-        <ImageButton
-            android:id="@+id/back_toolbar"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_gravity="center_vertical"
-            android:background="@drawable/ic_baseline_chevron_left_24" />
 
         <TextView
             android:id="@+id/toolbartag"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_gravity="center_vertical"
-            android:layout_marginStart="10dp"
-            android:text="Toolbar"
-            android:fontFamily="@font/roboto"
             android:clickable="true"
+            android:focusable="true"
+            android:fontFamily="@font/roboto"
+            android:text="Home"
+            android:textColor="@color/background_activity"
             android:textSize="20sp"
             android:textStyle="bold"
-            android:textColor="@color/background_activity"
-            android:focusable="true" />
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent" />
 
-    </LinearLayout>
+    </androidx.constraintlayout.widget.ConstraintLayout>
 
 </androidx.appcompat.widget.Toolbar>

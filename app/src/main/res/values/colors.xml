@@ -23,5 +23,6 @@
 
     <color name="background_activity">#E9EDF0</color>
     <color name="scritte_principali">#3C3C3C</color>
+    <color name="link_color">#3665AB</color>
 
 </resources>
