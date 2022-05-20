@@ -19,5 +19,9 @@
     <color name="card_background_darker">#272727</color>
     <color name="info_color">#FFBE3C</color>
     <color name="relative_home_user">#A62C2C2C</color>
+    <color name="white_grey">#A6783939</color>
+
+    <color name="background_activity">#E9EDF0</color>
+    <color name="scritte_principali">#3C3C3C</color>
 
 </resources>

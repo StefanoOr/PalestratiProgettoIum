@@ -25,6 +25,10 @@
         <entry key="..\:/Users/matte/AppData/Local/Android/Sdk/platforms/android-29/data/res/layout/simple_spinner_item.xml" value="0.3569230769230769" />
         <entry key="..\:/Users/matte/OneDrive/Documenti/GitHub/PalestratiProgettoIum/app/src/main/res/drawable/background_border_search_bar.xml" value="0.1725" />
         <entry key="..\:/Users/matte/OneDrive/Documenti/GitHub/PalestratiProgettoIum/app/src/main/res/drawable/border_card.xml" value="0.1725" />
+        <entry key="..\:/Users/matte/OneDrive/Documenti/GitHub/PalestratiProgettoIum/app/src/main/res/drawable/button_back_new.xml" value="0.1445" />
+        <entry key="..\:/Users/matte/OneDrive/Documenti/GitHub/PalestratiProgettoIum/app/src/main/res/drawable/ic_kisspng_logo_gym_5ac7fd9535ed42_7005685715230560212209.xml" value="0.197" />
+        <entry key="..\:/Users/matte/OneDrive/Documenti/GitHub/PalestratiProgettoIum/app/src/main/res/drawable/text_input_background.xml" value="0.1" />
+        <entry key="..\:/Users/matte/OneDrive/Documenti/GitHub/PalestratiProgettoIum/app/src/main/res/drawable/upload_video_btn_layout.xml" value="0.2305" />
         <entry key="..\:/Users/matte/OneDrive/Documenti/GitHub/PalestratiProgettoIum/app/src/main/res/layout/activity_creazione_scheda_allenamento.xml" value="0.346875" />
         <entry key="..\:/Users/matte/OneDrive/Documenti/GitHub/PalestratiProgettoIum/app/src/main/res/layout/activity_esercizi.xml" value="0.33" />
         <entry key="..\:/Users/matte/OneDrive/Documenti/GitHub/PalestratiProgettoIum/app/src/main/res/layout/activity_esercizi_l_della_lista_allenamento.xml" value="0.346875" />
@@ -32,7 +36,7 @@
         <entry key="..\:/Users/matte/OneDrive/Documenti/GitHub/PalestratiProgettoIum/app/src/main/res/layout/activity_home.xml" value="0.33" />
         <entry key="..\:/Users/matte/OneDrive/Documenti/GitHub/PalestratiProgettoIum/app/src/main/res/layout/activity_home_personal_trainer.xml" value="0.346875" />
         <entry key="..\:/Users/matte/OneDrive/Documenti/GitHub/PalestratiProgettoIum/app/src/main/res/layout/activity_lista_pt.xml" value="0.346875" />
-        <entry key="..\:/Users/matte/OneDrive/Documenti/GitHub/PalestratiProgettoIum/app/src/main/res/layout/activity_login.xml" value="0.346875" />
+        <entry key="..\:/Users/matte/OneDrive/Documenti/GitHub/PalestratiProgettoIum/app/src/main/res/layout/activity_login.xml" value="0.3698224852071006" />
         <entry key="..\:/Users/matte/OneDrive/Documenti/GitHub/PalestratiProgettoIum/app/src/main/res/layout/activity_modifica_esercizio.xml" value="0.33" />
         <entry key="..\:/Users/matte/OneDrive/Documenti/GitHub/PalestratiProgettoIum/app/src/main/res/layout/activity_modify_password.xml" value="0.346875" />
         <entry key="..\:/Users/matte/OneDrive/Documenti/GitHub/PalestratiProgettoIum/app/src/main/res/layout/activity_panello_di_upload.xml" value="0.346875" />
