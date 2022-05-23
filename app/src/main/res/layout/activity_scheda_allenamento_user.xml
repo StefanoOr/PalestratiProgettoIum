@@ -4,47 +4,22 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
+    android:background="@color/background_activity"
     tools:context=".UserActivity.ActivityListaSchedaAllenamentoUser">
 
-    <TextView
-        android:id="@+id/title12"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_alignParentBottom="true"
-        android:fontFamily="@font/roboto"
-        android:layout_marginTop="20dp"
-        android:text="Schede Allenamento"
-        android:textColor="@color/barra_separatoria_principale"
-        android:textSize="36sp"
-        android:textStyle="bold"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent" />
-
-    <View
-        android:id="@+id/view"
-        android:layout_width="match_parent"
-        android:layout_height="1dp"
-        android:layout_alignParentBottom="true"
-        android:layout_marginTop="5dp"
-        android:background="@color/barra_separatoria_principale"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.0"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/title12" />
-
+    <include
+        android:id="@+id/idToolbar"
+        layout="@layout/toolbar"/>
 
     <androidx.recyclerview.widget.RecyclerView
         android:id="@+id/item_Lista_allenamento_user"
         android:layout_width="match_parent"
         android:layout_height="500dp"
-        android:layout_marginTop="92dp"
+        android:background="@color/background_activity"
         app:layout_constraintBottom_toTopOf="@+id/bottom_navigation"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.0"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.0" />
+        app:layout_constraintTop_toBottomOf="@id/idToolbar"/>
 
     <com.google.android.material.bottomnavigation.BottomNavigationView
         android:id="@+id/bottom_navigation"
@@ -55,7 +30,7 @@
         android:layout_alignParentEnd="true"
         android:layout_alignParentBottom="true"
 
-        app:itemBackground="@color/barra_separatoria_secondaria"
+        app:itemBackground="@color/scritte_principali"
         app:itemIconTint="@drawable/selector"
         app:itemTextColor="@drawable/selector"
         app:layout_constraintBottom_toBottomOf="parent"

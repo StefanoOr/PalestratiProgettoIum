@@ -133,8 +133,8 @@ public class ModificaEsercizio extends AppCompatActivity implements Serializable
         nomeEsercizio.setText(name);
         descrizioneEsercizio.setText(descrizione);
         descrizioneEsercizio.setMovementMethod(new ScrollingMovementMethod());
-        difficoltaAttuale.setText(difficolta);
-        muscoloAttuale.setText(gruppo.name());
+        difficoltaAttuale.setText("Attuale: " + difficolta);
+        muscoloAttuale.setText("Attuale: " + gruppo.name());
 
         nomeOriginale = nomeEsercizio.getText().toString();
 

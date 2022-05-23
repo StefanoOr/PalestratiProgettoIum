@@ -1,20 +1,25 @@
 <?xml version="1.0" encoding="utf-8"?>
-<ScrollView xmlns:android="http://schemas.android.com/apk/res/android"
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:background="@color/card_background"
+    android:background="@color/background_activity"
     android:orientation="vertical"
     tools:context=".EserciziActivity">
 
-    <androidx.constraintlayout.widget.ConstraintLayout
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content">
+    <include
+        android:id="@+id/idToolbar"
+        layout="@layout/toolbar"/>
 
-        <include
-            android:id="@+id/idToolbar"
-            layout="@layout/toolbar"/>
+    <ScrollView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        app:layout_constraintTop_toBottomOf="@id/idToolbar">
+
+        <androidx.constraintlayout.widget.ConstraintLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content">
 
         <!--<TextView
             android:id="@+id/esercizio_title"
@@ -37,20 +42,20 @@
             android:layout_height="wrap_content"
             android:fontFamily="@font/roboto"
             android:text="Nome esercizio"
-            android:layout_marginTop="10dp"
-            android:textColor="@color/barra_separatoria_principale"
+            android:layout_marginTop="40dp"
+            android:textColor="@color/scritte_principali"
             android:textSize="36sp"
             android:textStyle="bold"
             android:textAlignment="center"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toBottomOf="@id/idToolbar" />
+            app:layout_constraintTop_toTopOf="parent" />
 
         <View
             android:id="@+id/barra_uno"
             android:layout_width="match_parent"
             android:layout_height="1dp"
-            android:background="@color/barra_separatoria_principale"
+            android:background="@color/scritte_principali"
             android:layout_marginStart="30dp"
             android:layout_marginEnd="30dp"
             app:layout_constraintEnd_toEndOf="parent"
@@ -63,7 +68,9 @@
             android:layout_height="wrap_content"
             android:background="@drawable/card_background_edit_profile"
             android:layout_marginTop="40dp"
-            android:elevation="7dp"
+            android:elevation="20dp"
+            android:outlineAmbientShadowColor="@color/link_color"
+            android:outlineSpotShadowColor="@color/link_color"
             app:layout_constraintTop_toBottomOf="@id/barra_uno"
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintEnd_toEndOf="parent"
@@ -84,25 +91,27 @@
                 android:id="@+id/text_difficolta"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:text="Difficoltà"
                 android:layout_marginStart="30dp"
-                android:textColor="@color/barra_separatoria_secondaria"
-                android:fontFamily="@font/roboto"
-                android:textSize="22sp"
-                android:textStyle="bold"
                 android:layout_marginTop="10dp"
-                android:layout_toEndOf="@id/imageView"/>
+                android:layout_toEndOf="@id/imageView"
+                android:background="@drawable/background_border_search_bar"
+                android:fontFamily="@font/roboto"
+                android:padding="2dp"
+                android:text="Difficoltà"
+                android:textColor="@color/background_activity"
+                android:textSize="20sp"
+                android:textStyle="bold" />
 
             <TextView
                 android:id="@+id/text_corpo_difficolta"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_below="@id/text_difficolta"
-                android:layout_toEndOf="@id/imageView"
-                android:text="corpo_difficolta"
-                android:fontFamily="@font/roboto"
                 android:layout_marginStart="30dp"
-                android:textColor="@color/white"
+                android:layout_toEndOf="@id/imageView"
+                android:fontFamily="@font/roboto"
+                android:text="corpo_difficolta"
+                android:textColor="@color/scritte_principali"
                 android:textSize="18sp" />
 
             <TextView
@@ -113,10 +122,12 @@
                 android:layout_marginStart="30dp"
                 android:layout_marginTop="10dp"
                 android:layout_toEndOf="@id/imageView"
-                android:text="Gruppo Muscolare"
+                android:background="@drawable/background_border_search_bar"
                 android:fontFamily="@font/roboto"
-                android:textColor="@color/barra_separatoria_secondaria"
-                android:textSize="22sp"
+                android:text="Gruppo Muscolare"
+                android:padding="2dp"
+                android:textColor="@color/background_activity"
+                android:textSize="20sp"
                 android:textStyle="bold" />
 
             <TextView
@@ -126,9 +137,9 @@
                 android:layout_below="@id/text_gruppo"
                 android:layout_marginStart="30dp"
                 android:layout_toEndOf="@id/imageView"
-                android:text="corpo_gruppo_muscolare"
                 android:fontFamily="@font/roboto"
-                android:textColor="@color/white"
+                android:text="corpo_gruppo_muscolare"
+                android:textColor="@color/scritte_principali"
                 android:textSize="18sp" />
 
         </RelativeLayout>
@@ -143,8 +154,10 @@
             android:layout_marginStart="5dp"
             android:layout_marginEnd="5dp"
             android:layout_marginTop="20dp"
+            android:outlineAmbientShadowColor="@color/link_color"
+            android:outlineSpotShadowColor="@color/link_color"
             android:background="@drawable/card_background_edit_profile"
-            android:elevation="7dp"
+            android:elevation="20dp"
             android:layout_marginBottom="10dp">
 
             <FrameLayout
@@ -168,10 +181,12 @@
                 android:layout_height="wrap_content"
                 android:layout_below="@id/frameL"
                 android:layout_centerHorizontal="true"
+                android:background="@drawable/background_border_search_bar"
+                android:fontFamily="@font/roboto"
+                android:padding="2dp"
                 android:gravity="center"
                 android:text="@string/descrizione"
-                android:fontFamily="@font/roboto"
-                android:textColor="@color/barra_separatoria_secondaria"
+                android:textColor="@color/background_activity"
                 android:textSize="22sp"
                 android:textStyle="bold" />
 
@@ -182,11 +197,11 @@
                 android:layout_below="@id/text_descrizione"
                 android:layout_centerHorizontal="true"
                 android:layout_marginBottom="10dp"
+                android:fontFamily="@font/roboto"
                 android:gravity="center"
                 android:scrollbars="vertical"
-                android:fontFamily="@font/roboto"
                 android:text="@string/corpo_descrizioe"
-                android:textColor="@color/white"
+                android:textColor="@color/scritte_principali"
                 android:textSize="18sp" />
 
         </RelativeLayout>
@@ -198,7 +213,9 @@
             android:text="Vota:"
             android:fontFamily="@font/roboto"
             android:textAlignment="center"
-            android:textColor="@color/barra_separatoria_secondaria"
+            android:textColor="@color/background_activity"
+            android:padding="2dp"
+            android:background="@drawable/background_border_search_bar"
             android:textSize="22sp"
             android:textStyle="bold"
             app:layout_constraintTop_toBottomOf="@id/relative_layout_videoView"
@@ -213,13 +230,16 @@
             android:layout_alignBottom="@id/text_vota"
             android:layout_centerHorizontal="true"
             android:layout_centerVertical="true"
-            android:layout_marginBottom="40dp"
-            android:progressTint="@color/barra_separatoria_principale"
+            android:layout_marginBottom="60dp"
+            android:progressBackgroundTint="#5655555A"
+            android:progressTint="@color/scritte_principali"
             app:layout_constraintBottom_toBottomOf="parent"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toBottomOf="@id/text_vota" />
 
-    </androidx.constraintlayout.widget.ConstraintLayout>
+        </androidx.constraintlayout.widget.ConstraintLayout>
 
-</ScrollView>
+    </ScrollView>
+
+</androidx.constraintlayout.widget.ConstraintLayout>

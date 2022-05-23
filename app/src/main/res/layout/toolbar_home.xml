@@ -6,15 +6,10 @@
     android:background="@color/card_background"
     android:elevation="20dp">
 
-    <androidx.constraintlayout.widget.ConstraintLayout
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content">
-
         <TextView
             android:id="@+id/toolbartag"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:layout_gravity="center_vertical"
             android:clickable="true"
             android:focusable="true"
             android:fontFamily="@font/roboto"
@@ -22,11 +17,12 @@
             android:textColor="@color/background_activity"
             android:textSize="20sp"
             android:textStyle="bold"
+            android:layout_gravity="center"
+            android:textAlignment="center"
             app:layout_constraintBottom_toBottomOf="parent"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toTopOf="parent" />
 
-    </androidx.constraintlayout.widget.ConstraintLayout>
 
 </androidx.appcompat.widget.Toolbar>

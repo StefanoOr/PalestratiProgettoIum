@@ -9,9 +9,13 @@ import android.annotation.SuppressLint;
 import android.content.Intent;
 import android.os.Bundle;
 import android.view.MenuItem;
+import android.view.View;
+import android.widget.ImageView;
+import android.widget.TextView;
 
 import com.example.palestratiium.EserciziActivity;
 import com.example.palestratiium.Login;
+import com.example.palestratiium.ModifyPassword;
 import com.example.palestratiium.PersonalActivity.HomePersonalTrainer;
 import com.example.palestratiium.R;
 import com.example.palestratiium.adapter.AdapterListaAllenamento;
@@ -29,6 +33,8 @@ public class ActivityListaSchedaAllenamentoUser extends AppCompatActivity implem
     RecyclerView mRecyclerView;
     RecyclerView.Adapter adapter;
     private RecyclerView.LayoutManager mLayoutManager;
+    private TextView tool;
+    private ImageView back;
     public static final String EXTRA_USER = "package com.example.palestratiium";
     List<SchedeAllenamento> listaSchedeAllenamento;
     User user;
@@ -49,7 +55,19 @@ public class ActivityListaSchedaAllenamentoUser extends AppCompatActivity implem
             user = new User();
         }
 
+        tool = findViewById(R.id.toolbartag);
+        back = findViewById(R.id.back_toolbar);
 
+        tool.setText("Schede Allenamento");
+
+        back.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                Intent home = new Intent(ActivityListaSchedaAllenamentoUser.this, WorkOut.class);
+                home.putExtra(EXTRA_USER, user);
+                startActivity(home);
+            }
+        });
 
         mRecyclerView = findViewById(R.id.item_Lista_allenamento_user);
         mRecyclerView.setHasFixedSize(true);

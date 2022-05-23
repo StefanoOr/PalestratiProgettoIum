@@ -9,7 +9,8 @@
 
     <androidx.constraintlayout.widget.ConstraintLayout
         android:layout_width="match_parent"
-        android:layout_height="match_parent">
+        android:layout_height="match_parent"
+        android:background="@color/background_activity">
 
         <ImageView
             android:id="@+id/imageView"
@@ -21,9 +22,9 @@
             android:layout_marginTop="40dp"
             android:src="@drawable/ic_baseline_face_24"
             app:layout_constraintEnd_toEndOf="parent"
-            app:layout_constraintHorizontal_bias="0.498"
             app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toTopOf="parent" />
+            app:layout_constraintTop_toTopOf="parent"
+            app:tint="@color/scritte_principali" />
 
         <TextView
             android:id="@+id/textView9"
@@ -32,7 +33,7 @@
             android:layout_alignParentBottom="true"
             android:layout_marginTop="20dp"
             android:text="@string/username"
-            android:textColor="@color/barra_separatoria_principale"
+            android:textColor="@color/scritte_principali"
             android:textSize="36sp"
             android:textStyle="bold"
             android:fontFamily="@font/roboto"
@@ -46,27 +47,16 @@
             android:layout_height="1dp"
             android:layout_alignParentBottom="true"
             android:layout_marginTop="5dp"
-            android:background="@color/barra_separatoria_principale"
+            android:background="@color/scritte_principali"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintHorizontal_bias="0.0"
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toBottomOf="@+id/textView9" />
 
-        <ImageView
-            android:id="@+id/imageView3"
-            android:layout_width="30dp"
-            android:layout_height="30dp"
-            android:layout_marginStart="20dp"
-            android:layout_marginTop="20dp"
-            android:src="@drawable/ic_baseline_person_24"
-            app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toBottomOf="@+id/view" />
-
         <Button
             android:id="@+id/logoutUser"
             android:layout_width="371dp"
             android:layout_height="45dp"
-
             android:background="@drawable/upload_video_btn_layout"
             android:backgroundTint="@color/homeButton"
             android:elevation="5dp"
@@ -82,211 +72,259 @@
             app:layout_constraintTop_toBottomOf="@+id/view5"
             app:layout_constraintVertical_bias="0.32" />
 
-        <TextView
-            android:id="@+id/textView10"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_marginStart="5dp"
-            android:fontFamily="@font/roboto"
-            android:text="Nome"
-            android:textColor="@color/white"
-            android:textSize="22sp"
-            android:textStyle="bold"
-            app:layout_constraintBottom_toTopOf="@+id/view2"
-            app:layout_constraintStart_toEndOf="@+id/imageView3"
-            app:layout_constraintTop_toTopOf="@+id/imageView3" />
-
-        <TextView
-            android:id="@+id/textView11"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_marginStart="30dp"
-            android:fontFamily="@font/roboto"
-            android:text="Nome"
-            android:textColor="@color/white"
-            android:textSize="18sp"
-            app:layout_constraintBottom_toTopOf="@+id/view2"
-            app:layout_constraintStart_toEndOf="@+id/textView10"
-            app:layout_constraintTop_toTopOf="@+id/imageView3" />
-
-        <View
-            android:id="@+id/view2"
+        <RelativeLayout
+            android:id="@+id/relative4"
             android:layout_width="match_parent"
-            android:layout_height="1dp"
+            android:layout_height="wrap_content"
+            android:background="@drawable/background_border_search_bar"
+            android:layout_marginTop="20dp"
+            android:elevation="10dp"
+            android:paddingTop="5dp"
+            android:paddingBottom="5dp"
             android:layout_marginStart="20dp"
             android:layout_marginEnd="20dp"
-            android:background="@color/barra_separatoria_secondaria"
+            app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintEnd_toEndOf="parent"
-            app:layout_constraintHorizontal_bias="0.0"
-            app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toBottomOf="@+id/imageView3" />
+            app:layout_constraintTop_toBottomOf="@id/view">
 
-        <ImageView
-            android:id="@+id/imageView4"
-            android:layout_width="30dp"
-            android:layout_height="30dp"
-            android:layout_marginStart="20dp"
-            android:layout_marginTop="25dp"
-            android:src="@drawable/ic_baseline_cake_24"
-            app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toBottomOf="@+id/view2" />
+            <ImageView
+                android:id="@+id/imageView3"
+                android:layout_width="30dp"
+                android:layout_height="30dp"
+                android:layout_alignParentStart="true"
+                android:layout_marginStart="20dp"
+                android:src="@drawable/ic_baseline_person_24"
+                app:tint="@color/background_activity" />
 
-        <TextView
-            android:id="@+id/textView13"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_marginStart="4dp"
-            android:fontFamily="@font/roboto"
-            android:text="Età"
-            android:textColor="@color/white"
-            android:textSize="22sp"
-            android:textStyle="bold"
-            app:layout_constraintBottom_toTopOf="@+id/view3"
-            app:layout_constraintStart_toEndOf="@+id/imageView4"
-            app:layout_constraintTop_toTopOf="@+id/imageView4" />
+            <TextView
+                android:id="@+id/textView10"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="20dp"
+                android:layout_toEndOf="@id/imageView3"
+                android:fontFamily="@font/roboto"
+                android:text="Nome"
+                android:textColor="@color/white"
+                android:textSize="22sp"
+                android:textStyle="bold" />
 
-        <TextView
-            android:id="@+id/eta_user"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:fontFamily="@font/roboto"
-            android:text="00"
-            android:textColor="@color/white"
-            android:textSize="18sp"
-            app:layout_constraintBottom_toTopOf="@+id/view3"
-            app:layout_constraintStart_toStartOf="@+id/textView11"
-            app:layout_constraintTop_toTopOf="@+id/imageView4" />
+            <TextView
+                android:id="@+id/textView11"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_centerHorizontal="true"
+                android:paddingStart="40dp"
+                android:fontFamily="@font/roboto"
+                android:text="Nome"
+                android:textColor="@color/white"
+                android:textSize="18sp" />
 
-        <View
-            android:id="@+id/view3"
+            <View
+                android:id="@+id/view2"
+                android:layout_width="match_parent"
+                android:layout_height="1dp"
+                android:layout_below="@id/imageView3"
+                android:layout_marginStart="20dp"
+                android:layout_marginEnd="20dp"
+                android:background="@color/background_activity" />
+
+        </RelativeLayout>
+
+        <RelativeLayout
+            android:id="@+id/relative1"
             android:layout_width="match_parent"
-            android:layout_height="1dp"
+            android:layout_height="wrap_content"
+            android:background="@drawable/background_border_search_bar"
+            android:layout_marginTop="20dp"
+            android:elevation="10dp"
+            android:paddingTop="5dp"
+            android:paddingBottom="5dp"
             android:layout_marginStart="20dp"
             android:layout_marginEnd="20dp"
-            android:background="@color/barra_separatoria_secondaria"
-            app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toBottomOf="@+id/imageView4" />
-
-        <ImageView
-            android:id="@+id/imageView5"
-            android:layout_width="30dp"
-            android:layout_height="30dp"
-            android:layout_marginStart="20dp"
-            android:layout_marginTop="25dp"
-            android:src="@drawable/ic_baseline_fitness_center_24"
-            app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toBottomOf="@+id/view3" />
-
-        <TextView
-            android:id="@+id/textView14"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_marginStart="5dp"
-            android:fontFamily="@font/roboto"
-            android:text="Peso"
-            android:textColor="@color/white"
-            android:textSize="22sp"
-            android:textStyle="bold"
-            app:layout_constraintBottom_toTopOf="@+id/view4"
-            app:layout_constraintStart_toEndOf="@+id/imageView5"
-            app:layout_constraintTop_toTopOf="@+id/imageView5" />
-
-        <TextView
-            android:id="@+id/peso_attuale"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:fontFamily="@font/roboto"
-            android:text="0.0 kg"
-            android:textColor="@color/white"
-            android:textSize="18sp"
-            app:layout_constraintBottom_toTopOf="@+id/view4"
-            app:layout_constraintStart_toStartOf="@+id/eta_user"
-            app:layout_constraintTop_toTopOf="@+id/imageView5" />
-
-        <ImageView
-            android:id="@+id/edit_peso"
-            android:layout_width="30dp"
-            android:layout_height="30dp"
-            android:src="@drawable/ic_baseline_change_circle_24"
-            app:layout_constraintBottom_toTopOf="@+id/view4"
             app:layout_constraintEnd_toEndOf="parent"
-            app:layout_constraintHorizontal_bias="0.898"
-            app:layout_constraintStart_toEndOf="@+id/peso_attuale">
+            app:layout_constraintTop_toBottomOf="@id/relative4">
 
-        </ImageView>
+            <ImageView
+                android:id="@+id/imageView4"
+                android:layout_width="30dp"
+                android:layout_height="30dp"
+                android:layout_alignParentStart="true"
+                android:layout_marginStart="20dp"
+                android:src="@drawable/ic_baseline_cake_24"
+                app:tint="@color/background_activity" />
 
-        <View
-            android:id="@+id/view4"
+            <TextView
+                android:id="@+id/textView13"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="20dp"
+                android:layout_toEndOf="@id/imageView4"
+                android:fontFamily="@font/roboto"
+                android:text="Età"
+                android:textColor="@color/white"
+                android:textSize="22sp"
+                android:textStyle="bold" />
+
+            <TextView
+                android:id="@+id/eta_user"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_centerHorizontal="true"
+                android:paddingStart="40dp"
+                android:fontFamily="@font/roboto"
+                android:text="00"
+                android:textColor="@color/white"
+                android:textSize="18sp" />
+
+            <View
+                android:id="@+id/view3"
+                android:layout_width="match_parent"
+                android:layout_height="1dp"
+                android:layout_below="@id/imageView4"
+                android:layout_marginStart="20dp"
+                android:layout_marginEnd="20dp"
+                android:background="@color/background_activity" />
+
+        </RelativeLayout>
+
+        <RelativeLayout
+            android:id="@+id/relative2"
             android:layout_width="match_parent"
-            android:layout_height="1dp"
+            android:layout_height="wrap_content"
+            android:background="@drawable/background_border_search_bar"
+            android:layout_marginTop="20dp"
+            android:elevation="10dp"
+            android:paddingTop="5dp"
+            android:paddingBottom="5dp"
             android:layout_marginStart="20dp"
             android:layout_marginEnd="20dp"
-            android:background="@color/barra_separatoria_secondaria"
-            app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toBottomOf="@+id/imageView5" />
-
-        <ImageView
-            android:id="@+id/edit_altezza"
-            android:layout_width="30dp"
-            android:layout_height="30dp"
-            android:layout_marginBottom="1dp"
-            android:src="@drawable/ic_baseline_change_circle_24"
-            app:layout_constraintBottom_toTopOf="@+id/view12"
             app:layout_constraintEnd_toEndOf="parent"
-            app:layout_constraintHorizontal_bias="0.902"
-            app:layout_constraintStart_toEndOf="@+id/altezza_attuale">
+            app:layout_constraintTop_toBottomOf="@id/relative1">
 
-        </ImageView>
+            <ImageView
+                android:id="@+id/imageView5"
+                android:layout_width="30dp"
+                android:layout_height="30dp"
+                android:layout_alignParentStart="true"
+                android:layout_marginStart="20dp"
+                android:src="@drawable/ic_baseline_fitness_center_24"
+                app:tint="@color/background_activity" />
 
-        <ImageView
-            android:id="@+id/imageView7"
-            android:layout_width="30dp"
-            android:layout_height="30dp"
-            android:layout_marginStart="20dp"
-            android:layout_marginTop="25dp"
-            android:src="@drawable/ic_baseline_height_24"
-            app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toBottomOf="@+id/view4" />
+            <TextView
+                android:id="@+id/textView14"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="20dp"
+                android:layout_toEndOf="@id/imageView5"
+                android:fontFamily="@font/roboto"
+                android:text="Peso"
+                android:textColor="@color/white"
+                android:textSize="22sp"
+                android:textStyle="bold" />
 
-        <TextView
-            android:id="@+id/textView15"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_marginStart="5dp"
-            android:fontFamily="@font/roboto"
-            android:text="Altezza"
-            android:textColor="@color/white"
-            android:textSize="22sp"
-            android:textStyle="bold"
-            app:layout_constraintBottom_toTopOf="@+id/view12"
-            app:layout_constraintStart_toEndOf="@+id/imageView7"
-            app:layout_constraintTop_toTopOf="@+id/imageView7" />
+            <TextView
+                android:id="@+id/peso_attuale"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_centerHorizontal="true"
+                android:paddingStart="40dp"
+                android:fontFamily="@font/roboto"
+                android:text="0.0 kg"
+                android:textColor="@color/white"
+                android:textSize="18sp" />
 
-        <TextView
-            android:id="@+id/altezza_attuale"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:fontFamily="@font/roboto"
-            android:text="0 cm"
-            android:textColor="@color/white"
-            android:textSize="18sp"
-            app:layout_constraintBottom_toTopOf="@+id/view12"
-            app:layout_constraintStart_toStartOf="@+id/peso_attuale"
-            app:layout_constraintTop_toTopOf="@+id/imageView7" />
+            <View
+                android:id="@+id/view4"
+                android:layout_width="match_parent"
+                android:layout_height="1dp"
+                android:layout_below="@id/imageView5"
+                android:layout_marginStart="20dp"
+                android:layout_marginEnd="20dp"
+                android:background="@color/background_activity" />
 
-        <View
-            android:id="@+id/view12"
+            <ImageView
+                android:id="@+id/edit_peso"
+                android:layout_width="30dp"
+                android:layout_height="30dp"
+                android:src="@drawable/ic_baseline_change_circle_24"
+                android:layout_alignParentEnd="true"
+                android:layout_marginEnd="10dp"
+                app:tint="@color/info_color">
+
+            </ImageView>
+
+        </RelativeLayout>
+
+        <RelativeLayout
+            android:id="@+id/relative3"
             android:layout_width="match_parent"
-            android:layout_height="1dp"
+            android:layout_height="wrap_content"
+            android:background="@drawable/background_border_search_bar"
+            android:layout_marginTop="20dp"
+            android:elevation="10dp"
+            android:paddingTop="5dp"
+            android:paddingBottom="5dp"
             android:layout_marginStart="20dp"
-            android:layout_marginTop="2dp"
             android:layout_marginEnd="20dp"
-            android:background="@color/barra_separatoria_secondaria"
-            app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toBottomOf="@+id/imageView7" />
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintTop_toBottomOf="@id/relative2">
+
+            <ImageView
+                android:id="@+id/imageView7"
+                android:layout_width="30dp"
+                android:layout_height="30dp"
+                android:layout_alignParentStart="true"
+                android:layout_marginStart="20dp"
+                android:src="@drawable/ic_baseline_height_24"
+                app:tint="@color/background_activity" />
+
+            <TextView
+                android:id="@+id/textView15"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="20dp"
+                android:layout_toEndOf="@id/imageView7"
+                android:fontFamily="@font/roboto"
+                android:text="Altezza"
+                android:textColor="@color/white"
+                android:textSize="22sp"
+                android:textStyle="bold" />
+
+            <TextView
+                android:id="@+id/altezza_attuale"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_centerHorizontal="true"
+                android:paddingStart="40dp"
+                android:fontFamily="@font/roboto"
+                android:text="0 cm"
+                android:textColor="@color/white"
+                android:textSize="18sp" />
+
+            <View
+                android:id="@+id/view12"
+                android:layout_width="match_parent"
+                android:layout_height="1dp"
+                android:layout_below="@id/imageView7"
+                android:layout_marginStart="20dp"
+                android:layout_marginEnd="20dp"
+                android:background="@color/background_activity" />
+
+            <ImageView
+                android:id="@+id/edit_altezza"
+                android:layout_width="30dp"
+                android:layout_height="30dp"
+                android:src="@drawable/ic_baseline_change_circle_24"
+                android:layout_alignParentEnd="true"
+                android:layout_marginEnd="10dp"
+                app:tint="@color/info_color">
+
+            </ImageView>
+
+        </RelativeLayout>
 
         <ImageView
             android:layout_width="25dp"
@@ -296,7 +334,8 @@
             app:layout_constraintEnd_toStartOf="@+id/modify_password"
             app:layout_constraintHorizontal_bias="1.0"
             app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toBottomOf="@+id/view12" />
+            app:layout_constraintTop_toBottomOf="@+id/relative3"
+            app:tint="@color/link_color" />
 
         <TextView
             android:id="@+id/modify_password"
@@ -305,11 +344,11 @@
             android:layout_marginTop="50dp"
             android:text="Modifica Password"
             android:fontFamily="@font/roboto"
-            android:textColor="@color/barra_separatoria_principale"
+            android:textColor="@color/link_color"
             android:textSize="18sp"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toBottomOf="@+id/view12" />
+            app:layout_constraintTop_toBottomOf="@+id/relative3" />
 
         <View
             android:id="@+id/view5"
@@ -317,7 +356,7 @@
             android:layout_height="0.5dp"
             android:layout_marginStart="130dp"
             android:layout_marginEnd="130dp"
-            android:background="@color/barra_separatoria_secondaria"
+            android:background="@color/link_color"
             app:layout_constraintEnd_toEndOf="@+id/modify_password"
             app:layout_constraintStart_toStartOf="@+id/modify_password"
             app:layout_constraintTop_toBottomOf="@+id/modify_password" />
@@ -327,11 +366,9 @@
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:layout_alignParentStart="true"
-
             android:layout_alignParentEnd="true"
             android:layout_alignParentBottom="true"
-
-            app:itemBackground="@color/barra_separatoria_secondaria"
+            app:itemBackground="@color/scritte_principali"
             app:itemIconTint="@drawable/selector"
             app:itemTextColor="@drawable/selector"
             app:layout_constraintBottom_toBottomOf="parent"

@@ -10,6 +10,10 @@
     android:orientation="vertical"
     tools:context=".SignUp">
 
+    <include
+        android:id="@+id/idToolbar"
+        layout="@layout/toolbar"/>
+
     <ScrollView
         android:id="@+id/scrollView2"
         android:layout_width="match_parent"
@@ -18,12 +22,9 @@
         <LinearLayout
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
+            android:background="@color/background_activity"
             android:gravity="center"
             android:orientation="vertical">
-
-            <include
-                android:id="@+id/idToolbar"
-                layout="@layout/toolbar"/>
 
             <TextView
                 android:id="@+id/textView3"
@@ -33,19 +34,19 @@
                 android:gravity="center_horizontal"
                 android:textSize="22sp"
                 android:text="@string/username"
+                android:textStyle="bold"
                 android:visibility="visible"
                 android:fontFamily="@font/roboto"
-                android:textColor="@color/barra_separatoria_secondaria"
+                android:textColor="@color/scritte_principali"
                 tools:visibility="visible" />
 
             <com.google.android.material.textfield.TextInputLayout
                 android:id="@+id/input_signup_username"
                 android:layout_width="match_parent"
                 android:layout_height="match_parent"
-                android:background="@drawable/card_background_edit_profile"
                 android:layout_marginLeft="50dp"
                 android:hint="@string/username"
-                android:textColorHint="@color/white"
+                android:textColorHint="@color/scritte_principali"
                 android:layout_marginRight="50dp"
                 android:transitionName="user_transition">
 
@@ -53,7 +54,8 @@
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
                     android:gravity="center"
-                    android:backgroundTint="@color/barra_separatoria_secondaria"
+                    android:textColor="@color/scritte_principali"
+                    android:backgroundTint="@color/scritte_principali"
                     android:fontFamily="@font/roboto"
                     android:inputType="text"
                     android:textAlignment="center" />
@@ -66,10 +68,11 @@
                 android:layout_marginTop="40dp"
                 android:gravity="center_horizontal"
                 android:text="@string/password"
+                android:textStyle="bold"
                 android:textSize="22sp"
                 android:fontFamily="@font/roboto"
                 android:visibility="visible"
-                android:textColor="@color/barra_separatoria_secondaria"
+                android:textColor="@color/scritte_principali"
                 tools:visibility="visible" />
 
 
@@ -79,17 +82,19 @@
                 android:layout_height="match_parent"
                 android:layout_marginLeft="50dp"
                 android:layout_marginRight="50dp"
-                android:textColorHint="@color/white"
+                android:textColorHint="@color/scritte_principali"
                 android:hint="@string/password"
                 android:textAlignment="center"
                 android:transitionName="pass_transition"
+                app:passwordToggleTint="@color/scritte_principali"
                 app:passwordToggleEnabled="true">
 
                 <com.google.android.material.textfield.TextInputEditText
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
                     android:gravity="center"
-                    android:backgroundTint="@color/barra_separatoria_secondaria"
+                    android:textColor="@color/scritte_principali"
+                    android:backgroundTint="@color/scritte_principali"
                     android:fontFamily="@font/roboto"
                     android:inputType="textPassword"
                     android:textAlignment="center" />
