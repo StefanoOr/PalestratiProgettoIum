@@ -6,14 +6,14 @@
     xmlns:tools="http://schemas.android.com/tools"
     android1:id="@+id/videoAllenamentoIcon"
     android:layout_width="match_parent"
-    android:backgroundTint="@color/card_background_layout"
+    android:backgroundTint="@color/background_activity"
     android:layout_height="wrap_content"
     android:animateLayoutChanges="true"
     app:cardCornerRadius="20dp"
     app:cardElevation="2dp"
     app:cardUseCompatPadding="true"
-    android:outlineAmbientShadowColor="@color/barra_separatoria_secondaria"
-    android:outlineSpotShadowColor="@color/barra_separatoria_principale">
+    android:outlineAmbientShadowColor="@color/link_color"
+    android:outlineSpotShadowColor="@color/link_color">
 
     <androidx.constraintlayout.widget.ConstraintLayout
         android:id="@+id/layoutCard"
@@ -36,7 +36,8 @@
             app:layout_constraintBottom_toBottomOf="parent"
             app:layout_constraintEnd_toEndOf="@+id/textViewNesercizio"
             app:layout_constraintStart_toStartOf="@+id/textViewNesercizio"
-            app:layout_constraintTop_toBottomOf="@+id/textViewNesercizio" />
+            app:layout_constraintTop_toBottomOf="@+id/textViewNesercizio"
+            app:tint="@color/scritte_principali" />
 
 
         <TextView
@@ -48,7 +49,8 @@
             android:layout_marginEnd="5dp"
             android:fontFamily="@font/roboto"
             android:text="NEsercizio"
-            android:textColor="@color/barra_separatoria_principale"
+            android:textColor="@color/scritte_principali"
+            android:textStyle="bold"
             android:textSize="15dp"
             app:layout_constraintEnd_toStartOf="@+id/textView20"
             app:layout_constraintStart_toStartOf="parent"
@@ -61,7 +63,10 @@
             android:layout_marginStart="90dp"
             android:fontFamily="@font/roboto"
             android:text="Ripetizioni"
-            android:textColor="@color/white"
+            android:textColor="@color/background_activity"
+            android:background="@drawable/background_border_search_bar"
+            android:padding="1dp"
+            android:textStyle="bold"
             app:layout_constraintBottom_toTopOf="@+id/card_scheda_immagine"
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toTopOf="@+id/textViewNesercizio" />
@@ -73,7 +78,10 @@
             android:layout_marginStart="25dp"
             android:fontFamily="@font/roboto"
             android:text="Serie"
-            android:textColor="@color/white"
+            android:textColor="@color/background_activity"
+            android:background="@drawable/background_border_search_bar"
+            android:padding="1dp"
+            android:textStyle="bold"
             app:layout_constraintBottom_toBottomOf="@+id/textView20"
             app:layout_constraintStart_toEndOf="@+id/textView20"
             app:layout_constraintTop_toTopOf="@+id/textView20" />
@@ -85,7 +93,10 @@
             android:layout_marginStart="25dp"
             android:fontFamily="@font/roboto"
             android:text="T.Recupero"
-            android:textColor="@color/white"
+            android:textColor="@color/background_activity"
+            android:background="@drawable/background_border_search_bar"
+            android:padding="1dp"
+            android:textStyle="bold"
             app:layout_constraintBottom_toBottomOf="@+id/textView25"
             app:layout_constraintStart_toEndOf="@+id/textView25"
             app:layout_constraintTop_toTopOf="@+id/textView25" />
@@ -108,7 +119,7 @@
             android:layout_marginTop="10dp"
             android:fontFamily="@font/roboto"
             android:text="TextViewR"
-            android:textColor="@color/barra_separatoria_secondaria"
+            android:textColor="@color/scritte_principali"
             app:layout_constraintStart_toStartOf="@+id/textView20"
             app:layout_constraintTop_toBottomOf="@+id/textView20" />
 
@@ -119,7 +130,7 @@
             android:layout_marginTop="10dp"
             android:fontFamily="@font/roboto"
             android:text="t"
-            android:textColor="@color/barra_separatoria_secondaria"
+            android:textColor="@color/scritte_principali"
             app:layout_constraintStart_toStartOf="@+id/textView21"
             app:layout_constraintTop_toBottomOf="@+id/textView21" />
 
@@ -130,7 +141,7 @@
             android:layout_marginTop="10dp"
             android:fontFamily="@font/roboto"
             android:text="t"
-            android:textColor="@color/barra_separatoria_secondaria"
+            android:textColor="@color/scritte_principali"
             app:layout_constraintStart_toStartOf="@+id/textView25"
             app:layout_constraintTop_toBottomOf="@+id/textView25" />
 
@@ -141,7 +152,11 @@
             android:layout_marginEnd="20dp"
             android:fontFamily="@font/roboto"
             android:text="Info"
-            android:textColor="@color/white"
+            android:textColor="@color/scritte_principali"
+            android:background="@drawable/background_border_search_bar"
+            android:backgroundTint="@color/info_color"
+            android:padding="1dp"
+            android:textStyle="bold"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintTop_toTopOf="@+id/textViewNesercizio" />
 

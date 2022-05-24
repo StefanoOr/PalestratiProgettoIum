@@ -5,25 +5,18 @@
     xmlns:tools="http://schemas.android.com/tools"
     android1:id="@+id/videoAllenamentoIcon"
     android:layout_width="match_parent"
-    android:backgroundTint="@color/card_background_layout"
     android:layout_height="wrap_content"
-    android:animateLayoutChanges="true"
     app:cardCornerRadius="20dp"
-    app:cardElevation="2dp"
-    app:cardUseCompatPadding="true"
-    android:outlineAmbientShadowColor="@color/barra_separatoria_secondaria"
-    android:outlineSpotShadowColor="@color/barra_separatoria_principale">
+    app:cardUseCompatPadding="true">
 
     <androidx.constraintlayout.widget.ConstraintLayout
         android:id="@+id/layoutCard"
         android:layout_width="match_parent"
         android:layout_height="80dp"
-        android:layout_marginTop="1dp"
-        android:layout_marginLeft="1dp"
-        android:layout_marginBottom="1dp"
-        android:layout_marginRight="1dp"
-        android:animateLayoutChanges="true"
-        android:background="@drawable/card_background_edit_profile"
+        android:elevation="20dp"
+        android:outlineAmbientShadowColor="@color/scritte_principali"
+        android:outlineSpotShadowColor="@color/scritte_principali"
+        android:background="@color/background_activity"
         android:padding="1dp">
 
         <ImageView
@@ -37,7 +30,8 @@
             app:layout_constraintBottom_toBottomOf="parent"
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toTopOf="parent"
-            app:layout_constraintVertical_bias="0.52" />
+            app:layout_constraintVertical_bias="0.52"
+            app:tint="@color/scritte_principali" />
 
         <View
             android:id="@+id/view11"
@@ -45,7 +39,7 @@
             android:layout_height="match_parent"
             android:layout_marginTop="15dp"
             android:layout_marginBottom="15dp"
-            android:background="@color/barra_separatoria_principale"
+            android:background="@color/scritte_principali"
             app:layout_constraintBottom_toBottomOf="parent"
             app:layout_constraintStart_toEndOf="@+id/iconIDpT"
             app:layout_constraintTop_toTopOf="parent"
@@ -59,7 +53,7 @@
             android:layout_marginBottom="5dp"
             android:text="Nome scheda"
             android:textAlignment="center"
-            android:textColor="@color/card_text"
+            android:textColor="@color/scritte_principali"
             android:textSize="25sp"
             android:fontFamily="@font/roboto"
             android:textStyle="bold"

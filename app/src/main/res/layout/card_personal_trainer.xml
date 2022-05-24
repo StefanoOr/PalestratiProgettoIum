@@ -6,14 +6,12 @@
     xmlns:tools="http://schemas.android.com/tools"
     android1:id="@+id/videoAllenamentoIcon"
     android:layout_width="match_parent"
-    android:backgroundTint="@color/card_background_layout"
+    android:backgroundTint="@color/background_activity"
     android:layout_height="wrap_content"
     android:animateLayoutChanges="true"
     app:cardCornerRadius="20dp"
     app:cardElevation="2dp"
-    app:cardUseCompatPadding="true"
-    android:outlineAmbientShadowColor="@color/barra_separatoria_secondaria"
-    android:outlineSpotShadowColor="@color/barra_separatoria_principale">
+    app:cardUseCompatPadding="true">
 
     <androidx.constraintlayout.widget.ConstraintLayout
         android:id="@+id/layoutCard"
@@ -24,7 +22,6 @@
         android:layout_marginRight="1dp"
         android:layout_marginBottom="1dp"
         android:animateLayoutChanges="true"
-        android:background="@drawable/card_background_edit_profile"
         android:padding="1dp">
 
 
@@ -36,11 +33,13 @@
             android:layout_marginStart="10dp"
             android:layout_marginTop="10dp"
             android:background="@drawable/border_spinner"
+            android:backgroundTint="@color/scritte_principali"
             android:foregroundGravity="center"
             android:src="@drawable/ic_baseline_face_24"
             app:layout_constraintBottom_toBottomOf="@+id/nome_personal"
             app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toTopOf="parent" />
+            app:layout_constraintTop_toTopOf="parent"
+            app:tint="@color/background_activity" />
 
         <TextView
             android:id="@+id/text_name"
@@ -48,7 +47,8 @@
             android:layout_height="wrap_content"
             android:layout_marginTop="5dp"
             android:text="@string/nome_personal"
-            android:textColor="@color/white"
+            android:background="@drawable/background_border_search_bar"
+            android:textColor="@color/background_activity"
             android:fontFamily="@font/roboto"
             android:textSize="22sp"
             app:layout_constraintEnd_toEndOf="parent"
@@ -61,7 +61,7 @@
             android:layout_height="wrap_content"
             android:text="@string/nome_personal"
             android:textAlignment="center"
-            android:textColor="@color/card_text"
+            android:textColor="@color/scritte_principali"
             android:textSize="22sp"
             android:layout_marginTop="10dp"
             android:textStyle="bold"
@@ -71,14 +71,17 @@
 
         <TextView
             android:id="@+id/text_eta"
-            android:layout_width="wrap_content"
+            android:layout_width="0dp"
             android:layout_height="wrap_content"
             android:layout_marginStart="10dp"
             android:layout_marginTop="20dp"
-            android:text="Nato il:"
+            android:background="@drawable/background_border_search_bar"
             android:fontFamily="@font/roboto"
-            android:textColor="@color/white"
+            android:text="Nato il:"
+            android:textColor="@color/background_activity"
             android:textSize="22sp"
+            android:textStyle="bold"
+            app:layout_constraintEnd_toEndOf="@+id/iconPersonalTrainer"
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toBottomOf="@id/iconPersonalTrainer" />
 
@@ -89,38 +92,45 @@
             android:layout_marginStart="20dp"
             android:text="eta"
             android:textAlignment="center"
-            android:textColor="@color/card_text"
+            android:textColor="@color/scritte_principali"
+            android:textStyle="bold"
             android:textSize="20sp"
             android:fontFamily="@font/roboto"
-            android:textStyle="bold"
             app:layout_constraintBottom_toBottomOf="@+id/text_eta"
             app:layout_constraintStart_toEndOf="@id/text_eta"
             app:layout_constraintTop_toTopOf="@+id/text_eta" />
 
         <TextView
             android:id="@+id/text_team"
-            android:layout_width="wrap_content"
+            android:layout_width="0dp"
             android:layout_height="wrap_content"
-            android:text="Team: "
             android:layout_marginTop="15dp"
-            android:textColor="@color/white"
-            android:textSize="22sp"
+            android:background="@drawable/background_border_search_bar"
             android:fontFamily="@font/roboto"
+            android:text="Team: "
+            android:textColor="@color/background_activity"
+            android:textSize="22sp"
+            android:textStyle="bold"
+            app:layout_constraintEnd_toEndOf="@+id/text_eta"
             app:layout_constraintStart_toStartOf="@+id/text_eta"
             app:layout_constraintTop_toBottomOf="@+id/text_eta" />
 
 
         <TextView
             android:id="@+id/text_ig"
-            android:layout_width="wrap_content"
+            android:layout_width="0dp"
             android:layout_height="wrap_content"
+            android:paddingStart="5dp"
             android:layout_marginTop="15dp"
+            android:layout_marginBottom="10dp"
+            android:background="@drawable/background_border_search_bar"
             android:fontFamily="@font/roboto"
             android:text="Ig: "
-            android:layout_marginBottom="10dp"
-            android:textColor="@color/white"
+            android:textColor="@color/background_activity"
             android:textSize="22sp"
+            android:textStyle="bold"
             app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toEndOf="@+id/text_team"
             app:layout_constraintStart_toStartOf="@+id/text_team"
             app:layout_constraintTop_toBottomOf="@+id/text_team" />
 
@@ -131,9 +141,9 @@
             android:fontFamily="@font/roboto"
             android:text="team"
             android:textAlignment="center"
-            android:textColor="@color/card_text"
-            android:textSize="20sp"
             android:textStyle="bold"
+            android:textColor="@color/scritte_principali"
+            android:textSize="20sp"
             app:layout_constraintBottom_toBottomOf="@+id/text_team"
             app:layout_constraintStart_toStartOf="@+id/eta_personal"
             app:layout_constraintTop_toTopOf="@+id/text_team" />
@@ -146,9 +156,9 @@
             android:fontFamily="@font/roboto"
             android:text="Ig"
             android:textAlignment="center"
-            android:textColor="@color/card_text"
-            android:textSize="20sp"
+            android:textColor="@color/scritte_principali"
             android:textStyle="bold"
+            android:textSize="20sp"
             app:layout_constraintBottom_toBottomOf="@+id/text_ig"
             app:layout_constraintStart_toStartOf="@+id/team_personal"
             app:layout_constraintTop_toTopOf="@+id/text_ig" />

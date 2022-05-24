@@ -96,8 +96,8 @@
                     android:layout_marginBottom="5dp"
                     android:backgroundTint="@color/info_color"
                     android:elevation="5dp"
-                    android:outlineAmbientShadowColor="@color/card_background_layout"
-                    android:outlineSpotShadowColor="@color/card_background_layout"
+                    android:outlineAmbientShadowColor="@color/link_color"
+                    android:outlineSpotShadowColor="@color/link_color"
                     android:src="@drawable/ic_baseline_video_library_24"
                     app:layout_constraintBottom_toBottomOf="parent"
                     app:layout_constraintEnd_toEndOf="parent" />
