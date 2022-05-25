@@ -6,17 +6,19 @@
     xmlns:tools="http://schemas.android.com/tools"
     android1:id="@+id/videoAllenamentoIcon"
     android:layout_width="match_parent"
-    android:backgroundTint="@color/background_activity"
+    android:backgroundTint="#D6D9DC"
     android:layout_height="wrap_content"
     android:animateLayoutChanges="true"
     app:cardCornerRadius="20dp"
-    app:cardElevation="2dp"
     app:cardUseCompatPadding="true">
 
     <androidx.constraintlayout.widget.ConstraintLayout
         android:id="@+id/layoutCard"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
+        android:elevation="20dp"
+        android:outlineSpotShadowColor="@color/scritte_principali"
+        android:outlineAmbientShadowColor="@color/scritte_principali"
         android:layout_marginLeft="1dp"
         android:layout_marginTop="1dp"
         android:layout_marginRight="1dp"
@@ -28,20 +30,15 @@
         <ImageView
             android:id="@+id/iconPersonalTrainer"
             android:layout_width="80dp"
-            android:layout_height="0dp"
-            android:layout_centerVertical="true"
+            android:layout_height="60dp"
             android:layout_marginStart="10dp"
             android:layout_marginTop="10dp"
-            android:background="@drawable/border_spinner"
-            android:backgroundTint="@color/scritte_principali"
-            android:foregroundGravity="center"
             android:src="@drawable/ic_baseline_face_24"
-            app:layout_constraintBottom_toBottomOf="@+id/nome_personal"
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toTopOf="parent"
-            app:tint="@color/background_activity" />
+            app:tint="@color/scritte_principali" />
 
-        <TextView
+        <!--<TextView
             android:id="@+id/text_name"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
@@ -53,7 +50,7 @@
             android:textSize="22sp"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintStart_toEndOf="@id/iconPersonalTrainer"
-            app:layout_constraintTop_toTopOf="parent" />
+            app:layout_constraintTop_toTopOf="parent" />-->
 
         <TextView
             android:id="@+id/nome_personal"
@@ -63,11 +60,11 @@
             android:textAlignment="center"
             android:textColor="@color/scritte_principali"
             android:textSize="22sp"
-            android:layout_marginTop="10dp"
             android:textStyle="bold"
+            app:layout_constraintBottom_toBottomOf="@+id/iconPersonalTrainer"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintStart_toEndOf="@id/iconPersonalTrainer"
-            app:layout_constraintTop_toBottomOf="@id/text_name" />
+            app:layout_constraintTop_toTopOf="parent" />
 
         <TextView
             android:id="@+id/text_eta"

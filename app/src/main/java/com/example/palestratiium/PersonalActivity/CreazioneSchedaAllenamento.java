@@ -61,6 +61,8 @@ public class CreazioneSchedaAllenamento extends AppCompatActivity implements Rec
         titolo=findViewById(R.id.nomeSchedaAllenamento);
         toolbar_title=findViewById(R.id.toolbartag);
 
+        toolbar_title.setText("Creazione scheda Allenamento");
+
         allenamento= new SchedeAllenamento();
         EsercizioAllenameto=new ArrayList<>();
 
