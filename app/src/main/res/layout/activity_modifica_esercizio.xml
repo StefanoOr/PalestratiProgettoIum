@@ -187,7 +187,7 @@
                 app:layout_constraintTop_toBottomOf="@id/textView18" />
 
             <CheckBox
-                android:id="@+id/checkBox"
+                android:id="@+id/checkBox10"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_marginStart="4dp"
@@ -204,7 +204,7 @@
                 app:layout_constraintTop_toBottomOf="@+id/muscoli_attuali" />
 
             <CheckBox
-                android:id="@+id/checkBox5"
+                android:id="@+id/checkBox15"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_marginTop="5dp"
@@ -219,11 +219,11 @@
                 android:textSize="20sp"
                 android:textStyle="bold"
                 app:layout_constraintBottom_toBottomOf="parent"
-                app:layout_constraintStart_toStartOf="@+id/checkBox"
-                app:layout_constraintTop_toBottomOf="@+id/checkBox" />
+                app:layout_constraintStart_toStartOf="@+id/checkBox10"
+                app:layout_constraintTop_toBottomOf="@+id/checkBox10" />
 
             <CheckBox
-                android:id="@+id/checkBox6"
+                android:id="@+id/checkBox16"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_marginTop="10dp"
@@ -239,7 +239,7 @@
                 app:layout_constraintTop_toBottomOf="@+id/muscoli_attuali" />
 
             <CheckBox
-                android:id="@+id/checkBox2"
+                android:id="@+id/checkBox12"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_marginTop="5dp"
@@ -252,11 +252,11 @@
                 android:textSize="20sp"
                 android:textStyle="bold"
                 app:layout_constraintBottom_toBottomOf="parent"
-                app:layout_constraintStart_toStartOf="@+id/checkBox6"
-                app:layout_constraintTop_toBottomOf="@+id/checkBox6" />
+                app:layout_constraintStart_toStartOf="@+id/checkBox16"
+                app:layout_constraintTop_toBottomOf="@+id/checkBox16" />
 
             <CheckBox
-                android:id="@+id/checkBox3"
+                android:id="@+id/checkBox13"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_marginTop="5dp"
@@ -269,11 +269,11 @@
                 android:textSize="20sp"
                 android:textStyle="bold"
                 app:layout_constraintBottom_toBottomOf="parent"
-                app:layout_constraintStart_toStartOf="@+id/checkBox4"
-                app:layout_constraintTop_toBottomOf="@+id/checkBox4" />
+                app:layout_constraintStart_toStartOf="@+id/checkBox14"
+                app:layout_constraintTop_toBottomOf="@+id/checkBox14" />
 
             <CheckBox
-                android:id="@+id/checkBox4"
+                android:id="@+id/checkBox14"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_marginTop="10dp"

@@ -58,7 +58,7 @@ public class Upload extends AppCompatActivity implements Serializable, AdapterVi
 
     public static final int VIDEO_PICK_GALLERY_CODE = 100;
     private static final int VIDEO_PICK_CAMERA_CODE = 100;
-    private static final int CAMERA_REQUEST_CODE = 100;
+    private static final int CAMERA_REQUEST_CODE = 300;
     private static final int SELECT_IMAGE_CODE = 200;
     private static final int IMAGE_PICK_CAMERA_CODE = 200;
 
@@ -217,7 +217,7 @@ public class Upload extends AppCompatActivity implements Serializable, AdapterVi
 
     private void imagePickDialog() {
         //opzioni per il dialog
-        String[] options = {"Camera", "Galleria"};
+        String[] options = {"Galleria"};
 
         //dialog
         AlertDialog.Builder builder = new AlertDialog.Builder(this);
@@ -226,16 +226,6 @@ public class Upload extends AppCompatActivity implements Serializable, AdapterVi
                     @Override
                     public void onClick(DialogInterface dialogInterface, int i) {
                         if (i==0){
-                            //camera selezionata
-                            if (!checkCameraPermission()) {
-                                //permesso non dato, richiedilo
-                                requestCameraPermission();
-                            }else{
-                                //permesso dato, fai il video
-                                imagePickCamera();
-                            }
-                        }
-                        else if (i==1){
                             //galleria selezionata
                             imagePickGallery();
                         }
@@ -302,7 +292,8 @@ public class Upload extends AppCompatActivity implements Serializable, AdapterVi
     }
 
     private void imagePickCamera() {
-        Intent intent = new Intent(MediaStore.ACTION_IMAGE_CAPTURE);
+        Intent intent = new Intent(MediaStore.ACTION_IMAGE_CAPTURE_SECURE);
+        intent.setType("image/*");
         startActivityForResult(intent, IMAGE_PICK_CAMERA_CODE);
     }
 
@@ -395,12 +386,22 @@ public class Upload extends AppCompatActivity implements Serializable, AdapterVi
             case R.id.checkBox:
                 if (petto.isChecked())
                     Toast.makeText(getApplicationContext(), "Petto", Toast.LENGTH_LONG).show();
+                bicipiti.setChecked(false);
+                spalle.setChecked(false);
+                dorso.setChecked(false);
+                gambe.setChecked(false);
+                tricipiti.setChecked(false);
                 gruppoSelezionato = MyEnum.PETTO;
                 checkBoxErr.setVisibility(View.INVISIBLE);
                 break;
             case R.id.checkBox2:
                 if (spalle.isChecked())
                     Toast.makeText(getApplicationContext(), "Spalle", Toast.LENGTH_LONG).show();
+                petto.setChecked(false);
+                bicipiti.setChecked(false);
+                dorso.setChecked(false);
+                gambe.setChecked(false);
+                tricipiti.setChecked(false);
                 gruppoSelezionato = MyEnum.SPALLE;
                 checkBoxErr.setVisibility(View.INVISIBLE);
 
@@ -408,29 +409,48 @@ public class Upload extends AppCompatActivity implements Serializable, AdapterVi
             case R.id.checkBox3:
                 if (tricipiti.isChecked())
                     Toast.makeText(getApplicationContext(), "Tricipiti", Toast.LENGTH_LONG).show();
+                petto.setChecked(false);
+                bicipiti.setChecked(false);
+                spalle.setChecked(false);
+                dorso.setChecked(false);
+                gambe.setChecked(false);
                 gruppoSelezionato = MyEnum.TRICIPITI;
                 checkBoxErr.setVisibility(View.INVISIBLE);
                 break;
             case R.id.checkBox4:
                 if (gambe.isChecked())
                     Toast.makeText(getApplicationContext(), "Gambe", Toast.LENGTH_LONG).show();
+                petto.setChecked(false);
+                bicipiti.setChecked(false);
+                spalle.setChecked(false);
+                dorso.setChecked(false);
+                tricipiti.setChecked(false);
                 gruppoSelezionato = MyEnum.GAMBE;
                 checkBoxErr.setVisibility(View.INVISIBLE);
                 break;
             case R.id.checkBox5:
                 if (dorso.isChecked())
                     Toast.makeText(getApplicationContext(), "Dorso", Toast.LENGTH_LONG).show();
+                petto.setChecked(false);
+                bicipiti.setChecked(false);
+                spalle.setChecked(false);
+                gambe.setChecked(false);
+                tricipiti.setChecked(false);
                 gruppoSelezionato = MyEnum.DORSO;
                 checkBoxErr.setVisibility(View.INVISIBLE);
                 break;
             case R.id.checkBox6:
                 if (bicipiti.isChecked())
                     Toast.makeText(getApplicationContext(), "Bicipiti", Toast.LENGTH_LONG).show();
+                petto.setChecked(false);
+                spalle.setChecked(false);
+                dorso.setChecked(false);
+                gambe.setChecked(false);
+                tricipiti.setChecked(false);
                 gruppoSelezionato = MyEnum.BICIPITI;
                 checkBoxErr.setVisibility(View.INVISIBLE);
                 break;
         }
 
     }
-
 }

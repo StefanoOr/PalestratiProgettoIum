@@ -59,7 +59,7 @@ public class ModificaEsercizio extends AppCompatActivity implements Serializable
 
     private static final int VIDEO_PICK_GALLERY_CODE = 100;
     private static final int VIDEO_PICK_CAMERA_CODE = 100;
-    private static final int CAMERA_REQUEST_CODE = 100;
+    private static final int CAMERA_REQUEST_CODE = 300;
     private static final int SELECT_IMAGE_CODE = 200;
     private static final int IMAGE_PICK_CAMERA_CODE = 200;
 
@@ -114,12 +114,12 @@ public class ModificaEsercizio extends AppCompatActivity implements Serializable
         imageView = findViewById(R.id.image_view);
         videoView = findViewById(R.id.videoView);
         editImg = findViewById(R.id.image_catch_edit);
-        petto = findViewById(R.id.checkBox);
-        dorso = findViewById(R.id.checkBox5);
-        gambe = findViewById(R.id.checkBox4);
-        tricipiti = findViewById(R.id.checkBox3);
-        bicipiti = findViewById(R.id.checkBox6);
-        spalle = findViewById(R.id.checkBox2);
+        petto = findViewById(R.id.checkBox10);
+        dorso = findViewById(R.id.checkBox15);
+        gambe = findViewById(R.id.checkBox14);
+        tricipiti = findViewById(R.id.checkBox13);
+        bicipiti = findViewById(R.id.checkBox16);
+        spalle = findViewById(R.id.checkBox12);
         seleziona_difficolta = findViewById(R.id.difficolta_spinner);
         muscoloAttuale = findViewById(R.id.muscoli_attuali);
         toolbar_title = findViewById(R.id.toolbartag);
@@ -137,6 +137,13 @@ public class ModificaEsercizio extends AppCompatActivity implements Serializable
         muscoloAttuale.setText("Attuale: " + gruppo.name());
 
         nomeOriginale = nomeEsercizio.getText().toString();
+
+        petto.setOnClickListener(this);
+        spalle.setOnClickListener(this);
+        gambe.setOnClickListener(this);
+        bicipiti.setOnClickListener(this);
+        tricipiti.setOnClickListener(this);
+        dorso.setOnClickListener(this);
 
         switch (gruppo) {
 
@@ -203,6 +210,8 @@ public class ModificaEsercizio extends AppCompatActivity implements Serializable
             }
         });
 
+
+
         back_home.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
@@ -230,8 +239,9 @@ public class ModificaEsercizio extends AppCompatActivity implements Serializable
                 esercizio.setDifficolta(seleziona_difficolta.getSelectedItem().toString());
                 esercizio.setVideo(stringUriVideo);
                 esercizio.setImage(stringUriImage);
+                esercizio.setGruppoMuscolare(gruppoSelezionato);
                 //personalTrainer.addEsercizi(esercizio);
-                esercizio.setGruppoMuscolare(gruppo);
+                //esercizio.setGruppoMuscolare(gruppo);
                 //TODO cambiare il modifica da quui
                 UserFactory.getInstance().modifyEsercizio(nomeOriginale, personalTrainer, esercizio);
                 Intent home = new Intent(ModificaEsercizio.this, HomePersonalTrainer.class);
@@ -252,40 +262,70 @@ public class ModificaEsercizio extends AppCompatActivity implements Serializable
     public void onClick(View v) {
 
         switch (v.getId()) {
-            case R.id.checkBox:
+            case R.id.checkBox10:
                 if (petto.isChecked())
                     Toast.makeText(getApplicationContext(), "Petto", Toast.LENGTH_LONG).show();
+                bicipiti.setChecked(false);
+                spalle.setChecked(false);
+                dorso.setChecked(false);
+                gambe.setChecked(false);
+                tricipiti.setChecked(false);
                 gruppoSelezionato = MyEnum.PETTO;
                 checkBoxErr.setVisibility(View.INVISIBLE);
                 break;
-            case R.id.checkBox2:
+            case R.id.checkBox12:
                 if (spalle.isChecked())
                     Toast.makeText(getApplicationContext(), "Spalle", Toast.LENGTH_LONG).show();
+                bicipiti.setChecked(false);
+                petto.setChecked(false);
+                dorso.setChecked(false);
+                gambe.setChecked(false);
+                tricipiti.setChecked(false);
                 gruppoSelezionato = MyEnum.SPALLE;
                 checkBoxErr.setVisibility(View.INVISIBLE);
 
                 break;
-            case R.id.checkBox3:
+            case R.id.checkBox13:
                 if (tricipiti.isChecked())
                     Toast.makeText(getApplicationContext(), "Tricipiti", Toast.LENGTH_LONG).show();
+                bicipiti.setChecked(false);
+                spalle.setChecked(false);
+                dorso.setChecked(false);
+                gambe.setChecked(false);
+                petto.setChecked(false);
                 gruppoSelezionato = MyEnum.TRICIPITI;
                 checkBoxErr.setVisibility(View.INVISIBLE);
                 break;
-            case R.id.checkBox4:
+            case R.id.checkBox14:
                 if (gambe.isChecked())
                     Toast.makeText(getApplicationContext(), "Gambe", Toast.LENGTH_LONG).show();
+                bicipiti.setChecked(false);
+                spalle.setChecked(false);
+                dorso.setChecked(false);
+                petto.setChecked(false);
+                tricipiti.setChecked(false);
                 gruppoSelezionato = MyEnum.GAMBE;
                 checkBoxErr.setVisibility(View.INVISIBLE);
                 break;
-            case R.id.checkBox5:
+            case R.id.checkBox15:
                 if (dorso.isChecked())
                     Toast.makeText(getApplicationContext(), "Dorso", Toast.LENGTH_LONG).show();
+                bicipiti.setChecked(false);
+                spalle.setChecked(false);
+                petto.setChecked(false);
+                gambe.setChecked(false);
+                tricipiti.setChecked(false);
                 gruppoSelezionato = MyEnum.DORSO;
                 checkBoxErr.setVisibility(View.INVISIBLE);
                 break;
-            case R.id.checkBox6:
+            case R.id.checkBox16:
                 if (bicipiti.isChecked())
                     Toast.makeText(getApplicationContext(), "Bicipiti", Toast.LENGTH_LONG).show();
+                petto.setChecked(false);
+                spalle.setChecked(false);
+                dorso.setChecked(false);
+                gambe.setChecked(false);
+                tricipiti.setChecked(false);
                 gruppoSelezionato = MyEnum.BICIPITI;
                 checkBoxErr.setVisibility(View.INVISIBLE);
                 break;
@@ -295,7 +335,7 @@ public class ModificaEsercizio extends AppCompatActivity implements Serializable
 
     private void imagePickDialog() {
         //opzioni per il dialog
-        String[] options = {"Camera", "Galleria"};
+        String[] options = {"Galleria"};
 
 //dialog
         AlertDialog.Builder builder = new AlertDialog.Builder(this);
@@ -304,15 +344,6 @@ public class ModificaEsercizio extends AppCompatActivity implements Serializable
                     @Override
                     public void onClick(DialogInterface dialogInterface, int i) {
                         if (i == 0) {
-                            //camera selezionata
-                            if (!checkCameraPermission()) {
-                                //permesso non dato, richiedilo
-                                requestCameraPermission();
-                            } else {
-                                //permesso dato, fai il video
-                                imagePickCamera();
-                            }
-                        } else if (i == 1) {
                             //galleria selezionata
                             imagePickGallery();
                         }
