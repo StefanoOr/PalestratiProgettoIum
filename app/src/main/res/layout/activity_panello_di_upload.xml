@@ -7,6 +7,10 @@
     android:background="@color/background_activity"
     tools:context=".PersonalActivity.PanelloDiUpload">
 
+    <include
+        android:id="@+id/idToolbar"
+        layout="@layout/toolbar_home"/>
+
 
     <Button
         android:id="@+id/aggiungiAllenamento"
@@ -14,7 +18,7 @@
         android:layout_height="90dp"
         android:background="@drawable/background_border_search_bar"
         android:backgroundTint="@color/scritte_principali"
-        android:drawableBottom="@drawable/ic_baseline_fitness_center_24"
+        android:drawableBottom="@drawable/ic_baseline_sports_gymnastics_24"
         android:drawableTint="@color/background_activity"
         android:elevation="20dp"
         android:fontFamily="@font/roboto"

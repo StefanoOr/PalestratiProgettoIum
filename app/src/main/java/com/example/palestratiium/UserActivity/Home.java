@@ -15,6 +15,7 @@ import android.view.View;
 import android.widget.AdapterView;
 import android.widget.ArrayAdapter;
 import android.widget.Spinner;
+import android.widget.TextView;
 
 import com.example.palestratiium.EserciziActivity;
 import com.example.palestratiium.Login;
@@ -40,6 +41,7 @@ public class Home extends AppCompatActivity implements RecycleViewInterface {
     User user;
     PersonalTrainer coach;
     private CoachAdapter coachAdapter;
+    private TextView nomeA;
 
     Spinner spinnerCoach,spinnerGruppoMuscolare;
 
@@ -69,6 +71,7 @@ public class Home extends AppCompatActivity implements RecycleViewInterface {
 
         spinnerCoach = findViewById(R.id.spinner_coachUser1);
         spinnerGruppoMuscolare = findViewById(R.id.spinner_gruppo_muscolare);
+        nomeA = findViewById(R.id.toolbartag);
 
         Intent intent = getIntent();
         Serializable obj = intent.getSerializableExtra(Login.EXTRA_USER);
@@ -96,6 +99,8 @@ public class Home extends AppCompatActivity implements RecycleViewInterface {
 
             }
         });
+
+        nomeA.setText("Home");
 
 
         spinnerGruppoMuscolare.setAdapter(new ArrayAdapter<MyEnum>(this, android.R.layout.simple_spinner_item, MyEnum.values()));

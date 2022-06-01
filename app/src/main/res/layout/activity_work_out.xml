@@ -7,6 +7,10 @@
     android:background="@color/background_activity"
     tools:context=".UserActivity.WorkOut">
 
+    <include
+        android:id="@+id/idToolbar"
+        layout="@layout/toolbar_home"/>
+
     <Button
         android:id="@+id/aggiungiAllenamento"
         android:layout_width="match_parent"

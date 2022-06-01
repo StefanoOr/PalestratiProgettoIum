@@ -138,6 +138,8 @@
             android:backgroundTint="@color/scritte_principali"
             android:textColor="@color/card_background"
             android:fontFamily="@font/roboto"
+            android:text="1.00"
+            android:textColorHint="@color/black"
             android:textAlignment="center"
             android:textSize="14sp"
             app:layout_constraintEnd_toEndOf="@id/textView21"

@@ -9,6 +9,7 @@ import android.os.Bundle;
 import android.view.MenuItem;
 import android.view.View;
 import android.widget.Button;
+import android.widget.TextView;
 
 import com.example.palestratiium.Login;
 import com.example.palestratiium.R;
@@ -22,6 +23,8 @@ public class PanelloDiUpload extends AppCompatActivity {
     PersonalTrainer personal;
     Button aggiungiEsercizio,aggiungiSchedaAllenamento;
     public static final String EXTRA_PT = "package com.example.palestratiium";
+    private TextView nome;
+
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -39,6 +42,9 @@ public class PanelloDiUpload extends AppCompatActivity {
 
         aggiungiEsercizio = findViewById(R.id.aggiungiEsercizio);
         aggiungiSchedaAllenamento = findViewById(R.id.aggiungiAllenamento);
+        nome = findViewById(R.id.toolbartag);
+
+        nome.setText("Pannello di Upload");
 
         BottomNavigationView bottomNavigationView = findViewById(R.id.bottom_navigation);
 

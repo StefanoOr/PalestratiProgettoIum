@@ -40,6 +40,7 @@ public class ProfiloPersonalTrainer extends AppCompatActivity implements Adapter
 
     PersonalTrainer personal;
     Button logout;
+    private TextView nomeA;
 
     private TextView modifica, nome, eta, citta, username, team, instagram;
     private Spinner spinnerTitolo, spinnerCitta;
@@ -71,6 +72,9 @@ public class ProfiloPersonalTrainer extends AppCompatActivity implements Adapter
 
         logout=findViewById(R.id.logoutPT);
         modifica=findViewById(R.id.modify_password);
+        nomeA=findViewById(R.id.toolbartag);
+
+        nomeA.setText("Profilo");
 
         spinnerTitolo = findViewById(R.id.titoli);
 

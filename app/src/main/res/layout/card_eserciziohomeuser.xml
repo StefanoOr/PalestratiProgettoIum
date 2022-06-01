@@ -6,9 +6,9 @@
     android1:id="@+id/videoAllenamentoIcon"
     android:layout_width="wrap_content"
     android:layout_height="wrap_content"
-    android:backgroundTint="@color/background_activity"
-    android:outlineSpotShadowColor="#FEFEFF"
-    android:outlineAmbientShadowColor="#FEFEFF"
+    android:backgroundTint="#E3E7EA"
+    android:outlineSpotShadowColor="@color/card_background"
+    android:outlineAmbientShadowColor="@color/card_background"
     app:cardCornerRadius="15dp"
     android:elevation="20dp"
     app:cardElevation="10dp"
@@ -16,6 +16,7 @@
 
     <androidx.constraintlayout.widget.ConstraintLayout
         android:layout_width="wrap_content"
+        android:elevation="10dp"
         android:layout_height="wrap_content">
 
         <ImageView

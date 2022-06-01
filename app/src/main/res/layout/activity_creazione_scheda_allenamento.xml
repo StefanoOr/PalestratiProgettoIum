@@ -47,7 +47,6 @@
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         android:background="@color/background_activity"
-        app:layout_constraintBottom_toTopOf="@id/addEsercizioSchedaAllenamento"
         app:layout_constraintTop_toBottomOf="@+id/nomeSchedaAllenamento"/>
 
     <Button

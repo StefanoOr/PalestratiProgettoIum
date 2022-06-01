@@ -9,6 +9,7 @@ import android.os.Bundle;
 import android.view.MenuItem;
 import android.view.View;
 import android.widget.Button;
+import android.widget.TextView;
 
 import com.example.palestratiium.Login;
 import com.example.palestratiium.R;
@@ -22,6 +23,7 @@ public class WorkOut extends AppCompatActivity {
 
     User user;
     public Button allenamenti, personalTrainer;
+    private TextView nome;
 
 
 
@@ -45,6 +47,9 @@ public class WorkOut extends AppCompatActivity {
 
         allenamenti=findViewById(R.id.aggiungiAllenamento);
         personalTrainer=findViewById(R.id.lista_personal_trainer);
+
+        nome = findViewById(R.id.toolbartag);
+        nome.setText("Esplora");
 
 
         allenamenti.setOnClickListener(new View.OnClickListener() {

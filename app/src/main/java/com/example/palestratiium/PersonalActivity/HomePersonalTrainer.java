@@ -13,6 +13,7 @@ import android.text.Editable;
 import android.text.TextWatcher;
 import android.view.MenuItem;
 import android.widget.EditText;
+import android.widget.TextView;
 
 import com.example.palestratiium.EserciziActivity;
 import com.example.palestratiium.Login;
@@ -34,6 +35,7 @@ public class HomePersonalTrainer extends AppCompatActivity implements RecycleVie
     PersonalTrainer personal;
     EditText ricerca;
     public RecyclerView.LayoutManager mLayoutManager;
+    private TextView n;
     RecyclerView mRecyclerView;
     RecyclerView.Adapter adapter;
     List<Esercizio> listaEserciziPt;
@@ -44,6 +46,9 @@ public class HomePersonalTrainer extends AppCompatActivity implements RecycleVie
 
         Intent intent = getIntent();
         Serializable obj = intent.getSerializableExtra(Login.EXTRA_USER);
+        n=findViewById(R.id.toolbartag);
+
+        n.setText("Home Personal");
 
         if(obj instanceof PersonalTrainer){
             personal = (PersonalTrainer) obj;

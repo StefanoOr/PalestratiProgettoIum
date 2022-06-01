@@ -37,6 +37,8 @@ public class ProfiloUser extends AppCompatActivity {
     Button conferma_peso, nega_peso, conferma_altezza, nega_altezza,logout;
     AlertDialog dialog;
 
+    private TextView nomeA;
+
 
     public static final String EXTRA_USER = "package com.example.palestratiium";
 
@@ -56,6 +58,7 @@ public class ProfiloUser extends AppCompatActivity {
         altezza_attuale = findViewById(R.id.altezza_attuale);
         eta=findViewById(R.id.eta_user);
         logout=findViewById(R.id.logoutUser);
+        nomeA = findViewById(R.id.toolbartag);
 
 
         Intent intent = getIntent();
@@ -73,6 +76,7 @@ public class ProfiloUser extends AppCompatActivity {
 
         altezza_attuale.setText( user.getAltezza());
         peso_attuale.setText(user.getPeso());
+        nomeA.setText("Profilo");
 
         edit_peso.setOnClickListener(new View.OnClickListener() {
             @Override

@@ -12,6 +12,10 @@
         android:layout_height="match_parent"
         android:background="@color/background_activity">
 
+        <include
+            android:id="@+id/idToolbar"
+            layout="@layout/toolbar_home"/>
+
         <ImageView
             android:id="@+id/imageView"
             android:layout_width="110dp"
@@ -19,11 +23,11 @@
             android:layout_alignParentStart="true"
             android:layout_alignParentTop="true"
             android:layout_alignParentEnd="true"
-            android:layout_marginTop="40dp"
+            android:layout_marginTop="20dp"
             android:src="@drawable/ic_baseline_face_24"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toTopOf="parent"
+            app:layout_constraintTop_toBottomOf="@id/idToolbar"
             app:tint="@color/scritte_principali" />
 
         <TextView
