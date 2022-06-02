@@ -96,7 +96,7 @@ public class ModifyPassword extends AppCompatActivity {
 
                     user.setPassword(Objects.requireNonNull(newpass.getEditText()).getText().toString());
                     UserFactory.getInstance().modifyPass(user);
-                    Intent home = new Intent(ModifyPassword.this, ModifyPassword.class);
+                    Intent home = new Intent(ModifyPassword.this, ProfiloUser.class);
                     home.putExtra(EXTRA_USER, user);
 
                     Context context = getApplicationContext();
@@ -110,15 +110,15 @@ public class ModifyPassword extends AppCompatActivity {
 
                     personalTrainer.setPassword(Objects.requireNonNull(newpass.getEditText()).getText().toString());
                     UserFactory.getInstance().modifyPassPersonal(personalTrainer);
-                    Intent home = new Intent(ModifyPassword.this, ModifyPassword.class);
-                    home.putExtra(EXTRA_USER, user);
+                    Intent home = new Intent(ModifyPassword.this, ProfiloPersonalTrainer.class);
+                    home.putExtra(EXTRA_PT, personalTrainer);
 
                     Context context = getApplicationContext();
-                    CharSequence text = "Password Updated";
+                    CharSequence text = "Password Updated Personal";
                     int duration = Toast.LENGTH_SHORT;
                     Toast toast = Toast.makeText(context, text, duration);
                     toast.show();
-                    //todo trhow exception for mismathch new passwords
+                    startActivity(home);
                 }
             }
         });

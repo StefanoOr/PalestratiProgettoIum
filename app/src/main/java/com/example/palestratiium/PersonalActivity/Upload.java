@@ -44,7 +44,7 @@ public class Upload extends AppCompatActivity implements Serializable, AdapterVi
     Esercizio esercizio = new Esercizio();
     PersonalTrainer  personal;
 
-    private EditText videoErr, checkBoxErr;
+    private EditText videoErr, checkBoxErr,imageErr;
     private EditText titleEt, descrizioneEt;
     private VideoView videoView;
     private ImageView imageView, back_home;
@@ -88,6 +88,7 @@ public class Upload extends AppCompatActivity implements Serializable, AdapterVi
         back_home=findViewById(R.id.back_toolbar);
         checkBoxErr = findViewById(R.id.error_checkBox);
         videoErr = findViewById(R.id.error_video);
+        imageErr=findViewById(R.id.error_image);
         titleEt = findViewById(R.id.title_edit_text);
         descrizioneEt = findViewById(R.id.descrizione_edit_text);
         imageView = findViewById(R.id.image_view);
@@ -200,6 +201,14 @@ public class Upload extends AppCompatActivity implements Serializable, AdapterVi
             errors++;
         }else{
             videoErr.setError(null);
+        }
+
+        if(imageUri == null){
+            imageErr.setVisibility(View.VISIBLE);
+            imageErr.setError("Perfavore inserisci un immagine");
+            errors++;
+        }else{
+            imageErr.setError(null);
         }
 
         //TODO
