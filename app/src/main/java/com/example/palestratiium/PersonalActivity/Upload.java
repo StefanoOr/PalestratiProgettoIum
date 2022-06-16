@@ -203,7 +203,7 @@ public class Upload extends AppCompatActivity implements Serializable, AdapterVi
             videoErr.setError(null);
         }
 
-        if(imageUri == null){
+        if(stringUriImage == null){
             imageErr.setVisibility(View.VISIBLE);
             imageErr.setError("Perfavore inserisci un immagine");
             errors++;
