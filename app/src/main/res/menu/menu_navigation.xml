@@ -6,7 +6,7 @@
         android:title="@string/home"/>
 
     <item android:id="@+id/aggiungiVideo"
-        android:icon="@drawable/ic_baseline_add_24"
+        android:icon="@drawable/ic_baseline_fitness_center_24"
         android:title="Workout"/>
 
     <item android:id="@+id/profilo"

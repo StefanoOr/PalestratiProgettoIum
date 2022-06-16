@@ -13,6 +13,7 @@ public class User implements Serializable {
     private Calendar date;
     private String peso;
     private String altezza;
+    private String genere;
 
     public User(){
         this.setUsername("");
@@ -23,6 +24,14 @@ public class User implements Serializable {
     public User(String username, String password){
         this.setUsername(username);
         this.setPassword(password);
+    }
+
+    public void setGenere(String genere){
+        this.genere=genere;
+    }
+
+    public String getGenere(){
+        return this.genere;
     }
 
     public String getPeso() {
