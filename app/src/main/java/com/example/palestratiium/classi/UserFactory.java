@@ -124,11 +124,11 @@ public class UserFactory implements Serializable {
             fine_pt = false;
 
             PersonalTrainer all = new PersonalTrainer();
-            all.setUsername("all");
+            all.setUsername("Tutti");
             coach.add(all);
 
             PersonalTrainer atzeni = new PersonalTrainer();
-            atzeni.setUsername("At");
+            atzeni.setUsername("Atzeni");
             atzeni.setNome("Michele");
             atzeni.setPassword("at");
             atzeni.setCity("Cagliari");
@@ -143,7 +143,7 @@ public class UserFactory implements Serializable {
             coach.add(atzeni);
 
             PersonalTrainer roberto = new PersonalTrainer();
-            roberto.setUsername("Ro");
+            roberto.setUsername("Roby");
             roberto.setNome("Roberto");
             roberto.setPassword("ro");
             roberto.setCity("Cagliari");
@@ -236,11 +236,11 @@ public class UserFactory implements Serializable {
         List<Esercizio> exe;
         List<Esercizio> esercizi = new ArrayList<>();
 
-        if (pt.getUsername().equals("all") && gruppoMuscolare.equals(TUTTI)) {
+        if (pt.getUsername().equals("Tutti") && gruppoMuscolare.equals(TUTTI)) {
             return getAllEsercizi();
         }
 
-        if (pt.getUsername().equals("all")) {
+        if (pt.getUsername().equals("Tutti")) {
             exe = getAllEsercizi();
         } else {
             exe = (getEserciziPt(pt));
